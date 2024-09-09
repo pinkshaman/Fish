@@ -1,0 +1,1007 @@
+fileFormatVersion: 2
+guid: 385cd4bfce9269f4587dcf77daf7d3f2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Humphead Wrasse_0
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 445
+        width: 273
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6059ef70196424d9c1ce602d911e4b
+      internalID: -967357005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_1
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 439
+        width: 271
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14757fb13bcabc4468af2c1c2f215f93
+      internalID: 1454627218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_2
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 438
+        width: 282
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b6bc5a04830d8b4b9b5e20c167c8d2e
+      internalID: -1042556733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_3
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 443
+        width: 271
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad673ba0565cd247ba3203492ce656f
+      internalID: -1096565563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_4
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 438
+        width: 281
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80304bf8822694745804cedd5593f5f6
+      internalID: 356305108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_5
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 439
+        width: 277
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 551253c77bb48d84998e4c27af7a2553
+      internalID: -1292440783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_6
+      rect:
+        serializedVersion: 2
+        x: 1774
+        y: 439
+        width: 280
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3af7aca629490944a85bb38e94b0ab76
+      internalID: -1608084650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_7
+      rect:
+        serializedVersion: 2
+        x: 2055
+        y: 437
+        width: 285
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 039760b050fa8ae4a9df7152719d3331
+      internalID: -639955592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_8
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 298
+        width: 288
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75431390deacc384aa0efd265917fbe9
+      internalID: -1690786047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_9
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 298
+        width: 280
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 393e6f41cf974de4eb229d422c15d898
+      internalID: 1509451199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_10
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 296
+        width: 279
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e1397a28234294780d7117234dfd23
+      internalID: 1934286267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_11
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 291
+        width: 276
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87f1e9f0dc5f07b41818086d5e6e9953
+      internalID: 95809397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_12
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 294
+        width: 279
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fb79e33eda2b5c449ce43304ab24e50
+      internalID: -870435025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_13
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 294
+        width: 271
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6701e6aa2a669b04bad8f808b9071f1c
+      internalID: -253304512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_14
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 295
+        width: 272
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5936c141bddf09b4e9d08a98bb0af2f0
+      internalID: 2132889239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_15
+      rect:
+        serializedVersion: 2
+        x: 2053
+        y: 303
+        width: 273
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29249ba1b1e06e546ac8766bfa659d7d
+      internalID: 865990640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_16
+      rect:
+        serializedVersion: 2
+        x: 2330
+        y: 308
+        width: 271
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ad1464ad439b146b825d207a26fbad
+      internalID: -2009102489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_17
+      rect:
+        serializedVersion: 2
+        x: 2611
+        y: 305
+        width: 270
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06f0cbaee21197489ecba58c238062d
+      internalID: -506247496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_18
+      rect:
+        serializedVersion: 2
+        x: 2886
+        y: 303
+        width: 273
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2d3664c330696847822061a9e4a9159
+      internalID: 856866077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_19
+      rect:
+        serializedVersion: 2
+        x: 3164
+        y: 304
+        width: 278
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a78ca6f4302f8fd46860265500b866a2
+      internalID: 881288639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_20
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 152
+        width: 278
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 513fb04d24135a34fa1f8006ce221a22
+      internalID: 1896619348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_21
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 157
+        width: 272
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e9eef385783e114aa302f6c755427e3
+      internalID: -327414196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_22
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 154
+        width: 274
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b866d5126f8e034ab3f49213399f6fc
+      internalID: -369705095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_23
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 161
+        width: 268
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6360ad15d7e6fc438235323821c39d6
+      internalID: 59874486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_24
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 157
+        width: 271
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff33d5fdb7f948a4ba49003fe18044d5
+      internalID: 1055662969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_25
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 160
+        width: 267
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d87f79b90f03c4b8efda5f8fea860f
+      internalID: -1751147298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_26
+      rect:
+        serializedVersion: 2
+        x: 1772
+        y: 158
+        width: 275
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d7e195a70010c546bda10fe36e8fb40
+      internalID: -449477406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_27
+      rect:
+        serializedVersion: 2
+        x: 2053
+        y: 152
+        width: 271
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2432f5572e0130a4681752702dac3b78
+      internalID: -785663596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_28
+      rect:
+        serializedVersion: 2
+        x: 2328
+        y: 151
+        width: 272
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f8931cc6e0b70543b68f77449656f67
+      internalID: -32646104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_29
+      rect:
+        serializedVersion: 2
+        x: 2608
+        y: 139
+        width: 270
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b569606a878d24d4ab0d5f09ac4cebcc
+      internalID: 1890233159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_30
+      rect:
+        serializedVersion: 2
+        x: 2888
+        y: 145
+        width: 271
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b666efe873fb654bbbded9b4064ad91
+      internalID: -100325709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_31
+      rect:
+        serializedVersion: 2
+        x: 3164
+        y: 149
+        width: 270
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf40b897ca1491b45bff83fcfa225538
+      internalID: 1632385269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_32
+      rect:
+        serializedVersion: 2
+        x: 3438
+        y: 137
+        width: 274
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f0db66c8b90f9d46b17858630ae2b80
+      internalID: -1592944860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_33
+      rect:
+        serializedVersion: 2
+        x: 3717
+        y: 149
+        width: 269
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe3371a1454adc43906e8f6f72a4e90
+      internalID: -1202511369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_34
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 9
+        width: 223
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97fb8070a03397b4b954b85f5d602672
+      internalID: 372584269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_35
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 0
+        width: 181
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afe982632e8ddce48a31ec61ed6f1435
+      internalID: 1131309446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_36
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 0
+        width: 157
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c45512456293fc447b3f5f73673250a6
+      internalID: 659975095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_37
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 0
+        width: 169
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23646c4d26e5c4842a22f043db9cf478
+      internalID: -432050209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_38
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 0
+        width: 168
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8951c1399279d0f40a79c45b36eb9734
+      internalID: -662370374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphead Wrasse_39
+      rect:
+        serializedVersion: 2
+        x: 1493
+        y: 5
+        width: 276
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbbf971c0b00d014286aa961839eaae9
+      internalID: -1964956491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Humphead Wrasse_0: -967357005
+      Humphead Wrasse_1: 1454627218
+      Humphead Wrasse_10: 1934286267
+      Humphead Wrasse_11: 95809397
+      Humphead Wrasse_12: -870435025
+      Humphead Wrasse_13: -253304512
+      Humphead Wrasse_14: 2132889239
+      Humphead Wrasse_15: 865990640
+      Humphead Wrasse_16: -2009102489
+      Humphead Wrasse_17: -506247496
+      Humphead Wrasse_18: 856866077
+      Humphead Wrasse_19: 881288639
+      Humphead Wrasse_2: -1042556733
+      Humphead Wrasse_20: 1896619348
+      Humphead Wrasse_21: -327414196
+      Humphead Wrasse_22: -369705095
+      Humphead Wrasse_23: 59874486
+      Humphead Wrasse_24: 1055662969
+      Humphead Wrasse_25: -1751147298
+      Humphead Wrasse_26: -449477406
+      Humphead Wrasse_27: -785663596
+      Humphead Wrasse_28: -32646104
+      Humphead Wrasse_29: 1890233159
+      Humphead Wrasse_3: -1096565563
+      Humphead Wrasse_30: -100325709
+      Humphead Wrasse_31: 1632385269
+      Humphead Wrasse_32: -1592944860
+      Humphead Wrasse_33: -1202511369
+      Humphead Wrasse_34: 372584269
+      Humphead Wrasse_35: 1131309446
+      Humphead Wrasse_36: 659975095
+      Humphead Wrasse_37: -432050209
+      Humphead Wrasse_38: -662370374
+      Humphead Wrasse_39: -1964956491
+      Humphead Wrasse_4: 356305108
+      Humphead Wrasse_5: -1292440783
+      Humphead Wrasse_6: -1608084650
+      Humphead Wrasse_7: -639955592
+      Humphead Wrasse_8: -1690786047
+      Humphead Wrasse_9: 1509451199
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

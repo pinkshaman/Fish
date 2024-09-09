@@ -1,0 +1,789 @@
+fileFormatVersion: 2
+guid: 42e880bf6007add47b83d6482769407c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Barracuda_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 250
+        width: 278
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e69ca1e2d1a141e44b38e5ef56735573
+      internalID: -769307366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_8
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 129
+        width: 253
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33da10a981562144482b6fa3d9c5489e
+      internalID: 1017074182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_10
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 126
+        width: 260
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c2f1459658fce45bf7ad430de1c051
+      internalID: 1232022645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_11
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 127
+        width: 245
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2666552c969151e4c8ae65f438b5f7ef
+      internalID: 1490453564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_15
+      rect:
+        serializedVersion: 2
+        x: 2434
+        y: 116
+        width: 245
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fd95fce0853e0e4ab92b138de060cc1
+      internalID: -2089592334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_17
+      rect:
+        serializedVersion: 2
+        x: 2980
+        y: 99
+        width: 248
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59de3a6d486d13345a2970f9fd8284cf
+      internalID: 1583913723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_18
+      rect:
+        serializedVersion: 2
+        x: 3246
+        y: 110
+        width: 256
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b762d2a224c9345951a6b1befaf0e5
+      internalID: -953222805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_19
+      rect:
+        serializedVersion: 2
+        x: 3516
+        y: 113
+        width: 245
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8da3133a7e091ae4e8e1ea00be1755b7
+      internalID: -1101313902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_21
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 0
+        width: 234
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a322537aed7b8745bf278bd22d76ed7
+      internalID: 1882904239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_1
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 240
+        width: 221
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecb0e581be787f441a80bc6847551327
+      internalID: -961004660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_2
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 245
+        width: 260
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a76befdfbffbe241a7592171223ec24
+      internalID: -1715833149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_3
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 247
+        width: 271
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ed1c0dd6ca12f04fa76d8e67546383f
+      internalID: -360312785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_4
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 248
+        width: 262
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42505ee18f60f954aae5f945fcd57966
+      internalID: -2073980591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_5
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 248
+        width: 266
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055435e96086a5645aeecc6eef0ca7b6
+      internalID: -1042321645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 118
+        width: 240
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3781edc9cc9a67418f7ba7e8bb09abd
+      internalID: -476244089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_7
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 126
+        width: 269
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2b6feb88c72ca6459ea6937525256a4
+      internalID: 678877725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_9
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 133
+        width: 262
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea547c3c7fc164245b404cfe3f30752a
+      internalID: -1532823518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_12
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 141
+        width: 238
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985c6235b476cf04fb2ba16b0e1a55a9
+      internalID: 2137033802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_13
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 127
+        width: 232
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8957e50624b1d48945bdfa6dde8d31
+      internalID: 221186426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_14
+      rect:
+        serializedVersion: 2
+        x: 2154
+        y: 122
+        width: 247
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e749cb3d5a26ade49b1f6c27c372e0e6
+      internalID: -1804928237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_16
+      rect:
+        serializedVersion: 2
+        x: 2708
+        y: 103
+        width: 245
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e28e18f4858420548817ada9ddddac2a
+      internalID: 1957182186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_20
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 207
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02f44c0e9f7e3d94fb474fd454f3abe4
+      internalID: 1664768828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_22
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 4
+        width: 235
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1caccbc265996f448a57c84289f1bda0
+      internalID: 290772291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_23
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 0
+        width: 193
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5490c48251bfa9d4eb7c4cdfb8a6b68a
+      internalID: -303966627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barracuda_24
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 0
+        width: 224
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8497a89a14a81645ba64e23ba53ae9d
+      internalID: -123936035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Barracuda_0: -769307366
+      Barracuda_1: -961004660
+      Barracuda_10: 1232022645
+      Barracuda_100: 124719528
+      Barracuda_101: -1275154145
+      Barracuda_102: 1642856443
+      Barracuda_103: -1936614172
+      Barracuda_104: -1471512829
+      Barracuda_105: 2132836844
+      Barracuda_106: -554617787
+      Barracuda_107: 595933726
+      Barracuda_108: -139464729
+      Barracuda_109: -471715953
+      Barracuda_11: 1490453564
+      Barracuda_110: 1498525031
+      Barracuda_111: 2104151049
+      Barracuda_112: 950404113
+      Barracuda_113: -890639220
+      Barracuda_114: 1404477616
+      Barracuda_115: -2109295188
+      Barracuda_116: 436495060
+      Barracuda_117: -1554856593
+      Barracuda_118: 2039410237
+      Barracuda_119: -554602618
+      Barracuda_12: 2137033802
+      Barracuda_120: 229478935
+      Barracuda_121: -1793105395
+      Barracuda_122: 444314439
+      Barracuda_123: -1858315518
+      Barracuda_124: -1007661972
+      Barracuda_125: 2087363795
+      Barracuda_126: -135365887
+      Barracuda_127: -1976622056
+      Barracuda_128: -1589608914
+      Barracuda_129: -980085555
+      Barracuda_13: 221186426
+      Barracuda_130: 1228622251
+      Barracuda_131: 1748098102
+      Barracuda_132: -235527487
+      Barracuda_133: -1825145957
+      Barracuda_134: -986480154
+      Barracuda_135: 1899136494
+      Barracuda_136: 1569803017
+      Barracuda_14: -1804928237
+      Barracuda_15: -2089592334
+      Barracuda_16: 1957182186
+      Barracuda_17: 1583913723
+      Barracuda_18: -953222805
+      Barracuda_19: -1101313902
+      Barracuda_2: -1715833149
+      Barracuda_20: 1664768828
+      Barracuda_21: 1882904239
+      Barracuda_22: 290772291
+      Barracuda_23: -303966627
+      Barracuda_24: -123936035
+      Barracuda_25: 1195233944
+      Barracuda_26: 637854662
+      Barracuda_27: -1984427599
+      Barracuda_28: -1206285581
+      Barracuda_29: 1107751409
+      Barracuda_3: -360312785
+      Barracuda_30: -1855542677
+      Barracuda_31: 1723956330
+      Barracuda_32: 1437581301
+      Barracuda_33: 2073191381
+      Barracuda_34: 277621082
+      Barracuda_35: 512396724
+      Barracuda_36: -1573226680
+      Barracuda_37: -1995293342
+      Barracuda_38: -235131730
+      Barracuda_39: -1464519281
+      Barracuda_4: -2073980591
+      Barracuda_40: 1349601136
+      Barracuda_41: -745973491
+      Barracuda_42: -655866074
+      Barracuda_43: 219013576
+      Barracuda_44: -768506080
+      Barracuda_45: 737685437
+      Barracuda_46: -890192278
+      Barracuda_47: -738147803
+      Barracuda_48: -1873422203
+      Barracuda_49: 304171713
+      Barracuda_5: -1042321645
+      Barracuda_50: 916616233
+      Barracuda_51: 303854465
+      Barracuda_52: -965974834
+      Barracuda_53: -1911187775
+      Barracuda_54: -1717796613
+      Barracuda_55: -1003852154
+      Barracuda_56: 1898664480
+      Barracuda_57: -1647216954
+      Barracuda_58: -224990249
+      Barracuda_59: 221369765
+      Barracuda_6: -476244089
+      Barracuda_60: 105746438
+      Barracuda_61: 1301085690
+      Barracuda_62: 789696483
+      Barracuda_63: 1742676997
+      Barracuda_64: -1037858250
+      Barracuda_65: -808304325
+      Barracuda_66: 1802491358
+      Barracuda_67: 972054660
+      Barracuda_68: -1211725538
+      Barracuda_69: 458533672
+      Barracuda_7: 678877725
+      Barracuda_70: 583207495
+      Barracuda_71: 766410725
+      Barracuda_72: -1102208229
+      Barracuda_73: -1902961418
+      Barracuda_74: 698106829
+      Barracuda_75: 330586960
+      Barracuda_76: 1782542655
+      Barracuda_77: -1090977264
+      Barracuda_78: -243022970
+      Barracuda_79: -761823302
+      Barracuda_8: 1017074182
+      Barracuda_80: -1582032830
+      Barracuda_81: 1242874984
+      Barracuda_82: -1822237444
+      Barracuda_83: -1350089312
+      Barracuda_84: -1876373172
+      Barracuda_85: -1913115943
+      Barracuda_86: 615570739
+      Barracuda_87: 1343273511
+      Barracuda_88: 2045962599
+      Barracuda_89: -114933443
+      Barracuda_9: -1532823518
+      Barracuda_90: 2074866454
+      Barracuda_91: -1074770971
+      Barracuda_92: -27645500
+      Barracuda_93: -897056726
+      Barracuda_94: -963052260
+      Barracuda_95: -189316918
+      Barracuda_96: -312100158
+      Barracuda_97: -2074604576
+      Barracuda_98: -286326564
+      Barracuda_99: -172565454
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

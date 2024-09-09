@@ -1,0 +1,69 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public class FishManager : MonoBehaviour
+{
+    public static FishManager Instance { get; private set; }
+    public Transform rootFish;
+    public FishOtherHandle fishOtherHandle;
+    public FishDataBase fishDataBases;
+    public GameObject fishPrefabs;
+    public List<FishHandle> allFishes;
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    public void Start()
+    {
+
+    }
+    public void RegisterFish(FishHandle fish)
+    {
+        if (!allFishes.Contains(fish))
+        {
+            allFishes.Add(fish);
+            Debug.Log($"Add newFish: {fish.uniqueID}");
+        }
+    }
+    public void CreateFish(QuestDataTest questData)
+    {
+        for (int i = 0; i < questData.quality; i++)
+        {
+            Vector2 spawnPosition = questData.fishPositions;
+
+            // Tạo đối tượng cá mới từ prefab và gán nó vào rootFish
+            var newFish = Instantiate(fishPrefabs, spawnPosition, Quaternion.identity, rootFish);
+
+            FishOtherHandle fishOtherHandles = newFish.GetComponent<FishOtherHandle>();
+            fishOtherHandles.fishData = new FishData
+            {
+                fishName = questData.fishName,
+                scalePoint = questData.scalePoint,
+                speed = questData.speed,
+                fishSprite = questData.fishSprite,
+                controller = questData.controller
+            };
+            fishOtherHandles.uniqueID = newFish.GetInstanceID();
+
+            Debug.Log($"Create fish: {newFish.name}:{questData.quality} at position {spawnPosition}");
+            RegisterFish(fishOtherHandles);
+        }
+    }
+    // Phương thức để tạo nhiều cá dựa trên thông tin cung cấp
+    public void CreateFishesFromData(List<QuestDataTest> questDataTests)
+    {
+        foreach (var questData in questDataTests)
+        {
+            CreateFish(questData);
+        }
+    }
+}

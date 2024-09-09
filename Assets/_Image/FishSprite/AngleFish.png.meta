@@ -1,0 +1,1022 @@
+fileFormatVersion: 2
+guid: f056917dafa0d164e8fb3e6113c5545b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AngleFish_0
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 775
+        width: 226
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1a0da612869e0c4e890dd93e2c51f53
+      internalID: 1116063129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_4
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 757
+        width: 218
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6398ce0ff650bd043bbfc00ecf9ea77a
+      internalID: 417071658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_13
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 525
+        width: 223
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec74e6a7bf7b8443899361c3dfbe097
+      internalID: -188655822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_25
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 279
+        width: 205
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18c1a931a6e8e734db45da69dd0240f0
+      internalID: 1426270867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_26
+      rect:
+        serializedVersion: 2
+        x: 2628
+        y: 278
+        width: 211
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e065a45620e015b43aa7ea86bceb3273
+      internalID: 1173319056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_14
+      rect:
+        serializedVersion: 2
+        x: 1724
+        y: 525
+        width: 224
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0e72c70a90035345aee129dd90d18c8
+      internalID: -218781992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_33
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 19
+        width: 159
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be506e14a7b17594d9a4a0771e1135e8
+      internalID: -577140867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_34
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 21
+        width: 201
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28dbab2303e869b4bab0465b4ebce2a8
+      internalID: 1665220113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_5
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 748
+        width: 216
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75987668fab2d2e4b9ab66617cf2123f
+      internalID: -644188572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_1
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 770
+        width: 218
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de32e85e9f342c48b93e07dfc254ad9
+      internalID: -265942924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_2
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 748
+        width: 223
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e032f1d6b63455f4883130a0946c4256
+      internalID: 1508359092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_3
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 753
+        width: 215
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c7936b80d14335488981eff58a9fc81
+      internalID: 1023521533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_6
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 752
+        width: 217
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff4ab74e55564894abae3b909de53058
+      internalID: -887533923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_7
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 532
+        width: 235
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ade98c160aeb1409546984e938da22
+      internalID: -884521535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_8
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 530
+        width: 220
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ee70299457e2394a8aa79c0f91a904b
+      internalID: 1273596083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_9
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 528
+        width: 220
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2262dc0814987847b8bb703f5998cd3
+      internalID: -1678768546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_10
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 532
+        width: 223
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68b7473b731960d4bbc17dcef93163a2
+      internalID: 1180727705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_11
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 534
+        width: 216
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd1bc18b40d53c941a31824ef5554b5a
+      internalID: 1772775709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_12
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 532
+        width: 221
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a620b2c4c321494a86a9b011e41f320
+      internalID: 1025551337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_15
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 276
+        width: 225
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810e6601d2165d54c813ca23b8628c63
+      internalID: -136995190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_16
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 274
+        width: 211
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c9a4d4a37f7b948b469763f6c64b80
+      internalID: -1612747525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_17
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 265
+        width: 206
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bac0506d2f08ee4c91fc7c13d1349f2
+      internalID: -1594845007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_18
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 269
+        width: 209
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c82eeed765587da4aa53cf9f4b5b9c22
+      internalID: -712969121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_19
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 268
+        width: 207
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a38816abc22884d9c7d1dd5bc14cd2
+      internalID: 1186481684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_20
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 273
+        width: 223
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca0159bf73e08b843ae043700db25cdd
+      internalID: -10670357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_21
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 278
+        width: 220
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1af85ccdd811dd04c88c51d04bfe0cd9
+      internalID: -1114448486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_22
+      rect:
+        serializedVersion: 2
+        x: 1723
+        y: 274
+        width: 215
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98fcb4f67ec88f741a0ef9ebc98f9915
+      internalID: 597130789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_23
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 277
+        width: 201
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c70516316a89f9947bab59b0294a541a
+      internalID: -1578446469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_24
+      rect:
+        serializedVersion: 2
+        x: 2177
+        y: 272
+        width: 193
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fed9cc37e5b3c94984c277709ab399c
+      internalID: -1351615961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_27
+      rect:
+        serializedVersion: 2
+        x: 2855
+        y: 276
+        width: 221
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f375d48e5fd2c194e9294e7333c59604
+      internalID: 426012216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 31
+        width: 224
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0763bd15e10b3e438527c69898bec38
+      internalID: 405654416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_29
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 35
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8152624af0070704a8c08bf250ddd3f5
+      internalID: -554073424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_30
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 26
+        width: 151
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 119344a97c1a8104f8c55b623175ab34
+      internalID: -1654267463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_31
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 21
+        width: 154
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5840c1b76385afe429725ffaff1b43e9
+      internalID: -1188519960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngleFish_32
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 13
+        width: 139
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26fa4d816a5eac643a5409478bcdc1e9
+      internalID: 835880433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      AngleFish_0: 1116063129
+      AngleFish_1: -265942924
+      AngleFish_10: 1180727705
+      AngleFish_100: -1227609263
+      AngleFish_101: -1962218001
+      AngleFish_102: 1835556493
+      AngleFish_103: 1059901416
+      AngleFish_104: 642597179
+      AngleFish_105: -830074671
+      AngleFish_106: 1851442550
+      AngleFish_107: 1922719017
+      AngleFish_108: -1925990625
+      AngleFish_109: -1432568033
+      AngleFish_11: 1772775709
+      AngleFish_110: -746704753
+      AngleFish_111: 941970691
+      AngleFish_112: -248611060
+      AngleFish_113: 1855749316
+      AngleFish_114: -1803184494
+      AngleFish_115: 1303646510
+      AngleFish_116: -298253244
+      AngleFish_117: 1635915964
+      AngleFish_118: -1059488871
+      AngleFish_119: 744967836
+      AngleFish_12: 1025551337
+      AngleFish_120: -1712868029
+      AngleFish_121: -257966142
+      AngleFish_122: 915728672
+      AngleFish_123: 343127265
+      AngleFish_124: -1145025299
+      AngleFish_125: -2074114491
+      AngleFish_126: 1287381874
+      AngleFish_127: -1848317262
+      AngleFish_128: -222448265
+      AngleFish_129: -320927152
+      AngleFish_13: -188655822
+      AngleFish_130: -720650702
+      AngleFish_131: 138724125
+      AngleFish_132: 292007608
+      AngleFish_133: -140758226
+      AngleFish_134: -377638074
+      AngleFish_135: -1437313054
+      AngleFish_136: -1258889102
+      AngleFish_137: -401815989
+      AngleFish_138: 1194156026
+      AngleFish_139: 269861738
+      AngleFish_14: -218781992
+      AngleFish_140: 663320111
+      AngleFish_141: 980856388
+      AngleFish_142: 1698068712
+      AngleFish_143: -288730328
+      AngleFish_144: 493169175
+      AngleFish_145: 1945570061
+      AngleFish_146: -436643160
+      AngleFish_147: -1495170536
+      AngleFish_148: -364876902
+      AngleFish_149: 1877164494
+      AngleFish_15: -136995190
+      AngleFish_150: 1891564407
+      AngleFish_151: 1018204922
+      AngleFish_152: 450081487
+      AngleFish_153: -282930828
+      AngleFish_154: -2071112008
+      AngleFish_155: 1683011905
+      AngleFish_156: 1374717588
+      AngleFish_157: -1331678870
+      AngleFish_158: -2014281582
+      AngleFish_159: -1856164445
+      AngleFish_16: -1612747525
+      AngleFish_17: -1594845007
+      AngleFish_18: -712969121
+      AngleFish_19: 1186481684
+      AngleFish_2: 1508359092
+      AngleFish_20: -10670357
+      AngleFish_21: -1114448486
+      AngleFish_22: 597130789
+      AngleFish_23: -1578446469
+      AngleFish_24: -1351615961
+      AngleFish_25: 1426270867
+      AngleFish_26: 1173319056
+      AngleFish_27: 426012216
+      AngleFish_28: 405654416
+      AngleFish_29: -554073424
+      AngleFish_3: 1023521533
+      AngleFish_30: -1654267463
+      AngleFish_31: -1188519960
+      AngleFish_32: 835880433
+      AngleFish_33: -577140867
+      AngleFish_34: 1665220113
+      AngleFish_35: 717421631
+      AngleFish_36: 1872115207
+      AngleFish_37: 1774266747
+      AngleFish_38: 730638947
+      AngleFish_39: -1843338705
+      AngleFish_4: 417071658
+      AngleFish_40: -1545757002
+      AngleFish_41: 1209842752
+      AngleFish_42: 679263737
+      AngleFish_43: 1008239957
+      AngleFish_44: 1271895112
+      AngleFish_45: 543588096
+      AngleFish_46: -1663318500
+      AngleFish_47: 2054334847
+      AngleFish_48: -1016879623
+      AngleFish_49: 678603109
+      AngleFish_5: -644188572
+      AngleFish_50: 174087806
+      AngleFish_51: 1621516928
+      AngleFish_52: 1405803567
+      AngleFish_53: -2046783226
+      AngleFish_54: -108623094
+      AngleFish_55: 904031407
+      AngleFish_56: -1070254509
+      AngleFish_57: 1481529960
+      AngleFish_58: 13120633
+      AngleFish_59: 1562518133
+      AngleFish_6: -887533923
+      AngleFish_60: 382537796
+      AngleFish_61: 309038038
+      AngleFish_62: 1668081264
+      AngleFish_63: 1658846035
+      AngleFish_64: 1170712362
+      AngleFish_65: -741071435
+      AngleFish_66: -340733994
+      AngleFish_67: 659709476
+      AngleFish_68: 2069270229
+      AngleFish_69: -1722367522
+      AngleFish_7: -884521535
+      AngleFish_70: 532447284
+      AngleFish_71: -326267980
+      AngleFish_72: 1015197988
+      AngleFish_73: 1260067419
+      AngleFish_74: 1813378199
+      AngleFish_75: -467943726
+      AngleFish_76: 909876831
+      AngleFish_77: 601819362
+      AngleFish_78: -1094280136
+      AngleFish_79: -1099181366
+      AngleFish_8: 1273596083
+      AngleFish_80: -1026877142
+      AngleFish_81: -2124141172
+      AngleFish_82: -332757760
+      AngleFish_83: -321816388
+      AngleFish_84: 2013626753
+      AngleFish_85: -1446079933
+      AngleFish_86: 1137626704
+      AngleFish_87: -473718370
+      AngleFish_88: 955805175
+      AngleFish_89: -1567642437
+      AngleFish_9: -1678768546
+      AngleFish_90: 505722503
+      AngleFish_91: -575325656
+      AngleFish_92: 772918388
+      AngleFish_93: -200980765
+      AngleFish_94: -136758539
+      AngleFish_95: -878994521
+      AngleFish_96: 1397886753
+      AngleFish_97: 682695251
+      AngleFish_98: -589572116
+      AngleFish_99: -1592266003
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
