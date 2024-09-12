@@ -135,8 +135,20 @@ PrefabInstance:
       value: Fish
       objectReference: {fileID: 0}
     - target: {fileID: 2639943450622597786, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639943450622597786, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
       propertyPath: m_TagString
       value: Fish
+      objectReference: {fileID: 0}
+    - target: {fileID: 6150452424233454087, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
+      propertyPath: Speed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6150452424233454087, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
+      propertyPath: scalePoint
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6150452424233454087, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
       propertyPath: targetPoint
@@ -793,6 +805,8 @@ MonoBehaviour:
   fishDataBases: {fileID: 11400000, guid: 5be3ad31cafc8e446a281d5a92d4c8ee, type: 2}
   fishPrefabs: {fileID: 2011319429182357059, guid: f3835122f36f3934b8468e7135a663a1, type: 3}
   allFishes: []
+  fishHandle: {fileID: 6150452424233454087, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
+  fishPlayerPrefabs: {fileID: 2639943450622597786, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
 --- !u!4 &357316171
 Transform:
   m_ObjectHideFlags: 0
@@ -1050,10 +1064,10 @@ MonoBehaviour:
     - questID: 1
       quality: 5
       fishPositions: {x: 0, y: 0}
-      fishName: Ca bong
+      fishName: AngelFishBlue
       scalePoint: 2
-      speed: 3
-      fishSprite: {fileID: 0}
+      speed: 20
+      fishSprite: {fileID: -1490646831, guid: f2aa61ac48dd67e409e70a488b40285b, type: 3}
       controller: {fileID: 9100000, guid: 4db151074ef63b4419c8c863cb934806, type: 2}
   moveAreaMin: {x: -10, y: -5}
   moveAreaMax: {x: 10, y: 5}

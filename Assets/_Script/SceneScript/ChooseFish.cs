@@ -65,7 +65,9 @@ public class ChooseFish : MonoBehaviour
         fishTankBase.fishTankBases.Add(newFish);
         SaveFishTankDataJson();
         Debug.Log("Fish added to tank list in FishTankBase.");
-        StartCoroutine(LoadFishTankSceneWhenReady());
+
+        loadFishTankScene.LoadFishTankScene();
+        //StartCoroutine(LoadFishTankSceneWhenReady());
 
     }
 

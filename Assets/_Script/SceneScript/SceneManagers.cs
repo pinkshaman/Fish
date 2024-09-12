@@ -18,9 +18,9 @@ public class SceneManagers : MonoBehaviour
     {
         SceneManager.LoadScene("FishTank");
     }
-    public void LoadPlayScene(int level)
+    public void LoadPlayScene()
     {
-        SceneManager.LoadScene(level);
+        SceneManager.LoadScene("PlayScene");
     }
     public void LoadDingScene()
     {

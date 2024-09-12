@@ -460,7 +460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00001936921}
+  m_AnchoredPosition: {x: 0, y: 0.000046780682}
   m_SizeDelta: {x: 0, y: 633}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &228338621
@@ -738,7 +738,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishDataBase: {fileID: 11400000, guid: 5be3ad31cafc8e446a281d5a92d4c8ee, type: 2}
-  fishTankBase: {fileID: 11400000, guid: 0e5b417b9f0e82f48aaba3adb6cb5227, type: 2}
+  fishTankBase:
+    fishTankBases: []
   showUi: {fileID: 6050750313852220955}
   fishinTankHandle: {fileID: -5774600213130805482, guid: b3cf90c9507718242846b89401d3abea, type: 3}
   rootTank: {fileID: 1189852455}
@@ -1227,7 +1228,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 596796949}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6050750313852220955}
+        m_TargetAssemblyTypeName: FishShowUIHandle, Assembly-CSharp
+        m_MethodName: Option1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &596796949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2279,7 +2292,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 25624360}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999785
+  m_Size: 0.9963537
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4145,6 +4158,7 @@ GameObject:
   - component: {fileID: 517565450199261250}
   - component: {fileID: 1237276187519636228}
   - component: {fileID: 6050750313852220955}
+  - component: {fileID: 6050750313852220956}
   m_Layer: 5
   m_Name: Panel Fish
   m_TagString: Untagged
@@ -4164,12 +4178,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768a78a136192c344bdb6a40e99a8841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPanel: {fileID: -8636099356858154783, guid: 5b77288ad4bc3f643abefa39bb8e75f2, type: 3}
+  fishPanel: {fileID: 6026374582929212303, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
   rootUi: {fileID: 764448463279758389}
   togglePrefab: {fileID: 5791111157596202092, guid: 6edeea96c28b8e045be23b5ecaf7fd38, type: 3}
-  option1: {fileID: 596796946}
-  option2: {fileID: 1198978273}
-  option3: {fileID: 372200419}
+  option1: {fileID: 596796948}
+  option2: {fileID: 1198978275}
+  option3: {fileID: 372200420}
+  sceneManagers: {fileID: 6050750313852220956}
+--- !u!114 &6050750313852220956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6050750313852220954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bffb1b5defea13041b43ee8db1110b10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &6559893128529446514
 CanvasRenderer:
   m_ObjectHideFlags: 0

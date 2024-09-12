@@ -201,17 +201,21 @@ MonoBehaviour:
     speed: 0
     fishSprite: {fileID: 0}
     controller: {fileID: 0}
-  anim: {fileID: 0}
-  rb: {fileID: 0}
+  anim: {fileID: 4336091443100124561}
+  rb: {fileID: 443769431871007509}
   targetPoint: {fileID: 0}
   EatPoint: {fileID: 7376073189774564993}
   Speed: 0
   scalePoint: 0
   uniqueID: 0
+  ID: 0
+  fishSprite: {fileID: 0}
   moveAreaMin: {x: -10, y: -5}
   moveAreaMax: {x: 10, y: 5}
-  FishInTank:
-    ID: 0
+  questDataTest:
+    questID: 0
+    quality: 0
+    fishPositions: {x: 0, y: 0}
     fishName: 
     scalePoint: 0
     speed: 0

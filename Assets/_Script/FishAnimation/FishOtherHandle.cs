@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,15 +8,32 @@ public class FishOtherHandle : FishHandle
     public Vector2 moveAreaMin; // Giới hạn dưới của vùng di chuyển
     public Vector2 moveAreaMax; // Giới hạn trên của vùng di chuyển
     private Vector2 randomTagetPosition;// Vị trí mục tiêu ngẫu nhiên
-    
+    public QuestDataTest questDataTest;
 
     public override void Start()
     {
         base.Start();
         SetRandomTagetPosition();
     }
-  
-
+    public void SetData(QuestDataTest data)
+    {
+        this.questDataTest = data;
+        UpdateQuestData(data);
+    }
+    public override void SetData(FishData dataX)
+    {
+        
+    }
+    public void UpdateQuestData(QuestDataTest data)
+    {
+        Speed = data.speed; 
+        ID= data.questID;
+        scalePoint = data.scalePoint;
+        fishSprite = data.fishSprite;
+        anim.runtimeAnimatorController = data.controller;
+        uniqueID = GetInstanceID();
+        
+    }
     public override void Move()
     {
         Vector2 currentPosition = transform.position;

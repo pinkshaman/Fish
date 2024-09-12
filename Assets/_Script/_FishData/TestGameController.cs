@@ -35,7 +35,7 @@ public class TestGameController : MonoBehaviour
     
     public Vector2 moveAreaMin;
     public Vector2 moveAreaMax;
-
+    
     // Hàm chọn nhiệm vụ theo questID
     private QuestDataTest GetQuestDataByID(int questID)
     {

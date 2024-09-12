@@ -33,6 +33,7 @@ public class FishTankManager : MonoBehaviour
         foreach (var fishTanks in fishTankBase.fishTankBases)
         {
             var chooseFish = fishDataBase.fishDatas.Find(chooseFish => chooseFish.id == fishTanks.ID);
+            Debug.Log($"Fish in fishTank{chooseFish}");
             CreateFish(chooseFish);
         }
     }
@@ -65,18 +66,7 @@ public class FishTankManager : MonoBehaviour
         SaveFishTankDataJson();
         Debug.Log("Fish added to tank");
     }
-    public void SetDataFromTankData(FishData fishData)
-    {
-        FishInTank fishInTank = ConvertFishDataToTankData(fishData);
-    }
-
-    public FishInTank ConvertFishDataToTankData(FishData data)
-    {
-        return new FishInTank
-        {
-            ID = data.id,
-        };
-    }
+ 
     [ContextMenu("SaveFishTankDataJson")]
     public void SaveFishTankDataJson()
     {

@@ -12,12 +12,9 @@ public class FishManager : MonoBehaviour
     public FishDataBase fishDataBases;
     public GameObject fishPrefabs;
     public List<FishHandle> allFishes;
-    public FishShowUIHandle fishShowUIHandle;
-
-
-
-
-
+    //public FishShowUIHandle fishShowUIHandle;
+    public FishHandle fishHandle;
+    public GameObject fishPlayerPrefabs;
     private void Awake()
     {
         if (Instance == null)
@@ -49,18 +46,9 @@ public class FishManager : MonoBehaviour
 
             // Tạo đối tượng cá mới từ prefab và gán nó vào rootFish
             var newFish = Instantiate(fishPrefabs, spawnPosition, Quaternion.identity, rootFish);
-
-            FishOtherHandle fishOtherHandles = newFish.GetComponent<FishOtherHandle>();
-            fishOtherHandles.fishData = new FishData
-            {
-                fishName = questData.fishName,
-                scalePoint = questData.scalePoint,
-                speed = questData.speed,
-                fishSprite = questData.fishSprite,
-                controller = questData.controller
-            };
+            FishOtherHandle fishOtherHandles = newFish.GetComponent<FishOtherHandle>();         
             fishOtherHandles.uniqueID = newFish.GetInstanceID();
-
+            fishOtherHandles.SetData(questData);
             Debug.Log($"Create fish: {newFish.name}:{questData.quality} at position {spawnPosition}");
             RegisterFish(fishOtherHandles);
         }
@@ -86,10 +74,10 @@ public class FishManager : MonoBehaviour
 
         // Tạo đối tượng cá mới từ prefab và gán nó vào rootFish
         var newFish = Instantiate(fishPrefabs, spawnPosition, Quaternion.identity, rootFish);
-        var fishOtherHandles = newFish.GetComponent<FishOtherHandle>();
-        fishOtherHandle.SetData(dataX);
-        fishOtherHandles.uniqueID = newFish.GetInstanceID();
-        fishShowUIHandle.CreateFishShow(dataX);
+        var fishHandle = newFish.GetComponent<FishHandle>();
+        fishHandle.SetData(dataX);
+        fishHandle.uniqueID = newFish.GetInstanceID();
+        //fishShowUIHandle.CreateFishShow(dataX);
         Debug.Log($"Create fish: {newFish.name} at position {spawnPosition}");
     }   
 }
