@@ -11,14 +11,16 @@ public class CreateID : MonoBehaviour
     public LoadSaveData saveData;
     public PlayerDataBase playerDataBase;
     public Text Message;
- 
+    public Button xButton;
+    public SceneManagers loadScene;
     public void Start()
     {
-        // Gán sự kiện cho nút nếu tất cả các tham chiếu đã được gán
-        if (createButton != null)
-        {
-            createButton.onClick.AddListener(OnCreateButtonClick);
-        }
+        createButton.onClick.AddListener(OnCreateButtonClick);
+    }
+    public void OnXButtonClick()
+    {
+       Application.Quit();
+        Debug.Log("Application is Quitting");
     }
 
     public void OnCreateButtonClick()
@@ -58,7 +60,9 @@ public class CreateID : MonoBehaviour
         playerDataBase.playerDatas.Add(newPlayerData);
         Debug.Log($"Successfully! Your name: {playerName}");
 
-        // Lưu dữ liệ      
+        // Lưu dữ liệu      
         saveData.SaveDataJson();
+        loadScene.LoadChooseFish();
     }
+    
 }

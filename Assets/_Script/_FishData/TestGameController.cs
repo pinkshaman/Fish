@@ -64,7 +64,7 @@ public class TestGameController : MonoBehaviour
         {
             SetFishPositionForQuest(selectedQuest); // Set vị trí cho cá
             List<QuestDataTest> selectedQuestList = new List<QuestDataTest> { selectedQuest };
-            fishManager.CreateFishesFromData(selectedQuestList); // Tạo cá từ dữ liệu
+            fishManager.CreateFishesFromDataQuest(selectedQuestList); // Tạo cá từ dữ liệu
         }
     }
 

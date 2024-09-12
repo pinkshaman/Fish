@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FishOtherHandle : FishHandle
+public class FishinTankHandle : FishHandle
 {
+
     public Vector2 moveAreaMin; // Giới hạn dưới của vùng di chuyển
     public Vector2 moveAreaMax; // Giới hạn trên của vùng di chuyển
     private Vector2 randomTagetPosition;// Vị trí mục tiêu ngẫu nhiên
-    
+
 
     public override void Start()
     {
-        base.Start();
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         SetRandomTagetPosition();
     }
-  
-
+   
     public override void Move()
     {
         Vector2 currentPosition = transform.position;
@@ -25,7 +26,7 @@ public class FishOtherHandle : FishHandle
 
         Flip(movement);
         //Nếu đã đến gần vị trí mục tiêu, tạo vị trí mục tiêu mới
-        if (Vector2.Distance(currentPosition, randomTagetPosition) < 0.1f)
+        if (Vector2.Distance(currentPosition, randomTagetPosition) < 0.3f)
         {
             SetRandomTagetPosition();
         }
@@ -36,8 +37,12 @@ public class FishOtherHandle : FishHandle
         float randomY = Random.Range(moveAreaMin.y, moveAreaMax.y);
         randomTagetPosition = new Vector2(randomX, randomY);
     }
-    public override void Update()
+    public override void OnCollisionEnter2D(Collision2D collision)
     {
-        base.Update();
+        if (collision.gameObject.CompareTag("Fish"))
+        {
+            SetRandomTagetPosition();
+            Move();
+        }
     }
 }

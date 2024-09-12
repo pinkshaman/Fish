@@ -7,6 +7,7 @@ using UnityEngine.U2D;
 [Serializable]
 public class FishData 
 {
+    public int id;
     public string fishName;
     public float scalePoint;
     public float speed;

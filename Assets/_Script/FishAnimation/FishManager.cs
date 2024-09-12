@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -11,6 +12,12 @@ public class FishManager : MonoBehaviour
     public FishDataBase fishDataBases;
     public GameObject fishPrefabs;
     public List<FishHandle> allFishes;
+    public FishShowUIHandle fishShowUIHandle;
+
+
+
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -34,7 +41,7 @@ public class FishManager : MonoBehaviour
             Debug.Log($"Add newFish: {fish.uniqueID}");
         }
     }
-    public void CreateFish(QuestDataTest questData)
+    public void CreateFishQuest(QuestDataTest questData)
     {
         for (int i = 0; i < questData.quality; i++)
         {
@@ -59,11 +66,30 @@ public class FishManager : MonoBehaviour
         }
     }
     // Phương thức để tạo nhiều cá dựa trên thông tin cung cấp
-    public void CreateFishesFromData(List<QuestDataTest> questDataTests)
+    public void CreateFishesFromDataQuest(List<QuestDataTest> questDataTests)
     {
         foreach (var questData in questDataTests)
         {
-            CreateFish(questData);
+            CreateFishQuest(questData);
         }
     }
+    public void CreateFishesFromData(List<FishData> data)
+    {
+        foreach (var fishdata in data)
+        {
+            CreateFish(fishdata);
+        }
+    }
+    public void CreateFish(FishData dataX)
+    {
+        Vector2 spawnPosition = transform.position;
+
+        // Tạo đối tượng cá mới từ prefab và gán nó vào rootFish
+        var newFish = Instantiate(fishPrefabs, spawnPosition, Quaternion.identity, rootFish);
+        var fishOtherHandles = newFish.GetComponent<FishOtherHandle>();
+        fishOtherHandle.SetData(dataX);
+        fishOtherHandles.uniqueID = newFish.GetInstanceID();
+        fishShowUIHandle.CreateFishShow(dataX);
+        Debug.Log($"Create fish: {newFish.name} at position {spawnPosition}");
+    }   
 }

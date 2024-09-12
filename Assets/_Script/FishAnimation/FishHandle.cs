@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
+using UnityEngine.UI;
 
 public class FishHandle : MonoBehaviour
 {
@@ -15,19 +16,30 @@ public class FishHandle : MonoBehaviour
     public float Speed;
     public float scalePoint;
     public int uniqueID;
-
-
+    public int ID;
+    public Sprite fishSprite;
 
     public virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        originalScale = transform.localScale;
-        scalePoint = fishData.scalePoint;
-        Speed = fishData.speed;
-        anim.runtimeAnimatorController = fishData.controller;
+        anim = GetComponent<Animator>();   
     }
-   
+    public virtual void SetData(FishData dataX)
+    {
+        this.fishData = dataX;
+        UpdateData(dataX);
+    }
+    public virtual void UpdateData(FishData dataX)
+    {
+        Speed = dataX.speed;
+        scalePoint = dataX.scalePoint;
+        ID = dataX .id;
+        anim.runtimeAnimatorController = dataX.controller;
+        fishSprite = dataX.fishSprite;
+        uniqueID = GetInstanceID();
+
+    }
+
     public virtual void Flip(Vector2 direction)
     {
 
@@ -91,7 +103,7 @@ public class FishHandle : MonoBehaviour
     }
     public virtual void ScaleFish()
     {
-        if (scalePoint >=10)
+        if (scalePoint >= 10)
         {
             Debug.Log("Scaling Fish!"); // Thông báo trong Console
             transform.localScale = new Vector3(2, 2, 1);

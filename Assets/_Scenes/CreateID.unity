@@ -751,6 +751,7 @@ GameObject:
   - component: {fileID: 1188019172}
   - component: {fileID: 1188019177}
   - component: {fileID: 1188019178}
+  - component: {fileID: 1188019179}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -877,6 +878,20 @@ MonoBehaviour:
   saveData: {fileID: 1188019177}
   playerDataBase: {fileID: 11400000, guid: 5cc5d3c783fbb364e8fc2b523bba38cb, type: 2}
   Message: {fileID: 1540151121}
+  xButton: {fileID: 1254594953361529834}
+  loadScene: {fileID: 1188019179}
+--- !u!114 &1188019179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188019171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bffb1b5defea13041b43ee8db1110b10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1447610612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,6 +1279,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1188019179}
+        m_TargetAssemblyTypeName: SceneManagers, Assembly-CSharp
+        m_MethodName: LoadChooseFish
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1895306473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1479,6 +1506,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2964166026243201116, guid: f51d2612958a29d4d8c7ef44a4e438e6, type: 3}
   m_PrefabInstance: {fileID: 1254594953361529832}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1254594953361529834 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4255101120788344653, guid: f51d2612958a29d4d8c7ef44a4e438e6, type: 3}
+  m_PrefabInstance: {fileID: 1254594953361529832}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
