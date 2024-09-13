@@ -236,15 +236,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 93765996}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb9e1f1cf074a984e9b26f0572edb388, type: 3}
+  m_Script: {fileID: 11500000, guid: 768a78a136192c344bdb6a40e99a8841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fishPanel: {fileID: 6026374582929212303, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
   rootUi: {fileID: 1765465175}
   togglePrefab: {fileID: 5791111157596202092, guid: d53eb1a4635342049ba60c826282407d, type: 3}
-  option1: {fileID: 0}
-  option2: {fileID: 0}
-  option3: {fileID: 0}
+  sceneManagers: {fileID: 337900814}
 --- !u!1001 &140292787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -551,7 +549,8 @@ MonoBehaviour:
     - ID: 2
     - ID: 3
   fishDataBase: {fileID: 11400000, guid: 5be3ad31cafc8e446a281d5a92d4c8ee, type: 2}
-  fishTankBase: {fileID: 11400000, guid: 0e5b417b9f0e82f48aaba3adb6cb5227, type: 2}
+  fishTankBase:
+    fishTankBases: []
   ChooseFishButton: {fileID: 1491166005}
   Message: {fileID: 203578189}
   loadFishTankScene: {fileID: 337900814}
@@ -1015,19 +1014,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1491166006}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 337900813}
-        m_TargetAssemblyTypeName: ChooseFish, Assembly-CSharp
-        m_MethodName: OnChooseFish
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1491166006
 MonoBehaviour:
   m_ObjectHideFlags: 0

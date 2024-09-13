@@ -460,7 +460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000046780682}
+  m_AnchoredPosition: {x: 0, y: 0.00091430976}
   m_SizeDelta: {x: 0, y: 633}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &228338621
@@ -2292,7 +2292,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 25624360}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9963537
+  m_Size: 0.9999854
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2467,6 +2467,7 @@ GameObject:
   - component: {fileID: 1472200485}
   - component: {fileID: 1472200487}
   - component: {fileID: 1472200486}
+  - component: {fileID: 1472200488}
   m_Layer: 5
   m_Name: Panel Option
   m_TagString: Untagged
@@ -2533,6 +2534,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472200484}
   m_CullTransparentMesh: 1
+--- !u!114 &1472200488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472200484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb9e1f1cf074a984e9b26f0572edb388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  option1: {fileID: 596796948}
+  option2: {fileID: 1198978275}
+  option3: {fileID: 372200420}
+  fishShowUIHandle: {fileID: 6050750313852220955}
 --- !u!1 &1479287340
 GameObject:
   m_ObjectHideFlags: 0
@@ -4181,9 +4198,6 @@ MonoBehaviour:
   fishPanel: {fileID: 6026374582929212303, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
   rootUi: {fileID: 764448463279758389}
   togglePrefab: {fileID: 5791111157596202092, guid: 6edeea96c28b8e045be23b5ecaf7fd38, type: 3}
-  option1: {fileID: 596796948}
-  option2: {fileID: 1198978275}
-  option3: {fileID: 372200420}
   sceneManagers: {fileID: 6050750313852220956}
 --- !u!114 &6050750313852220956
 MonoBehaviour:

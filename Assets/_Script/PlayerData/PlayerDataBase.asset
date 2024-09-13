@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4b55c8fb2cc5bf4b9fb5c5d50ce7d9a, type: 3}
-  m_Name: PlayerData
-  m_EditorClassIdentifier: 
+  m_Script: {fileID: 0}
+  m_Name: PlayerDataBase
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDataBase
   playerDatas: []

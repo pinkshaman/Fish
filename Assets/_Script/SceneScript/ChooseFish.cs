@@ -66,31 +66,9 @@ public class ChooseFish : MonoBehaviour
         SaveFishTankDataJson();
         Debug.Log("Fish added to tank list in FishTankBase.");
 
-        loadFishTankScene.LoadFishTankScene();
-        //StartCoroutine(LoadFishTankSceneWhenReady());
-
+        loadFishTankScene.LoadFishTankScene();       
     }
 
-
-    private IEnumerator LoadFishTankSceneWhenReady()
-    {
-        // Giả sử việc khởi tạo Dictionary diễn ra trong quá trình AddFish
-        while (!IsDictionaryInitialized())
-        {
-            // Đợi 1 frame trước khi kiểm tra lại
-            yield return null;
-        }
-
-        // Khi đã sẵn sàng, load scene FishTankShow
-        loadFishTankScene.LoadFishTankScene();
-    }
-
-    private bool IsDictionaryInitialized()
-    {
-        // Kiểm tra nếu Dictionary trong FishTankBase đã được khởi tạo xong
-        // (Tùy thuộc vào logic của bạn về cách xác định khi nào Dictionary được khởi tạo)
-        return fishTankBase.fishTankBases != null && fishTankBase.fishTankBases.Count > 0;
-    }
     [ContextMenu("SaveChooseFishJson")]
     public void SaveChooseFishJson()
     {

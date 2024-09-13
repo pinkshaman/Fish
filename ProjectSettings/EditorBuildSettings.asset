@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/_Scenes/LoadingScene.unity
     guid: 52a06e0dce318a343abf075fcf8a8aaa
   - enabled: 1
+    path: Assets/_Scenes/ShopScene.unity
+    guid: 26fe05cc9ea9c694b99feebd64e981f4
+  - enabled: 1
     path: Assets/_Scenes/FishTank.unity
     guid: cd2fed3deaf033640aa365fe30f0d08e
   m_configObjects: {}

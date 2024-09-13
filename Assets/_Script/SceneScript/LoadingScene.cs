@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class LoadingScene : MonoBehaviour
 {
     public FishTankManager fishTankManager;
-    public FishShowUi choosefishmanager;
+    public OptionShow choosefishmanager;
     public void Start()
     {
         fishTankManager= FindObjectOfType<FishTankManager>();
-        choosefishmanager = FindObjectOfType<FishShowUi>();
+        choosefishmanager = FindObjectOfType<OptionShow>();
 
         // Kiểm tra nếu FishTankManager không tồn tại, tải scene chứa nó
         if (FindObjectOfType<FishTankManager>() == null)

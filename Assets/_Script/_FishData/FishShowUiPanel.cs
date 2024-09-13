@@ -21,7 +21,7 @@ public class FishShowUiPanel : MonoBehaviour
     public void ShowFish(bool isOn)
     {
         panelShowFish.SetActive(isOn);
-        Debug.Log(isOn ? "Show Fish Panel" : "Hide Fish Panel");
+        
 
     }
     public void SetData(FishData chooseFishX, Toggle toggle)

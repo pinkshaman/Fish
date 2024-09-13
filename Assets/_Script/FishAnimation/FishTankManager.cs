@@ -39,6 +39,7 @@ public class FishTankManager : MonoBehaviour
     }
     public void CreateFish(FishData dataX)
     {
+        Debug.Log("Creating fish for data: " + dataX.id);
         // Tạo đối tượng cá mới từ prefab và gán nó vào rootFish
         Vector2 randomPos = GenerateRandomPosition();
         var newFish = Instantiate(fishTankPrefabs, randomPos, Quaternion.identity, rootTank);
