@@ -15,6 +15,7 @@ public class CreateID : MonoBehaviour
     public Text Message;
     public Button xButton;
     public SceneManagers loadScene;
+    
     public void Start()
     {
         createButton.onClick.AddListener(OnCreateButtonClick);

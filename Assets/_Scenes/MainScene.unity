@@ -4365,7 +4365,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1175131987}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneManagers, Assembly-CSharp
         m_MethodName: LoadShopScene
         m_Mode: 1
@@ -7853,11 +7853,8 @@ GameObject:
   - component: {fileID: 1175131984}
   - component: {fileID: 1175131983}
   - component: {fileID: 1175131982}
-  - component: {fileID: 1175131988}
-  - component: {fileID: 1175131987}
   - component: {fileID: 1175131986}
   - component: {fileID: 1175131990}
-  - component: {fileID: 1175131989}
   m_Layer: 5
   m_Name: UI Menu Canvas
   m_TagString: Untagged
@@ -8004,58 +8001,6 @@ MonoBehaviour:
     progessPlayerAvatar: {fileID: 0}
     progessWhilePearl: 0
     progessBlackPearl: 0
---- !u!114 &1175131987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175131981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bffb1b5defea13041b43ee8db1110b10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 0
---- !u!114 &1175131988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175131981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc6ea202176e2f741abbb15b022bd23f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneManagers: {fileID: 1175131987}
-  buttonShop: {fileID: 699382070}
-  buttonFishTank: {fileID: 1996686752}
-  questData:
-    questDatas: []
---- !u!114 &1175131989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175131981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39402b56a8c6ea74785b6c3e4697968a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerDataBases: {fileID: 11400000, guid: 68f6561f92069e6449e392ea9a816f88, type: 2}
-  playerDataProgesses:
-    playerDataProgesses:
-    - progessID: 12
-      progessName: hh
-      progessLevel: 0
-      progessplayerExperience: 0
-      progessPlayerAvatar: {fileID: 0}
-      progessWhilePearl: 0
-      progessBlackPearl: 0
 --- !u!114 &1175131990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8070,11 +8015,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishMain: {fileID: 7530752568832452579, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
   playerUI: {fileID: 1175131986}
-  sceneManagers: {fileID: 1175131987}
+  sceneManagers: {fileID: 1315216207}
   playerDataBase: {fileID: 11400000, guid: 68f6561f92069e6449e392ea9a816f88, type: 2}
-  playerDataProgess:
+  playerDataProgessBase:
     playerDataProgesses: []
-  loadSaveData: {fileID: 1175131989}
+  loadSaveData: {fileID: 1315216209}
 --- !u!1 &1187913650
 GameObject:
   m_ObjectHideFlags: 0
@@ -9466,6 +9411,9 @@ GameObject:
   - component: {fileID: 1315216204}
   - component: {fileID: 1315216203}
   - component: {fileID: 1315216202}
+  - component: {fileID: 1315216208}
+  - component: {fileID: 1315216207}
+  - component: {fileID: 1315216209}
   m_Layer: 5
   m_Name: BackGround Canvas
   m_TagString: Untagged
@@ -9558,6 +9506,58 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1315216207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315216201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bffb1b5defea13041b43ee8db1110b10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+--- !u!114 &1315216208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315216201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc6ea202176e2f741abbb15b022bd23f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneManagers: {fileID: 1315216207}
+  buttonShop: {fileID: 699382070}
+  buttonFishTank: {fileID: 1996686752}
+  questData:
+    questDatas: []
+--- !u!114 &1315216209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315216201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39402b56a8c6ea74785b6c3e4697968a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDataBases: {fileID: 11400000, guid: 68f6561f92069e6449e392ea9a816f88, type: 2}
+  playerDataProgesses:
+    playerDataProgesses:
+    - progessID: 31
+      progessName: Hieu
+      progessLevel: 15
+      progessplayerExperience: 6
+      progessPlayerAvatar: {fileID: 0}
+      progessWhilePearl: 12
+      progessBlackPearl: 100
 --- !u!1 &1325712872
 GameObject:
   m_ObjectHideFlags: 0
@@ -13105,7 +13105,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1175131987}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneManagers, Assembly-CSharp
         m_MethodName: LoadFishTankScene
         m_Mode: 1

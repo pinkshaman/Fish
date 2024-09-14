@@ -7,30 +7,22 @@ using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static PlayerManager Instance;
+    
     public FishMain fishMain;
     public PlayerUi playerUI;
     public SceneManagers sceneManagers;
     public PlayerDataBase playerDataBase;
-    public PlayerDataProgessBase playerDataProgess;
+    public PlayerDataProgessBase playerDataProgessBase;
     public LoadSaveData loadSaveData;
 
-    //public void Awake()
-    //{
-    //    if (Instance == null)
-    //    {
-    //        Instance = this;
-    //        DontDestroyOnLoad(gameObject); // Giữ lại PlayerManager qua các Scene
-    //    }
-    //    else
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //}
+  
     public void Start()
     {
+        loadSaveData = FindObjectOfType<LoadSaveData>();
         loadSaveData.LoadProgessDataJson();
-        foreach (var progessData in playerDataProgess.playerDataProgesses)//Duyệt qua danh sách playerDataProgesses trong playerDataProgess.
+        
+        Debug.Log("Progess Data Loaded: " + playerDataProgessBase.playerDataProgesses.Count);
+        foreach (var progessData in playerDataProgessBase.playerDataProgesses)//Duyệt qua danh sách playerDataProgesses trong playerDataProgess.
         {
             //Tìm đối tượng PlayerData tương ứng trong playerDataBase dựa trên ID,
             var playerData = playerDataBase.playerDatas.Find(playerData=> playerData.ID==progessData.progessID);
@@ -58,10 +50,11 @@ public class PlayerManager : MonoBehaviour
     public void UpdateProgessData(PlayerDataProgess progessPlayerData)
     {
         //Tìm vị trí của đối tượng PlayerDataProgess cần cập nhật trong danh sách playerDataProgesses dựa trên progessID.
-        var dataIndex = playerDataProgess.playerDataProgesses.FindIndex(progess => progessPlayerData.progessID == progess.progessID);
+        var dataIndex = playerDataProgessBase.playerDataProgesses.FindIndex(progess => progessPlayerData.progessID == progess.progessID);
         //Cập nhật lại dữ liệu tiến độ cho vị trí đó.
-        playerDataProgess.playerDataProgesses[dataIndex] = progessPlayerData;
+        playerDataProgessBase.playerDataProgesses[dataIndex] = progessPlayerData;
         //Cập nhật giao diện người chơi
         playerUI.UpdateProgessPlayerData(progessPlayerData);
     }
+ 
 }
