@@ -7,61 +7,69 @@ using UnityEngine.UI;
 
 public class CreateID : MonoBehaviour
 {
-    public Button createButton; // Nút tạo người chơi mới 
-    public InputField inputName;  //InputField cho người dùng nhập tên.
-    public LoadSaveData saveLoadData; //Tham chiếu script  lưu và tải dữ liệu người chơi.
-    public PlayerDataBase playerDataBase; //Đối tượng chứa danh sách các PlayerData.
-    public PlayerDataProgessBase progessBase;// Đối tượng chứa danh sách các PlayerDataProgess.
-    public Text Message; //Text để hiển thị thông báo cho người dùng.
-    public Button xButton; //Nút thoát ứng dụng.
-    public SceneManagers loadScene; // Quản lý chuyển cảnh khi tạo người chơi thành công.
+    public Button createButton;
+    public InputField inputName;
+    public LoadSaveData saveLoadData;
+    public PlayerDataBase playerDataBase;
+    public PlayerDataProgessBase progessBase;
+    public Text Message;
+    public Button xButton;
+    public SceneManagers loadScene;
     public void Start()
     {
-        createButton.onClick.AddListener(OnCreateButtonClick); // lắng nghe sự kiện 
+        createButton.onClick.AddListener(OnCreateButtonClick);
     }
     public void OnXButtonClick()
     {
-        Application.Quit();   //Thoát ứng dụng khi nhấn nút xButton
+        Application.Quit();
         Debug.Log("Application is Quitting");
     }
 
     public void OnCreateButtonClick()
     {
-        //Lấy tên người chơi từ inputName
-       
         string playerName = inputName != null ? inputName.text : string.Empty;
         if (!string.IsNullOrEmpty(playerName))
         {
-            CheckIDAndCreatePlayer(playerName); // Nếu tên không rỗng, kiểm tra tính hợp lệ của tên bằng cách gọi hàm 
+            CheckIDAndCreatePlayer(playerName);
         }
         else
         {
-            Debug.LogWarning("input Name is blank!"); //Nếu tên rỗng, cảnh báo bằng Debug.LogWarning()
+            Debug.LogWarning("input Name is blank!");
         }
     }
+   
 
     public void CheckIDAndCreatePlayer(string playerName)
-    {      
-        saveLoadData.LoadDataJson(); //Tải dữ liệu từ saveLoadData.
-        if (playerDataBase != null && playerDataBase.playerDatas != null) 
+    {  
+        if (playerDataBase != null && playerDataBase.playerDatas != null)
         {
-            //Nếu playerDataBase và danh sách playerDatas không null, kiểm tra xem tên đã tồn tại chưa.
             bool idExists = playerDataBase.playerDatas.Exists(player => player.name == playerName);
 
-            if (idExists) //Nếu tên đã tồn tại, cảnh báo và yêu cầu nhập tên khác.
+            if (idExists)
             {
                 Debug.LogWarning("Name is invalid. Please choose another name.");
                 Message.text = "Name is invalid. Please choose another name.";
             }
-            else//Nếu tên chưa tồn tại, gọi CreatePlayerName() để tạo người chơi.
+            else
             {
                 CreatePlayerName(playerName);
             }
         }
-        else //Nếu playerDataBase hoặc playerDatas null, khởi tạo danh sách và tạo người chơi
+        else
         {
-            playerDataBase.playerDatas = new List<PlayerData>();
-            Debug.LogWarning("PlayerDataBase is null.");
+            if (playerDataBase == null)
+            {
+                Debug.LogWarning("PlayerDataBase is null.");
+                // Tạo một instance mới nếu cần
+                playerDataBase = ScriptableObject.CreateInstance<PlayerDataBase>();
+            }
+
+            // Khởi tạo danh sách nếu null
+            if (playerDataBase.playerDatas == null)
+            {
+                playerDataBase.playerDatas = new List<PlayerData>();
+            }
+
             CreatePlayerName(playerName);
         }
     }
@@ -88,11 +96,10 @@ public class CreateID : MonoBehaviour
         saveLoadData.SaveDataJson();
         // Tạo progess data 
         CreatePlayerProgess(newPlayerData);
-        loadScene.LoadChooseFish();
+       
     }
     public void CreatePlayerProgess(PlayerData data)
     {
-        // Tạo đối tượng ProgessPlayerData mới
         PlayerDataProgess newPlayerDataProgess = new PlayerDataProgess
         {
             progessID = data.ID,
@@ -103,10 +110,10 @@ public class CreateID : MonoBehaviour
             progessPlayerAvatar = data.playerAvatar,
             progessplayerExperience = data.playerExperience,
         };
-        // Thêm đối tượng PlayerDataProgess vào danh sách trong PlayerDataBaseProgess
         progessBase.playerDataProgesses.Add(newPlayerDataProgess);
-        saveLoadData.SaveProgessDataJson();   //Lưu dữ liệu 
+        saveLoadData.SaveProgessDataJson();
+        loadScene.LoadChooseFish();
     }
-
-
 }
+
+

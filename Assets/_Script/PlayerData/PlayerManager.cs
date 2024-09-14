@@ -15,18 +15,18 @@ public class PlayerManager : MonoBehaviour
     public PlayerDataProgessBase playerDataProgess;
     public LoadSaveData loadSaveData;
 
-    public void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // Giữ lại PlayerManager qua các Scene
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    //public void Awake()
+    //{
+    //    if (Instance == null)
+    //    {
+    //        Instance = this;
+    //        DontDestroyOnLoad(gameObject); // Giữ lại PlayerManager qua các Scene
+    //    }
+    //    else
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
     public void Start()
     {
         loadSaveData.LoadProgessDataJson();

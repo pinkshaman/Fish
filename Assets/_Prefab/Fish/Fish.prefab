@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1419759521134478924}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6, y: 0, z: 0}
+  m_LocalPosition: {x: 0.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,9 +45,10 @@ GameObject:
   - component: {fileID: 5965827015198703780}
   - component: {fileID: 615169696876550962}
   - component: {fileID: 6150452424233454087}
+  - component: {fileID: 7530752568832452579}
   m_Layer: 0
   m_Name: Fish
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +64,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7849163941565928372}
   m_Father: {fileID: 0}
@@ -216,14 +217,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishData:
+    id: 0
     fishName: 
-    scalePoint: 1
+    scalePoint: 9
     speed: 5
     fishSprite: {fileID: 0}
-    controller: {fileID: 0}
+    controller: {fileID: 9100000, guid: 4db151074ef63b4419c8c863cb934806, type: 2}
   anim: {fileID: 0}
   rb: {fileID: 0}
-  targetPoint: {fileID: 2076750745985519787, guid: a9dd06bf4b1cdfd4497b1e53ae04cec0, type: 3}
+  targetPoint: {fileID: 0}
   EatPoint: {fileID: 1419759521134478924}
-  Speed: 5
-  scalePoint: 1
+  Speed: 30
+  scalePoint: 9
+  uniqueID: 0
+  ID: 0
+  fishSprite: {fileID: 0}
+--- !u!114 &7530752568832452579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2639943450622597786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724a2e698af73d542ac7010537ab6746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishData:
+    id: 0
+    fishName: 
+    scalePoint: 0
+    speed: 0
+    fishSprite: {fileID: 0}
+    controller: {fileID: 0}
+  fishHandle: {fileID: 6150452424233454087}
+  fishPrefabs: {fileID: 2639943450622597786}

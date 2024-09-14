@@ -25,6 +25,7 @@ public class PlayerUi : MonoBehaviour
         //Gán đối tượng progess (tiến trình người chơi) cho biến playerDataProgess.
         this.playerDataProgess = progess;
         UpdateDataFormProgess(progess);
+        Debug.Log(progess.ToString());
     }
     public void UpdateDataFormProgess(PlayerDataProgess progess)
     {

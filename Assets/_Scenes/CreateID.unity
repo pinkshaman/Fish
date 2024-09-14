@@ -862,7 +862,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerDataBases: {fileID: 11400000, guid: 68f6561f92069e6449e392ea9a816f88, type: 2}
   playerDataProgesses:
-    playerDataProgesses: []
+    playerDataProgesses:
+    - progessID: 0
+      progessName: 
+      progessLevel: 0
+      progessplayerExperience: 0
+      progessPlayerAvatar: {fileID: 0}
+      progessWhilePearl: 0
+      progessBlackPearl: 0
 --- !u!114 &1188019178
 MonoBehaviour:
   m_ObjectHideFlags: 0
