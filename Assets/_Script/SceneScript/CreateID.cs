@@ -11,11 +11,11 @@ public class CreateID : MonoBehaviour
     public InputField inputName;
     public LoadSaveData saveLoadData;
     public PlayerDataBase playerDataBase;
-    public PlayerDataProgessBase progessBase;
+
     public Text Message;
     public Button xButton;
     public SceneManagers loadScene;
-    
+
     public void Start()
     {
         createButton.onClick.AddListener(OnCreateButtonClick);
@@ -38,13 +38,13 @@ public class CreateID : MonoBehaviour
             Debug.LogWarning("input Name is blank!");
         }
     }
-   
+
 
     public void CheckIDAndCreatePlayer(string playerName)
-    {  
-        if (playerDataBase != null && playerDataBase.playerDatas != null)
+    {
+        if (playerDataBase != null && playerDataBase.PlayerDataBases != null)
         {
-            bool idExists = playerDataBase.playerDatas.Exists(player => player.name == playerName);
+            bool idExists = playerDataBase.PlayerDataBases.Exists(player => player.name == playerName);
 
             if (idExists)
             {
@@ -62,13 +62,13 @@ public class CreateID : MonoBehaviour
             {
                 Debug.LogWarning("PlayerDataBase is null.");
                 // Tạo một instance mới nếu cần
-                playerDataBase = ScriptableObject.CreateInstance<PlayerDataBase>();
+                playerDataBase = new PlayerDataBase();
             }
 
             // Khởi tạo danh sách nếu null
-            if (playerDataBase.playerDatas == null)
+            if (playerDataBase.PlayerDataBases == null)
             {
-                playerDataBase.playerDatas = new List<PlayerData>();
+                playerDataBase.PlayerDataBases = new List<PlayerData>();
             }
 
             CreatePlayerName(playerName);
@@ -87,32 +87,16 @@ public class CreateID : MonoBehaviour
             playerExperience = 0f,
             whilePearl = 0,
             blackPearl = 0,
-            playerAvatar = null
+            playerAvatar = null,
+            fishMainID = 0,
         };
         // Thêm đối tượng PlayerData vào danh sách trong PlayerDataBase
-        playerDataBase.playerDatas.Add(newPlayerData);      
+        //playerDataBase.PlayerDataBases.Add(newPlayerData);
         Debug.Log($"Successfully! Your name: {playerName}");
 
         // Lưu dữ liệu      
-        saveLoadData.SaveDataJson();
-        // Tạo progess data 
-        CreatePlayerProgess(newPlayerData);
-       
-    }
-    public void CreatePlayerProgess(PlayerData data)
-    {
-        PlayerDataProgess newPlayerDataProgess = new PlayerDataProgess
-        {
-            progessID = data.ID,
-            progessLevel = data.level,
-            progessName = data.name,
-            progessBlackPearl = data.blackPearl,
-            progessWhilePearl = data.whilePearl,
-            progessPlayerAvatar = data.playerAvatar,
-            progessplayerExperience = data.playerExperience,
-        };
-        progessBase.playerDataProgesses.Add(newPlayerDataProgess);
-        saveLoadData.SaveProgessDataJson();
+        saveLoadData.SavesData(newPlayerData);
+        
         loadScene.LoadChooseFish();
     }
 }

@@ -44,11 +44,10 @@ GameObject:
   - component: {fileID: 5455109958028303738}
   - component: {fileID: 5965827015198703780}
   - component: {fileID: 615169696876550962}
-  - component: {fileID: 6150452424233454087}
-  - component: {fileID: 7530752568832452579}
+  - component: {fileID: -48318313807000794}
   m_Layer: 0
   m_Name: Fish
-  m_TagString: Fish
+  m_TagString: FishMain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,35 +203,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6150452424233454087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2639943450622597786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 903ef740581e84647ab6187fdf198614, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fishData:
-    id: 0
-    fishName: 
-    scalePoint: 9
-    speed: 5
-    fishSprite: {fileID: 0}
-    controller: {fileID: 9100000, guid: 4db151074ef63b4419c8c863cb934806, type: 2}
-  anim: {fileID: 0}
-  rb: {fileID: 0}
-  targetPoint: {fileID: 0}
-  EatPoint: {fileID: 1419759521134478924}
-  Speed: 30
-  scalePoint: 9
-  uniqueID: 0
-  ID: 0
-  fishSprite: {fileID: 0}
---- !u!114 &7530752568832452579
+--- !u!114 &-48318313807000794
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -251,5 +222,12 @@ MonoBehaviour:
     speed: 0
     fishSprite: {fileID: 0}
     controller: {fileID: 0}
-  fishHandle: {fileID: 6150452424233454087}
-  fishPrefabs: {fileID: 2639943450622597786}
+  anim: {fileID: 5455109958028303738}
+  rb: {fileID: 615169696876550962}
+  targetPoint: {fileID: 0}
+  EatPoint: {fileID: 1419759521134478924}
+  Speed: 0
+  scalePoint: 0
+  uniqueID: 0
+  ID: 0
+  fishSprite: {fileID: 0}

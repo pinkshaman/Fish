@@ -209,6 +209,7 @@ MonoBehaviour:
   scalePoint: 0
   uniqueID: 0
   ID: 0
+  fishSprite: {fileID: 0}
   moveAreaMin: {x: -20, y: -7}
   moveAreaMax: {x: 20, y: 7}
 --- !u!1 &7376073189774564993

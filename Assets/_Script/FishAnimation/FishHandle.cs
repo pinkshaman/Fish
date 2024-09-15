@@ -18,7 +18,8 @@ public class FishHandle : MonoBehaviour
     public int uniqueID;
     public int ID;
     public Sprite fishSprite;
-
+    
+    
     public virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,9 +38,8 @@ public class FishHandle : MonoBehaviour
         anim.runtimeAnimatorController = dataX.controller;
         fishSprite = dataX.fishSprite;
         uniqueID = GetInstanceID();
-
     }
-
+  
     public virtual void Flip(Vector2 direction)
     {
 
@@ -77,12 +77,12 @@ public class FishHandle : MonoBehaviour
     {
         anim.SetTrigger("Eat");
     }
-    public virtual void OnCollisionEnter2D(Collision2D collision)
+    public virtual void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.gameObject.CompareTag("Fish"))
+        if (collider.gameObject.CompareTag("Fish"))
         {
             // Lấy đối tượng FishHandle từ đối tượng va chạm
-            FishHandle otherFishHandle = collision.gameObject.GetComponent<FishHandle>();
+            FishHandle otherFishHandle = collider.gameObject.GetComponent<FishHandle>();
             // Tìm FishHandle tương ứng từ danh sách allFishes
             FishHandle otherFishInList = FishManager.Instance.allFishes.Find(otherFishInList => otherFishInList.uniqueID == otherFishHandle.uniqueID);
 
@@ -95,7 +95,7 @@ public class FishHandle : MonoBehaviour
                     this.scalePoint += otherFishInList.scalePoint;
                     // Gọi Eat animation và phá hủy cá nhỏ hơn
                     Eat();
-                    Destroy(collision.gameObject);
+                    Destroy(collider.gameObject);
                     ScaleFish();
                 }
             }

@@ -130,14 +130,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -48318313807000794, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
+      propertyPath: targetPoint
+      value: 
+      objectReference: {fileID: 1727279062}
     - target: {fileID: 2639943450622597786, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
       propertyPath: m_Name
       value: Fish
       objectReference: {fileID: 0}
+    - target: {fileID: 2639943450622597786, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6150452424233454087, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
       propertyPath: targetPoint
       value: 
-      objectReference: {fileID: 703769006}
+      objectReference: {fileID: 0}
     - target: {fileID: 6682393162909393231, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -313,6 +321,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &58826781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2639943450622597786, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
+  m_PrefabInstance: {fileID: 32169140}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &66116170
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,8 +774,8 @@ MonoBehaviour:
   fishDataBases: {fileID: 11400000, guid: 5be3ad31cafc8e446a281d5a92d4c8ee, type: 2}
   fishPrefabs: {fileID: 2011319429182357059, guid: f3835122f36f3934b8468e7135a663a1, type: 3}
   allFishes: []
-  fishHandle: {fileID: 6150452424233454087, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
-  fishPlayerPrefabs: {fileID: 2639943450622597786, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
+  fishMain: {fileID: -48318313807000794, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
+  PlayerFishMain: {fileID: 58826781}
 --- !u!4 &357316171
 Transform:
   m_ObjectHideFlags: 0
@@ -980,11 +993,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!4 &703769006 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3668955761495303100, guid: 263119753ceaa374298a02f9393239e4, type: 3}
-  m_PrefabInstance: {fileID: 1637087482}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &825303777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,15 +1026,15 @@ MonoBehaviour:
   questDataBase:
     questDatas:
     - questID: 1
-      quality: 5
+      quality: 30
       fishPositions: {x: 0, y: 0}
       fishName: AngelFishBlue
       scalePoint: 2
-      speed: 20
+      speed: 7
       fishSprite: {fileID: -1490646831, guid: f2aa61ac48dd67e409e70a488b40285b, type: 3}
       controller: {fileID: 9100000, guid: 4db151074ef63b4419c8c863cb934806, type: 2}
-  moveAreaMin: {x: -10, y: -5}
-  moveAreaMax: {x: 10, y: 5}
+  moveAreaMin: {x: -30, y: -10}
+  moveAreaMax: {x: -25, y: 10}
 --- !u!4 &825303779
 Transform:
   m_ObjectHideFlags: 0
@@ -1346,6 +1354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1083754155}
+  - component: {fileID: 1083754156}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -1368,6 +1377,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1083754156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083754154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 998d073283e0c2a4aa28761be706dd4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishDataBase: {fileID: 11400000, guid: 5be3ad31cafc8e446a281d5a92d4c8ee, type: 2}
+  fishMain: {fileID: -48318313807000794, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
+  fishManager: {fileID: 357316170}
+  playerData:
+    ID: 113120
+    name: bbb
+    level: 1
+    playerExperience: 0
+    playerAvatar: {fileID: 0}
+    whilePearl: 0
+    blackPearl: 0
+    fishMainID: 2
 --- !u!1 &1113617929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,7 +1631,7 @@ Transform:
   m_GameObject: {fileID: 1184068860}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3867862, y: 1.2915301, z: 0}
+  m_LocalPosition: {x: 29.5, y: -0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1705,6 +1738,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fixed Joystick
       objectReference: {fileID: 0}
+    - target: {fileID: 6320918179270440006, guid: 263119753ceaa374298a02f9393239e4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7707033620930633295, guid: 263119753ceaa374298a02f9393239e4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1790,6 +1827,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 263119753ceaa374298a02f9393239e4, type: 3}
+--- !u!4 &1727279062 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3668955761495303100, guid: 263119753ceaa374298a02f9393239e4, type: 3}
+  m_PrefabInstance: {fileID: 1637087482}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1738626820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,7 +1908,7 @@ SceneRoots:
   - {fileID: 198597579}
   - {fileID: 1199596441}
   - {fileID: 357316171}
-  - {fileID: 32169140}
   - {fileID: 825303779}
   - {fileID: 1184068863}
   - {fileID: 1083754155}
+  - {fileID: 32169140}

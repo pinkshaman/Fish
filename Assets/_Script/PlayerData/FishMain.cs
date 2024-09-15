@@ -2,21 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FishMain : MonoBehaviour
+public class FishMain : FishHandle
 {
-    public FishData fishData;
-    public FishHandle fishHandle;
-    public GameObject fishPrefabs;
-
-    public void Start()
+   
+    
+    public override void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        base.Start();
+        
+    }
+    
+   
 
-    }
-    public void SetDataFishMain(FishData dataX)
-    {
-        this.fishData = dataX;
-        FishManager.Instance.CreateFish(fishData);
-    }
+
+
 
 }

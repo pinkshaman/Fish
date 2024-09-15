@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEngine.RuleTile.TilingRuleOutput;
+using Transform = UnityEngine.Transform;
 
 public class FishManager : MonoBehaviour
 {
@@ -12,9 +14,11 @@ public class FishManager : MonoBehaviour
     public FishDataBase fishDataBases;
     public GameObject fishPrefabs;
     public List<FishHandle> allFishes;
-    //public FishShowUIHandle fishShowUIHandle;
-    public FishHandle fishHandle;
-    public GameObject fishPlayerPrefabs;
+
+    public FishMain fishMain;
+    public GameObject PlayerFishMain;
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -30,6 +34,7 @@ public class FishManager : MonoBehaviour
     {
 
     }
+
     public void RegisterFish(FishHandle fish)
     {
         if (!allFishes.Contains(fish))
@@ -38,6 +43,7 @@ public class FishManager : MonoBehaviour
             Debug.Log($"Add newFish: {fish.uniqueID}");
         }
     }
+
     public void CreateFishQuest(QuestDataTest questData)
     {
         for (int i = 0; i < questData.quality; i++)
@@ -46,7 +52,7 @@ public class FishManager : MonoBehaviour
 
             // Tạo đối tượng cá mới từ prefab và gán nó vào rootFish
             var newFish = Instantiate(fishPrefabs, spawnPosition, Quaternion.identity, rootFish);
-            FishOtherHandle fishOtherHandles = newFish.GetComponent<FishOtherHandle>();         
+            FishOtherHandle fishOtherHandles = newFish.GetComponent<FishOtherHandle>();
             fishOtherHandles.uniqueID = newFish.GetInstanceID();
             fishOtherHandles.SetData(questData);
             Debug.Log($"Create fish: {newFish.name}:{questData.quality} at position {spawnPosition}");
@@ -73,11 +79,13 @@ public class FishManager : MonoBehaviour
         Vector2 spawnPosition = transform.position;
 
         // Tạo đối tượng cá mới từ prefab và gán nó vào rootFish
-        var newFish = Instantiate(fishPrefabs, spawnPosition, Quaternion.identity, rootFish);
-        var fishHandle = newFish.GetComponent<FishHandle>();
-        fishHandle.SetData(dataX);
+        var newFish = Instantiate(PlayerFishMain, spawnPosition, Quaternion.identity, rootFish);
+        var fishHandle = newFish.GetComponent<FishMain>();
+        fishHandle.gameObject.SetActive(true);
         fishHandle.uniqueID = newFish.GetInstanceID();
+        fishHandle.SetData(dataX);
+        RegisterFish(fishHandle);
         //fishShowUIHandle.CreateFishShow(dataX);
         Debug.Log($"Create fish: {newFish.name} at position {spawnPosition}");
-    }   
+    }
 }

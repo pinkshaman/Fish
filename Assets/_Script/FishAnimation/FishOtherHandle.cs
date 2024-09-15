@@ -54,6 +54,35 @@ public class FishOtherHandle : FishHandle
         float randomY = Random.Range(moveAreaMin.y, moveAreaMax.y);
         randomTagetPosition = new Vector2(randomX, randomY);
     }
+    public override void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("FishMain"))
+        {
+            // Lấy đối tượng FishHandle từ đối tượng va chạm
+            FishHandle otherFishHandle = collider.gameObject.GetComponent<FishHandle>();
+            // Tìm FishHandle tương ứng từ danh sách allFishes
+            FishHandle otherFishInList = FishManager.Instance.allFishes.Find(otherFishInList => otherFishInList.uniqueID == otherFishHandle.uniqueID);
+
+            if (otherFishInList != null)
+            {
+                // So sánh scalePoint của cá hiện tại và cá va chạm
+                if (this.scalePoint > otherFishInList.scalePoint)
+                {
+                    // Tăng scalePoint của cá lớn hơn
+                    this.scalePoint += otherFishInList.scalePoint;
+                    // Gọi Eat animation và phá hủy cá nhỏ hơn
+                    Eat();
+                    Destroy(collider.gameObject);
+                    ScaleFish();
+                }
+            }
+        }
+        else
+        {
+            SetRandomTagetPosition();
+
+        }
+    }
     public override void Update()
     {
         base.Update();

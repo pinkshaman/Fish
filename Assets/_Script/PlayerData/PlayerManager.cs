@@ -1,60 +1,66 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using static Unity.Burst.Intrinsics.X86.Avx;
+
 
 public class PlayerManager : MonoBehaviour
 {
-    
-    public FishMain fishMain;
+    public static PlayerManager Instance { get; private set; }
     public PlayerUi playerUI;
     public SceneManagers sceneManagers;
-    public PlayerDataBase playerDataBase;
-    public PlayerDataProgessBase playerDataProgessBase;
+    public PlayerData playerData;
     public LoadSaveData loadSaveData;
 
-  
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     public void Start()
     {
-        loadSaveData = FindObjectOfType<LoadSaveData>();
-        loadSaveData.LoadProgessDataJson();
-        
-        Debug.Log("Progess Data Loaded: " + playerDataProgessBase.playerDataProgesses.Count);
-        foreach (var progessData in playerDataProgessBase.playerDataProgesses)//Duyệt qua danh sách playerDataProgesses trong playerDataProgess.
-        {
-            //Tìm đối tượng PlayerData tương ứng trong playerDataBase dựa trên ID,
-            var playerData = playerDataBase.playerDatas.Find(playerData=> playerData.ID==progessData.progessID);
-            //gọi hàm CreatePlayerData() để tạo dữ liệu người chơi tương ứng từ tiến độ đã lưu.
-            CreatePlayerData(progessData);
-        }
-    }
-    public void SetMainFish(FishData fishData)
-    {
-        if (fishMain == null)
-        {
-            fishMain = FindObjectOfType<FishMain>(); // Lấy FishMain từ Scene hiện tại nếu chưa có
-        }
+        LoadPlayerData();
 
-        if (fishMain != null)
-        {
-            fishMain.SetDataFishMain(fishData); // Gán dữ liệu cho FishMain
-        }
+        Debug.Log("Data Loaded: " + playerData.name);
+        CreatePlayerData(playerData);
     }
-    public void CreatePlayerData(PlayerDataProgess playerData)
+    public void CreatePlayerData(PlayerData playerdata)
     {
-        var progessData = Instantiate(playerUI); //Tạo một instance của playerUI để cập nhật giao diện người chơi.
-        progessData.UpdateDataFormProgess(playerData); //Cập nhật dữ liệu từ dâta 
+        playerUI.SetDataPlayer(playerdata);
     }
-    public void UpdateProgessData(PlayerDataProgess progessPlayerData)
+    public int GetFishMainID()
     {
-        //Tìm vị trí của đối tượng PlayerDataProgess cần cập nhật trong danh sách playerDataProgesses dựa trên progessID.
-        var dataIndex = playerDataProgessBase.playerDataProgesses.FindIndex(progess => progessPlayerData.progessID == progess.progessID);
-        //Cập nhật lại dữ liệu tiến độ cho vị trí đó.
-        playerDataProgessBase.playerDataProgesses[dataIndex] = progessPlayerData;
-        //Cập nhật giao diện người chơi
-        playerUI.UpdateProgessPlayerData(progessPlayerData);
+        
+        return playerData.fishMainID;
     }
- 
+
+
+    public void UpdateProgessData(PlayerData changedData)
+    {
+        this.playerData = changedData;
+        playerUI.UpdateUIplayerData(changedData);
+    }
+
+
+    [ContextMenu("LoadPlayerData")]
+    public void LoadPlayerData()
+    {
+        var defaultValue = JsonUtility.ToJson(playerData);
+        var json = PlayerPrefs.GetString(nameof(playerData), defaultValue);
+        playerData = JsonUtility.FromJson<PlayerData>(json);
+        Debug.Log("LoadProgess is Loaded");
+    }
+    [ContextMenu("SavePlayersData")]
+    public void SavePlayersData()
+    {
+        var value = JsonUtility.ToJson(playerData);
+        PlayerPrefs.SetString(nameof(playerData), value);
+        PlayerPrefs.Save();
+    }
 }

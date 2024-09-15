@@ -4,56 +4,58 @@ using UnityEngine;
 
 public class LoadSaveData : MonoBehaviour
 {
-    public PlayerDataBase playerDataBases;
-    public PlayerDataProgessBase playerDataProgesses;
+    //public PlayerDataBase playerDataBases;
+    public PlayerData playerData;
 
-    [ ContextMenu("SaveDataJson")]
-    public void SaveDataJson()
+
+
+    //[ContextMenu("SaveDataJson")]
+    //public void SaveDataJson()
+    //{
+    //    var value = JsonUtility.ToJson(playerDataBases.PlayerDataBases);
+    //    PlayerPrefs.SetString(nameof(playerDataBases), value);
+    //    PlayerPrefs.Save();
+    //}
+
+    //[ContextMenu("LoadDataJson")]
+    //public void LoadDataJson()
+    //{
+    //    var defaultValue = JsonUtility.ToJson(playerDataBases.PlayerDataBases);
+    //    var json = PlayerPrefs.GetString(nameof(playerDataBases), defaultValue);
+    //    playerDataBases = JsonUtility.FromJson<PlayerDataBase>(json);
+    //    Debug.Log("LoadDataJson is Loaded");
+
+    //}
+    [ContextMenu("LoadData")]
+    public void LoadData()
     {
-        var value = JsonUtility.ToJson(playerDataBases);
-        PlayerPrefs.SetString(nameof(playerDataBases), value);
+        var defaultValue = JsonUtility.ToJson(playerData);
+        var json = PlayerPrefs.GetString(nameof(playerData), defaultValue);
+        playerData = JsonUtility.FromJson<PlayerData>(json);
+        Debug.Log("LoadProgess is Loaded");
+    }
+    [ContextMenu("SavesData")]
+    public void SavesData(PlayerData playerData)
+    {
+        var value = JsonUtility.ToJson(playerData);
+        PlayerPrefs.SetString(nameof(playerData), value);
         PlayerPrefs.Save();
     }
-   
-    [ContextMenu("LoadDataJson")]     
-        public void LoadDataJson()
-        {
-            if (PlayerPrefs.HasKey(nameof(playerDataBases)))
-            {
-                string json = PlayerPrefs.GetString(nameof(playerDataBases));
-                if (!string.IsNullOrEmpty(json))
-                {
-                    playerDataBases = JsonUtility.FromJson<PlayerDataBase>(json);
-                    Debug.Log("Dữ liệu đã được tải.");
-                }
-                else
-                {
-                    Debug.LogWarning("Chuỗi JSON tải về là rỗng.");
-                }
-            }
-            else
-            {
-                Debug.LogWarning("Dữ liệu không tồn tại trong PlayerPrefs.");
-            }
-        }
-    [ContextMenu("SaveProgessDataJson")]
-    public void SaveProgessDataJson()
+    [ContextMenu("SetFishMain")]
+    public void SetFishMain(PlayerData currentPlayer, int fishMainID)
     {
-        var value = JsonUtility.ToJson(playerDataProgesses);
-        PlayerPrefs.SetString(nameof(playerDataProgesses), value);
+        var defaultValue = JsonUtility.ToJson(playerData);
+        var json = PlayerPrefs.GetString(nameof(playerData), defaultValue);
+        currentPlayer = JsonUtility.FromJson<PlayerData>(json);
+        currentPlayer.fishMainID = fishMainID;
+        string updatedPlayerDataJson = JsonUtility.ToJson(currentPlayer);
+        PlayerPrefs.SetString(nameof(playerData), updatedPlayerDataJson);
         PlayerPrefs.Save();
-    }
-    [ContextMenu("LoadProgessDataJson")]
-    public void LoadProgessDataJson()
-    {
-        var defaultValue = JsonUtility.ToJson(playerDataProgesses);
-        var json = PlayerPrefs.GetString(nameof(playerDataProgesses), defaultValue);
-        playerDataProgesses = JsonUtility.FromJson<PlayerDataProgessBase>(json);
-        Debug.Log("LoadDataJson is Loaded");
+
     }
     public void OnApplicationQuit()
     {
-        SaveProgessDataJson();
+        SavesData(playerData);
     }
-  
+
 }

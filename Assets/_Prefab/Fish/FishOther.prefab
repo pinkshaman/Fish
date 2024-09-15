@@ -166,7 +166,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.026478738, y: 0.004413128}
@@ -210,8 +210,8 @@ MonoBehaviour:
   uniqueID: 0
   ID: 0
   fishSprite: {fileID: 0}
-  moveAreaMin: {x: -10, y: -5}
-  moveAreaMax: {x: 10, y: 5}
+  moveAreaMin: {x: -35, y: -10}
+  moveAreaMax: {x: 35, y: 10}
   questDataTest:
     questID: 0
     quality: 0

@@ -15,29 +15,7 @@ public class PlayerUi : MonoBehaviour
     public Image progessLevelBG; 
     public Image levelFill;     
     public PlayerData playerData;
-    public PlayerDataProgess playerDataProgess;
-
-
-
-
-    public void UpdateProgessPlayerData(PlayerDataProgess progess)
-    {
-        //Gán đối tượng progess (tiến trình người chơi) cho biến playerDataProgess.
-        this.playerDataProgess = progess;
-        UpdateDataFormProgess(progess);
-        Debug.Log(progess.ToString());
-    }
-    public void UpdateDataFormProgess(PlayerDataProgess progess)
-    {
-        //Gán các giá trị từ đối tượng progess cho playerData
-        playerData.ID = progess.progessID;
-        playerData.blackPearl=progess.progessBlackPearl;
-        playerData.whilePearl = progess.progessWhilePearl;
-        playerData.level = progess.progessLevel;
-        playerData.playerExperience = progess.progessplayerExperience;
-        playerData.name =progess.progessName;
-        UpdateUIplayerData(playerData);
-    }
+    
     public void SetDataPlayer(PlayerData data)
     {
        // Gán dữ liệu data cho playerData.

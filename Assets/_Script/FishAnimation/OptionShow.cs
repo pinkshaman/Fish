@@ -13,7 +13,8 @@ public class OptionShow : MonoBehaviour
     public Button option3;
     public FishShowUIHandle fishShowUIHandle;
     public SceneManagers sceneManagers;
-    public FishMain fishMain;
+    public PlayerData playerData;
+    public LoadSaveData loadSaveData;
     public void Start()
     {
         fishShowUIHandle = FindObjectOfType<FishShowUIHandle>();
@@ -44,8 +45,9 @@ public class OptionShow : MonoBehaviour
     {
         var Value = fishShowUIHandle.GetFishDataFromCurrentToggle();
         Debug.Log($"Data :{Value.fishName}");
-        fishMain.SetDataFishMain(Value);
-        sceneManagers.LoadMainScene();
+        
+        loadSaveData.SetFishMain(playerData,Value.id);
+        
     }
     public void Option2()
     {
@@ -55,4 +57,6 @@ public class OptionShow : MonoBehaviour
     {
         Debug.Log("Button3");
     }
+    
+
 }
