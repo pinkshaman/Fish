@@ -77,25 +77,23 @@ public class FishHandle : MonoBehaviour
     {
         anim.SetTrigger("Eat");
     }
-    public virtual void OnTriggerEnter2D(Collider2D collider)
+    public virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collider.gameObject.CompareTag("Fish"))
+        if (collision.gameObject.CompareTag("Fish"))
         {
             // Lấy đối tượng FishHandle từ đối tượng va chạm
-            FishHandle otherFishHandle = collider.gameObject.GetComponent<FishHandle>();
+            FishOtherHandle otherFishHandle = collision.gameObject.GetComponent<FishOtherHandle>();
             // Tìm FishHandle tương ứng từ danh sách allFishes
-            FishHandle otherFishInList = FishManager.Instance.allFishes.Find(otherFishInList => otherFishInList.uniqueID == otherFishHandle.uniqueID);
+            FishOtherHandle otherFishInList = FishManager.Instance.allFishes.Find(otherFishInList => otherFishInList.uniqueID == otherFishHandle.uniqueID);
 
             if (otherFishInList != null)
             {
-                // So sánh scalePoint của cá hiện tại và cá va chạm
+                
                 if (this.scalePoint > otherFishInList.scalePoint)
-                {
-                    // Tăng scalePoint của cá lớn hơn
-                    this.scalePoint += otherFishInList.scalePoint;
-                    // Gọi Eat animation và phá hủy cá nhỏ hơn
+                {                  
+                    this.scalePoint++ ;                   
                     Eat();
-                    Destroy(collider.gameObject);
+                    Destroy(collision.gameObject);
                     ScaleFish();
                 }
             }

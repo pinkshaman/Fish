@@ -1,7 +1,9 @@
 ﻿using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class FishOtherHandle : FishHandle
 {
@@ -14,6 +16,7 @@ public class FishOtherHandle : FishHandle
     {
         base.Start();
         SetRandomTagetPosition();
+
     }
     public void SetData(QuestDataTest data)
     {
@@ -22,31 +25,52 @@ public class FishOtherHandle : FishHandle
     }
     public override void SetData(FishData dataX)
     {
-        
+
     }
     public void UpdateQuestData(QuestDataTest data)
     {
-        Speed = data.speed; 
-        ID= data.questID;
+        Speed = data.speed;
+        ID = data.questID;
         scalePoint = data.scalePoint;
         fishSprite = data.fishSprite;
         anim.runtimeAnimatorController = data.controller;
         uniqueID = GetInstanceID();
-        
     }
-    public override void Move()
+    public void Move1()
+    {
+        //Vector2 currentPosition = transform.position;
+        //Vector2 targertPosition = targetArena.position;
+        //movement = (targertPosition - currentPosition).normalized;
+        //rb.MovePosition(Vector2.MoveTowards(currentPosition, targertPosition, Speed * Time.deltaTime));
+        //Flip(movement);
+        //if (Vector2.Distance(currentPosition, targertPosition) < 0.1f)
+        //{
+        //    Destroy(gameObject);
+        //}
+    }
+    public void Move2()
     {
         Vector2 currentPosition = transform.position;
-
         movement = (randomTagetPosition - currentPosition).normalized;
         rb.MovePosition(Vector2.MoveTowards(currentPosition, randomTagetPosition, Speed * Time.deltaTime));
 
         Flip(movement);
-        //Nếu đã đến gần vị trí mục tiêu, tạo vị trí mục tiêu mới
+
         if (Vector2.Distance(currentPosition, randomTagetPosition) < 0.1f)
         {
             SetRandomTagetPosition();
         }
+    }
+    public int RandomMove()
+    {
+        int RandomMove = Random.Range(1, 2);
+        return RandomMove;
+    }
+
+    public override void Move()
+    {
+        Move2();
+
     }
     private void SetRandomTagetPosition()
     {
@@ -54,33 +78,30 @@ public class FishOtherHandle : FishHandle
         float randomY = Random.Range(moveAreaMin.y, moveAreaMax.y);
         randomTagetPosition = new Vector2(randomX, randomY);
     }
-    public override void OnTriggerEnter2D(Collider2D collider)
+    public override void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collider.gameObject.CompareTag("FishMain"))
+        if (collision.gameObject.CompareTag("FishMain"))
         {
-            // Lấy đối tượng FishHandle từ đối tượng va chạm
-            FishHandle otherFishHandle = collider.gameObject.GetComponent<FishHandle>();
-            // Tìm FishHandle tương ứng từ danh sách allFishes
-            FishHandle otherFishInList = FishManager.Instance.allFishes.Find(otherFishInList => otherFishInList.uniqueID == otherFishHandle.uniqueID);
-
-            if (otherFishInList != null)
+            FishMain fishMain = collision.gameObject.GetComponent<FishMain>();
+            if (this.scalePoint > fishMain.scalePoint)
             {
-                // So sánh scalePoint của cá hiện tại và cá va chạm
-                if (this.scalePoint > otherFishInList.scalePoint)
-                {
-                    // Tăng scalePoint của cá lớn hơn
-                    this.scalePoint += otherFishInList.scalePoint;
-                    // Gọi Eat animation và phá hủy cá nhỏ hơn
-                    Eat();
-                    Destroy(collider.gameObject);
-                    ScaleFish();
-                }
+                this.scalePoint += fishMain.scalePoint;
+                Eat();
+                Destroy(fishMain.gameObject);
+                ScaleFish();
+            }
+            else
+            {
+                SetRandomTagetPosition();
             }
         }
         else
         {
+            if (collision.gameObject.CompareTag("Ground"))
+            {
+                Destroy(gameObject);
+            }
             SetRandomTagetPosition();
-
         }
     }
     public override void Update()

@@ -10,10 +10,11 @@ public class MainScene : MonoBehaviour
     public Button buttonShop;
     public Button buttonFishTank;
     public QuestDataBaseTest questData;
-   
+    public Toggle QuestToggle;
+    public GameObject questPanelQuest;
     public void Start()
     {
-       
+        QuestToggle.onValueChanged.AddListener(QuestCheck);
     }
     public void OnButtonShopClick()
     {
@@ -23,6 +24,10 @@ public class MainScene : MonoBehaviour
     {
         sceneManagers.LoadFishTankScene();
     }
+    public void QuestCheck(bool isOn)
+    {
+        questPanelQuest.SetActive(isOn);
+    }
 
-    
+
 }

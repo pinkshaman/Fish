@@ -13,11 +13,11 @@ public class FishManager : MonoBehaviour
     public FishOtherHandle fishOtherHandle;
     public FishDataBase fishDataBases;
     public GameObject fishPrefabs;
-    public List<FishHandle> allFishes;
+    public List<FishOtherHandle> allFishes;
 
     public FishMain fishMain;
     public GameObject PlayerFishMain;
-
+    public Transform rootMainFish;
 
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class FishManager : MonoBehaviour
 
     }
 
-    public void RegisterFish(FishHandle fish)
+    public void RegisterFish(FishOtherHandle fish)
     {
         if (!allFishes.Contains(fish))
         {
@@ -84,7 +84,7 @@ public class FishManager : MonoBehaviour
         fishHandle.gameObject.SetActive(true);
         fishHandle.uniqueID = newFish.GetInstanceID();
         fishHandle.SetData(dataX);
-        RegisterFish(fishHandle);
+        //RegisterFish(fishHandle);
         //fishShowUIHandle.CreateFishShow(dataX);
         Debug.Log($"Create fish: {newFish.name} at position {spawnPosition}");
     }

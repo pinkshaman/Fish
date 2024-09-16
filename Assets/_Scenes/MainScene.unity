@@ -9548,6 +9548,8 @@ MonoBehaviour:
   buttonFishTank: {fileID: 1996686752}
   questData:
     questDatas: []
+  QuestToggle: {fileID: 2021722459}
+  questPanelQuest: {fileID: 540627276}
 --- !u!114 &1315216209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13406,7 +13408,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &2059310244
 GameObject:
   m_ObjectHideFlags: 0

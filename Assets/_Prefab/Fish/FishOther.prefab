@@ -210,8 +210,8 @@ MonoBehaviour:
   uniqueID: 0
   ID: 0
   fishSprite: {fileID: 0}
-  moveAreaMin: {x: -35, y: -10}
-  moveAreaMax: {x: 35, y: 10}
+  moveAreaMin: {x: -60, y: -20}
+  moveAreaMax: {x: 60, y: 20}
   questDataTest:
     questID: 0
     quality: 0

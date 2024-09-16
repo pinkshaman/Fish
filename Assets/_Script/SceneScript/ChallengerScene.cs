@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChallengerScene : MonoBehaviour
 {
     public FishDataBase fishDataBase;
-    public FishHandle fishMain;
+    public FishMain fishMain;
     public FishManager fishManager;
     public PlayerData playerData;
     public void Start()

@@ -37,9 +37,9 @@ public class FishinTankHandle : FishHandle
         float randomY = Random.Range(moveAreaMin.y, moveAreaMax.y);
         randomTagetPosition = new Vector2(randomX, randomY);
     }
-    public override void OnTriggerEnter2D(Collider2D collider)
+    public override void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collider.gameObject.CompareTag("Fish"))
+        if (collision.gameObject.CompareTag("Fish"))
         {
             SetRandomTagetPosition();
             Move();
