@@ -41,6 +41,7 @@ public class FishManager : MonoBehaviour
         {
             allFishes.Add(fishID);
             Debug.Log($"Add newFish: {fishID}");
+            
         }
     }
 
@@ -81,8 +82,7 @@ public class FishManager : MonoBehaviour
         // Tạo đối tượng cá mới từ prefab và gán nó vào rootFish
         var newFish = Instantiate(PlayerFishMain, spawnPosition, Quaternion.identity, rootMainFish);
         var fishHandle = newFish.GetComponent<FishMain>();
-        fishHandle.gameObject.SetActive(true);
-        fishHandle.uniqueID = newFish.GetInstanceID();
+        fishHandle.gameObject.SetActive(true);      
         fishHandle.SetData(dataX);
         
         Debug.Log($"Create fish: {newFish.name} at position {spawnPosition}");

@@ -8,7 +8,7 @@ public class UIScore : MonoBehaviour
     public FishData fishData;
     public GameObject fishDisplay;
     public Transform RootFishMenu;
-
+    public FishMain fishMain;
     public Image AbilityBar;
     public Image AbilityFillBar;
     public Image ScaleBar;
@@ -20,22 +20,30 @@ public class UIScore : MonoBehaviour
     {
         var fishMenu = Instantiate(fishDisplay, RootFishMenu);
         var fishImage = fishMenu.GetComponentInChildren<Image>();
-        fishImage.sprite = fishData.fishSprite;
+        fishImage.sprite = fishDataX.fishSprite;
     }
-    
-    public void SetMenuData(float scalepoint, int score, int live,int Ability)
+    public void SetdataUI(FishMain fish)
     {
-        scalePoint.text = $"{scalepoint}";
-        scores.text = $"{score}";
-        lives.text = $"{live}";
-        
+        this.fishMain = fish;
+        SetMenuData(fish);
+    }
+   
+
+    public void SetMenuData(FishMain fishMain)
+    {
+        scalePoint.text = $"{fishMain.scalePoint}";
+        scores.text = $"{fishMain.score}";
+        lives.text = $"{fishMain.lives}";
+        SetAbilityScore();
+        SetScalePoint();
     }
     public void SetAbilityScore()
     {
-
+        float FillAmout =float.Parse(scalePoint.text)/ 100;
+        ScaleFillBar.fillAmount = FillAmout;
     }
     public void SetScalePoint()
     {
-
+        
     }
 }

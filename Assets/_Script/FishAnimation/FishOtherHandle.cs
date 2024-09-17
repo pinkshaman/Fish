@@ -35,7 +35,7 @@ public class FishOtherHandle : FishHandle
         fishSprite = data.fishSprite;
         anim.runtimeAnimatorController = data.controller;
         uniqueID = GetInstanceID();
-        fishPoint= data.Point;
+        fishPoints= data.questScore;
     }
     public void Move1()
     {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class FishHandle : MonoBehaviour
 {
@@ -18,8 +19,8 @@ public class FishHandle : MonoBehaviour
     public int uniqueID;
     public int ID;
     public Sprite fishSprite;
-    public int fishPoint;
     
+   
     public virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,7 +39,7 @@ public class FishHandle : MonoBehaviour
         anim.runtimeAnimatorController = dataX.controller;
         fishSprite = dataX.fishSprite;
         uniqueID = GetInstanceID();
-        this.fishPoint = dataX.point;
+        
     }
   
     public virtual void Flip(Vector2 direction)
@@ -55,17 +56,10 @@ public class FishHandle : MonoBehaviour
     }
     public virtual void Move()
     {
-        // Lấy vị trí hiện tại của Fish và TargetPoint
         Vector2 currentPosition = transform.position;
         Vector2 targetPosition = targetPoint.position;
-
-        // Tính hướng di chuyển và cập nhật hướng sprite
-        movement = (targetPosition - currentPosition).normalized;
-        // Di chuyển Fish bằng Lerp        
-        rb.MovePosition(Vector2.Lerp(currentPosition, targetPosition, Speed * Time.deltaTime));
-
-
-        // Đổi hướng sprite dựa trên hướng di chuyển
+        movement = (targetPosition - currentPosition).normalized;           
+        rb.MovePosition(Vector2.Lerp(currentPosition, targetPosition, Speed * Time.deltaTime));       
         Flip(movement);
     }
     public virtual void CheckAnim()

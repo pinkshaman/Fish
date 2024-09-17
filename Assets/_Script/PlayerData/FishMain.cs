@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class FishMain : FishHandle
 {
-    public UIMainFishControl control;
+    public UIScore control;
     public int lives = 3;
-
+    public int score;
     public override void Start()
     {
         base.Start();
-        control.SetData(this);
+        control.SetdataUI(this);
     }
     public override void UpdateData(FishData dataX)
     {
@@ -26,11 +27,11 @@ public class FishMain : FishHandle
             if (this.scalePoint > otherFishHandle.scalePoint)
             {
                 this.scalePoint++;
-                this.fishPoint += otherFishHandle.fishPoints;
+                this.score += otherFishHandle.fishPoints;
                 Eat();
                 Destroy(collision.gameObject);
                 ScaleFish();   
-                control.SetData(this);
+                control.SetdataUI(this);
             }
         }
     }
@@ -39,11 +40,5 @@ public class FishMain : FishHandle
         base.Update();
 
     }
-
-
-
-
-
-
 
 }

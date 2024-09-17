@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,20 +10,14 @@ public class UIMainFishControl : MonoBehaviour
     public FishMain fishMain;
     public FishManager fishManager;
     public PlayerData playerData;
-    public int Abilityscore;
-    public int score;
-    public float scalePoint;
-    public int lives;
-    public Time time;
-     
+    public Time time;    
     public UIScore UiScore;
     public void Start()
     {
         fishManager = FindObjectOfType<FishManager>();
-        LoadPlayerData();
-        var fishID = playerData.fishMainID;
-        FishData fish = fishDataBase.fishDatas.Find(fish => fish.id == fishID);
-        fishManager.CreateFish(fish);
+        LoadPlayerData();     
+        var fish = fishDataBase.fishDatas.Find(fish => fish.id == playerData.fishMainID);
+        fishManager.CreateFish(fish);        
         Check();
         
     }
@@ -40,18 +35,7 @@ public class UIMainFishControl : MonoBehaviour
         // Debug để kiểm tra xem playerData có được nạp đúng không
         Debug.Log($"PlayerData Loaded - FishMainID: {playerData.fishMainID}");
     }
-    public void SetData(FishMain fishmain)
-    {
-        this. scalePoint = fishmain.scalePoint;
-        this. score = fishmain.fishPoint;
-        this. lives = fishmain.lives;
-        UiScore.SetMenuData(scalePoint,score, lives,Abilityscore);
-    }
-    public void UpdateData()
-    {
-
-        
-    }
+     
     public void Check()
     {
         foreach (var ID in fishManager.allFishes)
