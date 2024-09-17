@@ -13,7 +13,7 @@ public class FishManager : MonoBehaviour
     public FishOtherHandle fishOtherHandle;
     public FishDataBase fishDataBases;
     public GameObject fishPrefabs;
-    public List<FishOtherHandle> allFishes;
+    public List<int> allFishes;
 
     public FishMain fishMain;
     public GameObject PlayerFishMain;
@@ -35,12 +35,12 @@ public class FishManager : MonoBehaviour
 
     }
 
-    public void RegisterFish(FishOtherHandle fish)
+    public void RegisterFish(int fishID)
     {
-        if (!allFishes.Contains(fish))
+        if (!allFishes.Contains(fishID))
         {
-            allFishes.Add(fish);
-            Debug.Log($"Add newFish: {fish.uniqueID}");
+            allFishes.Add(fishID);
+            Debug.Log($"Add newFish: {fishID}");
         }
     }
 
@@ -56,7 +56,7 @@ public class FishManager : MonoBehaviour
             fishOtherHandles.uniqueID = newFish.GetInstanceID();
             fishOtherHandles.SetData(questData);
             Debug.Log($"Create fish: {newFish.name}:{questData.quality} at position {spawnPosition}");
-            RegisterFish(fishOtherHandles);
+            RegisterFish(fishOtherHandles.ID);
         }
     }
     // Phương thức để tạo nhiều cá dựa trên thông tin cung cấp
@@ -79,13 +79,13 @@ public class FishManager : MonoBehaviour
         Vector2 spawnPosition = transform.position;
 
         // Tạo đối tượng cá mới từ prefab và gán nó vào rootFish
-        var newFish = Instantiate(PlayerFishMain, spawnPosition, Quaternion.identity, rootFish);
+        var newFish = Instantiate(PlayerFishMain, spawnPosition, Quaternion.identity, rootMainFish);
         var fishHandle = newFish.GetComponent<FishMain>();
         fishHandle.gameObject.SetActive(true);
         fishHandle.uniqueID = newFish.GetInstanceID();
         fishHandle.SetData(dataX);
-        //RegisterFish(fishHandle);
-        //fishShowUIHandle.CreateFishShow(dataX);
+        
         Debug.Log($"Create fish: {newFish.name} at position {spawnPosition}");
     }
+  
 }

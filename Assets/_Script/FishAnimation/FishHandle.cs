@@ -18,7 +18,7 @@ public class FishHandle : MonoBehaviour
     public int uniqueID;
     public int ID;
     public Sprite fishSprite;
-    
+    public int fishPoint;
     
     public virtual void Start()
     {
@@ -38,6 +38,7 @@ public class FishHandle : MonoBehaviour
         anim.runtimeAnimatorController = dataX.controller;
         fishSprite = dataX.fishSprite;
         uniqueID = GetInstanceID();
+        this.fishPoint = dataX.point;
     }
   
     public virtual void Flip(Vector2 direction)
@@ -81,20 +82,14 @@ public class FishHandle : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Fish"))
         {
-            // Lấy đối tượng FishHandle từ đối tượng va chạm
-            FishOtherHandle otherFishHandle = collision.gameObject.GetComponent<FishOtherHandle>();
-            // Tìm FishHandle tương ứng từ danh sách allFishes
-            FishOtherHandle otherFishInList = FishManager.Instance.allFishes.Find(otherFishInList => otherFishInList.uniqueID == otherFishHandle.uniqueID);
-
-            if (otherFishInList != null)
-            {
-                
-                if (this.scalePoint > otherFishInList.scalePoint)
+            FishData otherFishHandle = collision.gameObject.GetComponent<FishData>();
+            if (otherFishHandle != null)
+            {               
+                if (this.scalePoint > otherFishHandle.scalePoint)
                 {                  
                     this.scalePoint++ ;                   
                     Eat();
-                    Destroy(collision.gameObject);
-                    ScaleFish();
+                    Destroy(collision.gameObject);                   
                 }
             }
         }

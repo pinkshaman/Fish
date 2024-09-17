@@ -18,7 +18,7 @@ public class QuestDataTest
     public float speed;
     public Sprite fishSprite;
     public RuntimeAnimatorController controller;
-
+    public int Point;
    
 }
 [Serializable]

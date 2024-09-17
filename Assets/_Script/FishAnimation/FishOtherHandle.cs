@@ -11,7 +11,7 @@ public class FishOtherHandle : FishHandle
     public Vector2 moveAreaMax; // Giới hạn trên của vùng di chuyển
     private Vector2 randomTagetPosition;// Vị trí mục tiêu ngẫu nhiên
     public QuestDataTest questDataTest;
-
+    public int fishPoints;
     public override void Start()
     {
         base.Start();
@@ -35,6 +35,7 @@ public class FishOtherHandle : FishHandle
         fishSprite = data.fishSprite;
         anim.runtimeAnimatorController = data.controller;
         uniqueID = GetInstanceID();
+        fishPoint= data.Point;
     }
     public void Move1()
     {
@@ -95,14 +96,7 @@ public class FishOtherHandle : FishHandle
                 SetRandomTagetPosition();
             }
         }
-        else
-        {
-            if (collision.gameObject.CompareTag("Ground"))
-            {
-                Destroy(gameObject);
-            }
-            SetRandomTagetPosition();
-        }
+       
     }
     public override void Update()
     {

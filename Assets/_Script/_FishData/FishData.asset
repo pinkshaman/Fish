@@ -19,15 +19,18 @@ MonoBehaviour:
     speed: 2
     fishSprite: {fileID: -1490646831, guid: f2aa61ac48dd67e409e70a488b40285b, type: 3}
     controller: {fileID: 9100000, guid: 4db151074ef63b4419c8c863cb934806, type: 2}
+    point: 15
   - id: 2
     fishName: Angle
     scalePoint: 2
     speed: 3
     fishSprite: {fileID: 1116063129, guid: f056917dafa0d164e8fb3e6113c5545b, type: 3}
     controller: {fileID: 9100000, guid: d046917813b472642b4125d5a12c28a7, type: 2}
+    point: 50
   - id: 3
     fishName: Barracuda
     scalePoint: 2
     speed: 3
     fishSprite: {fileID: -769307366, guid: 42e880bf6007add47b83d6482769407c, type: 3}
     controller: {fileID: 9100000, guid: 804e4f4569941334bbb6b89140e94ff1, type: 2}
+    point: 100
