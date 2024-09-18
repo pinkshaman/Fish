@@ -41,7 +41,7 @@ public class FishManager : MonoBehaviour
         {
             allFishes.Add(fishID);
             Debug.Log($"Add newFish: {fishID}");
-            
+            allFishes.Sort();
         }
     }
 

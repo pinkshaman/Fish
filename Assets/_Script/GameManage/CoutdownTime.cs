@@ -33,9 +33,11 @@ public class CoutdownTime : MonoBehaviour
             isEnd = true;
            Debug.Log("Countdown finished");
         }
+        Debug.Log($"isEnd: {isEnd}");
     }
    public bool IsTheGameEnd()
     {      
         return isEnd;
+        
     }    
 }

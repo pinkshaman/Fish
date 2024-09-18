@@ -19,12 +19,12 @@ public class FishHandle : MonoBehaviour
     public int uniqueID;
     public int ID;
     public Sprite fishSprite;
-    
-   
+
+
     public virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();   
+        anim = GetComponent<Animator>();
     }
     public virtual void SetData(FishData dataX)
     {
@@ -35,34 +35,41 @@ public class FishHandle : MonoBehaviour
     {
         Speed = dataX.speed;
         scalePoint = dataX.scalePoint;
-        ID = dataX .id;
+        ID = dataX.id;
         anim.runtimeAnimatorController = dataX.controller;
         fishSprite = dataX.fishSprite;
         uniqueID = GetInstanceID();
-        
+
     }
-  
+
     public virtual void Flip(Vector2 direction)
     {
 
         if (direction.x < 0) // Di chuyển sang trái
         {
+
+            anim.SetTrigger("Turn");
             transform.rotation = Quaternion.Euler(0, 180, 0); // Xoay 180 độ quanh trục Y
+
+
         }
         else if (direction.x > 0) // Di chuyển sang phải
         {
+
+            anim.SetTrigger("Turn");
             transform.rotation = Quaternion.Euler(0, 0, 0); // Xoay về góc 0 độ
+
         }
     }
     public virtual void Move()
     {
         Vector2 currentPosition = transform.position;
         Vector2 targetPosition = targetPoint.position;
-        movement = (targetPosition - currentPosition).normalized;           
-        rb.MovePosition(Vector2.Lerp(currentPosition, targetPosition, Speed * Time.deltaTime));       
+        movement = (targetPosition - currentPosition).normalized;
+        rb.MovePosition(Vector2.Lerp(currentPosition, targetPosition, Speed * Time.deltaTime));
         Flip(movement);
 
-        if(Vector2.Distance(currentPosition,targetPosition)> 0.2f)
+        if (Vector2.Distance(currentPosition, targetPosition) > 0.2f)
         {
             anim.SetBool("isMoving", true);
         }
@@ -71,7 +78,7 @@ public class FishHandle : MonoBehaviour
             anim.SetBool("isMoving", false);
         }
     }
-   
+
     public virtual void Eat()
     {
         anim.SetTrigger("Eat");
@@ -82,12 +89,12 @@ public class FishHandle : MonoBehaviour
         {
             FishData otherFishHandle = collision.gameObject.GetComponent<FishData>();
             if (otherFishHandle != null)
-            {               
+            {
                 if (this.scalePoint > otherFishHandle.scalePoint)
-                {                  
-                    this.scalePoint+= otherFishHandle.scalePoint ;                   
+                {
+                    this.scalePoint += otherFishHandle.scalePoint;
                     Eat();
-                    Destroy(collision.gameObject);                   
+                    Destroy(collision.gameObject);
                 }
             }
         }
@@ -96,16 +103,16 @@ public class FishHandle : MonoBehaviour
     {
         if (scalePoint >= 15)
         {
-            Debug.Log("Scaling Fish!"); 
-            transform.localScale = new Vector3(1.5f,1.5f, 1);
+            Debug.Log("Scaling Fish!");
+            transform.localScale = new Vector3(1.5f, 1.5f, 1);
             Debug.Log("New scale: " + transform.localScale);
         }
-        else if(scalePoint >= 30)
+        else if (scalePoint >= 30)
         {
             Debug.Log("Scaling Fish!");
             transform.localScale = new Vector3(2.0f, 2.0f, 1);
         }
-        else if(scalePoint >= 50)
+        else if (scalePoint >= 50)
         {
 
             Debug.Log("Scaling Fish!");
@@ -114,7 +121,7 @@ public class FishHandle : MonoBehaviour
     }
     public virtual void Update()
     {
-       
+
         Move();
 
     }

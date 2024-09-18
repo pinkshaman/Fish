@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,6 +32,11 @@ public class UIScore : MonoBehaviour
         var fishMenu = Instantiate(fishDisplay, RootFishMenu);
         var fishImage = fishMenu.GetComponentInChildren<Image>();
         fishImage.sprite = fishDataX.fishSprite;
+        if (fishDataX.scalePoint > fishMain.scalePoint)
+        {
+            fishImage.color = Color.gray;
+        }
+        
     }
     public void SetdataUI(FishMain fish)
     {
@@ -84,6 +90,7 @@ public class UIScore : MonoBehaviour
     public void Skill1Activate()
     {
         isSkillActivate = true;
+        fishMain.Dash();
     }
     public void Skill2Activate()
     {

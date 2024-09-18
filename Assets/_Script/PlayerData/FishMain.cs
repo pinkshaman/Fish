@@ -8,7 +8,7 @@ public class FishMain : FishHandle
     public UIScore control;
     public int lives = 3;
     public int score;
-    public float dashSpeed;
+    public float dashSpeed=10;
     public override void Start()
     {
         base.Start();
@@ -40,7 +40,7 @@ public class FishMain : FishHandle
     {
         float dashDirection = transform.localScale.x;
         Vector3 dashForce = new Vector3(dashDirection * dashSpeed, 0, 0);
-        rb.velocity = Vector3.zero;
+        
         rb.AddForce(dashForce, ForceMode2D.Impulse);
     }
   

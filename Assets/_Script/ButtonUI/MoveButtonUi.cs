@@ -11,25 +11,30 @@ public class MoveButtonUi : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     public float Horizontal => input.x;                          // Biến để lấy giá trị ngang (X) của joystick
     public float Vertical => input.y;                            // Biến để lấy giá trị doc (Y) của joystick
     public float HandleRange = 1;                                 // Phạm vi di chuyển của joystick
-    [SerializeField] private RectTransform background;           // Nền của joystick
-    [SerializeField] private RectTransform handle;               // Tay cầm của joystick
+    [SerializeField] protected RectTransform background;           // Nền của joystick
+    [SerializeField] protected RectTransform handle;               // Tay cầm của joystick
 
-
-    public void Start()
+    protected Canvas canvas;
+    protected Camera cam;
+    public virtual void Start()
     {
         handle.anchoredPosition = Vector2.zero;                  // Đặt tay cầm joystick ở giữa
     }
 
     // Phương thức gọi khi nhấn vào joystick
-    public void OnPointerDown(PointerEventData eventData)
+    public virtual void OnPointerDown(PointerEventData eventData)
     {
         OnDrag(eventData);
+
     }
 
     // Phương thức gọi khi kéo joystick
-    public void OnDrag(PointerEventData eventData)
+    public virtual void OnDrag(PointerEventData eventData)
     {
-        Vector2 position = RectTransformUtility.WorldToScreenPoint(null, background.position); // Lấy vị trí của nền joystick
+        if (canvas.renderMode == RenderMode.ScreenSpaceCamera)
+            cam = canvas.worldCamera;
+
+        Vector2 position = RectTransformUtility.WorldToScreenPoint(cam, background.position); // Lấy vị trí của nền joystick
         Vector2 radius = background.sizeDelta / 2; // Tính bán kính của nền
         input = (eventData.position - position) / radius; // Tính input dựa trên vị trí
         HandleInput(input.magnitude, input.normalized); // Xử lý input
@@ -44,7 +49,7 @@ public class MoveButtonUi : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     }
 
     // Phương thức gọi khi thả joystick
-    public void OnPointerUp(PointerEventData eventData)
+    public virtual void  OnPointerUp(PointerEventData eventData)
     {
         input = Vector2.zero; // Đặt lại giá trị đầu vào về 0
         handle.anchoredPosition = Vector2.zero; // Đặt lại tay cầm về vị trí giữa

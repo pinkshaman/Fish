@@ -51,7 +51,7 @@ public class UIMainFishControl : MonoBehaviour
         var isGameEnd = coutdownTime.IsTheGameEnd();
         if (isGameEnd ==true)
         {
-            resultPanel.gameObject.SetActive(true);
+            resultPanel.SetActive(true);
             UiScore.ShowReSult();
         }
     }

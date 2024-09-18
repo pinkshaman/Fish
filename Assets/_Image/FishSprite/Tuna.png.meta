@@ -108,7 +108,553 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Tuna_0
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 243
+        width: 240
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 922309f3c3877d54b841c220f2618575
+      internalID: -129485271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_1
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 244
+        width: 231
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f30336c832d4e343bd1a6e6e8efa75f
+      internalID: 131962647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_2
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 244
+        width: 243
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb626b77f58d64c42942d97a8bf25249
+      internalID: -1041115047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_3
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 245
+        width: 233
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cfa641b61d54174997483c3c12d33b4
+      internalID: 2047836935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_4
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 244
+        width: 240
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf3dcd5d81123e4a8d328c45e6127fc
+      internalID: 1483383102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_5
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 245
+        width: 236
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1d6555abf0234846a393287b6600434
+      internalID: 1108262049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_6
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 124
+        width: 215
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c1dddc18dd066f46b3c990a9b2bbfd1
+      internalID: -1045265526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_7
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 124
+        width: 217
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a93f616b787c9a439ecb4c077d8784c
+      internalID: 2091239021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_8
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 124
+        width: 223
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e8dda1e508f87c4b9ae671906f74699
+      internalID: -842717782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_9
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 125
+        width: 224
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7f7cc161a4cb9847834c39a19ce9504
+      internalID: -77485827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_10
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 123
+        width: 237
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c7c631518ece2d438949ca7d4d6d32a
+      internalID: 1825353121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_11
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 123
+        width: 236
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 910ac28b738b8ba48be6bbe6d0594531
+      internalID: -907535545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_12
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 126
+        width: 227
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c63118bf99ebd8744addce86ee8f80a8
+      internalID: 1881762991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_13
+      rect:
+        serializedVersion: 2
+        x: 1794
+        y: 124
+        width: 221
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0753732a59b292245a386acd0b78e838
+      internalID: 1088144196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_14
+      rect:
+        serializedVersion: 2
+        x: 2029
+        y: 125
+        width: 230
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ea8a4a392f5f074588cdc006da06688
+      internalID: 319439262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_15
+      rect:
+        serializedVersion: 2
+        x: 2271
+        y: 125
+        width: 237
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9834689e94218b4bb2d48455440c054
+      internalID: 626998526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_16
+      rect:
+        serializedVersion: 2
+        x: 2515
+        y: 126
+        width: 232
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b91b825ab11cd743833c0fd45a0c890
+      internalID: 1313821380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_17
+      rect:
+        serializedVersion: 2
+        x: 2756
+        y: 125
+        width: 226
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d21e86dc56412df428051a0390cb7f69
+      internalID: 440947759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_18
+      rect:
+        serializedVersion: 2
+        x: 2990
+        y: 126
+        width: 228
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fb34465fdc6c564cad55b4b46d36ba9
+      internalID: 1284493456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_19
+      rect:
+        serializedVersion: 2
+        x: 3232
+        y: 125
+        width: 216
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7bf61e90b882c4fb943723b28ea601
+      internalID: 1369854376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_20
+      rect:
+        serializedVersion: 2
+        x: 3473
+        y: 125
+        width: 215
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7eb83f695e6ee45a3ba464d1376ea9
+      internalID: 929472115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_21
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 2
+        width: 186
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5cbef659cfd83843ad8737e2e7805f5
+      internalID: 401393173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_22
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 3
+        width: 166
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a67dced33419f4b9d6025aa107a95e
+      internalID: 1215443102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_23
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 0
+        width: 125
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f0623a00d7e08b4f8bc1822676c0a24
+      internalID: 511142003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_24
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 0
+        width: 102
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abe79d80dcf1a1a45a37e2b4695daf58
+      internalID: -884688120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuna_25
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 3
+        width: 119
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88deebbf91ed8274982823c965c0de98
+      internalID: -1459160846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +665,33 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tuna_0: -129485271
+      Tuna_1: 131962647
+      Tuna_10: 1825353121
+      Tuna_11: -907535545
+      Tuna_12: 1881762991
+      Tuna_13: 1088144196
+      Tuna_14: 319439262
+      Tuna_15: 626998526
+      Tuna_16: 1313821380
+      Tuna_17: 440947759
+      Tuna_18: 1284493456
+      Tuna_19: 1369854376
+      Tuna_2: -1041115047
+      Tuna_20: 929472115
+      Tuna_21: 401393173
+      Tuna_22: 1215443102
+      Tuna_23: 511142003
+      Tuna_24: -884688120
+      Tuna_25: -1459160846
+      Tuna_3: 2047836935
+      Tuna_4: 1483383102
+      Tuna_5: 1108262049
+      Tuna_6: -1045265526
+      Tuna_7: 2091239021
+      Tuna_8: -842717782
+      Tuna_9: -77485827
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

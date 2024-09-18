@@ -108,7 +108,700 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Orca_0
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 372
+        width: 225
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 709b77c1d3274d94f8e71730cb6a4508
+      internalID: 1037851793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_1
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 372
+        width: 247
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0814add4525b0224cabf1a1e1095de45
+      internalID: 1854983272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_2
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 372
+        width: 233
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 971fc2710ccbaeb40a021eaab403224c
+      internalID: -395853370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_3
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 371
+        width: 239
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7184b52c0711e8f4f991aa8cd8333470
+      internalID: -928612467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_4
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 372
+        width: 235
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e95073eab15d144792891a7919f0156
+      internalID: 1342156270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_5
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 371
+        width: 227
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb7d3978b027cb46a73014f484c55c2
+      internalID: -381669818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_6
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 260
+        width: 228
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acc921c4533364049882e5fbac39cc00
+      internalID: 1720744656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_7
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 259
+        width: 235
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 624a4946fa7ad3d4da80b393cd513d9b
+      internalID: 225985596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_8
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 259
+        width: 232
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c21babfe5643c5e408326d9f27ed937e
+      internalID: -839215053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_9
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 259
+        width: 234
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b5e5f84a2d33345ba25cb954e4daba
+      internalID: -1670181976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_10
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 259
+        width: 230
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c40d96c21ff16be428ba208fc839610d
+      internalID: -1237380157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_11
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 261
+        width: 228
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8c2b30e474316040ad7072d0045b27b
+      internalID: -1638958139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_12
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 261
+        width: 238
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7209f61162702741b8a5712751460e1
+      internalID: -496756145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_13
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 126
+        width: 231
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b51050ccbca6c640a6503de3ba58e5b
+      internalID: 1806229586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_14
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 124
+        width: 232
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73f3699d910957944a3cb6083e55c7e9
+      internalID: 1279595989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_15
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 124
+        width: 237
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2774c4247dede54fa8729a3bcbe17d5
+      internalID: 448547856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_16
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 124
+        width: 234
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe2d93fd4311828469f739d2a862d4d5
+      internalID: 678922131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_17
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 124
+        width: 229
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eae9d885f1c0e794b8fa4064663a7470
+      internalID: 2045911616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_18
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 124
+        width: 238
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c005f3c8de093ae49b3b47971af77800
+      internalID: -2147274475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_19
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 124
+        width: 235
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa60ad2aba4ef3a40b691b81a6f029ad
+      internalID: 1596693458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_20
+      rect:
+        serializedVersion: 2
+        x: 1782
+        y: 124
+        width: 237
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9f8ca1e0cea7748b5e10c71bf1943e
+      internalID: 1119900075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_21
+      rect:
+        serializedVersion: 2
+        x: 2025
+        y: 124
+        width: 234
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e383f055898ca544690dfad806f10252
+      internalID: 1954678544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_22
+      rect:
+        serializedVersion: 2
+        x: 2264
+        y: 124
+        width: 233
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f45fd0a89cb387418111d9a509d77ea
+      internalID: 358048776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_23
+      rect:
+        serializedVersion: 2
+        x: 2503
+        y: 124
+        width: 234
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e46e2d54b678844ea0802e6cb68f95e
+      internalID: -1764636048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_24
+      rect:
+        serializedVersion: 2
+        x: 2742
+        y: 125
+        width: 238
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 730a5d463711cce44a653503fa97f026
+      internalID: -550521373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_25
+      rect:
+        serializedVersion: 2
+        x: 2988
+        y: 125
+        width: 231
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6574950243a9b254e859d90abc85193c
+      internalID: 1243106359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_26
+      rect:
+        serializedVersion: 2
+        x: 3230
+        y: 125
+        width: 230
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfae4c4234a49b948a0943f82829a700
+      internalID: -1556409747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_27
+      rect:
+        serializedVersion: 2
+        x: 3472
+        y: 125
+        width: 231
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2ff90094e3aad4eb36b306b26d7174
+      internalID: 427895747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_28
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 19
+        width: 184
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016def4abac4e1641ab57fa948b187e1
+      internalID: 335873538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_29
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 0
+        width: 241
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191626d81340b074ebb6a299f682ce8b
+      internalID: 1193423669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_30
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 170
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3caeba8b827fa23478c333bd9dbe163d
+      internalID: 1896190189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_31
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 0
+        width: 127
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806838b3bb5449d45a185085a670ef42
+      internalID: 218891776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orca_32
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 0
+        width: 156
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28cd174b15f77c140bc5db58b08f3a35
+      internalID: -1568318216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +812,40 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Orca_0: 1037851793
+      Orca_1: 1854983272
+      Orca_10: -1237380157
+      Orca_11: -1638958139
+      Orca_12: -496756145
+      Orca_13: 1806229586
+      Orca_14: 1279595989
+      Orca_15: 448547856
+      Orca_16: 678922131
+      Orca_17: 2045911616
+      Orca_18: -2147274475
+      Orca_19: 1596693458
+      Orca_2: -395853370
+      Orca_20: 1119900075
+      Orca_21: 1954678544
+      Orca_22: 358048776
+      Orca_23: -1764636048
+      Orca_24: -550521373
+      Orca_25: 1243106359
+      Orca_26: -1556409747
+      Orca_27: 427895747
+      Orca_28: 335873538
+      Orca_29: 1193423669
+      Orca_3: -928612467
+      Orca_30: 1896190189
+      Orca_31: 218891776
+      Orca_32: -1568318216
+      Orca_4: 1342156270
+      Orca_5: -381669818
+      Orca_6: 1720744656
+      Orca_7: 225985596
+      Orca_8: -839215053
+      Orca_9: -1670181976
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
