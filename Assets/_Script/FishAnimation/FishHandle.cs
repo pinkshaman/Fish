@@ -61,13 +61,17 @@ public class FishHandle : MonoBehaviour
         movement = (targetPosition - currentPosition).normalized;           
         rb.MovePosition(Vector2.Lerp(currentPosition, targetPosition, Speed * Time.deltaTime));       
         Flip(movement);
+
+        if(Vector2.Distance(currentPosition,targetPosition)> 0.2f)
+        {
+            anim.SetBool("isMoving", true);
+        }
+        else
+        {
+            anim.SetBool("isMoving", false);
+        }
     }
-    public virtual void CheckAnim()
-    {
-        // Chơi animation Move nếu đang di chuyển
-        bool isMoving = !movement.Equals(Vector2.zero);
-        anim.SetBool("isMoving", isMoving);
-    }
+   
     public virtual void Eat()
     {
         anim.SetTrigger("Eat");
@@ -81,7 +85,7 @@ public class FishHandle : MonoBehaviour
             {               
                 if (this.scalePoint > otherFishHandle.scalePoint)
                 {                  
-                    this.scalePoint++ ;                   
+                    this.scalePoint+= otherFishHandle.scalePoint ;                   
                     Eat();
                     Destroy(collision.gameObject);                   
                 }
@@ -90,16 +94,27 @@ public class FishHandle : MonoBehaviour
     }
     public virtual void ScaleFish()
     {
-        if (scalePoint >= 10)
+        if (scalePoint >= 15)
         {
-            Debug.Log("Scaling Fish!"); // Thông báo trong Console
-            transform.localScale = new Vector3(2, 2, 1);
+            Debug.Log("Scaling Fish!"); 
+            transform.localScale = new Vector3(1.5f,1.5f, 1);
             Debug.Log("New scale: " + transform.localScale);
+        }
+        else if(scalePoint >= 30)
+        {
+            Debug.Log("Scaling Fish!");
+            transform.localScale = new Vector3(2.0f, 2.0f, 1);
+        }
+        else if(scalePoint >= 50)
+        {
+
+            Debug.Log("Scaling Fish!");
+            transform.localScale = new Vector3(3.0f, 3.0f, 1);
         }
     }
     public virtual void Update()
     {
-        CheckAnim();
+       
         Move();
 
     }

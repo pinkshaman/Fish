@@ -9,17 +9,19 @@ public class UIMainFishControl : MonoBehaviour
     public FishDataBase fishDataBase;
     public FishMain fishMain;
     public FishManager fishManager;
-    public PlayerData playerData;
-    public Time time;    
+    public PlayerData playerData;    
     public UIScore UiScore;
+    public CoutdownTime coutdownTime;
+
+    public GameObject resultPanel;
     public void Start()
     {
         fishManager = FindObjectOfType<FishManager>();
         LoadPlayerData();     
         var fish = fishDataBase.fishDatas.Find(fish => fish.id == playerData.fishMainID);
         fishManager.CreateFish(fish);        
-        Check();
-        
+        Check();   
+        coutdownTime = FindObjectOfType<CoutdownTime>();
     }
     [ContextMenu("LoadPlayerData")]
     public void LoadPlayerData()
@@ -44,5 +46,15 @@ public class UIMainFishControl : MonoBehaviour
             UiScore.CreateMenu(fishData);
         }
     }
+    public void LoadResutl()
+    {
+        var isGameEnd = coutdownTime.IsTheGameEnd();
+        if (isGameEnd ==true)
+        {
+            resultPanel.gameObject.SetActive(true);
+            UiScore.ShowReSult();
+        }
+    }
+    
   
 }

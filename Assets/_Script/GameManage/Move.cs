@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-
     public float smoothTime = 0.3F;
     private Vector3 velocity = Vector3.zero;
-    public float moveSpeed = 10;
     private Vector3 targetPosition;
     void Update()
     {
