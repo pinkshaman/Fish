@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class CoutdownTime : MonoBehaviour
 {
-    public float countdownTime = 180f;
+    public float countdownTime = 1;
     public Text coundownText;
     private float currenTimes;
-    public bool isEnd=false;
+    public bool isEnd = false;
+
+    public UIMainFishControl control;
     public void Start()
     {
         currenTimes = countdownTime;
@@ -19,7 +21,7 @@ public class CoutdownTime : MonoBehaviour
     {
         while (currenTimes > 0)
         {
-            isEnd =false;
+            isEnd = false;
             currenTimes -= Time.deltaTime;
             coundownText.text = Mathf.Ceil(currenTimes).ToString();
             yield return null;
@@ -29,15 +31,13 @@ public class CoutdownTime : MonoBehaviour
         OnCountdownEnd();
 
         void OnCountdownEnd()
-        {     
+        {
             isEnd = true;
-           Debug.Log("Countdown finished");
+            Debug.Log("Countdown finished");
+            control.LoadResutl(isEnd);
         }
         Debug.Log($"isEnd: {isEnd}");
     }
-   public bool IsTheGameEnd()
-    {      
-        return isEnd;
-        
-    }    
+   
+
 }

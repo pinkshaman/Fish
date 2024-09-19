@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2076750745985519787}
   - component: {fileID: 2572218315474124130}
-  - component: {fileID: 4087988573549396777}
+  - component: {fileID: 5353539918826268706}
   m_Layer: 0
   m_Name: Point
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4087988573549396777
+--- !u!114 &5353539918826268706
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,8 +94,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2119907031093937692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46e167aad486d744f9cb4a8908aaf978, type: 3}
+  m_Script: {fileID: 11500000, guid: fae17b311ee59b74d84b9e43d9abdad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothTime: 0.3
-  moveSpeed: 15
+  smoothTime: 0.425

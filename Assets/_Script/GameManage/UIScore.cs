@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class UIScore : MonoBehaviour
 {
+
+    public RewardHandle rewardHandle;
     public FishData fishData;
     public GameObject fishDisplay;
     public Transform RootFishMenu;
@@ -21,6 +23,8 @@ public class UIScore : MonoBehaviour
     public Button skill2;
     private bool isSkillActivate;
     
+    public Text ScoreReward;
+
     public void Start()
     {
         skill1.onClick.AddListener(Skill1Activate);
@@ -35,8 +39,7 @@ public class UIScore : MonoBehaviour
         if (fishDataX.scalePoint > fishMain.scalePoint)
         {
             fishImage.color = Color.gray;
-        }
-        
+        }     
     }
     public void SetdataUI(FishMain fish)
     {
@@ -98,7 +101,7 @@ public class UIScore : MonoBehaviour
     }
     public void ShowReSult()
     {
-        
+        ScoreReward.text = scores.text;
 
     }
 

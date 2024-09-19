@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 
@@ -35,9 +36,17 @@ public class TestGameController : MonoBehaviour
     
     public Vector2 moveAreaMin;
     public Vector2 moveAreaMax;
-    
+
+    public GameObject questTogglePanel;
+    public Toggle toggle;
+
+
+    public void OpenQuestCheck(bool isOn)
+    {
+        questTogglePanel.SetActive(isOn);
+    }
     // Hàm chọn nhiệm vụ theo questID
-    private QuestDataTest GetQuestDataByID(int questID)
+    public QuestDataTest GetQuestDataByID(int questID)
     {
         foreach (var questData in questDataBase.questDatas)
         {
@@ -77,7 +86,9 @@ public class TestGameController : MonoBehaviour
 
     public void Start()
     {
-        int currentQuestID = 1; // Giả sử bạn đang ở nhiệm vụ ID 1
+        int currentQuestID = 1;
+        
         LoadFishForQuest(currentQuestID);
+        toggle.onValueChanged.AddListener(OpenQuestCheck);
     }
 }

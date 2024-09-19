@@ -48,7 +48,7 @@ public class FishHandle : MonoBehaviour
         if (direction.x < 0) // Di chuyển sang trái
         {
 
-            anim.SetTrigger("Turn");
+           
             transform.rotation = Quaternion.Euler(0, 180, 0); // Xoay 180 độ quanh trục Y
 
 
@@ -56,7 +56,7 @@ public class FishHandle : MonoBehaviour
         else if (direction.x > 0) // Di chuyển sang phải
         {
 
-            anim.SetTrigger("Turn");
+            
             transform.rotation = Quaternion.Euler(0, 0, 0); // Xoay về góc 0 độ
 
         }

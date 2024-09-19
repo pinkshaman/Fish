@@ -9,18 +9,18 @@ public class UIMainFishControl : MonoBehaviour
     public FishDataBase fishDataBase;
     public FishMain fishMain;
     public FishManager fishManager;
-    public PlayerData playerData;    
+    public PlayerData playerData;
     public UIScore UiScore;
     public CoutdownTime coutdownTime;
-
     public GameObject resultPanel;
+    public bool isGameEnd;
     public void Start()
     {
         fishManager = FindObjectOfType<FishManager>();
-        LoadPlayerData();     
+        LoadPlayerData();
         var fish = fishDataBase.fishDatas.Find(fish => fish.id == playerData.fishMainID);
-        fishManager.CreateFish(fish);        
-        Check();   
+        fishManager.CreateFish(fish);
+        Check();
         coutdownTime = FindObjectOfType<CoutdownTime>();
     }
     [ContextMenu("LoadPlayerData")]
@@ -37,7 +37,7 @@ public class UIMainFishControl : MonoBehaviour
         // Debug để kiểm tra xem playerData có được nạp đúng không
         Debug.Log($"PlayerData Loaded - FishMainID: {playerData.fishMainID}");
     }
-     
+
     public void Check()
     {
         foreach (var ID in fishManager.allFishes)
@@ -46,15 +46,10 @@ public class UIMainFishControl : MonoBehaviour
             UiScore.CreateMenu(fishData);
         }
     }
-    public void LoadResutl()
-    {
-        var isGameEnd = coutdownTime.IsTheGameEnd();
-        if (isGameEnd ==true)
-        {
-            resultPanel.SetActive(true);
-            UiScore.ShowReSult();
-        }
+    public void LoadResutl(bool isEnd)
+    {  
+        Debug.Log($"IsGame: {isEnd}");
+        resultPanel.SetActive(isEnd);
+        UiScore.ShowReSult();
     }
-    
-  
 }
