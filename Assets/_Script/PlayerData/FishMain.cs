@@ -41,7 +41,7 @@ public class FishMain : FishHandle
         float dashDirection = transform.localScale.x;
         Vector3 dashForce = new Vector3(dashDirection * dashSpeed, 0, 0);
         
-        rb.AddForce(dashForce, ForceMode2D.Impulse);
+        rb.MovePosition(dashForce);
     }
   
     public override void Update()

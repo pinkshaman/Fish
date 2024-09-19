@@ -11,10 +11,10 @@ public class RewardManager : MonoBehaviour
     {
         
     }
-    public void GetRewardByQuestID(QuestDataTest quest)
+    public void GetRewardByQuestID(int questID)
     {
-        var questbyID = controller.GetQuestDataByID(quest.questID);
-        var RewardbyID = rewardBase.rewardBases.Find(reward => reward.rewardID == questbyID.questID);
+       
+        var RewardbyID = rewardBase.rewardBases.Find(reward => reward.rewardID == questID);
         CreateReward(RewardbyID);
     }
     public void CreateReward(RewardBase reward)

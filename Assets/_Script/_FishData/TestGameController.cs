@@ -33,7 +33,7 @@ public class TestGameController : MonoBehaviour
 {
     public FishManager fishManager;
     public QuestDataBaseTest questDataBase;
-    
+    public RewardManager rewardManager;
     public Vector2 moveAreaMin;
     public Vector2 moveAreaMax;
 
@@ -53,6 +53,7 @@ public class TestGameController : MonoBehaviour
             if (questData.questID == questID)
             {
                 return questData;
+
             }
         }
         Debug.LogError("Quest not found!");
@@ -71,6 +72,7 @@ public class TestGameController : MonoBehaviour
         QuestDataTest selectedQuest = GetQuestDataByID(questID);
         if (selectedQuest != null)
         {
+            rewardManager.GetRewardByQuestID(questID);
             SetFishPositionForQuest(selectedQuest); // Set vị trí cho cá
             List<QuestDataTest> selectedQuestList = new List<QuestDataTest> { selectedQuest };
             fishManager.CreateFishesFromDataQuest(selectedQuestList); // Tạo cá từ dữ liệu
@@ -89,6 +91,7 @@ public class TestGameController : MonoBehaviour
         int currentQuestID = 1;
         
         LoadFishForQuest(currentQuestID);
+        
         toggle.onValueChanged.AddListener(OpenQuestCheck);
     }
 }

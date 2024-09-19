@@ -507,7 +507,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6722418904449087175}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7136439fb61993a46b417c05e69a8a66, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c37c72394db54049aeba73e1c55bf8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rewardBase:

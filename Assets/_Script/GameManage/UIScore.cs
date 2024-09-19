@@ -17,29 +17,35 @@ public class UIScore : MonoBehaviour
     public Image ScaleBar;
     public Image ScaleFillBar;
     public Text scores;
+
     public Text scalePoint;
     public Text lives;
     public Button skill1;
     public Button skill2;
+    public Button rewardButton;
     private bool isSkillActivate;
-    
+
     public Text ScoreReward;
 
     public void Start()
     {
+        rewardButton.onClick.AddListener(OnClaim);
         skill1.onClick.AddListener(Skill1Activate);
         skill2.onClick.AddListener(Skill2Activate);
         StartCoroutine(SetAbilityScore());
     }
     public void CreateMenu(FishData fishDataX)
     {
+        var scale = int.Parse(scalePoint.text);
+        Debug.Log($"scale :{scale}");
         var fishMenu = Instantiate(fishDisplay, RootFishMenu);
         var fishImage = fishMenu.GetComponentInChildren<Image>();
         fishImage.sprite = fishDataX.fishSprite;
-        if (fishDataX.scalePoint > fishMain.scalePoint)
+        if (fishDataX.scalePoint > scale)
         {
             fishImage.color = Color.gray;
-        }     
+        }
+
     }
     public void SetdataUI(FishMain fish)
     {
@@ -88,7 +94,7 @@ public class UIScore : MonoBehaviour
     public void ResetCount()
     {
         isSkillActivate = false;
-        AbilityFillBar.fillAmount = 0;       
+        AbilityFillBar.fillAmount = 0;
     }
     public void Skill1Activate()
     {
@@ -102,7 +108,13 @@ public class UIScore : MonoBehaviour
     public void ShowReSult()
     {
         ScoreReward.text = scores.text;
-
+    }
+    public void OnClaim()
+    {
+        int quality = rewardHandle.RewardChange();
+        Debug.Log($"{quality}");
+        PlayerManager.Instance.playerData.blackPearl += quality;
+        PlayerManager.Instance.SavePlayersData();
     }
 
 

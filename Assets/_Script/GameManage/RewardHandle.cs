@@ -5,8 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 public class RewardHandle : MonoBehaviour
 {
-    public RewardBase rewardBase;
-   
+    public RewardBase rewardBase;  
     public Image rewarImage;
     public TMP_Text rewardQuality;
     public TMP_Text rewardName;
@@ -22,5 +21,9 @@ public class RewardHandle : MonoBehaviour
         rewardName.text = rewardBase.rewardName;
         rewardQuality.text = $"{rewardBase.rewardQuality}";
     }
-    
+   public int RewardChange()
+    {
+        int quality = int.Parse(rewardQuality.text);
+        return quality;
+    }
 }
