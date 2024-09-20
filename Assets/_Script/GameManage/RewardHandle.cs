@@ -21,9 +21,5 @@ public class RewardHandle : MonoBehaviour
         rewardName.text = rewardBase.rewardName;
         rewardQuality.text = $"{rewardBase.rewardQuality}";
     }
-   public int RewardChange()
-    {
-        int quality = int.Parse(rewardQuality.text);
-        return quality;
-    }
+  
 }

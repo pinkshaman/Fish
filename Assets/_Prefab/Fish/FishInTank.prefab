@@ -166,7 +166,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.026478738, y: 0.004413128}
@@ -201,6 +201,7 @@ MonoBehaviour:
     speed: 0
     fishSprite: {fileID: 0}
     controller: {fileID: 0}
+    Price: 0
   anim: {fileID: 4336091443100124561}
   rb: {fileID: 443769431871007509}
   targetPoint: {fileID: 0}

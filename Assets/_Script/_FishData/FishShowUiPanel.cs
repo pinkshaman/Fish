@@ -13,18 +13,17 @@ public class FishShowUiPanel : MonoBehaviour
     public Text fishSpeed;
     public Text fishScale;
     public Text ID;
+    public Text Price;
     // Start is called before the first frame update
-    public void Start()
+    public virtual void Start()
     {
         showFishButton.onValueChanged.AddListener(ShowFish);
     }
-    public void ShowFish(bool isOn)
+    public virtual void ShowFish(bool isOn)
     {
-        panelShowFish.SetActive(isOn);
-        
-
+        panelShowFish.SetActive(isOn);      
     }
-    public void SetData(FishData chooseFishX, Toggle toggle)
+    public virtual void SetData(FishData chooseFishX, Toggle toggle)
     {
         this.fishData = chooseFishX;
         this.showFishButton = toggle;
@@ -33,7 +32,7 @@ public class FishShowUiPanel : MonoBehaviour
         UpdateUi(chooseFishX);
     }
 
-    public void UpdateUi(FishData chooseFishX)
+    public virtual void UpdateUi(FishData chooseFishX)
     {
         ID.text = chooseFishX.id.ToString();
         Image.sprite = chooseFishX.fishSprite;
@@ -41,6 +40,6 @@ public class FishShowUiPanel : MonoBehaviour
         fishSpeed.text = chooseFishX.speed.ToString();
         fishScale.text = chooseFishX.scalePoint.ToString();
         //animator.runtimeAnimatorController = chooseFishX.chooseFishcontroller;
-
+        Price.text = chooseFishX.Price.ToString();
     }
 }

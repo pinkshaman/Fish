@@ -13,7 +13,7 @@ public class FishData
     public float speed;
     public Sprite fishSprite;
     public RuntimeAnimatorController controller;
-    
+    public int Price;
 
 
 }

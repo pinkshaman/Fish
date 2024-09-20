@@ -12,10 +12,9 @@ public class ChooseFish : MonoBehaviour
     public FishTankBase fishTankBase;
     public UnityEngine.UI.Button ChooseFishButton;
     public Text Message;
-    public SceneManagers loadFishTankScene;
     public FishShowUIHandle showUIHandle;
     public FishShowUiPanel fishPanel;
-
+    public SceneManagers loadFishTankScene;
     public void Awake()
     {
         LoadChooseFishJson();

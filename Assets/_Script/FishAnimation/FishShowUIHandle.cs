@@ -62,7 +62,7 @@ public class FishShowUIHandle : MonoBehaviour
 
         }
     }
-    public FishData GetFishDataFromCurrentToggle()
+    public virtual FishData GetFishDataFromCurrentToggle()
     {
         foreach (var key in fishTankDict)
         {

@@ -71,11 +71,11 @@ public class TestGameController : MonoBehaviour
     {
         QuestDataTest selectedQuest = GetQuestDataByID(questID);
         if (selectedQuest != null)
-        {
-            rewardManager.GetRewardByQuestID(questID);
+        {           
             SetFishPositionForQuest(selectedQuest); // Set vị trí cho cá
             List<QuestDataTest> selectedQuestList = new List<QuestDataTest> { selectedQuest };
             fishManager.CreateFishesFromDataQuest(selectedQuestList); // Tạo cá từ dữ liệu
+            rewardManager.GetRewardByQuestID(questID);
         }
     }
 
@@ -88,10 +88,10 @@ public class TestGameController : MonoBehaviour
 
     public void Start()
     {
+        rewardManager = FindObjectOfType<RewardManager>();
         int currentQuestID = 1;
-        
         LoadFishForQuest(currentQuestID);
-        
+      
         toggle.onValueChanged.AddListener(OpenQuestCheck);
     }
 }

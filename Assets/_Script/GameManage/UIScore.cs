@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.UI;
@@ -110,11 +112,13 @@ public class UIScore : MonoBehaviour
         ScoreReward.text = scores.text;
     }
     public void OnClaim()
-    {
-        int quality = rewardHandle.RewardChange();
-        Debug.Log($"{quality}");
-        PlayerManager.Instance.playerData.blackPearl += quality;
-        PlayerManager.Instance.SavePlayersData();
+    {    
+        
+       
+
+
+       
+        
     }
 
 

@@ -2033,6 +2033,7 @@ MonoBehaviour:
     speed: 0
     fishSprite: {fileID: 0}
     controller: {fileID: 0}
+    Price: 0
   fishDisplay: {fileID: 5721539564062338280, guid: f3b3a6cfc010a5f47915d0e4e862229e, type: 3}
   RootFishMenu: {fileID: 1899249845}
   fishMain: {fileID: 58826788}
@@ -8407,9 +8408,17 @@ MonoBehaviour:
   rewardBase:
     rewardBases:
     - rewardID: 1
+      rewardIMG: {fileID: 21300000, guid: ffb22b62bf3aa284c8312ad090186883, type: 3}
+      rewardQuality: 0
+      rewardName: While Pearl
+    - rewardID: 2
       rewardIMG: {fileID: 21300000, guid: 50cce95390189a34fbe20c6fd137c2c1, type: 3}
-      rewardQuality: 20
-      rewardName: BlackPearl
+      rewardQuality: 0
+      rewardName: Black Pearl
+    - rewardID: 3
+      rewardIMG: {fileID: 21300000, guid: 10df839015f52934d8f1358d7ab22b33, type: 3}
+      rewardQuality: 0
+      rewardName: Exp
   questDataBaseTest:
     questDatas: []
   controller: {fileID: 825303778}

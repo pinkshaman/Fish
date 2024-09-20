@@ -553,9 +553,9 @@ MonoBehaviour:
     fishTankBases: []
   ChooseFishButton: {fileID: 1491166005}
   Message: {fileID: 203578189}
-  loadFishTankScene: {fileID: 337900814}
   showUIHandle: {fileID: 93766002}
   fishPanel: {fileID: 6026374582929212303, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+  loadFishTankScene: {fileID: 337900814}
 --- !u!114 &337900814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1399,6 +1399,18 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1078297048350325401, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078297048350325401, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078297048350325401, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3247524958357642646, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
       propertyPath: m_Name
       value: Panel_Fish
@@ -1407,9 +1419,41 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3689452324485649479, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689452324485649479, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689452324485649479, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689452324485649479, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689452324485649479, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689452324485649479, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5090955154546653317, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924149366013615548, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924149366013615548, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6628094215315358457, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
       propertyPath: m_Pivot.x
@@ -1437,11 +1481,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6628094215315358457, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 150
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 6628094215315358457, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 150
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 6628094215315358457, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1495,6 +1539,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6885519674519697272, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6885519674519697272, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6996380351458238418, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1506,6 +1558,30 @@ PrefabInstance:
     - target: {fileID: 6996380351458238418, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: FishPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322320339715094893, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322320339715094893, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701528812879652454, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701528812879652454, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701528812879652454, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701528812879652454, guid: 2b4bb4d22fcbbbe46affad3b40209a20, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
