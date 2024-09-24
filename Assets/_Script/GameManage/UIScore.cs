@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class UIScore : MonoBehaviour
 {
-
+    public PlayerData playerData;
     public RewardHandle rewardHandle;
     public FishData fishData;
     public GameObject fishDisplay;
@@ -19,7 +19,6 @@ public class UIScore : MonoBehaviour
     public Image ScaleBar;
     public Image ScaleFillBar;
     public Text scores;
-
     public Text scalePoint;
     public Text lives;
     public Button skill1;
@@ -112,13 +111,11 @@ public class UIScore : MonoBehaviour
         ScoreReward.text = scores.text;
     }
     public void OnClaim()
-    {    
-        
+    {
        
 
 
-       
-        
+
     }
 
 

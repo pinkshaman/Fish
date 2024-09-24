@@ -9,7 +9,7 @@ public class MainScene : MonoBehaviour
     public SceneManagers sceneManagers;
     public Button buttonShop;
     public Button buttonFishTank;
-    public QuestDataBaseTest questData;
+    public QuestDataBase questData;
     public Toggle QuestToggle;
     public GameObject questPanelQuest;
     public void Start()

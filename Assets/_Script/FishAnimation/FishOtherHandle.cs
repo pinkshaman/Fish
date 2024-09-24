@@ -10,7 +10,7 @@ public class FishOtherHandle : FishHandle
     public Vector2 moveAreaMin; // Giới hạn dưới của vùng di chuyển
     public Vector2 moveAreaMax; // Giới hạn trên của vùng di chuyển
     private Vector2 randomTagetPosition;// Vị trí mục tiêu ngẫu nhiên
-    public QuestDataTest questDataTest;
+    public QuestData questDataTest;
     public int fishPoints;
     public override void Start()
     {
@@ -18,7 +18,7 @@ public class FishOtherHandle : FishHandle
         SetRandomTagetPosition();
 
     }
-    public void SetData(QuestDataTest data)
+    public void SetData(QuestData data)
     {
         this.questDataTest = data;
         UpdateQuestData(data);
@@ -27,7 +27,7 @@ public class FishOtherHandle : FishHandle
     {
 
     }
-    public void UpdateQuestData(QuestDataTest data)
+    public void UpdateQuestData(QuestData data)
     {
         Speed = data.speed;
         ID = data.questID;

@@ -3,52 +3,56 @@ using UnityEngine;
 
 public class RewardManager : MonoBehaviour
 {
-    public RewardDataBase rewardBase;
-    public QuestDataBaseTest questDataBaseTest;
-    public TestGameController controller;
+    public RewardBase rewardData;
+    public RewardDataBase rewardDataBase;
+    public QuestDataBase questDataBaseTest;
+    public QuestManager controller;
     public RewardHandle rewardHandle;
     public Transform rootRewardUi;
 
-    public Dictionary<int, RewardDataBase> rewardData;
+    public Dictionary<int, RewardDataBase> rewards;
 
     public void Awake()
     {
-        rewardData = new Dictionary<int, RewardDataBase>();
+        rewards = new Dictionary<int, RewardDataBase>();
     }
     public void Start()
     {
-        AddReward();
+
     }
-    public void AddReward()
+    public void AddReward(int questID)
     {
-        if (rewardData == null)
+        if (questID == 1)
         {
-            Debug.LogWarning("rewardData is null. Initializing now...");
-            rewardData = new Dictionary<int, RewardDataBase>();
+            Debug.Log(rewards != null ? "rewardData exists" : "rewardData is null");
+            rewards = new Dictionary<int, RewardDataBase>();
+        
+            var newRewards = new RewardDataBase();                             
+            var reward = new RewardBase(1, 200, "WhitePearl", null );
+            newRewards.rewardBases = new List<RewardBase>();
+            newRewards.rewardBases.Add(reward);
+           
+            
+            rewards.Add(questID, newRewards);
         }
-        Debug.Log(rewardData != null ? "rewardData exists" : "rewardData is null");
-        rewardData.Add(1, new RewardDataBase
-        {
-            rewardBases = new List<RewardBase>
-            {
-                new() { rewardID = 1, rewardName = "While Pearl", rewardQuality = 200},
-                new() { rewardID = 3, rewardName = "Exp", rewardQuality = 1000 }
-
-            }
-        });
-
     }
+    //public void AddRewardByID(RewardBase rewadData)
+    //{
+    //    var newReward = rewardDataBase.rewardBases.Find(reward => rewardID == reward.rewardID);
+
+    //}
     public void GetRewardByQuestID(int key)
     {
+        AddReward(key);
 
-        if (rewardData == null)
+        if (rewards == null)
         {
             Debug.LogError("rewardData is null");
             return;
         }
-        if (rewardData.ContainsKey(key))
+        if (rewards.ContainsKey(key))
         {
-            RewardDataBase selectedRewardBase = rewardData[key];
+            RewardDataBase selectedRewardBase = rewards[key];
 
             foreach (var rewards in selectedRewardBase.rewardBases)
             {
@@ -62,6 +66,7 @@ public class RewardManager : MonoBehaviour
         var newReward = Instantiate(rewardHandle, rootRewardUi);
         newReward.SetDataReward(reward);
     }
+   
 
 }
 

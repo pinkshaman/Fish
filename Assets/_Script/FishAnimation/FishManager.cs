@@ -45,9 +45,9 @@ public class FishManager : MonoBehaviour
         }
     }
 
-    public void CreateFishQuest(QuestDataTest questData)
+    public void CreateFishQuest(QuestData questData)
     {
-        for (int i = 0; i < questData.quality; i++)
+        for (int i = 0; i < questData.fishQuality; i++)
         {
             Vector2 spawnPosition = questData.fishPositions;
 
@@ -56,12 +56,12 @@ public class FishManager : MonoBehaviour
             FishOtherHandle fishOtherHandles = newFish.GetComponent<FishOtherHandle>();
             fishOtherHandles.uniqueID = newFish.GetInstanceID();
             fishOtherHandles.SetData(questData);
-            Debug.Log($"Create fish: {newFish.name}:{questData.quality} at position {spawnPosition}");
+            Debug.Log($"Create fish: {newFish.name}:{questData.fishQuality} at position {spawnPosition}");
             RegisterFish(fishOtherHandles.ID);
         }
     }
     // Phương thức để tạo nhiều cá dựa trên thông tin cung cấp
-    public void CreateFishesFromDataQuest(List<QuestDataTest> questDataTests)
+    public void CreateFishesFromDataQuest(List<QuestData> questDataTests)
     {
         foreach (var questData in questDataTests)
         {
