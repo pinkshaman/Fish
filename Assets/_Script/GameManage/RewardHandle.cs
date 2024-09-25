@@ -21,5 +21,6 @@ public class RewardHandle : MonoBehaviour
         rewardName.text = rewardBase.rewardName;
         rewardQuality.text = $"{rewardBase.rewardQuality}";
     }
+   
   
 }

@@ -19,6 +19,8 @@ public class FishManager : MonoBehaviour
     public GameObject PlayerFishMain;
     public Transform rootMainFish;
 
+    public List<Transform> spawnPoints;
+
     private void Awake()
     {
         if (Instance == null)
@@ -45,36 +47,29 @@ public class FishManager : MonoBehaviour
         }
     }
 
-    public void CreateFishQuest(QuestData questData)
+    public void CreateFishQuest(int fishID)
     {
-        for (int i = 0; i < questData.fishQuality; i++)
-        {
-            Vector2 spawnPosition = questData.fishPositions;
+        FishData fishData = fishDataBases.fishDatas.Find(fish => fish.id == fishID);
+        int randomIndex = Random.Range(0, spawnPoints.Count); 
+        Vector3 randomPosition = spawnPoints[randomIndex].position;
+      
+        var newFish = Instantiate(fishPrefabs, randomPosition, Quaternion.identity,rootFish);
+        FishOtherHandle fishOtherHandles = newFish.GetComponent<FishOtherHandle>();
+        fishOtherHandles.uniqueID = newFish.GetInstanceID();
 
-            // Tạo đối tượng cá mới từ prefab và gán nó vào rootFish
-            var newFish = Instantiate(fishPrefabs, spawnPosition, Quaternion.identity, rootFish);
-            FishOtherHandle fishOtherHandles = newFish.GetComponent<FishOtherHandle>();
-            fishOtherHandles.uniqueID = newFish.GetInstanceID();
-            fishOtherHandles.SetData(questData);
-            Debug.Log($"Create fish: {newFish.name}:{questData.fishQuality} at position {spawnPosition}");
-            RegisterFish(fishOtherHandles.ID);
-        }
-    }
-    // Phương thức để tạo nhiều cá dựa trên thông tin cung cấp
-    public void CreateFishesFromDataQuest(List<QuestData> questDataTests)
-    {
-        foreach (var questData in questDataTests)
+        if (fishData == null)
         {
-            CreateFishQuest(questData);
+            Debug.LogError("FishData is null!"); 
+            return;
         }
+        fishOtherHandles.SetData(fishData);
+       
+        Debug.Log($"Create fish: {newFish.name} at position {randomPosition}");
+        RegisterFish(fishOtherHandles.ID);
+
     }
-    public void CreateFishesFromData(List<FishData> data)
-    {
-        foreach (var fishdata in data)
-        {
-            CreateFish(fishdata);
-        }
-    }
+    
+   
     public void CreateFish(FishData dataX)
     {
         Vector2 spawnPosition = transform.position;
@@ -82,10 +77,10 @@ public class FishManager : MonoBehaviour
         // Tạo đối tượng cá mới từ prefab và gán nó vào rootFish
         var newFish = Instantiate(PlayerFishMain, spawnPosition, Quaternion.identity, rootMainFish);
         var fishHandle = newFish.GetComponent<FishMain>();
-        fishHandle.gameObject.SetActive(true);      
+        fishHandle.gameObject.SetActive(true);
         fishHandle.SetData(dataX);
-        
+
         Debug.Log($"Create fish: {newFish.name} at position {spawnPosition}");
     }
-  
+
 }

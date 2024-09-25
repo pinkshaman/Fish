@@ -33,6 +33,11 @@ public class FishHandle : MonoBehaviour
     }
     public virtual void UpdateData(FishData dataX)
     {
+        if (dataX == null)
+        {
+            Debug.LogError("FishData is null!"); // Log lỗi nếu dataX là null
+            return;
+        }
         Speed = dataX.speed;
         scalePoint = dataX.scalePoint;
         ID = dataX.id;

@@ -10,6 +10,14 @@ public class QuestProgessData
     public bool isComplete;
     public bool hasClaimed;
     public int currentQuestProgess;
+
+    public QuestProgessData(int id, bool isComplete, bool hasClaimed, int currenProgess)
+    {
+        this.id = id;
+        this.isComplete = isComplete;
+        this.hasClaimed = hasClaimed;
+        this.currentQuestProgess = currenProgess;
+    }
 }
 [Serializable]
 public class QuestProgessDataBase

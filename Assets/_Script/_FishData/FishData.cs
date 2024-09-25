@@ -14,6 +14,6 @@ public class FishData
     public Sprite fishSprite;
     public RuntimeAnimatorController controller;
     public int Price;
-
+    public int fishPoint;
 
 }

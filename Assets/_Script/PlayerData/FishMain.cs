@@ -25,7 +25,7 @@ public class FishMain : FishHandle
         {
             // Lấy đối tượng FishHandle từ đối tượng va chạm
             FishOtherHandle otherFishHandle = collision.gameObject.GetComponent<FishOtherHandle>();
-            if (this.scalePoint > otherFishHandle.scalePoint)
+            if (this.scalePoint >= otherFishHandle.scalePoint)
             {
                 this.scalePoint++;
                 this.score += otherFishHandle.fishPoints;

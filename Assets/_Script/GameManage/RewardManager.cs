@@ -1,66 +1,44 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+
+
+[System.Serializable]
+public class RewardUpdateData
+{
+    public int rewardID;       
+    public int rewardQuality;  
+}
 public class RewardManager : MonoBehaviour
 {
-    public RewardBase rewardData;
     public RewardDataBase rewardDataBase;
     public QuestDataBase questDataBaseTest;
-    public QuestManager controller;
+    public QuestManager questManager;
     public RewardHandle rewardHandle;
     public Transform rootRewardUi;
-
-    public Dictionary<int, RewardDataBase> rewards;
-
-    public void Awake()
-    {
-        rewards = new Dictionary<int, RewardDataBase>();
-    }
+    public List<RewardUpdateData> rewardUpdateList;
+    
+   
     public void Start()
     {
-
+        UpdateRewards();
     }
-    public void AddReward(int questID)
+
+    public void UpdateRewards()
+    {     
+        foreach (var rewardData in rewardUpdateList)
+        {           
+            UpdateRewardQualityByID(rewardData.rewardID, rewardData.rewardQuality);
+            questManager.UpdateRewardQuality(rewardData.rewardID, rewardData.rewardQuality);
+        }      
+    }
+    public void UpdateRewardQualityByID(int rewardID, int newQuality)
     {
-        if (questID == 1)
-        {
-            Debug.Log(rewards != null ? "rewardData exists" : "rewardData is null");
-            rewards = new Dictionary<int, RewardDataBase>();
-        
-            var newRewards = new RewardDataBase();                             
-            var reward = new RewardBase(1, 200, "WhitePearl", null );
-            newRewards.rewardBases = new List<RewardBase>();
-            newRewards.rewardBases.Add(reward);
-           
-            
-            rewards.Add(questID, newRewards);
-        }
+        RewardBase reward = rewardDataBase.rewardBases.Find(r => r.rewardID == rewardID);
+        reward.rewardQuality = newQuality;
+        CreateReward(reward);
     }
-    //public void AddRewardByID(RewardBase rewadData)
-    //{
-    //    var newReward = rewardDataBase.rewardBases.Find(reward => rewardID == reward.rewardID);
 
-    //}
-    public void GetRewardByQuestID(int key)
-    {
-        AddReward(key);
-
-        if (rewards == null)
-        {
-            Debug.LogError("rewardData is null");
-            return;
-        }
-        if (rewards.ContainsKey(key))
-        {
-            RewardDataBase selectedRewardBase = rewards[key];
-
-            foreach (var rewards in selectedRewardBase.rewardBases)
-            {
-                CreateReward(rewards);
-            }
-
-        }
-    }
     public void CreateReward(RewardBase reward)
     {
         var newReward = Instantiate(rewardHandle, rootRewardUi);

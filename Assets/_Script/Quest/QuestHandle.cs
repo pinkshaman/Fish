@@ -8,16 +8,17 @@ public class QuestHandle : MonoBehaviour
 {
     public QuestData questData;
     public QuestProgessData questProgessData;
+    public RewardBase rewardData;
     public TMP_Text QuestName;
     public TMP_Text QuestDescription;
-    //public TMP_Text QuestType;
-    public TMP_Text QuestRewardQuality;
-    public Image RewardIMG;
+    //public TMP_Text QuestType;       
     public Image ProgessBar;
     public Image ProgessFillBar;
     public Image RewardClaimed;
     public Button Claim;
-
+    public List<RewardBase> rewardUI;
+    public Transform rootReward;
+    public RewardHandle rewardHandle;
     public void Start()
     {
         Claim.onClick.AddListener(OnClaim);
@@ -27,19 +28,27 @@ public class QuestHandle : MonoBehaviour
         this.questProgessData = progessData;
         UpdateUI();
     }
-    public void SetQuestData(QuestData data, QuestProgessData progessData)
+    public void SetQuestData(QuestData data, QuestProgessData progessData,List<RewardBase> reward)
     {
         this.questData = data;
         this.questProgessData = progessData;
+        
+        CreateRewardObject(reward);
         UpdateUI();
-
     }
+    public void CreateRewardObject(List<RewardBase> rewards)
+    {
+        foreach(var reward in rewards)
+        {
+            var rewardUi = Instantiate(rewardHandle,rootReward);
+            rewardUi.SetDataReward(reward);
+        }
+    }
+  
     public void UpdateUI()
     {
         QuestName.text = questData.QuestName;
         QuestDescription.text = questData.QuestDecription;
-        QuestRewardQuality.text = questData.rewardQuality.ToString();
-        RewardIMG.sprite = questData.QuestReward;
         FillProgess();
     }
     public void OnClaim()
@@ -82,9 +91,12 @@ public class QuestHandle : MonoBehaviour
             Claim.interactable = false;
             Claim.image.color = Color.gray;
         }
-
+        
     }
-    
+    public bool IsCompleteGame()
+    {
+        return questProgessData.isComplete;
+    }
 
 
 }

@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -19,10 +18,4 @@ public class RewardBase
         this.rewardName = rewardName;   
         this.rewardIMG = rewardIMG;
     }
-}
-[Serializable]
-public class RewardDataBase
-{
-    public List<RewardBase> rewardBases;
-    
 }
