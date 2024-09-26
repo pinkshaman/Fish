@@ -35,7 +35,7 @@ public class FishHandle : MonoBehaviour
     {
         if (dataX == null)
         {
-            Debug.LogError("FishData is null!"); // Log lỗi nếu dataX là null
+            Debug.LogError("FishData is null!"); 
             return;
         }
         Speed = dataX.speed;

@@ -12,4 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc02b7122069664bbf4f7e5f9111d99, type: 3}
   m_Name: RewardData
   m_EditorClassIdentifier: 
-  rewardBases: []
+  rewardBases:
+  - rewardID: 1
+    rewardIMG: {fileID: 21300000, guid: 0044249ffbdc0cc46826fc25e90fdfce, type: 3}
+    rewardQuality: 200
+    rewardName: White Pearl
+  - rewardID: 2
+    rewardIMG: {fileID: 21300000, guid: 50cce95390189a34fbe20c6fd137c2c1, type: 3}
+    rewardQuality: 0
+    rewardName: Black Pearl
+  - rewardID: 3
+    rewardIMG: {fileID: 21300000, guid: ffb22b62bf3aa284c8312ad090186883, type: 3}
+    rewardQuality: 500
+    rewardName: Exp

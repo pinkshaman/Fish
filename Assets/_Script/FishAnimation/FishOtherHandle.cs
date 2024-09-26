@@ -25,17 +25,23 @@ public class FishOtherHandle : FishHandle
     }
     public override void UpdateData(FishData dataX)
     {
-        base.UpdateData(dataX);
+        Speed = dataX.speed;
+        scalePoint = dataX.scalePoint;
+        ID = dataX.id;
+        anim.runtimeAnimatorController = dataX.controller;
+        fishSprite = dataX.fishSprite;
+        uniqueID = GetInstanceID();
         this.fishPoints = dataX.fishPoint;
     }
 
     public void Move1()
     {
-        //Vector2 currentPosition = transform.position;
+        Vector2 currentPosition = transform.position;
         //Vector2 targertPosition = targetArena.position;
         //movement = (targertPosition - currentPosition).normalized;
+        rb.transform.Translate(Speed * Time.deltaTime * currentPosition.normalized);
         //rb.MovePosition(Vector2.MoveTowards(currentPosition, targertPosition, Speed * Time.deltaTime));
-        //Flip(movement);
+        Flip(movement);
         //if (Vector2.Distance(currentPosition, targertPosition) < 0.1f)
         //{
         //    Destroy(gameObject);
@@ -63,7 +69,6 @@ public class FishOtherHandle : FishHandle
     public override void Move()
     {
         Move2();
-
     }
     private void SetRandomTagetPosition()
     {

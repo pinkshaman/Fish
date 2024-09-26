@@ -32,7 +32,7 @@ public class QuestHandle : MonoBehaviour
     {
         this.questData = data;
         this.questProgessData = progessData;
-        
+        this.rewardUI = reward;
         CreateRewardObject(reward);
         UpdateUI();
     }

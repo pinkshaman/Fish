@@ -9,21 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec9b9c6c978cf344cbb9eff1c8d1b962, type: 3}
+  m_Script: {fileID: 11500000, guid: 19889706310c4324ea8a573cef551cf9, type: 3}
   m_Name: QuestData
   m_EditorClassIdentifier: 
   questDataBases:
   - questID: 1
-    QuestName: challenger
-    QuestDecription: a quest
-    QuestReward: {fileID: 21300000, guid: 0044249ffbdc0cc46826fc25e90fdfce, type: 3}
+    QuestName: Challenger
+    QuestDecription: Eat All Fish!
     TaskCount: 1
-    rewardQuality: 200
-    fishQuality: 30
-    fishPositions: {x: -57.1235, y: -11.604996}
-    fishName: AngleFish
-    scalePoint: 0.9
-    speed: 10
-    fishSprite: {fileID: 1116063129, guid: f056917dafa0d164e8fb3e6113c5545b, type: 3}
-    controller: {fileID: 9100000, guid: d046917813b472642b4125d5a12c28a7, type: 2}
-    questScore: 0
+    fishList: 010000000200000003000000

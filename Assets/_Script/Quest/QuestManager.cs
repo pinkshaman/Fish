@@ -51,12 +51,15 @@ public class QuestManager : MonoBehaviour
     }
     public void GetFishFromList(int questid)
     {
+        QuestData selectedQuest = GetQuestDataByID(questid);
         bool isComplete = questHandle.IsCompleteGame();
-        while (isComplete)
+        Debug.Log($"isComplete : {isComplete}");
+        while (isComplete==false)
         {
-            QuestData selectedQuest = GetQuestDataByID(questid);
             int randomIndex = Random.Range(0, selectedQuest.fishList.Count);
+            Debug.Log($"fishLish : {selectedQuest.fishList.Count}");
             fishManager.CreateFishQuest(randomIndex);
+            if(isComplete==true ) { break; }
         }
     }
 
@@ -110,6 +113,12 @@ public class QuestManager : MonoBehaviour
         foreach (var datas in questDataBase.questDataBases)
         {
             QuestProgessData processData = processDataBase.questProgessDatas.Find(processData => processData.id == datas.questID);
+            if (processData == null)
+            {
+                processData = new QuestProgessData(datas.questID, false, false, 0);
+                processDataBase.questProgessDatas.Add(processData);
+                SaveDataJson();               
+            }
             CreateQuest(datas, processData);
         }
     }

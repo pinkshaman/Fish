@@ -1064,14 +1064,7 @@ MonoBehaviour:
     QuestName: 
     QuestDecription: 
     TaskCount: 0
-    fishQuality: 0
-    fishPositions: {x: 0, y: 0}
-    fishName: 
-    scalePoint: 0
-    speed: 0
-    fishSprite: {fileID: 0}
-    controller: {fileID: 0}
-    questScore: 0
+    fishList: 
   questProgessData:
     id: 0
     isComplete: 0
@@ -1401,21 +1394,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3150324688182582823}
     m_Modifications:
-    - target: {fileID: 8182364703893129231, guid: 106ede34cca50ba47be553066c8c2796, type: 3}
+    - target: {fileID: 8182364703893129228, guid: 968c7ef4643f3ae4d9cde356311c6c5f, type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182364703893129228, guid: 968c7ef4643f3ae4d9cde356311c6c5f, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182364703893129228, guid: 968c7ef4643f3ae4d9cde356311c6c5f, type: 3}
+      propertyPath: m_FillMethod
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182364703893129231, guid: 968c7ef4643f3ae4d9cde356311c6c5f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 8182364703893129231, guid: 106ede34cca50ba47be553066c8c2796, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8182364703893129231, guid: 106ede34cca50ba47be553066c8c2796, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8182364703893129231, guid: 106ede34cca50ba47be553066c8c2796, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 8182364703893129231, guid: 968c7ef4643f3ae4d9cde356311c6c5f, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1511,6 +1504,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8182364704351626371, guid: 968c7ef4643f3ae4d9cde356311c6c5f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182364703893129231, guid: 106ede34cca50ba47be553066c8c2796, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182364703893129231, guid: 106ede34cca50ba47be553066c8c2796, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182364703893129231, guid: 106ede34cca50ba47be553066c8c2796, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182364703893129231, guid: 106ede34cca50ba47be553066c8c2796, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

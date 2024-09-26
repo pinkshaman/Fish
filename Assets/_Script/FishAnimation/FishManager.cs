@@ -55,21 +55,12 @@ public class FishManager : MonoBehaviour
       
         var newFish = Instantiate(fishPrefabs, randomPosition, Quaternion.identity,rootFish);
         FishOtherHandle fishOtherHandles = newFish.GetComponent<FishOtherHandle>();
-        fishOtherHandles.uniqueID = newFish.GetInstanceID();
-
-        if (fishData == null)
-        {
-            Debug.LogError("FishData is null!"); 
-            return;
-        }
-        fishOtherHandles.SetData(fishData);
-       
+        fishOtherHandles.uniqueID = newFish.GetInstanceID();     
+        fishOtherHandles.SetData(fishData);    
         Debug.Log($"Create fish: {newFish.name} at position {randomPosition}");
         RegisterFish(fishOtherHandles.ID);
-
     }
     
-   
     public void CreateFish(FishData dataX)
     {
         Vector2 spawnPosition = transform.position;
