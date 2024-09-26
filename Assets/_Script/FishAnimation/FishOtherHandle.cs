@@ -25,6 +25,10 @@ public class FishOtherHandle : FishHandle
     }
     public override void UpdateData(FishData dataX)
     {
+        if(dataX != null)
+        {
+            Debug.LogWarning("fishData is null");
+        }
         Speed = dataX.speed;
         scalePoint = dataX.scalePoint;
         ID = dataX.id;

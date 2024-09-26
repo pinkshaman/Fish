@@ -2030,7 +2030,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QuestID: 1
-  questManager: {fileID: 825303778}
+  questDataBase: {fileID: 11400000, guid: 748c4ed03a1706c469991ced1f18accb, type: 2}
+  questTogglePanel: {fileID: 1818072266}
+  toggle: {fileID: 1793545371}
+  questHandle: {fileID: 7958928725000231152, guid: 488c5b1e9ae42d542a08ad35f58eb5fb, type: 3}
+  fishManager: {fileID: 357316170}
+  rewardManager: {fileID: 6922778439684656323}
 --- !u!1 &364073330
 GameObject:
   m_ObjectHideFlags: 0
@@ -3332,7 +3337,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 737611784}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.998545
+  m_Size: 0.9987384
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3408,7 +3413,7 @@ RectTransform:
   m_Father: {fileID: 397275771}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.998545}
+  m_AnchorMax: {x: 1, y: 0.9987384}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3780,9 +3785,6 @@ MonoBehaviour:
     questProgessDatas: []
   questHandle: {fileID: 7958928725000231152, guid: 488c5b1e9ae42d542a08ad35f58eb5fb, type: 3}
   rootQuestUI: {fileID: 1301076665}
-  RewardList: []
-  questTogglePanel: {fileID: 1818072266}
-  toggle: {fileID: 1793545371}
 --- !u!4 &825303779
 Transform:
   m_ObjectHideFlags: 0
@@ -5104,7 +5106,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0026897513}
+  m_AnchoredPosition: {x: 0, y: 0.013924289}
   m_SizeDelta: {x: 0, y: 130}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1301076666
@@ -8402,15 +8404,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewardDataBase: {fileID: 11400000, guid: 6b2b99297c25f004886ca6c7cd589a19, type: 2}
-  questDataBaseTest: {fileID: 11400000, guid: 748c4ed03a1706c469991ced1f18accb, type: 2}
+  questDataBase: {fileID: 11400000, guid: 748c4ed03a1706c469991ced1f18accb, type: 2}
   questManager: {fileID: 825303778}
   rewardHandle: {fileID: 6794138372321973837, guid: a613f83bc1fec1145816a579409110fc, type: 3}
   rootRewardUi: {fileID: 196025003}
-  rewardUpdateList:
-  - rewardID: 1
-    rewardQuality: 200
-  - rewardID: 3
-    rewardQuality: 500
 --- !u!222 &7073209349322576152
 CanvasRenderer:
   m_ObjectHideFlags: 0

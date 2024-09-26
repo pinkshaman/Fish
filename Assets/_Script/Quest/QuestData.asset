@@ -18,3 +18,12 @@ MonoBehaviour:
     QuestDecription: Eat All Fish!
     TaskCount: 1
     fishList: 010000000200000003000000
+    rewardList:
+    - rewardID: 1
+      rewardIMG: {fileID: 21300000, guid: 0044249ffbdc0cc46826fc25e90fdfce, type: 3}
+      rewardQuality: 200
+      rewardName: White Pearl
+    - rewardID: 3
+      rewardIMG: {fileID: 21300000, guid: ffb22b62bf3aa284c8312ad090186883, type: 3}
+      rewardQuality: 500
+      rewardName: Exp

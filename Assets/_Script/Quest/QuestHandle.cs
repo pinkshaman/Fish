@@ -16,7 +16,6 @@ public class QuestHandle : MonoBehaviour
     public Image ProgessFillBar;
     public Image RewardClaimed;
     public Button Claim;
-    public List<RewardBase> rewardUI;
     public Transform rootReward;
     public RewardHandle rewardHandle;
     public void Start()
@@ -28,12 +27,12 @@ public class QuestHandle : MonoBehaviour
         this.questProgessData = progessData;
         UpdateUI();
     }
-    public void SetQuestData(QuestData data, QuestProgessData progessData,List<RewardBase> reward)
+    public void SetQuestData(QuestData data, QuestProgessData progessData)
     {
         this.questData = data;
         this.questProgessData = progessData;
-        this.rewardUI = reward;
-        CreateRewardObject(reward);
+       
+        CreateRewardObject(data.rewardList);
         UpdateUI();
     }
     public void CreateRewardObject(List<RewardBase> rewards)

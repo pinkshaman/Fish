@@ -1,42 +1,46 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-
-
-[System.Serializable]
-public class RewardUpdateData
-{
-    public int rewardID;       
-    public int rewardQuality;  
-}
 public class RewardManager : MonoBehaviour
 {
-    public RewardDataBase rewardDataBase;
-    public QuestDataBase questDataBaseTest;
+    public QuestDataBase questDataBase;
     public QuestManager questManager;
     public RewardHandle rewardHandle;
     public Transform rootRewardUi;
-    public List<RewardUpdateData> rewardUpdateList;
+    
     
    
     public void Start()
     {
-        UpdateRewards();
+        
     }
 
-    public void UpdateRewards()
-    {     
-        foreach (var rewardData in rewardUpdateList)
-        {           
-            UpdateRewardQualityByID(rewardData.rewardID, rewardData.rewardQuality);
-            questManager.UpdateRewardQuality(rewardData.rewardID, rewardData.rewardQuality);
+    public void UpdateRewards(int questID)
+    {
+        QuestData selectedQuest = GetQuestDataByID(questID);
+        foreach (var reward in selectedQuest.rewardList )
+        {
+            if (reward == null)
+            {
+                Debug.LogError("Reward is null.");
+                continue; // Bỏ qua reward null
+            }
+
+            CreateReward(reward);
+            Debug.Log($"RewardCreated:{reward.rewardName}- {reward.rewardQuality} ");
         }      
     }
-    public void UpdateRewardQualityByID(int rewardID, int newQuality)
+    public QuestData GetQuestDataByID(int questID)
     {
-        RewardBase reward = rewardDataBase.rewardBases.Find(r => r.rewardID == rewardID);
-        reward.rewardQuality = newQuality;
-        CreateReward(reward);
+        foreach (var questData in questDataBase.questDataBases)
+        {
+            if (questData.questID == questID)
+            {
+                return questData;
+            }
+        }
+        Debug.LogError("Quest not found!");
+        return null;
     }
 
     public void CreateReward(RewardBase reward)
@@ -44,6 +48,7 @@ public class RewardManager : MonoBehaviour
         var newReward = Instantiate(rewardHandle, rootRewardUi);
         newReward.SetDataReward(reward);
     }
+
    
 
 }

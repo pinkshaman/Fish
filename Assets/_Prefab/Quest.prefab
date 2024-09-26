@@ -1065,6 +1065,7 @@ MonoBehaviour:
     QuestDecription: 
     TaskCount: 0
     fishList: 
+    rewardList: []
   questProgessData:
     id: 0
     isComplete: 0
@@ -1081,9 +1082,8 @@ MonoBehaviour:
   ProgessFillBar: {fileID: 411531360244714783}
   RewardClaimed: {fileID: 9218910610168071228}
   Claim: {fileID: 8003919954476624433}
-  rewardUI: []
   rootReward: {fileID: 6236090694045416959}
-  rewardHandle: {fileID: 340667784696561312}
+  rewardHandle: {fileID: 6794138372321973837, guid: a613f83bc1fec1145816a579409110fc, type: 3}
 --- !u!1 &8217562955491026911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,7 +1295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6722418904449087174, guid: a613f83bc1fec1145816a579409110fc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6722418904449087174, guid: a613f83bc1fec1145816a579409110fc, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1303,15 +1303,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6722418904449087174, guid: a613f83bc1fec1145816a579409110fc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6722418904449087174, guid: a613f83bc1fec1145816a579409110fc, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6722418904449087174, guid: a613f83bc1fec1145816a579409110fc, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6722418904449087174, guid: a613f83bc1fec1145816a579409110fc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1343,11 +1343,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6722418904449087174, guid: a613f83bc1fec1145816a579409110fc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 6722418904449087174, guid: a613f83bc1fec1145816a579409110fc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 6722418904449087174, guid: a613f83bc1fec1145816a579409110fc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1365,22 +1365,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reward 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6722418904449087175, guid: a613f83bc1fec1145816a579409110fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a613f83bc1fec1145816a579409110fc, type: 3}
---- !u!114 &340667784696561312 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6794138372321973837, guid: a613f83bc1fec1145816a579409110fc, type: 3}
-  m_PrefabInstance: {fileID: 6553840619508984045}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c37c72394db54049aeba73e1c55bf8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &556545511718723115 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6722418904449087174, guid: a613f83bc1fec1145816a579409110fc, type: 3}
