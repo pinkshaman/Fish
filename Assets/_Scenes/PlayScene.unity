@@ -2571,9 +2571,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 435528162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4cea5f31adcc0746a38e4b7e6fc2ad5, type: 3}
+  m_Script: {fileID: 11500000, guid: a75916ff7c62f814a88a6054a47f9f4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishTarget: {fileID: 798837251}
+  speed: 0.123
+  Offset: {x: 0, y: 0, z: -15}
 --- !u!1 &450279629
 GameObject:
   m_ObjectHideFlags: 0
@@ -3791,7 +3794,6 @@ MonoBehaviour:
   questDataBase: {fileID: 11400000, guid: dbb5dd9959503594b8364018211a6c09, type: 2}
   questTogglePanel: {fileID: 1818072266}
   toggle: {fileID: 1793545371}
-  questHandle: {fileID: 7958928725000231152, guid: 488c5b1e9ae42d542a08ad35f58eb5fb, type: 3}
   fishManager: {fileID: 357316170}
   rewardManager: {fileID: 6922778439684656323}
 --- !u!114 &825303781
@@ -7750,7 +7752,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Header Text
+  m_text: RESULT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8390,8 +8392,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questDataBase: {fileID: 11400000, guid: dbb5dd9959503594b8364018211a6c09, type: 2}
-  rewardHandle: {fileID: 4356626128105105277, guid: 8f5bf06c047e32647a07044e247d7b9f, type: 3}
-  rootRewardUi: {fileID: 1221746593}
+  rewardHandles: {fileID: 4356626128105105277, guid: 8f5bf06c047e32647a07044e247d7b9f, type: 3}
+  rootRewardUi: {fileID: 196025003}
 --- !u!222 &7073209349322576152
 CanvasRenderer:
   m_ObjectHideFlags: 0

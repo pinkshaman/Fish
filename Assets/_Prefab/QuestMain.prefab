@@ -181,6 +181,7 @@ MonoBehaviour:
   Claim: {fileID: 7276171296862806012}
   rootReward: {fileID: 2448664463132246438}
   rewardHandle: {fileID: 4541016592300431545, guid: 03d2746ea22eedd4984a30ba4c2d6971, type: 3}
+  rewardDataBase: {fileID: 11400000, guid: 3f24d394690466d4084ee7088eaff885, type: 2}
 --- !u!1 &604162484921439797
 GameObject:
   m_ObjectHideFlags: 0

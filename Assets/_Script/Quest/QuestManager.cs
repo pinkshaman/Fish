@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,7 +7,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-
+[Serializable]
+public class RewardBaseUpdate
+{
+    public int rewardID;
+    public int rewardQuality;
+}
 
 [Serializable]
 public class QuestData
@@ -16,7 +22,7 @@ public class QuestData
     public string QuestDecription;
     public int TaskCount;
     public List<int> fishList;
-    public List<RewardBase> rewardList;
+    public List<RewardBaseUpdate> rewardList;
 }
 
 public class QuestManager : MonoBehaviour

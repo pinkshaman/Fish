@@ -35,7 +35,6 @@ public class RewardManager : MonoBehaviour
         QuestHandle questHandle = GetQuestDataByID(QuestID);
         rewardHandles = questHandle.rewardHandle;
         var reward = rewardHandles.rewardBase;
-
         var newReward = Instantiate(rewardHandles, rootRewardUi);
         newReward.SetDataReward(reward);
     }

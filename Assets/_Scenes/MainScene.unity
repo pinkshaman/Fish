@@ -9420,7 +9420,7 @@ MonoBehaviour:
   sceneManagers: {fileID: 1315216207}
   buttonShop: {fileID: 699382070}
   buttonFishTank: {fileID: 1996686752}
-  questData: {fileID: 0}
+  questData: {fileID: 11400000, guid: dbb5dd9959503594b8364018211a6c09, type: 2}
   QuestToggle: {fileID: 2021722459}
   questPanelQuest: {fileID: 540627276}
 --- !u!114 &1315216209

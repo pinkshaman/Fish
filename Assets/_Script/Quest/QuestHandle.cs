@@ -17,6 +17,7 @@ public class QuestHandle : MonoBehaviour
     public Button Claim;
     public Transform rootReward;
     public RewardHandle rewardHandle;
+    public RewardDataBase rewardDataBase;
     public void Start()
     {
         Claim.onClick.AddListener(OnClaim);
@@ -34,12 +35,14 @@ public class QuestHandle : MonoBehaviour
         CreateRewardObject(data.rewardList);
         UpdateUI();
     }
-    public void CreateRewardObject(List<RewardBase> rewards)
+    public void CreateRewardObject(List<RewardBaseUpdate> rewards)
     {
         foreach(var reward in rewards)
         {
+            RewardBase rewardData = rewardDataBase.rewardBases.Find(rw => rw.rewardID == reward.rewardID);
+            rewardData.rewardQuality =reward.rewardQuality;
             var rewardUi = Instantiate(rewardHandle,rootReward);
-            rewardUi.SetDataReward(reward);
+            rewardUi.SetDataReward(rewardData);
         }
     }
   

@@ -9,48 +9,48 @@ public class ChallengerScene : MonoBehaviour
     public QuestDataBase questDataBase;
     public GameObject questTogglePanel;
     public Toggle toggle;
-    public QuestHandle questHandle;
     public FishManager fishManager;
     public RewardManager rewardManager;
     public void Start()
     {
         Debug.Log($"input QuestID : {QuestID}");
-        toggle.onValueChanged.AddListener(OpenQuestCheck);    
         GetFishFromList(QuestID);
         rewardManager.CreateReward(QuestID);
+        toggle.onValueChanged.AddListener(OpenQuestCheck);
+    
     }
-   
+
     public void OpenQuestCheck(bool isOn)
     {
         questTogglePanel.SetActive(isOn);
     }
 
-    public QuestData GetQuestDataByID(int questID)
+    public QuestHandle GetFishQuestData(int questID)
     {
-        foreach (var questData in questDataBase.questDataBases)
+        QuestManager questManager = QuestManager.Instance;
+        Dictionary<int, QuestHandle> questDictionary = questManager.GetQuests();
+        Debug.Log($"Dictionary: {questDictionary.Keys} - {questDictionary.Values}");
+        foreach (var key in questDictionary)
         {
-            if (questData.questID == questID)
+            if (key.Key == questID)
             {
-                return questData;
+                return key.Value;
             }
         }
-        Debug.LogError("Quest not found!");
+        Debug.LogError("Dictionary not found!");
         return null;
     }
-    public void GetFishFromList(int questid)
+    public void GetFishFromList(int QuestID)
     {
+        QuestHandle selectedQuestHandle = GetFishQuestData(QuestID); 
+        var selectedQuest = selectedQuestHandle.questData.fishList;
+        int randomIndex = Random.Range(0, selectedQuest.Count);
+        int fishID = selectedQuest[randomIndex];
 
-        QuestData selectedQuest = GetQuestDataByID(questid);
-        bool isComplete = questHandle.IsCompleteGame();
-        Debug.Log($"isComplete : {isComplete}");
-        while (isComplete == false)
-        {
-            int randomIndex = Random.Range(0, selectedQuest.fishList.Count);
-            int fishID = selectedQuest.fishList[randomIndex];
-            Debug.Log($"fishList for Challenger : {selectedQuest.fishList.Count}");        
-            fishManager.CreateFishQuest(fishID);
-            if (isComplete == true) { break; }
-        }
+        Debug.Log($"fishList for Challenger : {selectedQuest.Count}");
+        fishManager.CreateFishQuest(fishID);
+
+
     }
 
 

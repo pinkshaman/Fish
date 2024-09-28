@@ -25,7 +25,7 @@ public class FishOtherHandle : FishHandle
     }
     public override void UpdateData(FishData dataX)
     {
-        if(dataX != null)
+        if(dataX == null)
         {
             Debug.LogWarning("fishData is null");
         }

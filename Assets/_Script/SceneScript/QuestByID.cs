@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChallengerScript : MonoBehaviour
+public class QuestByID : MonoBehaviour
 {
     public Transform RootUiQuest;
     public QuestHandle questHandle;
@@ -14,6 +14,7 @@ public class ChallengerScript : MonoBehaviour
     {
         QuestManager questManager = QuestManager.Instance;
         Dictionary<int, QuestHandle> questDictionary = questManager.GetQuests();
+        Debug.Log($"Dictionary: {questDictionary.Keys} - {questID}");
         foreach (var key in questDictionary)
         {
             if (key.Key == questID)
