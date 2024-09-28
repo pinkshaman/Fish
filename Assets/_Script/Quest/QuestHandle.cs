@@ -14,7 +14,6 @@ public class QuestHandle : MonoBehaviour
     //public TMP_Text QuestType;       
     public Image ProgessBar;
     public Image ProgessFillBar;
-    public Image RewardClaimed;
     public Button Claim;
     public Transform rootReward;
     public RewardHandle rewardHandle;
@@ -57,7 +56,7 @@ public class QuestHandle : MonoBehaviour
             Claim.image.color = Color.black;
             questProgessData.hasClaimed = true;
             Claim.interactable = false;
-            RewardClaimed.gameObject.SetActive(true);
+            rewardHandle.rewardClaimedIMG.gameObject.SetActive(false);
         }
     }
     public void FillProgess()
@@ -81,7 +80,7 @@ public class QuestHandle : MonoBehaviour
             {
                 Claim.image.color = Color.black;
                 Claim.interactable = false;
-               RewardClaimed.gameObject.SetActive(true);
+                rewardHandle.rewardClaimedIMG.gameObject.SetActive(true);
             }
         }
         else

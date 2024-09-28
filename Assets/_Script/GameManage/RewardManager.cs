@@ -4,8 +4,7 @@ using UnityEngine;
 public class RewardManager : MonoBehaviour
 {
     public QuestDataBase questDataBase;
-    public QuestManager questManager;
-    public RewardHandle rewardHandle;
+    public RewardHandle rewardHandles;
     public Transform rootRewardUi;
     
     
@@ -15,37 +14,29 @@ public class RewardManager : MonoBehaviour
         
     }
 
-    public void UpdateRewards(int questID)
+    public QuestHandle GetQuestDataByID(int questID)
     {
-        QuestData selectedQuest = GetQuestDataByID(questID);
-        foreach (var reward in selectedQuest.rewardList )
+        QuestManager questManager = QuestManager.Instance;
+        Dictionary<int, QuestHandle> questDictionary = questManager.GetQuests();
+        foreach (var key in questDictionary)
         {
-            if (reward == null)
+            if (key.Key == questID)
             {
-                Debug.LogError("Reward is null.");
-                continue; // Bỏ qua reward null
-            }
-
-            CreateReward(reward);
-            Debug.Log($"RewardCreated:{reward.rewardName}- {reward.rewardQuality} ");
-        }      
-    }
-    public QuestData GetQuestDataByID(int questID)
-    {
-        foreach (var questData in questDataBase.questDataBases)
-        {
-            if (questData.questID == questID)
-            {
-                return questData;
+                return key.Value;
             }
         }
-        Debug.LogError("Quest not found!");
+        Debug.LogError("Dictionary not found!");
         return null;
     }
+  
 
-    public void CreateReward(RewardBase reward)
+    public void CreateReward(int QuestID)
     {
-        var newReward = Instantiate(rewardHandle, rootRewardUi);
+        QuestHandle questHandle = GetQuestDataByID(QuestID);
+        rewardHandles = questHandle.rewardHandle;
+        var reward = rewardHandles.rewardBase;
+
+        var newReward = Instantiate(rewardHandles, rootRewardUi);
         newReward.SetDataReward(reward);
     }
 

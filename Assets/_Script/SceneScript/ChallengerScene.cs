@@ -17,7 +17,7 @@ public class ChallengerScene : MonoBehaviour
         Debug.Log($"input QuestID : {QuestID}");
         toggle.onValueChanged.AddListener(OpenQuestCheck);    
         GetFishFromList(QuestID);
-        rewardManager.UpdateRewards(QuestID);
+        rewardManager.CreateReward(QuestID);
     }
    
     public void OpenQuestCheck(bool isOn)

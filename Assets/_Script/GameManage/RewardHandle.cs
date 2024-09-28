@@ -9,7 +9,7 @@ public class RewardHandle : MonoBehaviour
     public Image rewarImage;
     public TMP_Text rewardQuality;
     public TMP_Text rewardName;
-
+    public Image rewardClaimedIMG;
     public void SetDataReward(RewardBase reward)
     {
         this.rewardBase = reward;

@@ -16,7 +16,7 @@ MonoBehaviour:
   - id: 1
     fishName: BlueAngel
     scalePoint: 1
-    speed: 7
+    speed: 17
     fishSprite: {fileID: -1490646831, guid: f2aa61ac48dd67e409e70a488b40285b, type: 3}
     controller: {fileID: 9100000, guid: 4db151074ef63b4419c8c863cb934806, type: 2}
     Price: 100
@@ -24,7 +24,7 @@ MonoBehaviour:
   - id: 2
     fishName: Angle
     scalePoint: 2
-    speed: 8.8
+    speed: 15
     fishSprite: {fileID: 1116063129, guid: f056917dafa0d164e8fb3e6113c5545b, type: 3}
     controller: {fileID: 9100000, guid: d046917813b472642b4125d5a12c28a7, type: 2}
     Price: 200
@@ -32,8 +32,16 @@ MonoBehaviour:
   - id: 3
     fishName: Barracuda
     scalePoint: 2
-    speed: 6.8
+    speed: 20
     fishSprite: {fileID: -769307366, guid: 42e880bf6007add47b83d6482769407c, type: 3}
     controller: {fileID: 9100000, guid: 804e4f4569941334bbb6b89140e94ff1, type: 2}
     Price: 300
     fishPoint: 30
+  - id: 4
+    fishName: Humphead Wrasse
+    scalePoint: 10
+    speed: 20
+    fishSprite: {fileID: -967357005, guid: 385cd4bfce9269f4587dcf77daf7d3f2, type: 3}
+    controller: {fileID: 9100000, guid: 19181ed7a3fc69d4288234068bd40327, type: 2}
+    Price: 400
+    fishPoint: 40

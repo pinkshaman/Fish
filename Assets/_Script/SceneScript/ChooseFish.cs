@@ -67,6 +67,11 @@ public class ChooseFish : MonoBehaviour
 
         loadFishTankScene.LoadFishTankScene();       
     }
+    public void OnApplicationQuit()
+    {
+        SaveFishTankDataJson() ;
+        PlayerManager.Instance.OnApplicationQuit();
+    }
 
     [ContextMenu("SaveChooseFishJson")]
     public void SaveChooseFishJson()

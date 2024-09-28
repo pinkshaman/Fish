@@ -39,7 +39,10 @@ public class PlayerManager : MonoBehaviour
         
         return playerData.fishMainID;
     }
-
+    public void OnApplicationQuit()
+    {
+        SavePlayersData(); 
+    }
 
     public void UpdateProgessData(PlayerData changedData)
     {

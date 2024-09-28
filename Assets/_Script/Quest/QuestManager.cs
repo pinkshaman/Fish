@@ -21,24 +21,27 @@ public class QuestData
 
 public class QuestManager : MonoBehaviour
 {
+    public static QuestManager Instance { get; private set; }
     public QuestDataBase questDataBase;
     public QuestProgessDataBase processDataBase;
     public QuestHandle questHandle;
     public Transform rootQuestUI;
     public Dictionary<int, QuestHandle> DictionaryQuestHandle;
-    
 
-    public QuestData GetQuestDataByID(int questID)
+    private void Awake()
     {
-        foreach (var questData in questDataBase.questDataBases)
+        if (Instance == null)
         {
-            if (questData.questID == questID)
-            {
-                return questData;
-            }
+            Instance = this;
         }
-        Debug.LogError("Quest not found!");
-        return null;
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    public Dictionary<int, QuestHandle> GetQuests()
+    {
+        return DictionaryQuestHandle;
     }
 
     [ContextMenu("SaveDataJson")]
@@ -70,7 +73,11 @@ public class QuestManager : MonoBehaviour
         processDataBase.questProgessDatas[QuestIndex] = questProgess;
         DictionaryQuestHandle[questProgess.id].UpdateProgess(questProgess);
     }
-  
+    public void OnApplicationQuit()
+    {
+        SaveDataJson();
+    }
+
     public void Start()
     {       
         LoadDataJson();

@@ -10,7 +10,7 @@ public class OptionShow : MonoBehaviour
 {
     public Button option1;
     public Button option2;
-    public Button option3;
+    //public Button option3;
     public FishShowUIHandle fishShowUIHandle;
     public SceneManagers sceneManagers;
     public PlayerData playerData;
@@ -20,7 +20,7 @@ public class OptionShow : MonoBehaviour
         fishShowUIHandle = FindObjectOfType<FishShowUIHandle>();
         option1.onClick.AddListener(Option1);
         option2.onClick.AddListener(Option2);
-        option3.onClick.AddListener(Option3);
+        //option3.onClick.AddListener(Option3);
     }
     public void OnShow()
     {
@@ -30,13 +30,13 @@ public class OptionShow : MonoBehaviour
             {
                 option1.gameObject.SetActive(true);
                 option2.gameObject.SetActive(true);
-                option3.gameObject.SetActive(true);
+                //option3.gameObject.SetActive(true);
             }
             else
             {
                 option1.gameObject.SetActive(false);
                 option2.gameObject.SetActive(false);
-                option3.gameObject.SetActive(false);
+                //option3.gameObject.SetActive(false);
             }
         }
     }
@@ -52,6 +52,7 @@ public class OptionShow : MonoBehaviour
     public void Option2()
     {
         Debug.Log("Button2");
+        sceneManagers.LoadShopScene();
     }
     public void Option3()
     {

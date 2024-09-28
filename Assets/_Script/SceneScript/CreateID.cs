@@ -11,13 +11,18 @@ public class CreateID : MonoBehaviour
     public InputField inputName;
     public LoadSaveData saveLoadData;
     public PlayerDataBase playerDataBase;
-
+    public PlayerData playerData;
     public Text Message;
     public Button xButton;
     public SceneManagers loadScene;
 
     public void Start()
     {
+        saveLoadData.LoadData();
+        if(playerData.name != "")
+        {
+            loadScene.LoadMainScene();
+        }
         createButton.onClick.AddListener(OnCreateButtonClick);
     }
     public void OnXButtonClick()
