@@ -42,7 +42,7 @@ public class FishManager : MonoBehaviour
         if (!allFishes.Contains(fishID))
         {
             allFishes.Add(fishID);
-            Debug.Log($"Add newFish: {fishID}");
+            Debug.Log($"Add OtherFishTolist: {fishID}");
             allFishes.Sort();
         }
     }

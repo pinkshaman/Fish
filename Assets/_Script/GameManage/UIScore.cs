@@ -37,6 +37,7 @@ public class UIScore : MonoBehaviour
     }
     public void CreateMenu(FishData fishDataX)
     {       
+        
         var fishMenu = Instantiate(fishDisplay, RootFishMenu);
         var fishImage = fishMenu.GetComponentInChildren<Image>();
         fishImage.sprite = fishDataX.fishSprite;
