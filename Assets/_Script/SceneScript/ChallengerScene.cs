@@ -11,13 +11,14 @@ public class ChallengerScene : MonoBehaviour
     public Toggle toggle;
     public FishManager fishManager;
     public RewardManager rewardManager;
+    public UIMainFishControl UiFish;
     public void Start()
     {
-        Debug.Log($"input QuestID : {QuestID}");
-        GetFishFromList(QuestID);
-        rewardManager.CreateReward(QuestID);
         toggle.onValueChanged.AddListener(OpenQuestCheck);
-    
+        Debug.Log($"input QuestID : {QuestID}");
+        StartCoroutine(GetFishFromList(QuestID));
+        rewardManager.CreateReward(QuestID);
+        UiFish.Check(QuestID);
     }
 
     public void OpenQuestCheck(bool isOn)
@@ -40,18 +41,22 @@ public class ChallengerScene : MonoBehaviour
         Debug.LogError("Dictionary not found!");
         return null;
     }
-    public void GetFishFromList(int QuestID)
+    public IEnumerator GetFishFromList(int QuestID)
     {
-        QuestHandle selectedQuestHandle = GetFishQuestData(QuestID); 
+        QuestHandle selectedQuestHandle = GetFishQuestData(QuestID);
         var selectedQuest = selectedQuestHandle.questData.fishList;
-        int randomIndex = Random.Range(0, selectedQuest.Count);
-        int fishID = selectedQuest[randomIndex];
+        while (!selectedQuestHandle.questProgessData.isComplete)
+        {
+            int randomIndex = Random.Range(0, selectedQuest.Count);
+            Debug.Log($"RandomIndex: {randomIndex}");
+            int fishID = selectedQuest[randomIndex];
+            Debug.Log($"fishList for Challenger: {fishID}");
 
-        Debug.Log($"fishList for Challenger : {selectedQuest.Count}");
-        fishManager.CreateFishQuest(fishID);
+            fishManager.CreateFishQuest(fishID);
 
+            yield return new WaitForSeconds(1.0f);
 
+        }
     }
-
 
 }

@@ -7,9 +7,8 @@ public class FishShopManager : MonoBehaviour
     public FishShopDataBase shopDataBase;
     public FishDataBase fishDataBase;
     public FishShowUIHandle shopUiHandle;
-
-    public Transform rootUIShop;
-
+    public FishTankBase fishTankBase;
+    public FishShopUiHandle fishSellUiHandle;
     public void Awake()
     {
         SaveShopData();
@@ -21,6 +20,16 @@ public class FishShopManager : MonoBehaviour
         {
             FishData fishData = fishDataBase.fishDatas.Find(fish => fish.id == fishShop.FishShopID);
             shopUiHandle.CreateFishShow(fishData);
+        }
+        LoadFishInTankForShop();
+    }
+    public void LoadFishInTankForShop()
+    {
+        LoadFishTankDataJson();
+        foreach (var fishInTank in fishTankBase.fishTankBases)
+        {
+            FishData fishData = fishDataBase.fishDatas.Find(fish => fish.id == fishInTank.ID);
+            fishSellUiHandle.CreateFishShow(fishData);
         }
     }
     [ContextMenu("LoadShopData")]
@@ -38,6 +47,14 @@ public class FishShopManager : MonoBehaviour
         var value = JsonUtility.ToJson(shopDataBase);
         PlayerPrefs.SetString(nameof(shopDataBase), value);
         PlayerPrefs.Save();
+    }
+    [ContextMenu("LoadFishTankDataJson")]
+    public void LoadFishTankDataJson()
+    {
+        var defaultValue = JsonUtility.ToJson(fishTankBase);
+        var json = PlayerPrefs.GetString(nameof(fishTankBase), defaultValue);
+        fishTankBase = JsonUtility.FromJson<FishTankBase>(json);
+        Debug.Log("LoadDataJson is Loaded");
     }
 
 

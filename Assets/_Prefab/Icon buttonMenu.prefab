@@ -133,10 +133,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1763193464165489610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ae887f540cc1342a15ce49ea2a1181, type: 3}
+  m_Script: {fileID: 11500000, guid: c3aeea7e3cc871245b427b6be8394107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 7725704673629501907}
   Panel: {fileID: 0}
 --- !u!1 &1763193464457771799
 GameObject:

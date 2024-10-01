@@ -14,6 +14,7 @@ public class FishShowUiPanel : MonoBehaviour
     public Text fishScale;
     public Text ID;
     public Text Price;
+    
     // Start is called before the first frame update
     public virtual void Start()
     {

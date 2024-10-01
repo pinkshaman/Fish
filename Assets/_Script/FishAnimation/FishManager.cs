@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 using Transform = UnityEngine.Transform;
 
 public class FishManager : MonoBehaviour
@@ -56,11 +54,7 @@ public class FishManager : MonoBehaviour
         var newFish = Instantiate(fishPrefabs, randomPosition, Quaternion.identity,rootFish);
         FishOtherHandle fishOtherHandles = newFish.GetComponent<FishOtherHandle>();
         fishOtherHandles.uniqueID = newFish.GetInstanceID(); 
-        if(fishData == null)
-        {
-            Debug.Log($"FishData:{fishData.fishName} ");
-          
-        }
+        
         fishOtherHandles.SetData(fishData);    
         Debug.Log($"Create fish: {newFish.name} at position {randomPosition}");
         RegisterFish(fishOtherHandles.ID);

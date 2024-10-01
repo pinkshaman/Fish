@@ -29,10 +29,18 @@ public class LoadSaveData : MonoBehaviour
     [ContextMenu("LoadData")]
     public void LoadData()
     {
-        var defaultValue = JsonUtility.ToJson(playerData);
-        var json = PlayerPrefs.GetString(nameof(playerData), defaultValue);
-        playerData = JsonUtility.FromJson<PlayerData>(json);
-        Debug.Log("LoadProgess is Loaded");
+        if (PlayerPrefs.HasKey(nameof(playerData)))
+        {
+            var defaultValue = JsonUtility.ToJson(playerData);
+            var json = PlayerPrefs.GetString(nameof(playerData), defaultValue);
+            playerData = JsonUtility.FromJson<PlayerData>(json);
+            Debug.Log("LoadProgess is Loaded");
+        }
+        else
+        {
+            Debug.LogWarning("No saved data found in PlayerPrefs.");
+            
+        }
     }
     [ContextMenu("SavesData")]
     public void SavesData(PlayerData playerData)

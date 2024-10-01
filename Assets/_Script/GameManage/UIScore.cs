@@ -36,15 +36,17 @@ public class UIScore : MonoBehaviour
         StartCoroutine(SetAbilityScore());
     }
     public void CreateMenu(FishData fishDataX)
-    {       
-        
+    {              
         var fishMenu = Instantiate(fishDisplay, RootFishMenu);
         var fishImage = fishMenu.GetComponentInChildren<Image>();
-        fishImage.sprite = fishDataX.fishSprite;
        
-        if (fishDataX.scalePoint > fishMain.scalePoint)
+        if (int.TryParse(scalePoint.text, out int scale))
         {
-            fishImage.color = Color.gray;
+            if (fishDataX.scalePoint > scale)
+            {
+                fishImage.color = Color.gray;
+                fishImage.sprite = fishDataX.fishSprite;
+            }
         }
     }
     public void CheckScalePoint()

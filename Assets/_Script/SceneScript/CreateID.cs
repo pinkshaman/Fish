@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.VersionControl;
@@ -10,7 +11,7 @@ public class CreateID : MonoBehaviour
     public Button createButton;
     public InputField inputName;
     public LoadSaveData saveLoadData;
-    public PlayerDataBase playerDataBase;
+
     public PlayerData playerData;
     public Text Message;
     public Button xButton;
@@ -18,13 +19,23 @@ public class CreateID : MonoBehaviour
 
     public void Start()
     {
-        saveLoadData.LoadData();
-        if(playerData.name != "")
+        saveLoadData.LoadData(); 
+        playerData = saveLoadData.playerData;
+       
+        if (playerData != null && !string.IsNullOrEmpty(playerData.name))
         {
-            loadScene.LoadMainScene();
+            Debug.Log($"playerName :{playerData.name}");
+            loadScene.LoadMainScene(); // Nếu có tên, load MainScene
         }
+        else
+        {
+            Debug.Log("No player data found or player name is empty.");
+            // Nếu không có dữ liệu, bạn có thể xử lý khác hoặc để người dùng nhập tên
+        }
+
         createButton.onClick.AddListener(OnCreateButtonClick);
     }
+
     public void OnXButtonClick()
     {
         Application.Quit();
@@ -36,49 +47,50 @@ public class CreateID : MonoBehaviour
         string playerName = inputName != null ? inputName.text : string.Empty;
         if (!string.IsNullOrEmpty(playerName))
         {
-            CheckIDAndCreatePlayer(playerName);
+            CreatePlayerName(playerName);
         }
         else
         {
             Debug.LogWarning("input Name is blank!");
+            Message.text = " Input Name is blank!";
         }
     }
 
 
-    public void CheckIDAndCreatePlayer(string playerName)
-    {
-        if (playerDataBase != null && playerDataBase.PlayerDataBases != null)
-        {
-            bool idExists = playerDataBase.PlayerDataBases.Exists(player => player.name == playerName);
+    //public void CheckIDAndCreatePlayer(string playerName)
+    //{
+    //    if (playerDataBase != null && playerDataBase.PlayerDataBases != null)
+    //    {
+    //        bool idExists = playerDataBase.PlayerDataBases.Exists(player => player.name == playerName);
 
-            if (idExists)
-            {
-                Debug.LogWarning("Name is invalid. Please choose another name.");
-                Message.text = "Name is invalid. Please choose another name.";
-            }
-            else
-            {
-                CreatePlayerName(playerName);
-            }
-        }
-        else
-        {
-            if (playerDataBase == null)
-            {
-                Debug.LogWarning("PlayerDataBase is null.");
-                // Tạo một instance mới nếu cần
-                playerDataBase = new PlayerDataBase();
-            }
+    //        if (idExists)
+    //        {
+    //            Debug.LogWarning("Name is invalid. Please choose another name.");
+    //            Message.text = "Name is invalid. Please choose another name.";
+    //        }
+    //        else
+    //        {
+    //            CreatePlayerName(playerName);
+    //        }
+    //    }
+    //    else
+    //    {
+    //        if (playerDataBase == null)
+    //        {
+    //            Debug.LogWarning("PlayerDataBase is null.");
+    //            // Tạo một instance mới nếu cần
+    //            playerDataBase = new PlayerDataBase();
+    //        }
 
-            // Khởi tạo danh sách nếu null
-            if (playerDataBase.PlayerDataBases == null)
-            {
-                playerDataBase.PlayerDataBases = new List<PlayerData>();
-            }
+    //        // Khởi tạo danh sách nếu null
+    //        if (playerDataBase.PlayerDataBases == null)
+    //        {
+    //            playerDataBase.PlayerDataBases = new List<PlayerData>();
+    //        }
 
-            CreatePlayerName(playerName);
-        }
-    }
+    //        CreatePlayerName(playerName);
+    //    }
+    //}
 
 
     public void CreatePlayerName(string playerName)
@@ -101,7 +113,7 @@ public class CreateID : MonoBehaviour
 
         // Lưu dữ liệu      
         saveLoadData.SavesData(newPlayerData);
-        
+
         loadScene.LoadChooseFish();
     }
 }

@@ -187,13 +187,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 291415891}
     - target: {fileID: 8880245560058091044, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
+      propertyPath: fishEat
+      value: 
+      objectReference: {fileID: 8300000, guid: b4f2cbd9ae2e72f4cabe16bfe509455a, type: 3}
+    - target: {fileID: 8880245560058091044, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
       propertyPath: dashSpeed
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8880245560058091044, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
+      propertyPath: fishGround
+      value: 
+      objectReference: {fileID: 8300000, guid: ef9451d241ddd7c45acccf970423c816, type: 3}
+    - target: {fileID: 8880245560058091044, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
       propertyPath: targetPoint
       value: 
       objectReference: {fileID: 798837251}
+    - target: {fileID: 8880245560058091044, guid: c2e1a7c406c4ebe4f8d8bde433c2c288, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1142894704}
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects: []
@@ -407,7 +419,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 47580837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bffb1b5defea13041b43ee8db1110b10, type: 3}
+  m_Script: {fileID: 11500000, guid: 61d5634a02b76214c903309ac577a89c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
@@ -3796,6 +3808,7 @@ MonoBehaviour:
   toggle: {fileID: 1793545371}
   fishManager: {fileID: 357316170}
   rewardManager: {fileID: 6922778439684656323}
+  UiFish: {fileID: 544347088}
 --- !u!114 &825303781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4546,6 +4559,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1142894703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1142894705}
+  - component: {fileID: 1142894704}
+  m_Layer: 0
+  m_Name: AudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1142894704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142894703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5685c02d789f5144821058c1dd8c62b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 33766b43685b66b42a4696fdf89d10a7, type: 3}
+  audioDataBase: {fileID: 11400000, guid: 93607b9d32bf3834899fdffb813a9d44, type: 2}
+  volume: 1
+  isMuted: 0
+  setMusic: 2
+--- !u!4 &1142894705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142894703}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.95849776, y: -1.8152522, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1184068860
 GameObject:
   m_ObjectHideFlags: 0
@@ -4563,7 +4625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1184068861
 Animator:
   serializedVersion: 5
@@ -4574,7 +4636,7 @@ Animator:
   m_GameObject: {fileID: 1184068860}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1faf5f6650522404bb656c0c568cffad, type: 2}
+  m_Controller: {fileID: 9100000, guid: 99d6fefb0a617be4ab8c1feb67cae27a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4646,7 +4708,7 @@ Transform:
   m_GameObject: {fileID: 1184068860}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -61.6, y: 19.6, z: 0}
+  m_LocalPosition: {x: -54.38, y: 16.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9040,3 +9102,4 @@ SceneRoots:
   - {fileID: 1083754155}
   - {fileID: 32169140}
   - {fileID: 849883433}
+  - {fileID: 1142894705}

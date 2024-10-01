@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,9 @@ public class MainScene : MonoBehaviour
     public void Start()
     {
         QuestToggle.onValueChanged.AddListener(QuestCheck);
+        AudioManager audio = FindObjectOfType<AudioManager>();
+        audio.ChangeBackGroundMusic(1);
+
     }
     public void OnButtonShopClick()
     {
@@ -27,6 +31,11 @@ public class MainScene : MonoBehaviour
     public void QuestCheck(bool isOn)
     {
         questPanelQuest.SetActive(isOn);
+    }
+    public void OnButtonClickEffect()
+    {
+        AudioManager audio = FindObjectOfType<AudioManager>();
+        audio.OnButtonClickAudio();
     }
 
 

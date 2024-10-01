@@ -41,6 +41,8 @@ public class ChooseFish : MonoBehaviour
 
     public void OnChooseFish()
     {
+        AudioManager audioManager = FindObjectOfType<AudioManager>();
+        audioManager.OnButtonClickAudio();
         FishData fishData = showUIHandle.GetFishDataFromCurrentToggle();
         if (fishData != null)
         {
@@ -70,7 +72,8 @@ public class ChooseFish : MonoBehaviour
     public void OnApplicationQuit()
     {
         SaveFishTankDataJson() ;
-        PlayerManager.Instance.OnApplicationQuit();
+        PlayerManager  playerManager = FindObjectOfType<PlayerManager>();
+        playerManager.OnApplicationQuit();
     }
 
     [ContextMenu("SaveChooseFishJson")]

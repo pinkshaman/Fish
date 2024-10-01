@@ -118,7 +118,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011319429182357059}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -201,6 +201,8 @@ MonoBehaviour:
     speed: 0
     fishSprite: {fileID: 0}
     controller: {fileID: 0}
+    Price: 0
+    fishPoint: 0
   anim: {fileID: 4336091443100124561}
   rb: {fileID: 443769431871007509}
   targetPoint: {fileID: 0}
@@ -210,17 +212,21 @@ MonoBehaviour:
   uniqueID: 0
   ID: 0
   fishSprite: {fileID: 0}
+  audioManager: {fileID: 0}
+  fishEat: {fileID: 8300000, guid: de25c7bfcddd0d643ac3e2ac1c10a97b, type: 3}
+  fishGround: {fileID: 8300000, guid: ef9451d241ddd7c45acccf970423c816, type: 3}
   moveAreaMin: {x: -60, y: -20}
   moveAreaMax: {x: 60, y: 20}
-  questDataTest:
-    questID: 0
-    quality: 0
-    fishPositions: {x: 0, y: 0}
+  fishOtherData:
+    id: 0
     fishName: 
     scalePoint: 0
     speed: 0
     fishSprite: {fileID: 0}
     controller: {fileID: 0}
+    Price: 0
+    fishPoint: 0
+  fishPoints: 0
 --- !u!1 &7376073189774564993
 GameObject:
   m_ObjectHideFlags: 0

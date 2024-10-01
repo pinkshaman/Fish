@@ -222,6 +222,8 @@ MonoBehaviour:
     speed: 0
     fishSprite: {fileID: 0}
     controller: {fileID: 0}
+    Price: 0
+    fishPoint: 0
   anim: {fileID: 5455109958028303738}
   rb: {fileID: 615169696876550962}
   targetPoint: {fileID: 0}
@@ -231,3 +233,10 @@ MonoBehaviour:
   uniqueID: 0
   ID: 0
   fishSprite: {fileID: 0}
+  audioManager: {fileID: 0}
+  fishEat: {fileID: 8300000, guid: b4f2cbd9ae2e72f4cabe16bfe509455a, type: 3}
+  fishGround: {fileID: 8300000, guid: ef9451d241ddd7c45acccf970423c816, type: 3}
+  control: {fileID: 0}
+  lives: 3
+  score: 0
+  dashSpeed: 10

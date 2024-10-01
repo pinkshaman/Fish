@@ -16,33 +16,45 @@ public class UIMainFishControl : MonoBehaviour
     public bool isGameEnd;
     public void Start()
     {
-        fishManager = FindObjectOfType<FishManager>();
+        
         LoadPlayerData();
         var fish = fishDataBase.fishDatas.Find(fish => fish.id == playerData.fishMainID);
         fishManager.CreateFish(fish);
-        Check();
-        coutdownTime = FindObjectOfType<CoutdownTime>();
+        
+        
     }
     [ContextMenu("LoadPlayerData")]
     public void LoadPlayerData()
     {
         var defaultValue = JsonUtility.ToJson(playerData);
         var json = PlayerPrefs.GetString(nameof(playerData), defaultValue);
-
-        // Debug để kiểm tra xem giá trị của json có chính xác không
         Debug.Log($"Loaded JSON: {json}");
-
-        playerData = JsonUtility.FromJson<PlayerData>(json);
-
-        // Debug để kiểm tra xem playerData có được nạp đúng không
+        playerData = JsonUtility.FromJson<PlayerData>(json);        
         Debug.Log($"PlayerData Loaded - FishMainID: {playerData.fishMainID}");
     }
 
-    public void Check()
+    public QuestHandle GetIMGOtherFish(int questID)
     {
-        foreach (var ID in fishManager.allFishes)
+        QuestManager questManager = QuestManager.Instance;
+        Dictionary<int, QuestHandle> questDictionary = questManager.GetQuests();
+        Debug.Log($"Dictionary: {questDictionary.Keys} - {questDictionary.Values}");
+        foreach (var key in questDictionary)
         {
-            var fishData = fishDataBase.fishDatas.Find(fishes => fishes.id == ID);
+            if (key.Key == questID)
+            {
+                return key.Value;
+            }
+        }
+        Debug.LogError("Dictionary not found!");
+        return null;
+    }
+    public void Check(int questID)
+    {
+        QuestHandle selectedQuestHandle = GetIMGOtherFish(questID);
+        var selectedQuest = selectedQuestHandle.questData.fishList;
+        foreach (var fishID in selectedQuest)
+        {
+            var fishData = fishDataBase.fishDatas.Find(fishes => fishes.id == fishID);
             UiScore.CreateMenu(fishData);
         }
     }

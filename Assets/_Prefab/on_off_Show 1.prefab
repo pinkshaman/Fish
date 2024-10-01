@@ -84,19 +84,7 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8636099356858154783, guid: 5b77288ad4bc3f643abefa39bb8e75f2, type: 3}
-        m_TargetAssemblyTypeName: FishShowUiPanel, Assembly-CSharp
-        m_MethodName: ShowFish
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_IsOn: 0
 --- !u!1 &3582314996205755161
 GameObject:

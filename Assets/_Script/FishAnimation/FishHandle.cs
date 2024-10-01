@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.Scripting;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -15,14 +17,17 @@ public class FishHandle : MonoBehaviour
     protected Vector2 originalScale;
     protected Vector2 movement;
     public float Speed;
-    public float scalePoint;
+    public int scalePoint;
     public int uniqueID;
     public int ID;
     public Sprite fishSprite;
-
-
+    public AudioManager audioManager;
+    public AudioClip fishEat;
+    public AudioClip fishGround;
     public virtual void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
+        ScaleFish();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -52,8 +57,7 @@ public class FishHandle : MonoBehaviour
 
         if (direction.x < 0) // Di chuyển sang trái
         {
-
-           
+            
             transform.rotation = Quaternion.Euler(0, 180, 0); // Xoay 180 độ quanh trục Y
 
 
@@ -86,6 +90,7 @@ public class FishHandle : MonoBehaviour
 
     public virtual void Eat()
     {
+        audioManager.PlaySoundEffect(fishEat);
         anim.SetTrigger("Eat");
     }
     public virtual void OnTriggerEnter2D(Collider2D collision)
@@ -106,27 +111,30 @@ public class FishHandle : MonoBehaviour
     }
     public virtual void ScaleFish()
     {
-        if (scalePoint >= 15)
+        if (this.scalePoint == 15)
         {
+            audioManager.PlaySoundEffect(fishGround);
             Debug.Log("Scaling Fish!");
-            transform.localScale = new Vector3(1.5f, 1.5f, 1);
+            transform.localScale = new Vector3(2, 2, 1);
             Debug.Log("New scale: " + transform.localScale);
         }
-        else if (scalePoint >= 30)
+        else if (this.scalePoint == 30)
         {
-            Debug.Log("Scaling Fish!");
-            transform.localScale = new Vector3(2.0f, 2.0f, 1);
-        }
-        else if (scalePoint >= 50)
-        {
+            audioManager.PlaySoundEffect(fishGround);
 
             Debug.Log("Scaling Fish!");
-            transform.localScale = new Vector3(3.0f, 3.0f, 1);
+            transform.localScale = new Vector3(3, 3, 1);
+        }
+        else if (this.scalePoint == 50)
+        {
+            audioManager.PlaySoundEffect(fishGround);
+            Debug.Log("Scaling Fish!");
+            transform.localScale = new Vector3(4, 4, 1);
         }
     }
     public virtual void Update()
     {
-
+        
         Move();
 
     }

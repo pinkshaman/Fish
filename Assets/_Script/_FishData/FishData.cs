@@ -9,7 +9,7 @@ public class FishData
 {
     public int id;
     public string fishName;
-    public float scalePoint;
+    public int  scalePoint;
     public float speed;
     public Sprite fishSprite;
     public RuntimeAnimatorController controller;

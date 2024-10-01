@@ -10,11 +10,13 @@ public class BubbleManager : MonoBehaviour
     public Vector2 SpawnArenaMin;
     public Vector2 SpawnArenaMax;
     public int bubbleCount = 10;
-
-
+    
+    
 
     public void Start()
     {
+        AudioManager audioManager = FindObjectOfType<AudioManager>();
+        audioManager.ChangeBackGroundMusic(2);
         StartCoroutine(SpawnBubbles());
         
     }
@@ -31,6 +33,7 @@ public class BubbleManager : MonoBehaviour
                 );
 
             Instantiate(BubblePrefabs, spawnPotision, Quaternion.identity,RootBubble);
+            
             yield return new WaitForSeconds(SpawmTime);
             
         }

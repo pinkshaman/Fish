@@ -1,18 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class ButtonExit : ButtonUi
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void OnClick()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        base.OnClick();
+        Application.Quit();
     }
 }

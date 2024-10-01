@@ -60,6 +60,8 @@ public class QuestHandle : MonoBehaviour
             questProgessData.hasClaimed = true;
             Claim.interactable = false;
             rewardHandle.rewardClaimedIMG.gameObject.SetActive(false);
+            AudioManager audio = FindObjectOfType<AudioManager>();
+            audio.OnButtonClickAudio();
         }
     }
     public void FillProgess()

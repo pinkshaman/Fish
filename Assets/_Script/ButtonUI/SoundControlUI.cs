@@ -9,7 +9,7 @@ public class SoundControlUI : MonoBehaviour
     public Slider musicVolumeSlider;
     public Slider SFXSoundSlider;
     public Toggle muteAll;
-
+    public AudioManager audioManager;
     public AudioSource musicAudioSource;
     public AudioSource SFXAudioSource;
 
@@ -21,6 +21,9 @@ public class SoundControlUI : MonoBehaviour
         musicVolumeSlider.onValueChanged.AddListener(SetMusicVolume);
         SFXSoundSlider.onValueChanged.AddListener(SetSFXVolume);
 
+        musicVolumeSlider.value = musicAudioSource.volume;
+        SFXSoundSlider.value = SFXAudioSource.volume;
+
         previousMusicVolume = musicVolumeSlider.value;
         previousSFXVolume = SFXSoundSlider.value;
 
@@ -29,24 +32,24 @@ public class SoundControlUI : MonoBehaviour
     {
         if (isOn)
         {
-            previousMusicVolume = musicAudioSource.volume;
-            previousSFXVolume = SFXAudioSource.volume;
-            musicAudioSource.volume = 0f;
-            musicAudioSource.volume = 0f;      
+            previousMusicVolume = audioManager.backGroundMusic.volume;
+            previousSFXVolume = audioManager.soundEffect.volume;
+            audioManager.backGroundMusic.volume = 0f;
+            audioManager.soundEffect.volume = 0f;
         }
         else
         {
-            musicAudioSource.volume = previousMusicVolume;
-            SFXAudioSource.volume= previousSFXVolume;
+            audioManager.backGroundMusic.volume = previousMusicVolume;
+            audioManager.soundEffect.volume = previousSFXVolume;
         }
     }
     public void SetMusicVolume(float volume)
     {
-        musicAudioSource.volume = volume;
+        audioManager.backGroundMusic.volume = volume;
     }
     public void SetSFXVolume(float volume)
     {
-        SFXAudioSource.volume = volume;
+        audioManager.soundEffect.volume = volume;
     }
 
 }

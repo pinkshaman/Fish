@@ -5,8 +5,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneManagers : MonoBehaviour
-{
-    public float level;
+{    
+    public float level;  
+    public void Start()
+    {
+      
+    }
     public void LoadChooseFish()
     {
         SceneManager.LoadScene("ChooseFish");
@@ -20,7 +24,7 @@ public class SceneManagers : MonoBehaviour
         SceneManager.LoadScene("FishTank");
     }
     public void LoadPlayScene(float level)
-    {
+    {       
         SceneManager.LoadScene("PlayScene");
     }
     public void LoadDingScene()
