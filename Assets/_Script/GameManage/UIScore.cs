@@ -39,15 +39,15 @@ public class UIScore : MonoBehaviour
     {              
         var fishMenu = Instantiate(fishDisplay, RootFishMenu);
         var fishImage = fishMenu.GetComponentInChildren<Image>();
-       
-        if (int.TryParse(scalePoint.text, out int scale))
-        {
-            if (fishDataX.scalePoint > scale)
-            {
-                fishImage.color = Color.gray;
-                fishImage.sprite = fishDataX.fishSprite;
-            }
-        }
+        fishImage.sprite = fishDataX.fishSprite;
+        //if (int.TryParse(scalePoint.text, out int scale))
+        //{
+        //    if (fishDataX.scalePoint > scale)
+        //    {
+        //        fishImage.color = Color.black;
+        //        fishImage.sprite = fishDataX.fishSprite;
+        //    }
+        //}
     }
     public void CheckScalePoint()
     {

@@ -23,13 +23,7 @@ public class FishTankManager : MonoBehaviour
 
     }
     public void Start()
-    {
-        if (fishTankBase == null || fishTankPrefabs == null || rootTank == null)
-        {
-            Debug.LogError("FishTankBase, FishTankPrefabs, or RootTank is not assigned!");
-            return;
-        }
-
+    {      
         foreach (var fishTanks in fishTankBase.fishTankBases)
         {
             var chooseFish = fishDataBase.fishDatas.Find(chooseFish => chooseFish.id == fishTanks.ID);
@@ -67,6 +61,10 @@ public class FishTankManager : MonoBehaviour
         SaveFishTankDataJson();
         Debug.Log("Fish added to tank");
     }
+    public void RemoveFishFromTank(FishInTank data)
+    {
+        fishTankBase.fishTankBases.Remove(data);
+    }
  
     [ContextMenu("SaveFishTankDataJson")]
     public void SaveFishTankDataJson()
@@ -82,5 +80,9 @@ public class FishTankManager : MonoBehaviour
         var json = PlayerPrefs.GetString(nameof(fishTankBase), defaultValue);
         fishTankBase = JsonUtility.FromJson<FishTankBase>(json);
         Debug.Log("LoadDataJson is Loaded");
+    }
+    public void OnApplicationQuit()
+    {
+        SaveFishTankDataJson();      
     }
 }

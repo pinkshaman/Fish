@@ -15,13 +15,11 @@ public class UIMainFishControl : MonoBehaviour
     public GameObject resultPanel;
     public bool isGameEnd;
     public void Start()
-    {
-        
+    {       
         LoadPlayerData();
         var fish = fishDataBase.fishDatas.Find(fish => fish.id == playerData.fishMainID);
         fishManager.CreateFish(fish);
-        
-        
+    
     }
     [ContextMenu("LoadPlayerData")]
     public void LoadPlayerData()
@@ -56,6 +54,14 @@ public class UIMainFishControl : MonoBehaviour
         {
             var fishData = fishDataBase.fishDatas.Find(fishes => fishes.id == fishID);
             UiScore.CreateMenu(fishData);
+        }
+    }
+    public void CheckGame()
+    {
+        if(fishMain.lives== 0|| coutdownTime.isEnd == true)
+        {
+            isGameEnd = true;
+            LoadResutl(isGameEnd);
         }
     }
     public void LoadResutl(bool isEnd)

@@ -12,7 +12,7 @@ public class FishShowUIHandle : MonoBehaviour
     public Transform rootUi;
     public Dictionary<Toggle, FishData> fishTankDict = new Dictionary<Toggle, FishData>();
     public Toggle togglePrefab;
-    public SceneManagers sceneManagers;
+    
 
     public virtual void Start()
     {
@@ -21,16 +21,25 @@ public class FishShowUIHandle : MonoBehaviour
     public virtual void CreateFishShow(FishData chooseFish)
     {
         var fish = Instantiate(fishPanel, rootUi);
-        Toggle toggle = Instantiate(togglePrefab, fish.transform);       
-        toggle.gameObject.name = $"{chooseFish.id}"; // Đặt tên cho Toggle 
+        Toggle toggle = Instantiate(togglePrefab, fish.transform); 
+        var toggleName = fish.GetInstanceID();
+        toggle.gameObject.name = $"{toggleName}"; // Đặt tên cho Toggle 
         toggle.onValueChanged.AddListener(OnToggleValueChanged);
-       
+      
         // Truyền Toggle và FishData vào FishPanel
         fish.SetData(chooseFish, toggle);
-
-
         // Thêm Toggle và FishData vào Dictionary
         AddToDictionary(toggle, chooseFish);
+    }
+    public void RemoveFishShow(string keyName)
+    {
+        foreach(var key in fishTankDict.Keys)
+        {
+            if(key.name.ToString() == keyName)
+            {
+                fishTankDict.Remove(key);
+            }
+        }
     }
     public virtual void AddToDictionary(Toggle toggle, FishData fishData)
     {
@@ -44,7 +53,6 @@ public class FishShowUIHandle : MonoBehaviour
     {
         if (isOn)
         {
-
             // Lưu trữ Toggle hiện tại (đang được thay đổi)
             Toggle currentToggle = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.GetComponent<Toggle>();
 
@@ -59,7 +67,6 @@ public class FishShowUIHandle : MonoBehaviour
                     toggle.isOn = false;
                 }
             }
-
         }
     }
     public virtual FishData GetFishDataFromCurrentToggle()
@@ -71,7 +78,19 @@ public class FishShowUIHandle : MonoBehaviour
                 return key.Value;
             }
         }
-        return null; // Nếu không có Toggle nào được bật
+        return null;
+    }
+    public virtual string GetKeyFromCurrentToggle()
+    {
+        foreach (var key in fishTankDict)
+        {
+            if (key.Key.isOn)
+            {
+                string keyName = key.Key.ToString();
+                return keyName;
+            }
+        }
+        return null;
     }
 
 }

@@ -286,7 +286,8 @@ MonoBehaviour:
   fishDataBase: {fileID: 11400000, guid: 5be3ad31cafc8e446a281d5a92d4c8ee, type: 2}
   fishTankBase:
     fishTankBases: []
-  showUIHandle: {fileID: 1040480908}
+  showUIHandle: {fileID: 897165101}
+  shopUiHandle: {fileID: 0}
   BuyFishButton: {fileID: 1247548972}
   SellFishButton: {fileID: 1750752967}
   Message: {fileID: 686906559}
@@ -328,10 +329,10 @@ MonoBehaviour:
     - FishShopID: 9
     - FishShopID: 10
   fishDataBase: {fileID: 11400000, guid: 5be3ad31cafc8e446a281d5a92d4c8ee, type: 2}
-  shopUiHandle: {fileID: 1040480908}
+  shopUiHandle: {fileID: 897165101}
   fishTankBase:
     fishTankBases: []
-  fishSellUiHandle: {fileID: 1040480911}
+  fishSellUiHandle: {fileID: 0}
 --- !u!114 &29797145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1191,10 +1192,10 @@ RectTransform:
   - {fileID: 628525600}
   m_Father: {fileID: 63308983}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -60}
+  m_SizeDelta: {x: 200, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &317805191
 MonoBehaviour:
@@ -2614,6 +2615,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7675368630740794070, guid: afc429cd819d33740bbd205943005ec0, type: 3}
   m_PrefabInstance: {fileID: 1040480902}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &897165101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897165100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768a78a136192c344bdb6a40e99a8841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPanel: {fileID: 6026374582929212303, guid: ea7316ebb707a9c4083b14caf061835d, type: 3}
+  rootUi: {fileID: 1040480904}
+  togglePrefab: {fileID: 5791111157596202092, guid: 6edeea96c28b8e045be23b5ecaf7fd38, type: 3}
 --- !u!1001 &1040480902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2836,7 +2852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8910393995556121888, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0000014169168
+      value: -0.00001288466
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3781277530102436625, guid: afc429cd819d33740bbd205943005ec0, type: 3}
@@ -2849,12 +2865,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 689198651}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6694553499159095673, guid: afc429cd819d33740bbd205943005ec0, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 7675368630740794070, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1040480908}
-    - targetCorrespondingSourceObject: {fileID: 6694553499159095673, guid: afc429cd819d33740bbd205943005ec0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1040480911}
+      addedObject: {fileID: 897165101}
     - targetCorrespondingSourceObject: {fileID: 60146356919343019, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1040480907}
@@ -2867,11 +2880,6 @@ RectTransform:
 --- !u!224 &1040480904 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8910393995556121888, guid: afc429cd819d33740bbd205943005ec0, type: 3}
-  m_PrefabInstance: {fileID: 1040480902}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1040480905 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6694553499159095673, guid: afc429cd819d33740bbd205943005ec0, type: 3}
   m_PrefabInstance: {fileID: 1040480902}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1040480906 stripped
@@ -2903,37 +2911,6 @@ MonoBehaviour:
   m_Spacing: {x: 10, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 8
---- !u!114 &1040480908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1040480905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 768a78a136192c344bdb6a40e99a8841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fishPanel: {fileID: 6026374582929212303, guid: ea7316ebb707a9c4083b14caf061835d, type: 3}
-  rootUi: {fileID: 1040480904}
-  togglePrefab: {fileID: 5791111157596202092, guid: 6edeea96c28b8e045be23b5ecaf7fd38, type: 3}
-  sceneManagers: {fileID: 29797145}
---- !u!114 &1040480911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1040480905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9db27917a7b89c74a80923c9fd19e897, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fishPanel: {fileID: 6026374582929212303, guid: ea7316ebb707a9c4083b14caf061835d, type: 3}
-  togglePrefab: {fileID: 5791111157596202092, guid: 3d5bcbd1f3146404491a10cf9d549456, type: 3}
-  rootSellFishUI: {fileID: 135518524}
 --- !u!1 &1213957900
 GameObject:
   m_ObjectHideFlags: 0
@@ -3143,18 +3120,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 29797143}
-        m_TargetAssemblyTypeName: ShopScene, Assembly-CSharp
-        m_MethodName: OnChooseFish
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 29797143}
         m_TargetAssemblyTypeName: ShopScene, Assembly-CSharp
         m_MethodName: OnclickEffect
@@ -3519,31 +3484,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1750752968}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 29797143}
-        m_TargetAssemblyTypeName: ShopScene, Assembly-CSharp
-        m_MethodName: OnclickEffect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 29797143}
-        m_TargetAssemblyTypeName: ShopScene, Assembly-CSharp
-        m_MethodName: OnSellFish
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1750752968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4257,14 +4198,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2140962111}
   - component: {fileID: 2140962112}
-  - component: {fileID: 2140962113}
   m_Layer: 5
   m_Name: ToggleSellFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2140962111
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4281,10 +4221,10 @@ RectTransform:
   - {fileID: 2062813323}
   m_Father: {fileID: 63308983}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -180}
+  m_SizeDelta: {x: 200, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2140962112
 MonoBehaviour:
@@ -4334,21 +4274,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
---- !u!114 &2140962113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2140962110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa146dcd095ea584f81d476e1e1bf83d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toggle: {fileID: 2140962112}
-  panel: {fileID: 2077019966}
-  button: {fileID: 1750752967}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

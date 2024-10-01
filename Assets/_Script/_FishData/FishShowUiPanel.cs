@@ -39,8 +39,7 @@ public class FishShowUiPanel : MonoBehaviour
         Image.sprite = chooseFishX.fishSprite;
         fishNames.text = chooseFishX.fishName;
         fishSpeed.text = chooseFishX.speed.ToString();
-        fishScale.text = chooseFishX.scalePoint.ToString();
-        //animator.runtimeAnimatorController = chooseFishX.chooseFishcontroller;
+        fishScale.text = chooseFishX.scalePoint.ToString();      
         Price.text = chooseFishX.Price.ToString();
     }
 }

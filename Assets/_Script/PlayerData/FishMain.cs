@@ -12,12 +12,24 @@ public class FishMain : FishHandle
     public override void Start()
     {
         base.Start();
+        
         control.SetdataUI(this);
+    }
+    public override void SetData(FishData dataX)
+    {
+        this.fishData = dataX;      
+        UpdateData(dataX);
     }
     public override void UpdateData(FishData dataX)
     {
         base.UpdateData(dataX);
-        
+        Speed = dataX.speed;
+        scalePoint = 2;
+        ID = dataX.id;
+        anim.runtimeAnimatorController = dataX.controller;
+        fishSprite = dataX.fishSprite;
+        uniqueID = GetInstanceID();
+
     }
     public override void OnTriggerEnter2D(Collider2D collision)
     {
@@ -39,11 +51,18 @@ public class FishMain : FishHandle
     public void Dash()
     {
         float dashDirection = transform.localScale.x;
-        Vector3 dashForce = new Vector3(dashDirection * dashSpeed, 0, 0);
-        
+        Vector3 dashForce = new Vector3(dashDirection * dashSpeed, 0, 0);        
         rb.MovePosition(dashForce);
     }
-  
+    public void OnDestroy()
+    {
+        if(lives>0)
+        {
+            FishManager.Instance.CreateFish(this.fishData);
+            lives -= 1;            
+        }
+    }
+
     public override void Update()
     {
         base.Update();

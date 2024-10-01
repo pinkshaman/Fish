@@ -19,6 +19,12 @@ public class ChallengerScene : MonoBehaviour
         StartCoroutine(GetFishFromList(QuestID));
         rewardManager.CreateReward(QuestID);
         UiFish.Check(QuestID);
+        ChangeBGMusic();
+    }
+    public void ChangeBGMusic()
+    {
+        AudioManager audioManager = FindObjectOfType<AudioManager>();
+        audioManager.ChangeBackGroundMusic(2);
     }
 
     public void OpenQuestCheck(bool isOn)
@@ -45,7 +51,7 @@ public class ChallengerScene : MonoBehaviour
     {
         QuestHandle selectedQuestHandle = GetFishQuestData(QuestID);
         var selectedQuest = selectedQuestHandle.questData.fishList;
-        while (!selectedQuestHandle.questProgessData.isComplete)
+        while (!UiFish.isGameEnd)
         {
             int randomIndex = Random.Range(0, selectedQuest.Count);
             Debug.Log($"RandomIndex: {randomIndex}");
@@ -55,8 +61,21 @@ public class ChallengerScene : MonoBehaviour
             fishManager.CreateFishQuest(fishID);
 
             yield return new WaitForSeconds(1.0f);
-
         }
     }
 
+    public void CreateFishData(int QuestID)
+    {
+        QuestHandle selectedQuestHandle = GetFishQuestData(QuestID);
+        var selectedQuest = selectedQuestHandle.questData.fishList;
+        if (UiFish.fishMain.scalePoint < 20)
+        {
+            foreach (var fishID in selectedQuest)
+            {
+                FishData fishData = fishManager.fishDataBases.fishDatas.Find(fish => fish.scalePoint <= 20 && fish.id == fishID);
+               
+
+            }
+        }
+    }
 }

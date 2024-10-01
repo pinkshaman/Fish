@@ -34,7 +34,6 @@ public class FishManager : MonoBehaviour
     {
 
     }
-
     public void RegisterFish(int fishID)
     {
         if (!allFishes.Contains(fishID))
@@ -44,7 +43,6 @@ public class FishManager : MonoBehaviour
             allFishes.Sort();
         }
     }
-
     public void CreateFishQuest(int fishID)
     {
         FishData fishData = fishDataBases.fishDatas.Find(fish => fish.id == fishID);
@@ -55,8 +53,7 @@ public class FishManager : MonoBehaviour
         FishOtherHandle fishOtherHandles = newFish.GetComponent<FishOtherHandle>();
         fishOtherHandles.uniqueID = newFish.GetInstanceID(); 
         
-        fishOtherHandles.SetData(fishData);    
-        Debug.Log($"Create fish: {newFish.name} at position {randomPosition}");
+        fishOtherHandles.SetData(fishData);           
         RegisterFish(fishOtherHandles.ID);
     }
     

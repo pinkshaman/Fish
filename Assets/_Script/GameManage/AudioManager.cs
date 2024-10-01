@@ -7,7 +7,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    private static AudioManager instance;
+    private static AudioManager Instance;
+    public AudioClip coin;
     public AudioClip clickSound;
     public AudioSource backGroundMusic;
     public AudioSource soundEffect;
@@ -17,9 +18,9 @@ public class AudioManager : MonoBehaviour
     public int setMusic;
     private void Awake()
     {       
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject); 
         }
         else
@@ -60,6 +61,7 @@ public class AudioManager : MonoBehaviour
         {         
             backGroundMusic.Stop();
         }
+        
 
         foreach (var audio in audioDataBase.audioDataBases)
         {
@@ -74,6 +76,10 @@ public class AudioManager : MonoBehaviour
     public void OnButtonClickAudio()
     {
         soundEffect.PlayOneShot(clickSound);
+    }
+    public void CointEffect()
+    {
+        soundEffect.PlayOneShot(coin);
     }
     public void SetVolume(float newVolume)
     {

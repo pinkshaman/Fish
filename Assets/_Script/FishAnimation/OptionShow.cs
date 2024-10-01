@@ -13,10 +13,16 @@ public class OptionShow : MonoBehaviour
     //public Button option3;
     public FishShowUIHandle fishShowUIHandle;
     public SceneManagers sceneManagers;
-    public PlayerData playerData;
+    public PlayerData playerDatas;
     public LoadSaveData loadSaveData;
+    public FishTankManager fishTankManager;
+    public Text whitePearl;
+    public Text blackPearl;
     public void Start()
     {
+        loadSaveData.LoadData();
+        playerDatas = loadSaveData.playerData;
+        UpdateBalance();
         fishShowUIHandle = FindObjectOfType<FishShowUIHandle>();
         option1.onClick.AddListener(Option1);
         option2.onClick.AddListener(Option2);
@@ -40,24 +46,49 @@ public class OptionShow : MonoBehaviour
             }
         }
     }
- 
+
     public void Option1()
     {
         var Value = fishShowUIHandle.GetFishDataFromCurrentToggle();
         Debug.Log($"Data :{Value.fishName}");
-        
-        loadSaveData.SetFishMain(playerData,Value.id);
-        
+        loadSaveData.SetFishMain(playerDatas, Value.id);
     }
     public void Option2()
     {
-        Debug.Log("Button2");
-        sceneManagers.LoadShopScene();
+        var Value = fishShowUIHandle.GetFishDataFromCurrentToggle();
+        var keyName = fishShowUIHandle.GetKeyFromCurrentToggle();
+        Debug.Log($"Data: {Value.fishName}");
+        SellFishOnTank(Value);
+        fishShowUIHandle.RemoveFishShow(keyName);
+        AudioManager audioManager = FindAnyObjectByType<AudioManager>();
+        audioManager.CointEffect();
+    }
+    public void UpdateBalance()
+    {
+        whitePearl.text = playerDatas.whilePearl.ToString();
+        blackPearl.text = playerDatas.blackPearl.ToString();
+    }
+    public void SellFishOnTank(FishData fishData)
+    {
+
+        FishInTank fishTank =fishTankManager.fishTankBase.fishTankBases.Find(fish => fish.ID == fishData.id);
+        fishTankManager.fishTankBase.fishTankBases.Remove(fishTank);
+        fishTankManager.RemoveFishFromTank(fishTank);
+        Debug.Log($"Sell : {fishTank.ID} = {fishData.Price}");
+        playerDatas.whilePearl += fishData.Price;
+        UpdateBalance();
+        loadSaveData.SavesData(playerDatas);
     }
     public void Option3()
     {
         Debug.Log("Button3");
     }
-    
+    public void OnApplicationQuit()
+    {
+
+        loadSaveData.SavesData(playerDatas);
+    }
+
+
 
 }

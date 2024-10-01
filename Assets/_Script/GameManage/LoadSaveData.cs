@@ -61,9 +61,6 @@ public class LoadSaveData : MonoBehaviour
         PlayerPrefs.Save();
 
     }
-    public void OnApplicationQuit()
-    {
-        SavesData(playerData);
-    }
+   
 
 }

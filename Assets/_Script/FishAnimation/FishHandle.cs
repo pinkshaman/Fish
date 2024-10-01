@@ -133,9 +133,7 @@ public class FishHandle : MonoBehaviour
         }
     }
     public virtual void Update()
-    {
-        
+    {    
         Move();
-
     }
 }

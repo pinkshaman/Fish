@@ -3,7 +3,12 @@ guid: a5685c02d789f5144821058c1dd8c62b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - coin: {fileID: 8300000, guid: 4941d953fa5f9c84e874df9f9fd4b002, type: 3}
+  - clickSound: {fileID: 8300000, guid: 33766b43685b66b42a4696fdf89d10a7, type: 3}
+  - backGroundMusic: {instanceID: 0}
+  - soundEffect: {instanceID: 0}
+  - audioDataBase: {fileID: 11400000, guid: 93607b9d32bf3834899fdffb813a9d44, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
