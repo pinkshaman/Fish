@@ -58,8 +58,10 @@ public class FishMain : FishHandle
     {
         if(lives>0)
         {
-            FishManager.Instance.CreateFish(this.fishData);
-            lives -= 1;            
+            FishManager fishManager = FishManager.Instance;
+            fishManager.CreateFish(this.fishData);
+            lives -= 1;
+            control.SetdataUI(this);
         }
     }
 

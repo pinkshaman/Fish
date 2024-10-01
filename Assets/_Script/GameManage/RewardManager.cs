@@ -6,9 +6,7 @@ public class RewardManager : MonoBehaviour
     public QuestDataBase questDataBase;
     public RewardHandle rewardHandles;
     public Transform rootRewardUi;
-    
-    
-   
+    public RewardDataBase rewardDataBase; 
     public void Start()
     {
         
@@ -16,7 +14,7 @@ public class RewardManager : MonoBehaviour
 
     public QuestHandle GetQuestDataByID(int questID)
     {
-        QuestManager questManager = QuestManager.Instance;
+        QuestManager questManager = QuestManager.Instance;      
         Dictionary<int, QuestHandle> questDictionary = questManager.GetQuests();
         foreach (var key in questDictionary)
         {
@@ -28,19 +26,20 @@ public class RewardManager : MonoBehaviour
         Debug.LogError("Dictionary not found!");
         return null;
     }
-  
+
 
     public void CreateReward(int QuestID)
     {
         QuestHandle questHandle = GetQuestDataByID(QuestID);
-        rewardHandles = questHandle.rewardHandle;
-        var reward = rewardHandles.rewardBase;
-        var newReward = Instantiate(rewardHandles, rootRewardUi);
-        newReward.SetDataReward(reward);
+        var rewardListUpdate = questHandle.questData.rewardListUpdate;
+        foreach (var rewardUpdateID in rewardListUpdate)
+        {
+            RewardBase rewards = rewardDataBase.rewardBases.Find(reward => reward.rewardID == rewardUpdateID.rewardID);
+            rewards.rewardQuality = rewardUpdateID.rewardQuality;
+            var newReward = Instantiate(rewardHandles, rootRewardUi);
+            newReward.SetDataReward(rewards);
+        }
     }
-
-   
-
 }
 
 

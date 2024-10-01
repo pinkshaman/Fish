@@ -16,7 +16,7 @@ public class ChallengerScene : MonoBehaviour
     {
         toggle.onValueChanged.AddListener(OpenQuestCheck);
         Debug.Log($"input QuestID : {QuestID}");
-        StartCoroutine(GetFishFromList(QuestID));
+        StartCoroutine(CreateFishData(QuestID, 1.0f));
         rewardManager.CreateReward(QuestID);
         UiFish.Check(QuestID);
         ChangeBGMusic();
@@ -47,35 +47,30 @@ public class ChallengerScene : MonoBehaviour
         Debug.LogError("Dictionary not found!");
         return null;
     }
-    public IEnumerator GetFishFromList(int QuestID)
+    public IEnumerator CreateFishData(int QuestID, float delay)
     {
         QuestHandle selectedQuestHandle = GetFishQuestData(QuestID);
         var selectedQuest = selectedQuestHandle.questData.fishList;
+
+        int maxScalePoint = UiFish.fishMain.scalePoint <= 20 ? 20 :
+                            UiFish.fishMain.scalePoint <= 40 ? 40 :
+                            UiFish.fishMain.scalePoint <= 60 ? 60 : 100;
+
         while (!UiFish.isGameEnd)
         {
-            int randomIndex = Random.Range(0, selectedQuest.Count);
-            Debug.Log($"RandomIndex: {randomIndex}");
-            int fishID = selectedQuest[randomIndex];
-            Debug.Log($"fishList for Challenger: {fishID}");
+            List<FishData> filteredFishList = fishManager.fishDataBases.fishDatas.FindAll(fish => fish.scalePoint <= maxScalePoint && selectedQuest.Contains(fish.id));
 
-            fishManager.CreateFishQuest(fishID);
 
-            yield return new WaitForSeconds(1.0f);
-        }
-    }
+            FishData randomFish = filteredFishList[Random.Range(0, filteredFishList.Count)];
+            Debug.Log($"Selected fish: {randomFish.fishName}, Scale Point: {randomFish.scalePoint}");
+            fishManager.CreateFishQuest(randomFish.id);
 
-    public void CreateFishData(int QuestID)
-    {
-        QuestHandle selectedQuestHandle = GetFishQuestData(QuestID);
-        var selectedQuest = selectedQuestHandle.questData.fishList;
-        if (UiFish.fishMain.scalePoint < 20)
-        {
-            foreach (var fishID in selectedQuest)
-            {
-                FishData fishData = fishManager.fishDataBases.fishDatas.Find(fish => fish.scalePoint <= 20 && fish.id == fishID);
-               
+            yield return new WaitForSeconds(delay);
 
-            }
+
+            maxScalePoint = UiFish.fishMain.scalePoint <= 20 ? 20 :
+                            UiFish.fishMain.scalePoint <= 40 ? 40 :
+                            UiFish.fishMain.scalePoint <= 60 ? 60 : 100;
         }
     }
 }

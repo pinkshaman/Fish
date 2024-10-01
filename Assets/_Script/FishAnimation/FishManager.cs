@@ -18,7 +18,7 @@ public class FishManager : MonoBehaviour
     public Transform rootMainFish;
 
     public List<Transform> spawnPoints;
-
+    
     private void Awake()
     {
         if (Instance == null)
@@ -34,6 +34,7 @@ public class FishManager : MonoBehaviour
     {
 
     }
+  
     public void RegisterFish(int fishID)
     {
         if (!allFishes.Contains(fishID))
@@ -51,8 +52,9 @@ public class FishManager : MonoBehaviour
       
         var newFish = Instantiate(fishPrefabs, randomPosition, Quaternion.identity,rootFish);
         FishOtherHandle fishOtherHandles = newFish.GetComponent<FishOtherHandle>();
-        fishOtherHandles.uniqueID = newFish.GetInstanceID(); 
+        fishOtherHandles.uniqueID = newFish.GetInstanceID();
         
+        fishOtherHandle.gameObject.SetActive(true);
         fishOtherHandles.SetData(fishData);           
         RegisterFish(fishOtherHandles.ID);
     }

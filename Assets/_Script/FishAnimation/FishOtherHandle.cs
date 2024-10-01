@@ -12,6 +12,7 @@ public class FishOtherHandle : FishHandle
     private Vector2 randomTagetPosition;// Vị trí mục tiêu ngẫu nhiên
     public FishData fishOtherData;
     public int fishPoints;
+
     public override void Start()
     {
         base.Start();
@@ -25,7 +26,7 @@ public class FishOtherHandle : FishHandle
     }
     public override void UpdateData(FishData dataX)
     {
-        if(dataX == null)
+        if (dataX == null)
         {
             Debug.LogWarning("fishData is null");
         }
@@ -40,16 +41,8 @@ public class FishOtherHandle : FishHandle
 
     public void Move1()
     {
-        Vector2 currentPosition = transform.position;
-        //Vector2 targertPosition = targetArena.position;
-        //movement = (targertPosition - currentPosition).normalized;
-        rb.transform.Translate(Speed * Time.deltaTime * currentPosition.normalized);
-        //rb.MovePosition(Vector2.MoveTowards(currentPosition, targertPosition, Speed * Time.deltaTime));
-        Flip(movement);
-        //if (Vector2.Distance(currentPosition, targertPosition) < 0.1f)
-        //{
-        //    Destroy(gameObject);
-        //}
+        
+       
     }
     public void Move2()
     {
@@ -97,7 +90,6 @@ public class FishOtherHandle : FishHandle
                 SetRandomTagetPosition();
             }
         }
-
     }
     public override void Update()
     {

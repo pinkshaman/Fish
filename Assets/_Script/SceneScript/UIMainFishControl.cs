@@ -31,6 +31,7 @@ public class UIMainFishControl : MonoBehaviour
         Debug.Log($"PlayerData Loaded - FishMainID: {playerData.fishMainID}");
     }
 
+   
     public QuestHandle GetIMGOtherFish(int questID)
     {
         QuestManager questManager = QuestManager.Instance;

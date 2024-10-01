@@ -32,7 +32,7 @@ public class QuestHandle : MonoBehaviour
         this.questData = data;
         this.questProgessData = progessData;
        
-        CreateRewardObject(data.rewardList);
+        CreateRewardObject(data.rewardListUpdate);
         UpdateUI();
     }
     public void CreateRewardObject(List<RewardBaseUpdate> rewards)

@@ -209,6 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5685c02d789f5144821058c1dd8c62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coin: {fileID: 8300000, guid: 4941d953fa5f9c84e874df9f9fd4b002, type: 3}
   clickSound: {fileID: 8300000, guid: 33766b43685b66b42a4696fdf89d10a7, type: 3}
   backGroundMusic: {fileID: 0}
   soundEffect: {fileID: 0}
@@ -9517,8 +9518,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39402b56a8c6ea74785b6c3e4697968a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDataBases:
-    PlayerDataBases: []
   playerData:
     ID: 0
     name: 

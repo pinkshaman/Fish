@@ -22,7 +22,7 @@ public class QuestData
     public string QuestDecription;
     public int TaskCount;
     public List<int> fishList;
-    public List<RewardBaseUpdate> rewardList;
+    public List<RewardBaseUpdate> rewardListUpdate;
 }
 
 public class QuestManager : MonoBehaviour
@@ -71,7 +71,7 @@ public class QuestManager : MonoBehaviour
         var quest = Instantiate(questHandle, rootQuestUI);
         quest.SetQuestData(questdata, progessData);
         DictionaryQuestHandle.Add(questdata.questID, quest);
-        Debug.Log ($" RewardList: {questdata.rewardList.Count}");
+        Debug.Log ($" RewardList: {questdata.rewardListUpdate.Count}");
     }
     public void UpdateQuestProgess(QuestProgessData questProgess)
     {

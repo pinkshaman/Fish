@@ -227,6 +227,7 @@ MonoBehaviour:
     Price: 0
     fishPoint: 0
   fishPoints: 0
+  targetPosition: []
 --- !u!1 &7376073189774564993
 GameObject:
   m_ObjectHideFlags: 0
