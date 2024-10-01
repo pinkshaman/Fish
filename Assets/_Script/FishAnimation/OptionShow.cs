@@ -60,6 +60,7 @@ public class OptionShow : MonoBehaviour
         Debug.Log($"Data: {Value.fishName}");
         SellFishOnTank(Value);
         fishShowUIHandle.RemoveFishShow(keyName);
+        fishShowUIHandle.UpdateFishShow();
         AudioManager audioManager = FindAnyObjectByType<AudioManager>();
         audioManager.CointEffect();
     }
@@ -78,6 +79,7 @@ public class OptionShow : MonoBehaviour
         playerDatas.whilePearl += fishData.Price;
         UpdateBalance();
         loadSaveData.SavesData(playerDatas);
+        fishTankManager.SaveFishTankDataJson();
     }
     public void Option3()
     {

@@ -12,8 +12,8 @@ public class FishShowUIHandle : MonoBehaviour
     public Transform rootUi;
     public Dictionary<Toggle, FishData> fishTankDict = new Dictionary<Toggle, FishData>();
     public Toggle togglePrefab;
-    
-
+    public FishTankBase fishTankBase;
+    public FishDataBase fishDataBase;
     public virtual void Start()
     {
         
@@ -49,6 +49,16 @@ public class FishShowUIHandle : MonoBehaviour
             Debug.Log($"Added Toggle for {toggle.name} to Dictionary.");
         }
     }
+    public void UpdateFishShow()
+    {
+       fishTankDict.Clear();
+        foreach (var fishTank in fishTankBase.fishTankBases)
+        {
+            FishData fisData = fishDataBase.fishDatas.Find(fish => fish.id == fishTank.ID);
+            CreateFishShow(fisData);
+        }
+    }
+ 
     public virtual void OnToggleValueChanged(bool isOn)
     {
         if (isOn)
