@@ -23,7 +23,7 @@ public class FishTankManager : MonoBehaviour
 
     }
     public void Start()
-    {      
+    {
         foreach (var fishTanks in fishTankBase.fishTankBases)
         {
             var chooseFish = fishDataBase.fishDatas.Find(chooseFish => chooseFish.id == fishTanks.ID);
@@ -65,7 +65,7 @@ public class FishTankManager : MonoBehaviour
     {
         fishTankBase.fishTankBases.Remove(data);
     }
- 
+
     [ContextMenu("SaveFishTankDataJson")]
     public void SaveFishTankDataJson()
     {
@@ -83,6 +83,6 @@ public class FishTankManager : MonoBehaviour
     }
     public void OnApplicationQuit()
     {
-        SaveFishTankDataJson();      
+        SaveFishTankDataJson();
     }
 }

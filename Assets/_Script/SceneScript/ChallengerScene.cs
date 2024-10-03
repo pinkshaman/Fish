@@ -21,6 +21,7 @@ public class ChallengerScene : MonoBehaviour
         UiFish.Check(QuestID);
         ChangeBGMusic();
     }
+ 
     public void ChangeBGMusic()
     {
         AudioManager audioManager = FindObjectOfType<AudioManager>();
@@ -52,25 +53,25 @@ public class ChallengerScene : MonoBehaviour
         QuestHandle selectedQuestHandle = GetFishQuestData(QuestID);
         var selectedQuest = selectedQuestHandle.questData.fishList;
 
-        int maxScalePoint = UiFish.fishMain.scalePoint <= 20 ? 20 :
-                            UiFish.fishMain.scalePoint <= 40 ? 40 :
-                            UiFish.fishMain.scalePoint <= 60 ? 60 : 100;
+        int currentScalePoint = UiFish.fishMain.scalePoint;
+        int maxScalePoint = GetMaxScalePoint(currentScalePoint);
 
         while (!UiFish.isGameEnd)
         {
+            currentScalePoint = UiFish.fishMain.scalePoint;
+            maxScalePoint = GetMaxScalePoint(currentScalePoint);
             List<FishData> filteredFishList = fishManager.fishDataBases.fishDatas.FindAll(fish => fish.scalePoint <= maxScalePoint && selectedQuest.Contains(fish.id));
-
-
             FishData randomFish = filteredFishList[Random.Range(0, filteredFishList.Count)];
             Debug.Log($"Selected fish: {randomFish.fishName}, Scale Point: {randomFish.scalePoint}");
             fishManager.CreateFishQuest(randomFish.id);
-
             yield return new WaitForSeconds(delay);
 
-
-            maxScalePoint = UiFish.fishMain.scalePoint <= 20 ? 20 :
-                            UiFish.fishMain.scalePoint <= 40 ? 40 :
-                            UiFish.fishMain.scalePoint <= 60 ? 60 : 100;
         }
+    }
+    private int GetMaxScalePoint(int scalePoint)
+    {
+        return scalePoint <= 20 ? 20 :
+               scalePoint <= 40 ? 40 :
+               scalePoint <= 60 ? 60 : 100;
     }
 }

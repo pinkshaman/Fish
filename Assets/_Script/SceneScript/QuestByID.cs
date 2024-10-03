@@ -11,15 +11,15 @@ public class QuestByID : MonoBehaviour
 
     }
     public QuestHandle GetQuestDataByID(int questID)
-    {
-        QuestManager questManager = QuestManager.Instance;
+    {      
+        QuestManager questManager = FindObjectOfType<QuestManager>();
         Dictionary<int, QuestHandle> questDictionary = questManager.GetQuests();
         Debug.Log($"Dictionary: {questDictionary.Keys} - {questID}");
-        foreach (var key in questDictionary)
+        foreach (var quest in questDictionary)
         {
-            if (key.Key == questID)
+            if (quest.Key == questID)
             {
-                return key.Value;
+                return quest.Value;
             }
         }
         Debug.LogError("Dictionary not found!");

@@ -16,16 +16,16 @@ public class FishShowUIHandle : MonoBehaviour
     public FishDataBase fishDataBase;
     public virtual void Start()
     {
-        
+
     }
     public virtual void CreateFishShow(FishData chooseFish)
     {
         var fish = Instantiate(fishPanel, rootUi);
-        Toggle toggle = Instantiate(togglePrefab, fish.transform); 
+        Toggle toggle = Instantiate(togglePrefab, fish.transform);
         var toggleName = fish.GetInstanceID();
         toggle.gameObject.name = $"{toggleName}"; // Đặt tên cho Toggle 
         toggle.onValueChanged.AddListener(OnToggleValueChanged);
-      
+
         // Truyền Toggle và FishData vào FishPanel
         fish.SetData(chooseFish, toggle);
         // Thêm Toggle và FishData vào Dictionary
@@ -33,9 +33,9 @@ public class FishShowUIHandle : MonoBehaviour
     }
     public void RemoveFishShow(string keyName)
     {
-        foreach(var key in fishTankDict.Keys)
+        foreach (var key in fishTankDict.Keys)
         {
-            if(key.name.ToString() == keyName)
+            if (key.name.ToString() == keyName)
             {
                 fishTankDict.Remove(key);
             }
@@ -51,14 +51,24 @@ public class FishShowUIHandle : MonoBehaviour
     }
     public void UpdateFishShow()
     {
-       fishTankDict.Clear();
+        foreach (Transform child in rootUi)
+        {
+            Destroy(child.gameObject);
+        }
+        fishTankDict.Clear();
+        FishTankManager fishTankManager = FindObjectOfType<FishTankManager>();
+        fishTankBase = fishTankManager.fishTankBase;
+        foreach (Transform child in fishTankManager.rootTank)
+        {
+            Destroy(child.gameObject);
+        }
         foreach (var fishTank in fishTankBase.fishTankBases)
         {
             FishData fisData = fishDataBase.fishDatas.Find(fish => fish.id == fishTank.ID);
-            CreateFishShow(fisData);
+            fishTankManager.CreateFish(fisData);
         }
     }
- 
+
     public virtual void OnToggleValueChanged(bool isOn)
     {
         if (isOn)
