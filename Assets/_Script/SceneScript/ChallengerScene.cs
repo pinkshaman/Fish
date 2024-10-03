@@ -45,7 +45,6 @@ public class ChallengerScene : MonoBehaviour
             maxScalePoint = GetMaxScalePoint(currentScalePoint);
             List<FishData> filteredFishList = fishManager.fishDataBases.fishDatas.FindAll(fish => fish.scalePoint <= maxScalePoint && fishList.Contains(fish.id));
             FishData randomFish = filteredFishList[Random.Range(0, filteredFishList.Count)];
-            Debug.Log($"Selected fish: {randomFish.fishName}, Scale Point: {randomFish.scalePoint}");
             fishManager.CreateFishQuest(randomFish.id);
             yield return new WaitForSeconds(delay);
         }

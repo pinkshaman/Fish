@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.UI;
 using static Unity.Burst.Intrinsics.X86.Avx;
@@ -33,9 +34,20 @@ public class PlayerUi : MonoBehaviour
     }
     public void LevelFill(PlayerData data)
     {
-        //Tính toán phần trăm kinh nghiệm hiện tại 
-        float currenPercent = data.playerExperience / 100;
+        float ExpMax = 100;
+        float currenPercent = data.playerExperience / ExpMax;
         levelFill.fillAmount = currenPercent;
-        playerExp.text = $"{currenPercent}";
+        playerExp.text = $"{currenPercent}%";
+        if(currenPercent ==1&& data.playerExperience > ExpMax)
+        {
+           float ExpPart = data.playerExperience - ExpMax;
+            
+            data.level += 1;
+            ResetFill();
+        }
+    }
+    public void ResetFill()
+    {
+        levelFill.fillAmount = 0;
     }
 }

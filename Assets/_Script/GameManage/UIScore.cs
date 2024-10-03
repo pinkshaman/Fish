@@ -22,15 +22,13 @@ public class UIScore : MonoBehaviour
     public Text scalePoint;
     public Text lives;
     public Button skill1;
-    public Button skill2;
-    public Button rewardButton;
+    public Button skill2;    
     private bool isSkillActivate;
-
     public Text ScoreReward;
 
     public void Start()
     {
-        rewardButton.onClick.AddListener(OnClaim);
+        
         skill1.onClick.AddListener(Skill1Activate);
         skill2.onClick.AddListener(Skill2Activate);
         StartCoroutine(SetAbilityScore());
@@ -119,15 +117,9 @@ public class UIScore : MonoBehaviour
     {
         ScoreReward.text = scores.text;
     }
-    public void OnClaim()
+    public RewardBase ReturnQuality()
     {
-       
-
-
-
+        var Reward = rewardHandle.rewardBase;
+        return Reward;
     }
-
-
-
-
 }

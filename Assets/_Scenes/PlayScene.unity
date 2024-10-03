@@ -665,19 +665,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 47580841}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 47580839}
-        m_TargetAssemblyTypeName: SceneManagers, Assembly-CSharp
-        m_MethodName: LoadMainScene
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &47580841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2619,7 +2607,6 @@ MonoBehaviour:
   lives: {fileID: 740780070}
   skill1: {fileID: 145522932}
   skill2: {fileID: 1648171162}
-  rewardButton: {fileID: 47580840}
   ScoreReward: {fileID: 1398583934}
 --- !u!1001 &310071274
 PrefabInstance:
@@ -2940,7 +2927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9679820c213f81b4fb7d5649c2f3aa88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTime: 60
+  countdownTime: 5
   coundownText: {fileID: 1743179508}
   isEnd: 0
   control: {fileID: 544347088}
@@ -6531,6 +6518,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QuestID: 1
+  processDataBase:
+    questProgessDatas: []
   questDataBase: {fileID: 11400000, guid: dbb5dd9959503594b8364018211a6c09, type: 2}
   questTogglePanel: {fileID: 1818072266}
   toggle: {fileID: 1793545371}
@@ -6550,9 +6539,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3044be6185412f34bb20c247cedc19ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  processDataBase:
-    questProgessDatas: []
-  questDataBase: {fileID: 11400000, guid: dbb5dd9959503594b8364018211a6c09, type: 2}
   RootUiQuest: {fileID: 1301076665}
   questHandle: {fileID: 7958928725000231152, guid: 488c5b1e9ae42d542a08ad35f58eb5fb, type: 3}
 --- !u!1 &828205675
@@ -13566,7 +13552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5353539918826268706, guid: a9dd06bf4b1cdfd4497b1e53ae04cec0, type: 3}
       propertyPath: smoothTime
-      value: 0.525
+      value: 0.89
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -15095,6 +15081,17 @@ MonoBehaviour:
   rewardHandles: {fileID: 4356626128105105277, guid: 8f5bf06c047e32647a07044e247d7b9f, type: 3}
   rootRewardUi: {fileID: 196025003}
   rewardDataBase: {fileID: 11400000, guid: 3f24d394690466d4084ee7088eaff885, type: 2}
+  rewardListClaim: []
+  buttonClaim: {fileID: 47580840}
+  playerData:
+    ID: 0
+    name: 
+    level: 0
+    playerExperience: 0
+    playerAvatar: {fileID: 0}
+    whilePearl: 0
+    blackPearl: 0
+    fishMainID: 0
 --- !u!222 &7073209349322576152
 CanvasRenderer:
   m_ObjectHideFlags: 0

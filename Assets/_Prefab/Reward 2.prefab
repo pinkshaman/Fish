@@ -175,7 +175,7 @@ MonoBehaviour:
   rewarImage: {fileID: 4325595508594615735}
   rewardQuality: {fileID: 4325595507372590265}
   rewardName: {fileID: 4325595507313066796}
-  rewardClaimedIMG: {fileID: 0}
+  rewardClaimedIMG: {fileID: 4325595506954313840}
 --- !u!1 &4325595507313066834
 GameObject:
   m_ObjectHideFlags: 0
