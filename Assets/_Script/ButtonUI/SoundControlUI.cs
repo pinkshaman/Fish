@@ -17,6 +17,7 @@ public class SoundControlUI : MonoBehaviour
     private float previousSFXVolume;
     public void Start()
     {
+        
         muteAll.onValueChanged.AddListener(OnToggleValueChanged);
         musicVolumeSlider.onValueChanged.AddListener(SetMusicVolume);
         SFXSoundSlider.onValueChanged.AddListener(SetSFXVolume);
@@ -26,8 +27,9 @@ public class SoundControlUI : MonoBehaviour
 
         previousMusicVolume = musicVolumeSlider.value;
         previousSFXVolume = SFXSoundSlider.value;
-
+        
     }
+ 
     public void OnToggleValueChanged(bool isOn)
     {
         if (isOn)

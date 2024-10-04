@@ -18,7 +18,7 @@ MonoBehaviour:
     QuestDecription: Eat All Fish!
     TaskCount: 1
     fishList: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b000000
-    rewardList:
+    rewardListUpdate:
     - rewardID: 1
       rewardQuality: 200
     - rewardID: 3

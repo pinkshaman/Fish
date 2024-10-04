@@ -8,16 +8,17 @@ public class FishMain : FishHandle
     public UIScore control;
     public int lives = 3;
     public int score;
-    public float dashSpeed=10;
+    public float dashSpeed = 10;
+    public bool isDead;
     public override void Start()
     {
         base.Start();
-        
+
         control.SetdataUI(this);
     }
     public override void SetData(FishData dataX)
     {
-        this.fishData = dataX;      
+        this.fishData = dataX;
         UpdateData(dataX);
     }
     public override void UpdateData(FishData dataX)
@@ -43,7 +44,7 @@ public class FishMain : FishHandle
                 this.score += otherFishHandle.fishPoints;
                 Eat();
                 Destroy(collision.gameObject);
-                ScaleFish();   
+                ScaleFish();
                 control.SetdataUI(this);
             }
         }
@@ -51,18 +52,33 @@ public class FishMain : FishHandle
     public void Dash()
     {
         float dashDirection = transform.localScale.x;
-        Vector3 dashForce = new Vector3(dashDirection * dashSpeed, 0, 0);        
+        Vector3 dashForce = new Vector3(dashDirection * dashSpeed, 0, 0);
         rb.MovePosition(dashForce);
     }
-    public void OnDestroy()
+    public void OnDisable()
     {
-        if(lives>0)
+        if (lives > 0)
         {
-            FishManager fishManager = FishManager.Instance;
-            fishManager.CreateFish(this.fishData);
-            lives -= 1;
-            control.SetdataUI(this);
+            isDead = true;
+            lives -= 1;                
+            control.SetdataUI(this);          
         }
+    }
+    public void CheckStatus(bool IsDead)
+    {
+        if (IsDead == true)
+        {
+            StartCoroutine(RespawnFish());
+        }
+    }
+   
+    public IEnumerator RespawnFish()
+    {
+        yield return new  WaitForSeconds(3.0f);
+        transform.position = new Vector2(0, 0);
+        gameObject.SetActive(true);
+        control.SetdataUI(this); 
+        isDead = false;
     }
 
     public override void Update()

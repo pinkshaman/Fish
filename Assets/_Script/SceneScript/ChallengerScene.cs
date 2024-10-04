@@ -6,20 +6,20 @@ using UnityEngine.UI;
 public class ChallengerScene : MonoBehaviour
 {
     public int QuestID;
-    public QuestDataBase questDataBase;
+    public QuestProgessDataBase processDataBase;
+    public QuestDataBase questDataBase; 
     public GameObject questTogglePanel;
     public Toggle toggle;
     public FishManager fishManager;
     public RewardManager rewardManager;
     public UIMainFishControl UiFish;
+    public QuestByID questByID;
     public void Start()
     {
         toggle.onValueChanged.AddListener(OpenQuestCheck);
-        Debug.Log($"input QuestID : {QuestID}");
-        StartCoroutine(CreateFishData(QuestID, 1.0f));
-        rewardManager.CreateReward(QuestID);
-        UiFish.Check(QuestID);
+        Debug.Log($"input QuestID : {QuestID}");                    
         ChangeBGMusic();
+        GetQuestDataByID(QuestID);
     }
  
     public void ChangeBGMusic()
@@ -33,26 +33,9 @@ public class ChallengerScene : MonoBehaviour
         questTogglePanel.SetActive(isOn);
     }
 
-    public QuestHandle GetFishQuestData(int questID)
-    {
-        QuestManager questManager = QuestManager.Instance;
-        Dictionary<int, QuestHandle> questDictionary = questManager.GetQuests();
-        Debug.Log($"Dictionary: {questDictionary.Keys} - {questDictionary.Values}");
-        foreach (var key in questDictionary)
-        {
-            if (key.Key == questID)
-            {
-                return key.Value;
-            }
-        }
-        Debug.LogError("Dictionary not found!");
-        return null;
-    }
-    public IEnumerator CreateFishData(int QuestID, float delay)
-    {
-        QuestHandle selectedQuestHandle = GetFishQuestData(QuestID);
-        var selectedQuest = selectedQuestHandle.questData.fishList;
-
+    
+    public IEnumerator CreateFishData(List<int>fishList, float delay)
+    {  
         int currentScalePoint = UiFish.fishMain.scalePoint;
         int maxScalePoint = GetMaxScalePoint(currentScalePoint);
 
@@ -60,12 +43,11 @@ public class ChallengerScene : MonoBehaviour
         {
             currentScalePoint = UiFish.fishMain.scalePoint;
             maxScalePoint = GetMaxScalePoint(currentScalePoint);
-            List<FishData> filteredFishList = fishManager.fishDataBases.fishDatas.FindAll(fish => fish.scalePoint <= maxScalePoint && selectedQuest.Contains(fish.id));
+            List<FishData> filteredFishList = fishManager.fishDataBases.fishDatas.FindAll(fish => fish.scalePoint <= maxScalePoint && fishList.Contains(fish.id));
             FishData randomFish = filteredFishList[Random.Range(0, filteredFishList.Count)];
             Debug.Log($"Selected fish: {randomFish.fishName}, Scale Point: {randomFish.scalePoint}");
             fishManager.CreateFishQuest(randomFish.id);
             yield return new WaitForSeconds(delay);
-
         }
     }
     private int GetMaxScalePoint(int scalePoint)
@@ -73,5 +55,30 @@ public class ChallengerScene : MonoBehaviour
         return scalePoint <= 20 ? 20 :
                scalePoint <= 40 ? 40 :
                scalePoint <= 60 ? 60 : 100;
+    }
+    public void LoadDataJson()
+    {
+        var defaultValue = JsonUtility.ToJson(processDataBase);
+        var json = PlayerPrefs.GetString(nameof(processDataBase), defaultValue);
+        processDataBase = JsonUtility.FromJson<QuestProgessDataBase>(json);
+        Debug.Log("LoadDataJson is Loaded");
+    }
+    public void SaveDataJson()
+    {
+        var value = JsonUtility.ToJson(processDataBase);
+        PlayerPrefs.SetString(nameof(processDataBase), value);
+        PlayerPrefs.Save();
+    }
+    public void GetQuestDataByID(int questID)
+    {
+        LoadDataJson();
+        foreach (var datas in questDataBase.questDataBases)
+        {
+            QuestProgessData processData = processDataBase.questProgessDatas.Find(processData => processData.id == datas.questID && datas.questID == questID);
+            questByID.SetDataHandle(datas, processData);
+            UiFish.Check(datas.fishList);
+            StartCoroutine(CreateFishData(datas.fishList, 1.0f));
+            rewardManager.CreateReward(datas.rewardListUpdate);
+        }
     }
 }

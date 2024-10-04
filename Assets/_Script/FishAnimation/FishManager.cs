@@ -6,7 +6,7 @@ using Transform = UnityEngine.Transform;
 
 public class FishManager : MonoBehaviour
 {
-    public static FishManager Instance { get; private set; }
+    public static FishManager Instance;
     public Transform rootFish;
     public FishOtherHandle fishOtherHandle;
     public FishDataBase fishDataBases;
@@ -18,8 +18,8 @@ public class FishManager : MonoBehaviour
     public Transform rootMainFish;
 
     public List<Transform> spawnPoints;
-    
-    private void Awake()
+
+    public void Awake()
     {
         if (Instance == null)
         {
@@ -34,7 +34,7 @@ public class FishManager : MonoBehaviour
     {
 
     }
-  
+
     public void RegisterFish(int fishID)
     {
         if (!allFishes.Contains(fishID))
@@ -47,18 +47,18 @@ public class FishManager : MonoBehaviour
     public void CreateFishQuest(int fishID)
     {
         FishData fishData = fishDataBases.fishDatas.Find(fish => fish.id == fishID);
-        int randomIndex = Random.Range(0, spawnPoints.Count); 
+        int randomIndex = Random.Range(0, spawnPoints.Count);
         Vector3 randomPosition = spawnPoints[randomIndex].position;
-      
-        var newFish = Instantiate(fishPrefabs, randomPosition, Quaternion.identity,rootFish);
+
+        var newFish = Instantiate(fishPrefabs, randomPosition, Quaternion.identity, rootFish);
         FishOtherHandle fishOtherHandles = newFish.GetComponent<FishOtherHandle>();
         fishOtherHandles.uniqueID = newFish.GetInstanceID();
-        
+
         fishOtherHandle.gameObject.SetActive(true);
-        fishOtherHandles.SetData(fishData);           
+        fishOtherHandles.SetData(fishData);
         RegisterFish(fishOtherHandles.ID);
     }
-    
+
     public void CreateFish(FishData dataX)
     {
         Vector2 spawnPosition = transform.position;

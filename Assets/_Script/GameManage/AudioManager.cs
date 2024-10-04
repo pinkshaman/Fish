@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    private static AudioManager Instance;
+    public static AudioManager Instance;
     public AudioClip coin;
     public AudioClip clickSound;
     public AudioSource backGroundMusic;
@@ -17,15 +17,15 @@ public class AudioManager : MonoBehaviour
     public  bool isMuted = false;
     public int setMusic;
     private void Awake()
-    {       
-        if (Instance == null)
+    {
+        if (Instance != null && Instance != this)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); 
+            Destroy(Instance.gameObject);
         }
         else
-        {
-            Destroy(gameObject); 
+        {          
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
     public void Start()

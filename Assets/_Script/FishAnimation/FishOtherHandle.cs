@@ -82,7 +82,7 @@ public class FishOtherHandle : FishHandle
             {
                 this.scalePoint += fishMain.scalePoint;
                 Eat();
-                Destroy(fishMain.gameObject);
+                fishMain.gameObject.SetActive(false);
                 ScaleFish();
             }
             else
