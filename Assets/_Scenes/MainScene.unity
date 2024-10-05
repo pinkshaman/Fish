@@ -7271,7 +7271,7 @@ MonoBehaviour:
   musicVolumeSlider: {fileID: 1576749848}
   SFXSoundSlider: {fileID: 603877217}
   muteAll: {fileID: 1381234033}
-  audioManager: {fileID: 11882076}
+  audioManager: {fileID: 0}
   musicAudioSource: {fileID: 1995981618}
   SFXAudioSource: {fileID: 1932552342}
 --- !u!114 &1077759617

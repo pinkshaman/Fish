@@ -71,5 +71,6 @@ public class FishManager : MonoBehaviour
 
         Debug.Log($"Create fish: {newFish.name} at position {spawnPosition}");
     }
+    
 
 }

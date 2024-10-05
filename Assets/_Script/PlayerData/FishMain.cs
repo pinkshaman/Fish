@@ -47,6 +47,7 @@ public class FishMain : FishHandle
                 ScaleFish();
                 control.SetdataUI(this);
             }
+
         }
     }
     public void Dash()
@@ -57,34 +58,16 @@ public class FishMain : FishHandle
     }
     public void OnDisable()
     {
-        if (lives > 0)
-        {
-            isDead = true;
-            lives -= 1;                
-            control.SetdataUI(this);          
-        }
-    }
-    public void CheckStatus(bool IsDead)
-    {
-        if (IsDead == true)
-        {
-            StartCoroutine(RespawnFish());
-        }
-    }
-   
-    public IEnumerator RespawnFish()
-    {
-        yield return new  WaitForSeconds(3.0f);
-        transform.position = new Vector2(0, 0);
-        gameObject.SetActive(true);
-        control.SetdataUI(this); 
-        isDead = false;
-    }
+        isDead = true;
+        lives -= 1;
+        control.SetdataUI(this);
 
+    }
     public override void Update()
     {
         base.Update();
 
     }
+
 
 }

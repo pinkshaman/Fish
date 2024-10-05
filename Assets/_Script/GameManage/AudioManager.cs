@@ -20,7 +20,7 @@ public class AudioManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(Instance.gameObject);
+            Destroy(gameObject);
         }
         else
         {          
@@ -29,9 +29,7 @@ public class AudioManager : MonoBehaviour
         }
     }
     public void Start()
-    {
-       
-
+    {      
         backGroundMusic = gameObject.AddComponent<AudioSource>();
         soundEffect = gameObject.AddComponent<AudioSource>();
         foreach (var audio in audioDataBase.audioDataBases)

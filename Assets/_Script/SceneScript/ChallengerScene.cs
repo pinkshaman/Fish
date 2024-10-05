@@ -77,7 +77,7 @@ public class ChallengerScene : MonoBehaviour
             questByID.SetDataHandle(datas, processData);
             UiFish.Check(datas.fishList);
             StartCoroutine(CreateFishData(datas.fishList, 1.0f));
-            rewardManager.CreateReward(datas.rewardListUpdate);
+            rewardManager.SetDataListReward(datas.rewardListUpdate);
         }
     }
 }

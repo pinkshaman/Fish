@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class UIMainFishControl : MonoBehaviour
 {
+
     public FishDataBase fishDataBase;
     public FishMain fishMain;
     public FishManager fishManager;
@@ -15,14 +16,15 @@ public class UIMainFishControl : MonoBehaviour
     public CoutdownTime coutdownTime;
     public GameObject resultPanel;
     public bool isGameEnd;
-   
-    
+
+
     public void Start()
     {
         LoadPlayerData();
         var fish = fishDataBase.fishDatas.Find(fish => fish.id == playerData.fishMainID);
         fishManager.CreateFish(fish);
-        
+
+
     }
     [ContextMenu("LoadPlayerData")]
     public void LoadPlayerData()
@@ -42,12 +44,30 @@ public class UIMainFishControl : MonoBehaviour
             UiScore.CreateMenu(fishData);
         }
     }
-    public void CheckGame()
+    public void CheckGame(int live)
     {
-        if (fishMain.lives == 0 || coutdownTime.isEnd == true)
+        Debug.Log($"live: {live}");
+        if (live == 0 || coutdownTime.isEnd == true)
         {
             isGameEnd = true;
             LoadResutl(isGameEnd);
+        }
+        else
+        {
+            isGameEnd = false;
+        }
+    }
+
+    public IEnumerator RespawnFish()
+    {
+        yield return new WaitForSeconds(3.0f);
+        foreach (Transform child in fishManager.rootMainFish)
+        {
+            if (child.CompareTag("FishMain"))
+            {
+                child.gameObject.SetActive(true);
+                child.transform.position = new Vector2(0, 0);
+            }
         }
     }
     public void LoadResutl(bool isEnd)
@@ -56,6 +76,4 @@ public class UIMainFishControl : MonoBehaviour
         resultPanel.SetActive(isEnd);
         UiScore.ShowReSult();
     }
-
-
 }

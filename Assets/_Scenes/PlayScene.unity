@@ -665,7 +665,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 47580841}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 47580839}
+        m_TargetAssemblyTypeName: SceneManagers, Assembly-CSharp
+        m_MethodName: LoadMainScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &47580841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2488,6 +2500,7 @@ GameObject:
   - component: {fileID: 291415890}
   - component: {fileID: 291415889}
   - component: {fileID: 291415891}
+  - component: {fileID: 291415892}
   m_Layer: 0
   m_Name: UpPanel
   m_TagString: Untagged
@@ -2608,6 +2621,33 @@ MonoBehaviour:
   skill1: {fileID: 145522932}
   skill2: {fileID: 1648171162}
   ScoreReward: {fileID: 1398583934}
+--- !u!114 &291415892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291415887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a91e97c13eb7fa43b2a31983ba27835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questDataBase: {fileID: 11400000, guid: dbb5dd9959503594b8364018211a6c09, type: 2}
+  rewardHandles: {fileID: 4356626128105105277, guid: 8f5bf06c047e32647a07044e247d7b9f, type: 3}
+  rootRewardUi: {fileID: 196025003}
+  rewardDataBase: {fileID: 11400000, guid: 3f24d394690466d4084ee7088eaff885, type: 2}
+  rewardListClaim: []
+  buttonClaim: {fileID: 47580840}
+  playerData:
+    ID: 0
+    name: 
+    level: 0
+    playerExperience: 0
+    playerAvatar: {fileID: 0}
+    whilePearl: 0
+    blackPearl: 0
+    fishMainID: 0
 --- !u!1001 &310071274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2927,7 +2967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9679820c213f81b4fb7d5649c2f3aa88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTime: 5
+  countdownTime: 60
   coundownText: {fileID: 1743179508}
   isEnd: 0
   control: {fileID: 544347088}
@@ -5946,7 +5986,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x4
+  m_Text: 
 --- !u!222 &740780071
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6524,7 +6564,7 @@ MonoBehaviour:
   questTogglePanel: {fileID: 1818072266}
   toggle: {fileID: 1793545371}
   fishManager: {fileID: 357316170}
-  rewardManager: {fileID: 6922778439684656323}
+  rewardManager: {fileID: 291415892}
   UiFish: {fileID: 544347088}
   questByID: {fileID: 825303781}
 --- !u!114 &825303781
@@ -8329,7 +8369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1142894704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15057,7 +15097,6 @@ GameObject:
   - component: {fileID: 6717031109019824954}
   - component: {fileID: 221374788729284754}
   - component: {fileID: 1486601744623998456}
-  - component: {fileID: 6922778439684656323}
   m_Layer: 5
   m_Name: ResultPanel
   m_TagString: Untagged
@@ -15065,33 +15104,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &6922778439684656323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6922778439684656322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a91e97c13eb7fa43b2a31983ba27835, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questDataBase: {fileID: 11400000, guid: dbb5dd9959503594b8364018211a6c09, type: 2}
-  rewardHandles: {fileID: 4356626128105105277, guid: 8f5bf06c047e32647a07044e247d7b9f, type: 3}
-  rootRewardUi: {fileID: 196025003}
-  rewardDataBase: {fileID: 11400000, guid: 3f24d394690466d4084ee7088eaff885, type: 2}
-  rewardListClaim: []
-  buttonClaim: {fileID: 47580840}
-  playerData:
-    ID: 0
-    name: 
-    level: 0
-    playerExperience: 0
-    playerAvatar: {fileID: 0}
-    whilePearl: 0
-    blackPearl: 0
-    fishMainID: 0
 --- !u!222 &7073209349322576152
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -34,16 +34,20 @@ public class PlayerUi : MonoBehaviour
     }
     public void LevelFill(PlayerData data)
     {
-        float ExpMax = 100;
+        float ExpMax = 100f * Mathf.Pow(1.2f, data.level);
         float currenPercent = data.playerExperience / ExpMax;
         levelFill.fillAmount = currenPercent;
-        playerExp.text = $"{currenPercent}%";
-        if(currenPercent ==1&& data.playerExperience > ExpMax)
+        playerExp.text = $"{Mathf.Floor(currenPercent * 1000) / 10:F1}%";
+        if (currenPercent >=1f)
         {
-           float ExpPart = data.playerExperience - ExpMax;
-            
+            float ExpOverflow = data.playerExperience - ExpMax;
             data.level += 1;
             ResetFill();
+            data.playerExperience = ExpOverflow;
+            ExpMax *= 1.2f;
+            currenPercent = data.playerExperience / ExpMax;
+            levelFill.fillAmount = currenPercent;
+            playerExp.text = $"{Mathf.Floor(currenPercent * 1000) / 10:F1}%";
         }
     }
     public void ResetFill()

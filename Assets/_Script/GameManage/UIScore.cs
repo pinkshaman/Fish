@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class UIScore : MonoBehaviour
 {
+
     public PlayerData playerData;
     public RewardHandle rewardHandle;
     public FishData fishData;
@@ -22,19 +23,18 @@ public class UIScore : MonoBehaviour
     public Text scalePoint;
     public Text lives;
     public Button skill1;
-    public Button skill2;    
+    public Button skill2;
     private bool isSkillActivate;
     public Text ScoreReward;
 
     public void Start()
     {
-        
         skill1.onClick.AddListener(Skill1Activate);
         skill2.onClick.AddListener(Skill2Activate);
         StartCoroutine(SetAbilityScore());
     }
     public void CreateMenu(FishData fishDataX)
-    {              
+    {
         var fishMenu = Instantiate(fishDisplay, RootFishMenu);
         var fishImage = fishMenu.GetComponentInChildren<Image>();
         fishImage.sprite = fishDataX.fishSprite;
@@ -49,24 +49,25 @@ public class UIScore : MonoBehaviour
     }
     public void CheckScalePoint()
     {
-        
-       
+
+
 
     }
     public void SetdataUI(FishMain fish)
     {
         this.fishMain = fish;
         SetMenuData(fish);
-        
+       
     }
     public void SetMenuData(FishMain fishMain)
     {
         scalePoint.text = $"{fishMain.scalePoint}";
         scores.text = $"{fishMain.score}";
         lives.text = $"{fishMain.lives}";
-        
+
         SetScalePoint();
         CheckScalePoint();
+        CheckLives();
     }
     public void SetScalePoint()
     {
@@ -117,9 +118,22 @@ public class UIScore : MonoBehaviour
     {
         ScoreReward.text = scores.text;
     }
-    public RewardBase ReturnQuality()
+    public int ReturnScore()
     {
-        var Reward = rewardHandle.rewardBase;
-        return Reward;
+        int ScoreRwards = int.Parse(ScoreReward.text);
+        return ScoreRwards;
     }
+   public void CheckLives()
+    {
+        int live = int.Parse(lives.text);
+        UIMainFishControl uIMainFish = FindObjectOfType<UIMainFishControl>();
+        uIMainFish.CheckGame(live);
+        if (fishMain.isDead == true && fishMain.lives > 0)
+        {
+            uIMainFish.StartCoroutine(uIMainFish.RespawnFish());
+            fishMain.isDead = false;
+        }
+    }
+
+
 }
