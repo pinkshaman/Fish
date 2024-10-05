@@ -47,6 +47,11 @@ public class ChallengerScene : MonoBehaviour
             FishData randomFish = filteredFishList[Random.Range(0, filteredFishList.Count)];
             fishManager.CreateFishQuest(randomFish.id);
             yield return new WaitForSeconds(delay);
+            
+        }
+        if(UiFish.isGameEnd)
+        {
+            fishManager.DestroyFish(UiFish.isGameEnd);
         }
     }
     private int GetMaxScalePoint(int scalePoint)

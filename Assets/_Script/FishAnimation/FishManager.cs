@@ -58,6 +58,13 @@ public class FishManager : MonoBehaviour
         fishOtherHandles.SetData(fishData);
         RegisterFish(fishOtherHandles.ID);
     }
+    public void DestroyFish(bool isEnd)
+    {
+        foreach(Transform fishObj in rootFish)
+        {
+            Destroy(fishObj.gameObject);
+        }
+    }
 
     public void CreateFish(FishData dataX)
     {

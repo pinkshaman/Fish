@@ -75,5 +75,11 @@ public class UIMainFishControl : MonoBehaviour
         Debug.Log($"IsGame: {isEnd}");
         resultPanel.SetActive(isEnd);
         UiScore.ShowReSult();
+        int fishLives = fishMain.lives;
+        int scores = UiScore.ReturnScore();
+        RewardManager rewardManager = FindObjectOfType<RewardManager>();
+        StartCoroutine(rewardManager.CalculatorReward(isEnd,fishLives,scores));
+        Debug.Log($"Waiting for Reward Intilizing: {isEnd}-{fishLives}-{scores}");
+
     }
 }

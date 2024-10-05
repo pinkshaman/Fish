@@ -8,18 +8,18 @@ using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class PlayerUi : MonoBehaviour
 {
-    public Text playerName; 
-    public Text playerExp; 
+    public Text playerName;
+    public Text playerExp;
     public Text playerLevel;
-    public Text whilePearl; 
+    public Text whilePearl;
     public Text blackPearl;
-    public Image progessLevelBG; 
-    public Image levelFill;     
+    public Image progessLevelBG;
+    public Image levelFill;
     public PlayerData playerData;
-    
+
     public void SetDataPlayer(PlayerData data)
     {
-       // Gán dữ liệu data cho playerData.
+        // Gán dữ liệu data cho playerData.
         this.playerData = data;
         UpdateUIplayerData(data);
     }
@@ -36,22 +36,27 @@ public class PlayerUi : MonoBehaviour
     {
         float ExpMax = 100f * Mathf.Pow(1.2f, data.level);
         float currenPercent = data.playerExperience / ExpMax;
-        levelFill.fillAmount = currenPercent;
-        playerExp.text = $"{Mathf.Floor(currenPercent * 1000) / 10:F1}%";
-        if (currenPercent >=1f)
+        if (currenPercent > 1f)
         {
             float ExpOverflow = data.playerExperience - ExpMax;
             data.level += 1;
-            ResetFill();
+            ResetFill(data);
             data.playerExperience = ExpOverflow;
             ExpMax *= 1.2f;
             currenPercent = data.playerExperience / ExpMax;
             levelFill.fillAmount = currenPercent;
-            playerExp.text = $"{Mathf.Floor(currenPercent * 1000) / 10:F1}%";
+            playerExp.text = $"{currenPercent:F1}%";
+        }
+        else
+        {
+            levelFill.fillAmount = currenPercent;
+            playerExp.text = $"{currenPercent:F1}%";
         }
     }
-    public void ResetFill()
+    public void ResetFill(PlayerData playerData)
     {
         levelFill.fillAmount = 0;
+        playerData.playerExperience = 0;
     }
+   
 }

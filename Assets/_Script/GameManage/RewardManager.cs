@@ -17,11 +17,11 @@ public class RewardManager : MonoBehaviour
     {
         Debug.Log("List reward Created");
         LoadPlayerData();
-        buttonClaim.onClick.AddListener(OnAccept);
+        //buttonClaim.onClick.AddListener(OnAccept);
     }
     public void CreateReward(RewardBase reward)
     {
-        var newReward = Instantiate(rewardHandles, rootRewardUi);
+        RewardHandle newReward = Instantiate(rewardHandles, rootRewardUi);
         newReward.SetDataReward(reward);
 
     }
@@ -32,45 +32,48 @@ public class RewardManager : MonoBehaviour
             RewardBase rewards = rewardDataBase.rewardBases.Find(reward => reward.rewardID == rewardUpdateID.rewardID);
             rewards.rewardQuality = rewardUpdateID.rewardQuality;
             rewardListClaim.Add(rewards);
-            StartCoroutine(CalculatorReward(rewards));
         }
     }
-    public IEnumerator CalculatorReward(RewardBase reward)
-    {
-        UIMainFishControl uIMainFish = FindObjectOfType<UIMainFishControl>();
-        bool isEnd = uIMainFish.isGameEnd;
 
+    public IEnumerator CalculatorReward(bool isEnd, int fishlive, int score)
+    {
         yield return new WaitUntil(() => isEnd);
-        UIScore uiScore = FindObjectOfType<UIScore>();
-        int score = uiScore.ReturnScore();
-        int live = uIMainFish.fishMain.lives;
-        if (live <= 0)
+        if (fishlive <= 0)
         {
-            reward.rewardQuality = 0;
-            CreateReward(reward);
+            foreach (var reward in rewardListClaim)
+            {
+                reward.rewardQuality = 0;
+                CreateReward(reward);
+            }
         }
         else
         {
-            if (score > 0 && score <= 300)
+            foreach (var reward in rewardListClaim)
             {
-                reward.rewardQuality += Mathf.RoundToInt(score * 0.1f);
+                if (score > 0 && score <= 300)
+                {
+                    reward.rewardQuality += Mathf.RoundToInt(score * 0.1f);
+                    CreateReward(reward); break;
+                }
+                else if (score > 300 && score <= 600)
+                {
+                    reward.rewardQuality += Mathf.RoundToInt(score * 0.2f);
+                    CreateReward(reward); break;
+                }
+                else if (score > 600 && score <= 1000)
+                {
+                    reward.rewardQuality += Mathf.RoundToInt(score * 0.3f);
+                    CreateReward(reward); break;
+                }
+                else if (score > 1000)
+                {
+                    reward.rewardQuality += Mathf.RoundToInt(score * 0.5f);
+                    CreateReward(reward); break;
+                }
             }
-            else if (score > 300 && score <= 600)
-            {
-                reward.rewardQuality += Mathf.RoundToInt(score * 0.2f);
-            }
-            else if (score > 600 && score <= 1000)
-            {
-                reward.rewardQuality += Mathf.RoundToInt(score * 0.3f);
-            }
-            else if (score > 1000)
-            {
-                reward.rewardQuality += Mathf.RoundToInt(score * 0.5f);
-            }
-            CreateReward(reward);
+
         }
     }
-    
 
     public void OnAccept()
     {
