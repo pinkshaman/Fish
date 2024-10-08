@@ -287,11 +287,9 @@ MonoBehaviour:
   fishTankBase:
     fishTankBases: []
   showUIHandle: {fileID: 897165101}
-  shopUiHandle: {fileID: 0}
   BuyFishButton: {fileID: 1247548972}
-  SellFishButton: {fileID: 1750752967}
   Message: {fileID: 686906559}
-  loadFishTankScene: {fileID: 29797145}
+  loadScene: {fileID: 0}
   playerDatas:
     ID: 0
     name: 
@@ -332,7 +330,6 @@ MonoBehaviour:
   shopUiHandle: {fileID: 897165101}
   fishTankBase:
     fishTankBases: []
-  fishSellUiHandle: {fileID: 0}
 --- !u!114 &29797145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1192,10 +1189,10 @@ RectTransform:
   - {fileID: 628525600}
   m_Father: {fileID: 63308983}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -60}
-  m_SizeDelta: {x: 200, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &317805191
 MonoBehaviour:
@@ -2630,6 +2627,9 @@ MonoBehaviour:
   fishPanel: {fileID: 6026374582929212303, guid: ea7316ebb707a9c4083b14caf061835d, type: 3}
   rootUi: {fileID: 1040480904}
   togglePrefab: {fileID: 5791111157596202092, guid: 6edeea96c28b8e045be23b5ecaf7fd38, type: 3}
+  fishTankBase:
+    fishTankBases: []
+  fishDataBase: {fileID: 0}
 --- !u!1001 &1040480902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2852,7 +2852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8910393995556121888, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00001288466
+      value: 0.001321847
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3781277530102436625, guid: afc429cd819d33740bbd205943005ec0, type: 3}
@@ -2908,7 +2908,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 150, y: 150}
-  m_Spacing: {x: 10, y: 0}
+  m_Spacing: {x: 10, y: 50}
   m_Constraint: 1
   m_ConstraintCount: 8
 --- !u!1 &1213957900

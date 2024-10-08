@@ -14,7 +14,7 @@ public class SwimPathAgent : MonoBehaviour
     public void Update()
     {
         if (swimPath == null) return;
-        if (nextIndex >= swimPath.wayPoint.Length) { return; }
+        if (nextIndex >= swimPath.wayPoint.Count) { return; }
         if (transform.position != swimPath[nextIndex])
         {
             SwimToNextPoint();
@@ -24,7 +24,7 @@ public class SwimPathAgent : MonoBehaviour
             nextIndex++;
         }
     }
-    private void SwimToNextPoint()
+    public void SwimToNextPoint()
     => transform.position = Vector3.MoveTowards(transform.position, swimPath[nextIndex], Speed * Time.deltaTime);
 
 

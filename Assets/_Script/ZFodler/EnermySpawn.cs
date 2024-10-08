@@ -4,27 +4,35 @@ using UnityEngine;
 
 public class EnermySpawn : MonoBehaviour
 {
-    public EnermyWave[] enermyWaves;
+    public EnermyWaveList enermyWavesLists;
     private int currentWave;
+    public int fishId;
+    public int waveID;
+    public FishOtherHandle fishOtherHandle;
+    public FishDataBase fishDataBase;
 
-
+    public void Start()
+    {
+        Debug.Log("Start");
+        SpawnEnermyWave();
+    }
     private void SpawnEnermyWave()
     {
-        var waveInfo= enermyWaves[currentWave];
-        var startPostision = waveInfo.SwimPath[0];
-        for (int i = 0; i < enermyWaves.Length; i++)
+        foreach (var enermyWave in enermyWavesLists.enermyWavesList)
         {
-            var enermy = Instantiate(waveInfo.enermPrefab, startPostision, Quaternion.identity);
-            var agent = enermy.GetComponent<SwimPathAgent>();
-            agent.swimPath = waveInfo.SwimPath;
-            agent.Speed = waveInfo.speed;
-            startPostision += waveInfo.formationOffset;
-
-        }
-        currentWave++;
-        if(currentWave<enermyWaves.Length)
-        {
-            Invoke(nameof(SpawnEnermyWave), waveInfo.nextWaveDelay);
+            if (enermyWave.waveID == waveID)
+            {
+                FishData newFish = fishDataBase.fishDatas.Find(fish => fish.id == fishId);             
+                var enermy = Instantiate(fishOtherHandle, enermyWave.SwimPath[0], Quaternion.identity);
+               
+                enermy.SetData(newFish);
+                
+            }
+            currentWave++;
+            if (currentWave < enermyWave.numberOfWave)
+            {
+                Invoke(nameof(SpawnEnermyWave), enermyWave.nextWaveDelay);
+            }
         }
     }
 }

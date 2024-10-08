@@ -1,15 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnermyWave : MonoBehaviour
+[Serializable]
+public class EnermyWave 
 {
-    public Transform enermPrefab;
+    public int waveID;
+    public FishData fishData;
     public int numberOfEnemy;
-    public Vector3 formationOffset;
+    public int numberOfWave;
     public SwimPath SwimPath;
     public float speed;
     public float nextWaveDelay;
-
     
+}
+[Serializable]
+public class EnermyWaveList
+{
+    public List<EnermyWave> enermyWavesList;
 }

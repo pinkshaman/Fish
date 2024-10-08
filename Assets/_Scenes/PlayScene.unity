@@ -2979,7 +2979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9679820c213f81b4fb7d5649c2f3aa88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTime: 60
+  countdownTime: 180
   coundownText: {fileID: 1743179508}
   isEnd: 0
   control: {fileID: 544347088}
@@ -3890,7 +3890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishTarget: {fileID: 798837251}
-  speed: 4.5
+  speed: 0.01
   Offset: {x: 0, y: 0, z: -15}
   minBounds: {x: -50, y: -30}
   maxBounds: {x: 50, y: 30}
@@ -9459,7 +9459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1355130117}
-  - component: {fileID: 1355130116}
+  - component: {fileID: 1355130118}
   m_Layer: 0
   m_Name: EnermyWave
   m_TagString: Untagged
@@ -9467,24 +9467,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1355130116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1355130115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52bf23dc32dd75043a0fa08ab980adf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enermPrefab: {fileID: 4768841105628241272, guid: f3835122f36f3934b8468e7135a663a1, type: 3}
-  numberOfEnemy: 10
-  formationOffset: {x: 0, y: 0, z: 0}
-  SwimPath: {fileID: 1007811312}
-  speed: 10
-  nextWaveDelay: 5
 --- !u!4 &1355130117
 Transform:
   m_ObjectHideFlags: 0
@@ -9500,6 +9482,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1355130118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355130115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b90ad9e203ca8e428f7363d41abc488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enermyWavesLists:
+    enermyWavesList: []
+  fishId: 12
+  fishOtherHandle: {fileID: 1053265355681689607, guid: f3835122f36f3934b8468e7135a663a1, type: 3}
+  fishDataBase: {fileID: 11400000, guid: 5be3ad31cafc8e446a281d5a92d4c8ee, type: 2}
 --- !u!1 &1366561967
 GameObject:
   m_ObjectHideFlags: 0
@@ -13640,7 +13639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5353539918826268706, guid: a9dd06bf4b1cdfd4497b1e53ae04cec0, type: 3}
       propertyPath: smoothTime
-      value: 0.89
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
