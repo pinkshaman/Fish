@@ -49,7 +49,6 @@ public class FishOtherHandle : FishHandle
         Vector2 currentPosition = transform.position;
         movement = (randomTagetPosition - currentPosition).normalized;
         rb.MovePosition(Vector2.MoveTowards(currentPosition, randomTagetPosition, Speed * Time.deltaTime));
-
         Flip(movement);
 
         if (Vector2.Distance(currentPosition, randomTagetPosition) < 0.1f)

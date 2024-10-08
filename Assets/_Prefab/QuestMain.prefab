@@ -163,7 +163,7 @@ MonoBehaviour:
     QuestDecription: 
     TaskCount: 0
     fishList: 
-    rewardList: []
+    rewardListUpdate: []
   questProgessData:
     id: 0
     isComplete: 0
@@ -176,6 +176,7 @@ MonoBehaviour:
     rewardName: 
   QuestName: {fileID: 4539178969076582687}
   QuestDescription: {fileID: 2981407852229202844}
+  progessText: {fileID: 5014791069003445323}
   ProgessBar: {fileID: 4147497548703682435}
   ProgessFillBar: {fileID: 7314707955404392507}
   Claim: {fileID: 7276171296862806012}
@@ -469,7 +470,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20/20
+  m_Text: 
 --- !u!1 &978283252120828651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,7 +1217,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.88
+  m_FillAmount: 0.306
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

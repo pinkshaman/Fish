@@ -11,6 +11,7 @@ public class QuestHandle : MonoBehaviour
     public RewardBase rewardData;
     public TMP_Text QuestName;
     public TMP_Text QuestDescription;
+    public Text progessText;
     //public TMP_Text QuestType;       
     public Image ProgessBar;
     public Image ProgessFillBar;
@@ -68,6 +69,7 @@ public class QuestHandle : MonoBehaviour
     {
         float currentPecent = (float)questProgessData.currentQuestProgess/ questData.TaskCount;
         ProgessFillBar.fillAmount = currentPecent;
+        progessText.text = currentPecent.ToString();
         CheckQuest();
     }
     public void CheckQuest()

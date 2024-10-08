@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1490646831, guid: f2aa61ac48dd67e409e70a488b40285b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -227,7 +227,6 @@ MonoBehaviour:
     Price: 0
     fishPoint: 0
   fishPoints: 0
-  targetPosition: []
 --- !u!1 &7376073189774564993
 GameObject:
   m_ObjectHideFlags: 0

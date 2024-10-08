@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.IO.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -38,23 +39,12 @@ public class UIMainFishControl : MonoBehaviour
 
     public void Check(List<int> fishListID)
     {
-        foreach (var fishID in fishListID)
+        var sortedFishList = fishListID.Select(fishID => fishDataBase.fishDatas.Find(fishes => fishes.id == fishID)) 
+        .OrderBy(fishData => fishData.scalePoint) 
+        .ToList();
+        foreach (var fishID in sortedFishList)
         {
-            var fishData = fishDataBase.fishDatas.Find(fishes => fishes.id == fishID);
-            UiScore.CreateMenu(fishData);
-        }
-    }
-    public void CheckGame(int live)
-    {
-        Debug.Log($"live: {live}");
-        if (live == 0 || coutdownTime.isEnd == true)
-        {
-            isGameEnd = true;
-            LoadResutl(isGameEnd);
-        }
-        else
-        {
-            isGameEnd = false;
+            UiScore.CreateMenu(fishID);
         }
     }
 
@@ -70,15 +60,18 @@ public class UIMainFishControl : MonoBehaviour
             }
         }
     }
+
     public void LoadResutl(bool isEnd)
     {
+        isGameEnd = isEnd;
+
         Debug.Log($"IsGame: {isEnd}");
         resultPanel.SetActive(isEnd);
         UiScore.ShowReSult();
-        int fishLives = fishMain.lives;
+        int fishLives = UiScore.ReturnLives();
         int scores = UiScore.ReturnScore();
         RewardManager rewardManager = FindObjectOfType<RewardManager>();
-        StartCoroutine(rewardManager.CalculatorReward(isEnd,fishLives,scores));
+        StartCoroutine(rewardManager.CalculatorReward(isEnd, fishLives, scores));
         Debug.Log($"Waiting for Reward Intilizing: {isEnd}-{fishLives}-{scores}");
 
     }

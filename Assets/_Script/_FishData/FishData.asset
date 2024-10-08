@@ -23,43 +23,43 @@ MonoBehaviour:
     fishPoint: 10
   - id: 2
     fishName: Angle
-    scalePoint: 3
+    scalePoint: 14
     speed: 7
     fishSprite: {fileID: 1116063129, guid: f056917dafa0d164e8fb3e6113c5545b, type: 3}
     controller: {fileID: 9100000, guid: d046917813b472642b4125d5a12c28a7, type: 2}
-    Price: 200
+    Price: 15000
     fishPoint: 20
   - id: 3
     fishName: Barracuda
-    scalePoint: 15
+    scalePoint: 30
     speed: 6
     fishSprite: {fileID: -769307366, guid: 42e880bf6007add47b83d6482769407c, type: 3}
     controller: {fileID: 9100000, guid: 804e4f4569941334bbb6b89140e94ff1, type: 2}
-    Price: 300
+    Price: 40000
     fishPoint: 30
   - id: 4
     fishName: Humphead Wrasse
-    scalePoint: 31
+    scalePoint: 30
     speed: 5
     fishSprite: {fileID: -967357005, guid: 385cd4bfce9269f4587dcf77daf7d3f2, type: 3}
     controller: {fileID: 9100000, guid: 19181ed7a3fc69d4288234068bd40327, type: 2}
-    Price: 400
+    Price: 70000
     fishPoint: 40
   - id: 5
     fishName: JohnDory
-    scalePoint: 17
+    scalePoint: 25
     speed: 6.5
     fishSprite: {fileID: -955992280, guid: faf74db2a8f27704f86634372e24ddaf, type: 3}
     controller: {fileID: 9100000, guid: 014e4393a60d8524a83d023b4ab2e730, type: 2}
-    Price: 500
+    Price: 90000
     fishPoint: 50
   - id: 6
     fishName: Marlin
-    scalePoint: 23
+    scalePoint: 35
     speed: 12
     fishSprite: {fileID: -50807353, guid: f4a8b4dcab120c5449c87fdacd45b054, type: 3}
     controller: {fileID: 9100000, guid: 7024e9a76ff9e694998c7e057698fc3f, type: 2}
-    Price: 800
+    Price: 150000
     fishPoint: 150
   - id: 7
     fishName: Orca
@@ -67,39 +67,39 @@ MonoBehaviour:
     speed: 13.5
     fishSprite: {fileID: 1037851793, guid: a7430e0c31e4e3a4582e42d9eac88f94, type: 3}
     controller: {fileID: 9100000, guid: 1333f79d20f4a154599dc5b5c98d340c, type: 2}
-    Price: 1500
+    Price: 2000000
     fishPoint: 300
   - id: 8
     fishName: Puffrer
     scalePoint: 25
-    speed: 4
-    fishSprite: {fileID: -150435916, guid: b9558aac1a216744b988cf501c9dea09, type: 3}
-    controller: {fileID: 9100000, guid: 4d4e264129dcf8a44b90f6b13a618f6b, type: 2}
-    Price: 1000
-    fishPoint: 250
+    speed: 8
+    fishSprite: {fileID: 1800484203, guid: d674d5340d46d924e9683f8e3c0eddc2, type: 3}
+    controller: {fileID: 9100000, guid: 4564e61c7aa66ea4aae29b6793c2ef2a, type: 2}
+    Price: 50000
+    fishPoint: 20
   - id: 9
     fishName: Shark
-    scalePoint: 40
-    speed: 9
+    scalePoint: 50
+    speed: 20
     fishSprite: {fileID: -1180742736, guid: 72f8f1df854543947bcd6d79ff6eb6be, type: 3}
     controller: {fileID: 9100000, guid: bf15e51bf6ac8cc40ac60d6d45ce303f, type: 2}
-    Price: 1000
+    Price: 1500000
     fishPoint: 500
   - id: 10
     fishName: Surgeon
-    scalePoint: 13
-    speed: 6
+    scalePoint: 10
+    speed: 7
     fishSprite: {fileID: -1415346395, guid: 840b5faa7556968409da7347eecef535, type: 3}
     controller: {fileID: 9100000, guid: dcffb7effd04437409eb9cf9d3fd61ae, type: 2}
-    Price: 900
-    fishPoint: 300
+    Price: 30000
+    fishPoint: 13
   - id: 11
     fishName: Tuna
-    scalePoint: 19
+    scalePoint: 45
     speed: 6.8
     fishSprite: {fileID: -129485271, guid: 79c89078cdaddc343ad587aace877c14, type: 3}
     controller: {fileID: 9100000, guid: 90aeb464a390dc143817cd9d1a79aeaa, type: 2}
-    Price: 1300
+    Price: 700000
     fishPoint: 200
   - id: 12
     fishName: Minow
@@ -108,4 +108,20 @@ MonoBehaviour:
     fishSprite: {fileID: 388635681, guid: 6600feb6ca84e9147bb7afab55a605f4, type: 3}
     controller: {fileID: 9100000, guid: 99d6fefb0a617be4ab8c1feb67cae27a, type: 2}
     Price: 0
-    fishPoint: 200
+    fishPoint: 5
+  - id: 13
+    fishName: Lion
+    scalePoint: 15
+    speed: 10
+    fishSprite: {fileID: -1276677380, guid: d640b8365408cdf43ae7025c6153da79, type: 3}
+    controller: {fileID: 9100000, guid: 675896dd54154744e92fbec150254790, type: 2}
+    Price: 40000
+    fishPoint: 30
+  - id: 14
+    fishName: Parrot
+    scalePoint: 30
+    speed: 15
+    fishSprite: {fileID: -150435916, guid: b9558aac1a216744b988cf501c9dea09, type: 3}
+    controller: {fileID: 9100000, guid: 4d4e264129dcf8a44b90f6b13a618f6b, type: 2}
+    Price: 680000
+    fishPoint: 50

@@ -38,26 +38,25 @@ public class UIScore : MonoBehaviour
         var fishMenu = Instantiate(fishDisplay, RootFishMenu);
         var fishImage = fishMenu.GetComponentInChildren<Image>();
         fishImage.sprite = fishDataX.fishSprite;
-        //if (int.TryParse(scalePoint.text, out int scale))
-        //{
-        //    if (fishDataX.scalePoint > scale)
-        //    {
-        //        fishImage.color = Color.black;
-        //        fishImage.sprite = fishDataX.fishSprite;
-        //    }
-        //}
+        CheckScalePoint(fishImage, fishDataX);
     }
-    public void CheckScalePoint()
+    public void CheckScalePoint(Image image, FishData fishDataX)
     {
 
-
+        if (int.TryParse(scalePoint.text, out int scale))
+        {
+            if (fishDataX.scalePoint > scale)
+            {
+                image.color = Color.black;              
+            }
+        }
 
     }
     public void SetdataUI(FishMain fish)
     {
         this.fishMain = fish;
         SetMenuData(fish);
-       
+
     }
     public void SetMenuData(FishMain fishMain)
     {
@@ -66,7 +65,6 @@ public class UIScore : MonoBehaviour
         lives.text = $"{fishMain.lives}";
 
         SetScalePoint();
-        CheckScalePoint();
         CheckLives();
     }
     public void SetScalePoint()
@@ -123,16 +121,26 @@ public class UIScore : MonoBehaviour
         int ScoreRwards = int.Parse(ScoreReward.text);
         return ScoreRwards;
     }
-   public void CheckLives()
+    public int ReturnLives()
+    {
+        int live = int.Parse(lives.text);
+        return live;
+    }
+    public void CheckLives()
     {
         int live = int.Parse(lives.text);
         UIMainFishControl uIMainFish = FindObjectOfType<UIMainFishControl>();
-        uIMainFish.CheckGame(live);
+        if (live <= 0)
+        {
+            bool isGameEnd = true;
+            uIMainFish.LoadResutl(isGameEnd);
+        }
         if (fishMain.isDead == true && fishMain.lives > 0)
         {
             uIMainFish.StartCoroutine(uIMainFish.RespawnFish());
             fishMain.isDead = false;
         }
+
     }
 
 

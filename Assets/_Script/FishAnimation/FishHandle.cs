@@ -24,6 +24,7 @@ public class FishHandle : MonoBehaviour
     public AudioManager audioManager;
     public AudioClip fishEat;
     public AudioClip fishGround;
+    
     public virtual void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
@@ -52,7 +53,7 @@ public class FishHandle : MonoBehaviour
 
     }
 
-    public virtual void Flip(Vector2 direction)
+    public virtual void Flip(Vector3 direction)
     {
 
         if (direction.x < 0) // Di chuyển sang trái
@@ -76,7 +77,7 @@ public class FishHandle : MonoBehaviour
         Vector2 targetPosition = targetPoint.position;
         movement = (targetPosition - currentPosition).normalized;
         rb.MovePosition(Vector2.Lerp(currentPosition, targetPosition, Speed * Time.deltaTime));
-        Flip(movement);
+       StartCoroutine(StartTurn(movement));
 
         if (Vector2.Distance(currentPosition, targetPosition) > 0.2f)
         {
@@ -86,6 +87,18 @@ public class FishHandle : MonoBehaviour
         {
             anim.SetBool("isMoving", false);
         }
+    }
+    public virtual IEnumerator StartTurn(Vector3 currentDirection)
+    {
+        anim.SetTrigger("Turn");
+        AnimatorStateInfo turnStateInfo = anim.GetCurrentAnimatorStateInfo(0);
+        while (!turnStateInfo.IsName("Turn"))
+        {
+            yield return null;
+            turnStateInfo = anim.GetCurrentAnimatorStateInfo(0);
+        }
+        yield return new WaitForSeconds(turnStateInfo.length);
+        Flip(currentDirection);
     }
 
     public virtual void Eat()
@@ -121,7 +134,6 @@ public class FishHandle : MonoBehaviour
         else if (this.scalePoint == 30)
         {
             audioManager.PlaySoundEffect(fishGround);
-
             Debug.Log("Scaling Fish!");
             transform.localScale = new Vector3(3, 3, 1);
         }

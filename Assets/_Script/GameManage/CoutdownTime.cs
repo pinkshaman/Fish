@@ -21,6 +21,10 @@ public class CoutdownTime : MonoBehaviour
     {
         while (currenTimes > 0)
         {
+            if (control.isGameEnd)
+            {
+                yield break; 
+            }
             isEnd = false;
             currenTimes -= Time.deltaTime;
             coundownText.text = Mathf.Ceil(currenTimes).ToString();

@@ -53,22 +53,22 @@ public class RewardManager : MonoBehaviour
                 if (score > 0 && score <= 300)
                 {
                     reward.rewardQuality += Mathf.RoundToInt(score * 0.1f);
-                    CreateReward(reward); break;
+                    CreateReward(reward); 
                 }
                 else if (score > 300 && score <= 600)
                 {
                     reward.rewardQuality += Mathf.RoundToInt(score * 0.2f);
-                    CreateReward(reward); break;
+                    CreateReward(reward); 
                 }
                 else if (score > 600 && score <= 1000)
                 {
                     reward.rewardQuality += Mathf.RoundToInt(score * 0.3f);
-                    CreateReward(reward); break;
+                    CreateReward(reward); 
                 }
                 else if (score > 1000)
                 {
                     reward.rewardQuality += Mathf.RoundToInt(score * 0.5f);
-                    CreateReward(reward); break;
+                    CreateReward(reward); 
                 }
             }
 

@@ -10,10 +10,14 @@ public class FishMain : FishHandle
     public int score;
     public float dashSpeed = 10;
     public bool isDead;
+    public GameObject effectEat;
+    public Move move;
+    private Vector3 previousDirection; 
+
     public override void Start()
     {
+        control = FindObjectOfType<UIScore>();
         base.Start();
-
         control.SetdataUI(this);
     }
     public override void SetData(FishData dataX)
@@ -50,6 +54,24 @@ public class FishMain : FishHandle
 
         }
     }
+    public override void Eat()
+    {
+        base.Eat();
+        effectEat.SetActive(true);
+        StartCoroutine(HandleEffectEat());
+    }
+    private IEnumerator HandleEffectEat()
+    {        
+        effectEat.SetActive(true);       
+        AnimatorStateInfo eatStateInfo = anim.GetCurrentAnimatorStateInfo(0);
+        while (!eatStateInfo.IsName("Eat"))
+        {
+            yield return null; 
+            eatStateInfo = anim.GetCurrentAnimatorStateInfo(0); 
+        }     
+        yield return new WaitForSeconds(eatStateInfo.length);     
+        effectEat.SetActive(false);
+    }
     public void Dash()
     {
         float dashDirection = transform.localScale.x;
@@ -63,6 +85,37 @@ public class FishMain : FishHandle
         control.SetdataUI(this);
 
     }
+    public override void Move()
+    {
+        Vector3 currentDirection = move.GetCurrentDirection();
+        if (currentDirection.magnitude > 0.01f)
+        {           
+            anim.SetBool("isMoving", true);
+            if (Mathf.Sign(currentDirection.x) != Mathf.Sign(previousDirection.x))
+            {
+                StartCoroutine(StartTurn(currentDirection));
+            }
+        }
+        else
+        {       
+            anim.SetBool("isMoving", false);
+        }
+
+        previousDirection = currentDirection;
+    }
+    public override IEnumerator StartTurn(Vector3 currentDirection)
+    {      
+        anim.SetTrigger("Turn");
+        AnimatorStateInfo turnStateInfo = anim.GetCurrentAnimatorStateInfo(0);
+        while (!turnStateInfo.IsName("Turn"))
+        {
+            yield return null;
+            turnStateInfo = anim.GetCurrentAnimatorStateInfo(0);
+        }
+        yield return new WaitForSeconds(turnStateInfo.length);
+        Flip(currentDirection);
+    }
+
     public override void Update()
     {
         base.Update();

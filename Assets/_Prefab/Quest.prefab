@@ -1065,7 +1065,7 @@ MonoBehaviour:
     QuestDecription: 
     TaskCount: 0
     fishList: 
-    rewardList: []
+    rewardListUpdate: []
   questProgessData:
     id: 0
     isComplete: 0
@@ -1078,6 +1078,7 @@ MonoBehaviour:
     rewardName: 
   QuestName: {fileID: 2939959721014904415}
   QuestDescription: {fileID: 2963663474664361358}
+  progessText: {fileID: 7647716573017252771}
   ProgessBar: {fileID: 411531359668789651}
   ProgessFillBar: {fileID: 411531360244714783}
   Claim: {fileID: 8003919954476624433}
@@ -1545,5 +1546,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7647716573017252771 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2168959840865543856, guid: 106ede34cca50ba47be553066c8c2796, type: 3}
+  m_PrefabInstance: {fileID: 8375451552620430611}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
