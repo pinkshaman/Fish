@@ -7,12 +7,13 @@ using UnityEngine;
 public class EnermyWave 
 {
     public int waveID;
-    public FishData fishData;
+    public int fishDataID;
     public int numberOfEnemy;
     public int numberOfWave;
     public SwimPath SwimPath;
     public float speed;
     public float nextWaveDelay;
+    public List<GameObject> spawnPoint;
     
 }
 [Serializable]

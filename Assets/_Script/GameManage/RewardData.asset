@@ -15,7 +15,7 @@ MonoBehaviour:
   rewardBases:
   - rewardID: 1
     rewardIMG: {fileID: 21300000, guid: 0044249ffbdc0cc46826fc25e90fdfce, type: 3}
-    rewardQuality: 200
+    rewardQuality: 100
     rewardName: White Pearl
   - rewardID: 2
     rewardIMG: {fileID: 21300000, guid: 50cce95390189a34fbe20c6fd137c2c1, type: 3}

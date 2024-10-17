@@ -16,6 +16,7 @@ public class Move : MonoBehaviour
         {
             targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             currentDirection = targetPosition - transform.position;
+            currentDirection.z = 0;
             targetPosition.z = transform.position.z;
             transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
 

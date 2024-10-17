@@ -14,7 +14,6 @@ public class SwimPath : MonoBehaviour
         for (int i = 0; i < wayPoint.Count - 1; i++)
         {
             Gizmos.DrawLine(wayPoint[i].transform.position, wayPoint[i + 1].transform.position);
-
         }
     }
 }

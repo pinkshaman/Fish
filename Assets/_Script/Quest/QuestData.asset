@@ -20,6 +20,6 @@ MonoBehaviour:
     fishList: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e000000
     rewardListUpdate:
     - rewardID: 1
-      rewardQuality: 200
+      rewardQuality: 100
     - rewardID: 3
       rewardQuality: 500

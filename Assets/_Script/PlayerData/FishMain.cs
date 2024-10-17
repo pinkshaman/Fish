@@ -40,16 +40,32 @@ public class FishMain : FishHandle
     {
         if (collision.gameObject.CompareTag("Fish"))
         {
-            // Lấy đối tượng FishHandle từ đối tượng va chạm
-            FishOtherHandle otherFishHandle = collision.gameObject.GetComponent<FishOtherHandle>();
-            if (this.scalePoint >= otherFishHandle.scalePoint)
+            if (collision.gameObject.GetComponent<FishOtherHandle>())
             {
-                this.scalePoint++;
-                this.score += otherFishHandle.fishPoints;
-                Eat();
-                Destroy(collision.gameObject);
-                ScaleFish();
-                control.SetdataUI(this);
+                FishOtherHandle otherFishHandle = collision.gameObject.GetComponent<FishOtherHandle>();
+                if (this.scalePoint >= otherFishHandle.scalePoint)
+                {
+                    this.scalePoint++;
+                    this.score += otherFishHandle.fishPoints;
+                    Eat();
+                    Destroy(collision.gameObject);
+                    ScaleFish();
+                    control.SetdataUI(this);
+                }
+            }
+            else if(collision.gameObject.GetComponent<FishSpawn>())
+            {
+                var fishWave = collision.GetComponent<FishSpawn>();
+                if (this.scalePoint>= fishWave.scalePoint)
+                {
+
+                    this.scalePoint++;
+                    this.score += fishWave.fishPoints;
+                    Eat();
+                    Destroy(collision.gameObject);
+                    ScaleFish();
+                    control.SetdataUI(this);
+                }
             }
 
         }
@@ -69,7 +85,7 @@ public class FishMain : FishHandle
             yield return null; 
             eatStateInfo = anim.GetCurrentAnimatorStateInfo(0); 
         }     
-        yield return new WaitForSeconds(eatStateInfo.length);     
+        yield return new WaitForSeconds(eatStateInfo.length/2);     
         effectEat.SetActive(false);
     }
     public void Dash()
@@ -88,7 +104,7 @@ public class FishMain : FishHandle
     public override void Move()
     {
         Vector3 currentDirection = move.GetCurrentDirection();
-        if (currentDirection.magnitude > 0.01f)
+        if (currentDirection.magnitude > 0.2f)
         {           
             anim.SetBool("isMoving", true);
             if (Mathf.Sign(currentDirection.x) != Mathf.Sign(previousDirection.x))

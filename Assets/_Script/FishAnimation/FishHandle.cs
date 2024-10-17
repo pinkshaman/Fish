@@ -50,7 +50,7 @@ public class FishHandle : MonoBehaviour
         anim.runtimeAnimatorController = dataX.controller;
         fishSprite = dataX.fishSprite;
         uniqueID = GetInstanceID();
-
+        
     }
 
     public virtual void Flip(Vector3 direction)

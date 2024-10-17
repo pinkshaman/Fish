@@ -18,8 +18,10 @@ public class CameraFollow : MonoBehaviour
     }
 
     public void Update()
-    {       
-        Vector3 desiredPosition = fishTarget.position + Offset;
+    {
+        var fishMain = FindObjectOfType<FishMain>();     
+       
+        Vector3 desiredPosition = fishMain.gameObject.transform.position + Offset;
 
         // Giới hạn vị trí của camera trong vùng cho phép
         float clampedX = Mathf.Clamp(desiredPosition.x, minBounds.x, maxBounds.x);

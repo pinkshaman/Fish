@@ -22,11 +22,16 @@ public class SwimPathAgent : MonoBehaviour
         else
         {
             nextIndex++;
+            if (nextIndex >= swimPath.wayPoint.Count)
+            {
+                Destroy(gameObject);
+            }
         }
     }
     public void SwimToNextPoint()
     => transform.position = Vector3.MoveTowards(transform.position, swimPath[nextIndex], Speed * Time.deltaTime);
-
+    public Vector3 Swim()
+        => transform.position = Vector3.MoveTowards(transform.position, swimPath[nextIndex], Speed * Time.deltaTime);
 
 
 }
