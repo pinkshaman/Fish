@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,4 +17,9 @@ public class SwimPath : MonoBehaviour
             Gizmos.DrawLine(wayPoint[i].transform.position, wayPoint[i + 1].transform.position);
         }
     }
+}
+[Serializable]
+public class SwimPathList
+{
+    public List<SwimPath> wayPoint;
 }

@@ -7,7 +7,7 @@ public class ChallengerScene : MonoBehaviour
 {
     public int QuestID;
     public QuestProgessDataBase processDataBase;
-    public QuestDataBase questDataBase; 
+    public QuestDataBase questDataBase;
     public GameObject questTogglePanel;
     public Toggle toggle;
     public FishManager fishManager;
@@ -17,11 +17,11 @@ public class ChallengerScene : MonoBehaviour
     public void Start()
     {
         toggle.onValueChanged.AddListener(OpenQuestCheck);
-        Debug.Log($"input QuestID : {QuestID}");                    
+        Debug.Log($"input QuestID : {QuestID}");
         ChangeBGMusic();
         GetQuestDataByID(QuestID);
     }
- 
+
     public void ChangeBGMusic()
     {
         AudioManager audioManager = FindObjectOfType<AudioManager>();
@@ -33,9 +33,9 @@ public class ChallengerScene : MonoBehaviour
         questTogglePanel.SetActive(isOn);
     }
 
-    
-    public IEnumerator CreateFishData(List<int>fishList, float delay)
-    {  
+
+    public IEnumerator CreateFishData(List<int> fishList, float delay)
+    {
         int currentScalePoint = UiFish.fishMain.scalePoint;
         int maxScalePoint = GetMaxScalePoint(currentScalePoint);
 
@@ -47,9 +47,9 @@ public class ChallengerScene : MonoBehaviour
             FishData randomFish = filteredFishList[Random.Range(0, filteredFishList.Count)];
             fishManager.CreateFishQuest(randomFish.id);
             yield return new WaitForSeconds(delay);
-            
+
         }
-        if(UiFish.isGameEnd)
+        if (UiFish.isGameEnd)
         {
             fishManager.DestroyFish(UiFish.isGameEnd);
         }
@@ -78,11 +78,14 @@ public class ChallengerScene : MonoBehaviour
         LoadDataJson();
         foreach (var datas in questDataBase.questDataBases)
         {
-            QuestProgessData processData = processDataBase.questProgessDatas.Find(processData => processData.id == datas.questID && datas.questID == questID);
-            questByID.SetDataHandle(datas, processData);
-            UiFish.Check(datas.fishList);
-            StartCoroutine(CreateFishData(datas.fishList, 1.0f));
-            rewardManager.SetDataListReward(datas.rewardListUpdate);
+            if (datas.questID == questID)
+            {
+                QuestProgessData processData = processDataBase.questProgessDatas.Find(processData => processData.id == datas.questID && datas.questID == questID);
+                questByID.SetDataHandle(datas, processData);
+                UiFish.Check(datas.fishList);
+                StartCoroutine(CreateFishData(datas.fishList, 1.0f));
+                rewardManager.SetDataListReward(datas.rewardListUpdate);
+            }
         }
     }
 }

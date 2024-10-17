@@ -23,3 +23,13 @@ MonoBehaviour:
       rewardQuality: 100
     - rewardID: 3
       rewardQuality: 500
+  - questID: 2
+    QuestName: Story 1
+    QuestDecription: Eat All Fish!
+    TaskCount: 1
+    fishList: 0100000002000000030000000c000000
+    rewardListUpdate:
+    - rewardID: 1
+      rewardQuality: 100
+    - rewardID: 3
+      rewardQuality: 500
