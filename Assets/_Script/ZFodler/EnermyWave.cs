@@ -5,11 +5,8 @@ using UnityEngine;
 
 [Serializable]
 public class EnermyWave 
-{
-    public int waveID;
-    public int fishDataID;
-    public int numberOfEnemy;
-    public int numberOfWave;
+{   
+    public int numberOfEnemy;  
     public SwimPath SwimPath;
     public float speed;
     public float nextWaveDelay;

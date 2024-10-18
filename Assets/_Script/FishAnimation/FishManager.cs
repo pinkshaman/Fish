@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.XR;
 using Transform = UnityEngine.Transform;
 
 public class FishManager : MonoBehaviour
@@ -18,6 +19,9 @@ public class FishManager : MonoBehaviour
     public Transform rootMainFish;
 
     public List<Transform> spawnPoints;
+    public EnermyWaveList enermyWaveList;
+    public GroupFish parentGroup;
+    public FishSpawn fishSpawn;
 
     public void Awake()
     {
@@ -58,9 +62,31 @@ public class FishManager : MonoBehaviour
         fishOtherHandles.SetData(fishData);
         RegisterFish(fishOtherHandles.ID);
     }
+    public void CreateFishGroup(int fishID)
+    {
+        int randomIndex = Random.Range(0, enermyWaveList.enermyWavesList.Count);
+        EnermyWave enermyWave = enermyWaveList.enermyWavesList[randomIndex];
+
+        FishData fishData = fishDataBases.fishDatas.Find(fish => fish.id == fishID);
+        var newParentGroup = Instantiate(parentGroup, enermyWave.SwimPath[0], Quaternion.identity,rootFish);
+        
+        Vector3 randomPosition = spawnPoints[randomIndex].position;
+        for (int i = 0; i < enermyWave.numberOfEnemy; i++)
+        {
+            var enermy = Instantiate(fishSpawn, enermyWave.spawnPoint[i].transform.position, Quaternion.identity, rootFish);
+            enermy.gameObject.transform.SetParent(newParentGroup.transform);
+            FishSpawn fish = enermy.GetComponent<FishSpawn>();
+            fish.uniqueID = enermy.GetInstanceID();
+            enermy.SetData(fishData);
+            RegisterFish(fish.ID);
+        }
+        newParentGroup.SetDataGroup(enermyWave.SwimPath, fishData.speed);
+
+
+    }
     public void DestroyFish(bool isEnd)
     {
-        foreach(Transform fishObj in rootFish)
+        foreach (Transform fishObj in rootFish)
         {
             Destroy(fishObj.gameObject);
         }
@@ -78,6 +104,6 @@ public class FishManager : MonoBehaviour
 
         Debug.Log($"Create fish: {newFish.name} at position {spawnPosition}");
     }
-    
+
 
 }

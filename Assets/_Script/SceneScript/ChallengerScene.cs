@@ -14,6 +14,7 @@ public class ChallengerScene : MonoBehaviour
     public RewardManager rewardManager;
     public UIMainFishControl UiFish;
     public QuestByID questByID;
+
     public void Start()
     {
         toggle.onValueChanged.AddListener(OpenQuestCheck);
@@ -44,8 +45,10 @@ public class ChallengerScene : MonoBehaviour
             currentScalePoint = UiFish.fishMain.scalePoint;
             maxScalePoint = GetMaxScalePoint(currentScalePoint);
             List<FishData> filteredFishList = fishManager.fishDataBases.fishDatas.FindAll(fish => fish.scalePoint <= maxScalePoint && fishList.Contains(fish.id));
-            FishData randomFish = filteredFishList[Random.Range(0, filteredFishList.Count)];
+            FishData randomFish = filteredFishList[Random.Range(0, filteredFishList.Count)];                   
             fishManager.CreateFishQuest(randomFish.id);
+            fishManager.CreateFishGroup(randomFish.id);
+          
             yield return new WaitForSeconds(delay);
 
         }
@@ -81,9 +84,16 @@ public class ChallengerScene : MonoBehaviour
             if (datas.questID == questID)
             {
                 QuestProgessData processData = processDataBase.questProgessDatas.Find(processData => processData.id == datas.questID && datas.questID == questID);
+                if (processData == null|| processData.id != questID)
+                {
+                    processData = new QuestProgessData(datas.questID, false, false, 0);
+                    processDataBase.questProgessDatas.Add(processData);
+                    SaveDataJson();
+                }
+
                 questByID.SetDataHandle(datas, processData);
                 UiFish.Check(datas.fishList);
-                StartCoroutine(CreateFishData(datas.fishList, 1.0f));
+                StartCoroutine(CreateFishData(datas.fishList, 3.0f));
                 rewardManager.SetDataListReward(datas.rewardListUpdate);
             }
         }
