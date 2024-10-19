@@ -7,7 +7,7 @@ public class SwimPathAgent : MonoBehaviour
 {
     public SwimPath swimPath;
     public float Speed;
-    private int nextIndex = 1;
+    public int nextIndex = 1;
 
 
 
@@ -30,8 +30,8 @@ public class SwimPathAgent : MonoBehaviour
     }
     public void SwimToNextPoint()
     => transform.position = Vector3.MoveTowards(transform.position, swimPath[nextIndex], Speed * Time.deltaTime);
-    public Vector3 Swim()
-        => transform.position = Vector3.MoveTowards(transform.position, swimPath[nextIndex], Speed * Time.deltaTime);
+    //public Vector3 Swim()
+    //    => transform.position = Vector3.MoveTowards(transform.position, swimPath[nextIndex], Speed * Time.deltaTime);
 
 
 }

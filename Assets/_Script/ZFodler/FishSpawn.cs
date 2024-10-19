@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class FishSpawn : FishHandle
@@ -9,14 +10,14 @@ public class FishSpawn : FishHandle
     private Vector2 randomTagetPosition;
     public SwimPathAgent swimPathAgent;
     public int fishPoints;
+    
     public override void UpdateData(FishData dataX)
     {
         base.UpdateData(dataX);
         this.fishPoints = dataX.fishPoint;
         
     }
-   
-   
+
     public void SetDataAndSwimPath(FishData fishData, SwimPath swimPath)
     {
         this.swimPathAgent.swimPath = swimPath;
