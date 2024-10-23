@@ -16,6 +16,7 @@ public class UIMainFishControl : MonoBehaviour
     public UIScore UiScore;
     public CoutdownTime coutdownTime;
     public GameObject resultPanel;
+    public Interstitial ads;
     public bool isGameEnd;
 
 
@@ -68,6 +69,7 @@ public class UIMainFishControl : MonoBehaviour
         Debug.Log($"IsGame: {isEnd}");
         resultPanel.SetActive(isEnd);
         UiScore.ShowReSult();
+        ads.ShowAd();
         int fishLives = UiScore.ReturnLives();
         int scores = UiScore.ReturnScore();
         RewardManager rewardManager = FindObjectOfType<RewardManager>();

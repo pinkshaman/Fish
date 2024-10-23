@@ -90,6 +90,22 @@ public class FishOtherHandle : FishHandle
             }
         }
     }
+    public override void ScaleFish()
+    {
+        if (this.scalePoint == 15)
+        {                
+            transform.localScale = new Vector3(1.5f, 1.5f, 1);
+        }
+        else if (this.scalePoint == 30)
+        {
+           
+            transform.localScale = new Vector3(2.0f, 2.0f, 1);
+        }
+        else if (this.scalePoint == 50)
+        {          
+            transform.localScale = new Vector3(2.5f, 2.5f, 1);
+        }
+    }
     public override void Update()
     {
         base.Update();

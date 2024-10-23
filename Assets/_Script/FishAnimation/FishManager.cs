@@ -94,9 +94,7 @@ public class FishManager : MonoBehaviour
 
     public void CreateFish(FishData dataX)
     {
-        Vector2 spawnPosition = transform.position;
-
-        // Tạo đối tượng cá mới từ prefab và gán nó vào rootFish
+        Vector2 spawnPosition = transform.position;     
         var newFish = Instantiate(PlayerFishMain, spawnPosition, Quaternion.identity, rootMainFish);
         var fishHandle = newFish.GetComponent<FishMain>();
         fishHandle.gameObject.SetActive(true);

@@ -245,9 +245,12 @@ MonoBehaviour:
   ID: 0
   fishSprite: {fileID: 0}
   audioManager: {fileID: 0}
-  fishEat: {fileID: 0}
-  fishGround: {fileID: 0}
+  fishEat: {fileID: 8300000, guid: de25c7bfcddd0d643ac3e2ac1c10a97b, type: 3}
+  fishGround: {fileID: 8300000, guid: ef9451d241ddd7c45acccf970423c816, type: 3}
+  moveAreaMin: {x: 0, y: 0}
+  moveAreaMax: {x: 0, y: 0}
   swimPathAgent: {fileID: -8609005451889944473}
+  fishPoints: 0
 --- !u!114 &-8609005451889944473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,3 +265,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swimPath: {fileID: 6225281993662170720, guid: 145dc4b4ee4d2f2408b64821f5aba8f8, type: 3}
   Speed: 0
+  nextIndex: 1

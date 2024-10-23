@@ -14,8 +14,7 @@ public class FishSpawn : FishHandle
     public override void UpdateData(FishData dataX)
     {
         base.UpdateData(dataX);
-        this.fishPoints = dataX.fishPoint;
-        
+        this.fishPoints = dataX.fishPoint;     
     }
 
     public void SetDataAndSwimPath(FishData fishData, SwimPath swimPath)
@@ -51,6 +50,22 @@ public class FishSpawn : FishHandle
             {
                 SetRandomTagetPosition();
             }
+        }
+    }
+    public override void ScaleFish()
+    {
+        if (this.scalePoint == 15)
+        {
+            transform.localScale = new Vector3(1.5f, 1.5f, 1);
+        }
+        else if (this.scalePoint == 30)
+        {
+
+            transform.localScale = new Vector3(2.0f, 2.0f, 1);
+        }
+        else if (this.scalePoint == 50)
+        {
+            transform.localScale = new Vector3(2.5f, 2.5f, 1);
         }
     }
 

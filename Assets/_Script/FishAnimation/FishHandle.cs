@@ -143,6 +143,12 @@ public class FishHandle : MonoBehaviour
             Debug.Log("Scaling Fish!");
             transform.localScale = new Vector3(2.5f, 2.5f, 1);
         }
+        else if (this.scalePoint == 70)
+        {
+            audioManager.PlaySoundEffect(fishGround);
+            Debug.Log("Scaling Fish!");
+            transform.localScale = new Vector3(3.0f, 3.0f, 1);
+        }
     }
     public virtual void Update()
     {    
