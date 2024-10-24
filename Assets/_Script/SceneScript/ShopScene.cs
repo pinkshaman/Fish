@@ -84,7 +84,7 @@ public class ShopScene : MonoBehaviour
 
     public void OnclickEffect()
     {
-        AudioManager audio = FindObjectOfType<AudioManager>();
+        AudioManager audio = FindAnyObjectByType<AudioManager>();
         audio.OnButtonClickAudio();
     }
     private void OnApplicationQuit()

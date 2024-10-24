@@ -14,9 +14,11 @@ public class ChallengerScene : MonoBehaviour
     public RewardManager rewardManager;
     public UIMainFishControl UiFish;
     public QuestByID questByID;
-
+    public MapDataBase mapDataBase;
+    public MapChallenger mapPrefabs;
+    public Transform rootMap;
     public void Start()
-    {
+    {       
         toggle.onValueChanged.AddListener(OpenQuestCheck);
         Debug.Log($"input QuestID : {QuestID}");
         ChangeBGMusic();
@@ -25,7 +27,7 @@ public class ChallengerScene : MonoBehaviour
 
     public void ChangeBGMusic()
     {
-        AudioManager audioManager = FindObjectOfType<AudioManager>();
+        AudioManager audioManager = FindAnyObjectByType<AudioManager>();
         audioManager.ChangeBackGroundMusic(2);
     }
 
@@ -76,6 +78,12 @@ public class ChallengerScene : MonoBehaviour
         PlayerPrefs.SetString(nameof(processDataBase), value);
         PlayerPrefs.Save();
     }
+    public void LoadMap(int mapID)
+    {
+        MapData mapdata = mapDataBase.mapDataBases.Find(map => map.mapID == mapID);  
+        var newMap = Instantiate(mapPrefabs, rootMap);
+        newMap.SetMap(mapdata);
+    }
     public void GetQuestDataByID(int questID)
     {
         LoadDataJson();
@@ -95,6 +103,7 @@ public class ChallengerScene : MonoBehaviour
                 UiFish.Check(datas.fishList);
                 StartCoroutine(CreateFishData(datas.fishList, 3.0f));
                 rewardManager.SetDataListReward(datas.rewardListUpdate);
+                LoadMap(datas.mapData);
             }
         }
     }

@@ -13,7 +13,7 @@ public class ButtonOnOff : ButtonUi
         if (Object != null)
         {
             Object.SetActive(!activateOnClick);
-            AudioManager audio = FindObjectOfType<AudioManager>();
+            AudioManager audio = FindAnyObjectByType<AudioManager>();
             audio.OnButtonClickAudio();
         }
         else

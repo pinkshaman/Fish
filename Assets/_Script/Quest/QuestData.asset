@@ -23,6 +23,7 @@ MonoBehaviour:
       rewardQuality: 100
     - rewardID: 3
       rewardQuality: 500
+    mapData: 2
   - questID: 2
     QuestName: Story 1
     QuestDecription: Eat All Fish!
@@ -33,3 +34,4 @@ MonoBehaviour:
       rewardQuality: 100
     - rewardID: 3
       rewardQuality: 500
+    mapData: 1

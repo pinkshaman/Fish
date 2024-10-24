@@ -43,7 +43,7 @@ public class ButtonUi : MonoBehaviour
     public virtual void OnClick()
     {
         Debug.Log("Button Clicked!");
-        AudioManager audio = FindObjectOfType<AudioManager>();
+        AudioManager audio = FindAnyObjectByType<AudioManager>();
         audio.OnButtonClickAudio();
     }
 }

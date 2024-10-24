@@ -61,7 +61,7 @@ public class QuestHandle : MonoBehaviour
             questProgessData.hasClaimed = true;
             Claim.interactable = false;
             rewardHandle.rewardClaimedIMG.gameObject.SetActive(false);
-            AudioManager audio = FindObjectOfType<AudioManager>();
+            AudioManager audio = FindAnyObjectByType<AudioManager>();
             audio.OnButtonClickAudio();
         }
     }

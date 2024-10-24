@@ -16,7 +16,7 @@ public class MainScene : MonoBehaviour
     public void Start()
     {
         QuestToggle.onValueChanged.AddListener(QuestCheck);
-        AudioManager audio = FindObjectOfType<AudioManager>();
+        AudioManager audio = FindAnyObjectByType<AudioManager>();
         audio.ChangeBackGroundMusic(1);
 
     }
@@ -34,7 +34,7 @@ public class MainScene : MonoBehaviour
     }
     public void OnButtonClickEffect()
     {
-        AudioManager audio = FindObjectOfType<AudioManager>();
+        AudioManager audio = FindAnyObjectByType<AudioManager>();
         audio.OnButtonClickAudio();
     }
 

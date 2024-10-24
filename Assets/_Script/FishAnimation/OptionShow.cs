@@ -23,7 +23,7 @@ public class OptionShow : MonoBehaviour
         loadSaveData.LoadData();
         playerDatas = loadSaveData.playerData;
         UpdateBalance();
-        fishShowUIHandle = FindObjectOfType<FishShowUIHandle>();
+        fishShowUIHandle = FindAnyObjectByType<FishShowUIHandle>();
         option1.onClick.AddListener(Option1);
         option2.onClick.AddListener(Option2);
         //option3.onClick.AddListener(Option3);

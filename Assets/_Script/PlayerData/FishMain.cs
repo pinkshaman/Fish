@@ -16,7 +16,7 @@ public class FishMain : FishHandle
 
     public override void Start()
     {
-        control = FindObjectOfType<UIScore>();
+        control = FindAnyObjectByType<UIScore>();
         base.Start();
         control.SetdataUI(this);
     }

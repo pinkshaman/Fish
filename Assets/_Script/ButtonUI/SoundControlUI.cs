@@ -17,7 +17,7 @@ public class SoundControlUI : MonoBehaviour
     private float previousSFXVolume;
     public void Start()
     {
-        audioManager = FindObjectOfType<AudioManager>();
+        audioManager = FindAnyObjectByType<AudioManager>();
         muteAll.onValueChanged.AddListener(OnToggleValueChanged);
         musicVolumeSlider.onValueChanged.AddListener(SetMusicVolume);
         SFXSoundSlider.onValueChanged.AddListener(SetSFXVolume);

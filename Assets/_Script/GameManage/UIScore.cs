@@ -26,7 +26,7 @@ public class UIScore : MonoBehaviour
     public Button skill2;
     private bool isSkillActivate;
     public Text ScoreReward;
-
+    public List<FishDisplay> fishD;
     public void Start()
     {
         skill1.onClick.AddListener(Skill1Activate);
@@ -36,22 +36,21 @@ public class UIScore : MonoBehaviour
     public void CreateMenu(FishData fishDataX)
     {
         var fishMenu = Instantiate(fishDisplay, RootFishMenu);
-        var fishImage = fishMenu.GetComponentInChildren<Image>();
-        fishImage.sprite = fishDataX.fishSprite;
-        CheckScalePoint(fishImage, fishDataX);
+        var fish = fishMenu.GetComponent<FishDisplay>();
+        int.TryParse(scalePoint.text, out int scale);
+        fish.SetImage(fishDataX, scale);
+        fishD.Add(fish);
     }
-    public void CheckScalePoint(Image image, FishData fishDataX)
+
+    public void CheckList(int scale)
     {
 
-        if (int.TryParse(scalePoint.text, out int scale))
+        foreach (var fish in fishD)
         {
-            if (fishDataX.scalePoint > scale)
-            {
-                image.color = Color.black;              
-            }
+            fish.UpdateImage(scale);
         }
-
     }
+
     public void SetdataUI(FishMain fish)
     {
         this.fishMain = fish;
@@ -63,10 +62,13 @@ public class UIScore : MonoBehaviour
         scalePoint.text = $"{fishMain.scalePoint}";
         scores.text = $"{fishMain.score}";
         lives.text = $"{fishMain.lives}";
-
         SetScalePoint();
-        CheckLives();
+        CheckLives();   
+        int scale = int.Parse(scalePoint.text);
+        CheckList(scale);
     }
+
+
     public void SetScalePoint()
     {
         float FillAmout = float.Parse(scalePoint.text) / 100;
@@ -129,7 +131,7 @@ public class UIScore : MonoBehaviour
     public void CheckLives()
     {
         int live = int.Parse(lives.text);
-        UIMainFishControl uIMainFish = FindObjectOfType<UIMainFishControl>();
+        UIMainFishControl uIMainFish = FindAnyObjectByType<UIMainFishControl>();
         if (live <= 0)
         {
             bool isGameEnd = true;

@@ -56,7 +56,7 @@ public class FishShowUIHandle : MonoBehaviour
             Destroy(child.gameObject);
         }
         fishTankDict.Clear();
-        FishTankManager fishTankManager = FindObjectOfType<FishTankManager>();
+        FishTankManager fishTankManager = FindAnyObjectByType<FishTankManager>();
         fishTankBase = fishTankManager.fishTankBase;
         foreach (Transform child in fishTankManager.rootTank)
         {

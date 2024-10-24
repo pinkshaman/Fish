@@ -35,4 +35,9 @@ public class SceneManagers : MonoBehaviour
     {
         SceneManager.LoadScene("ShopScene");
     }
+    public void LoadStoryScene(float level)
+    {
+        SceneManager.LoadScene("StoryScene");
+
+    }
 }

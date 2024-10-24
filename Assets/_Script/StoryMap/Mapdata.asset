@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9c28076abe552458544e17327c51b2, type: 3}
+  m_Name: Mapdata
+  m_EditorClassIdentifier: 
+  mapDataBases:
+  - mapBackGround: {fileID: 4228458911864910223, guid: 095a7bfa40ee8314987538a8847b3185, type: 3}
+    mapName: Big Ridge
+    mapID: 1
+  - mapBackGround: {fileID: -8280412388170396862, guid: 7e2411e4f50e151408390468b1df14a1, type: 3}
+    mapName: Deep Sea
+    mapID: 2
+  - mapBackGround: {fileID: 7229743976861737918, guid: 05f08e312312ac74ab20b83f0b02ac0f, type: 3}
+    mapName: Pottery Cave
+    mapID: 3
+  - mapBackGround: {fileID: -6877450638857007179, guid: 71b5d354d268abb488fa02c68394899e, type: 3}
+    mapName: Lost City
+    mapID: 4
+  - mapBackGround: {fileID: 997932929, guid: 3bab4b0e842dac449bf58844b6a3cb1c, type: 3}
+    mapName: StarFish
+    mapID: 5
+  - mapBackGround: {fileID: -5979690425406010659, guid: 129ecf4a9b6d51942ac5fe3838952434, type: 3}
+    mapName: Sunken Tresure
+    mapID: 6

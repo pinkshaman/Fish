@@ -72,7 +72,7 @@ public class UIMainFishControl : MonoBehaviour
         ads.ShowAd();
         int fishLives = UiScore.ReturnLives();
         int scores = UiScore.ReturnScore();
-        RewardManager rewardManager = FindObjectOfType<RewardManager>();
+        RewardManager rewardManager = FindAnyObjectByType<RewardManager>();
         StartCoroutine(rewardManager.CalculatorReward(isEnd, fishLives, scores));
         Debug.Log($"Waiting for Reward Intilizing: {isEnd}-{fishLives}-{scores}");
 

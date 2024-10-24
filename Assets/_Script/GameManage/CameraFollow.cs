@@ -19,7 +19,7 @@ public class CameraFollow : MonoBehaviour
 
     public void Update()
     {
-        var fishMain = FindObjectOfType<FishMain>();     
+        var fishMain = FindAnyObjectByType<FishMain>();     
        
         Vector3 desiredPosition = fishMain.gameObject.transform.position + Offset;
 

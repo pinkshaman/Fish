@@ -11,7 +11,7 @@ public class TargetPoint : MonoBehaviour
 
     public void Start()
     {
-        floatUI = FindObjectOfType<FloatUI>();
+        floatUI = FindAnyObjectByType<FloatUI>();  
         direction = floatUI.GetDirection();
     }
     public void Moving()

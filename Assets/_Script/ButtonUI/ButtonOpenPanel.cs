@@ -10,7 +10,7 @@ public class ButtonOpenPanel : ButtonUi
     {
         base.OnClick();
         Panel.SetActive(true);
-        AudioManager audio = FindObjectOfType<AudioManager>();
+        AudioManager audio = FindAnyObjectByType<AudioManager>();
         audio.OnButtonClickAudio();
     }
 }

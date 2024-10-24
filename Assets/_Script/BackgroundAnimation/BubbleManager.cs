@@ -12,7 +12,7 @@ public class BubbleManager : MonoBehaviour
     public int bubbleCount = 10;
     public void Start()
     {
-        AudioManager audioManager = FindObjectOfType<AudioManager>();
+        AudioManager audioManager = FindAnyObjectByType<AudioManager>();
         audioManager.ChangeBackGroundMusic(2);
         StartCoroutine(SpawnBubbles());        
     }

@@ -39,7 +39,7 @@ MonoBehaviour:
     fishPoint: 30
   - id: 4
     fishName: Humphead Wrasse
-    scalePoint: 30
+    scalePoint: 32
     speed: 5
     fishSprite: {fileID: -967357005, guid: 385cd4bfce9269f4587dcf77daf7d3f2, type: 3}
     controller: {fileID: 9100000, guid: 19181ed7a3fc69d4288234068bd40327, type: 2}

@@ -23,6 +23,7 @@ public class QuestData
     public int TaskCount;
     public List<int> fishList;
     public List<RewardBaseUpdate> rewardListUpdate;
+    public int mapData;
 }
 
 public class QuestManager : MonoBehaviour

@@ -9,11 +9,11 @@ public class LoadingScene : MonoBehaviour
     public OptionShow choosefishmanager;
     public void Start()
     {
-        fishTankManager= FindObjectOfType<FishTankManager>();
-        choosefishmanager = FindObjectOfType<OptionShow>();
+        fishTankManager= FindAnyObjectByType<FishTankManager>();
+        choosefishmanager = FindAnyObjectByType<OptionShow>();
 
         // Kiểm tra nếu FishTankManager không tồn tại, tải scene chứa nó
-        if (FindObjectOfType<FishTankManager>() == null)
+        if (FindAnyObjectByType<FishTankManager>() == null)
         {
             Debug.Log("FishTankManager not found. Loading FishTank scene.");
             SceneManager.LoadScene("FishTank", LoadSceneMode.Additive);
@@ -24,12 +24,12 @@ public class LoadingScene : MonoBehaviour
     private IEnumerator WaitForFishTankManager()
     {
         // Đợi đến khi FishTankManager xuất hiện
-        while (FindObjectOfType<FishTankManager>() == null)
+        while (FindAnyObjectByType<FishTankManager>() == null)
         {
             yield return null; // Đợi frame tiếp theo
         }
 
-        fishTankManager = FindObjectOfType<FishTankManager>();
+        fishTankManager = FindAnyObjectByType<FishTankManager>();
         Debug.Log("FishTankManager found and assigned.");
     }
 }
