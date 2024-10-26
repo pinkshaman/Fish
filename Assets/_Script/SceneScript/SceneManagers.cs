@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagers : MonoBehaviour
 {    
-    public float level;  
+    public int level;  
     public void Start()
     {
       
@@ -23,8 +23,10 @@ public class SceneManagers : MonoBehaviour
     {
         SceneManager.LoadScene("FishTank");
     }
-    public void LoadPlayScene(float level)
-    {       
+    public void LoadPlayScene(int level)
+    {
+        PlayerPrefs.SetInt("QuestID", level);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("PlayScene");
     }
     public void LoadDingScene()
@@ -35,8 +37,10 @@ public class SceneManagers : MonoBehaviour
     {
         SceneManager.LoadScene("ShopScene");
     }
-    public void LoadStoryScene(float level)
+    public void LoadStoryScene(int level)
     {
+        PlayerPrefs.SetInt("QuestID", level);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("StoryScene");
 
     }

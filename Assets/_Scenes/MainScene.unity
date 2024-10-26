@@ -2929,7 +2929,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 443627282}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1315216207}
+        m_TargetAssemblyTypeName: SceneManagers, Assembly-CSharp
+        m_MethodName: LoadStoryScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &443627282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4624,6 +4636,7 @@ GameObject:
   - component: {fileID: 751442117}
   - component: {fileID: 751442116}
   - component: {fileID: 751442118}
+  - component: {fileID: 751442119}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -4732,19 +4745,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 751442116}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1776629656}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &751442119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751442114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3aeea7e3cc871245b427b6be8394107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 751442118}
+  Panel: {fileID: 1336081409}
 --- !u!1 &753968513
 GameObject:
   m_ObjectHideFlags: 0
@@ -6133,7 +6148,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 918534316}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1315216207}
+        m_TargetAssemblyTypeName: SceneManagers, Assembly-CSharp
+        m_MethodName: LoadStoryScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &918534316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6851,19 +6878,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 961512864453471095, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 961512864453471095, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 961512864453471095, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 961512864453471095, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 961512864453471095, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6883,11 +6910,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1575041794715666001, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1575041794715666001, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 1575041794715666001, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6900,6 +6927,18 @@ PrefabInstance:
     - target: {fileID: 2511239427034102501, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2559045176597258429, guid: afc429cd819d33740bbd205943005ec0, type: 3}
+      propertyPath: m_text
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781277530102436625, guid: afc429cd819d33740bbd205943005ec0, type: 3}
+      propertyPath: Object
+      value: 
+      objectReference: {fileID: 1336081409}
+    - target: {fileID: 3781277530102436625, guid: afc429cd819d33740bbd205943005ec0, type: 3}
+      propertyPath: activateOnClick
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4115063987806968231, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_Vertical
@@ -6927,11 +6966,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6334838386231328888, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6334838386231328888, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 6334838386231328888, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6947,11 +6986,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6694553499159095673, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_Name
-      value: Popup Big
+      value: MapStory
       objectReference: {fileID: 0}
     - target: {fileID: 6694553499159095673, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6811372776232849627, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_Enabled
@@ -7039,11 +7078,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937634775603184577, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7937634775603184577, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8139215246673359389, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_IsActive
@@ -10533,6 +10572,11 @@ PrefabInstance:
       addedObject: {fileID: 1259765272}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c69fd1798b344694a99728edb6bb014f, type: 3}
+--- !u!1 &1336081409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6694553499159095673, guid: afc429cd819d33740bbd205943005ec0, type: 3}
+  m_PrefabInstance: {fileID: 997305143}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1336182296
 GameObject:
   m_ObjectHideFlags: 0
@@ -10615,7 +10659,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1336182299}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1315216207}
+        m_TargetAssemblyTypeName: SceneManagers, Assembly-CSharp
+        m_MethodName: LoadStoryScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1336182299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10736,7 +10792,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1346852119}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1315216207}
+        m_TargetAssemblyTypeName: SceneManagers, Assembly-CSharp
+        m_MethodName: LoadStoryScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1346852119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13180,7 +13248,6 @@ GameObject:
   - component: {fileID: 1776629659}
   - component: {fileID: 1776629658}
   - component: {fileID: 1776629661}
-  - component: {fileID: 1776629660}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -13246,19 +13313,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1776629656}
   m_CullTransparentMesh: 1
---- !u!114 &1776629660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776629656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61d5634a02b76214c903309ac577a89c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 0
 --- !u!114 &1776629661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13303,14 +13357,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1776629660}
+      - m_Target: {fileID: 1315216207}
         m_TargetAssemblyTypeName: SceneManagers, Assembly-CSharp
         m_MethodName: LoadPlayScene
-        m_Mode: 4
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13668,11 +13722,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1315216207}
         m_TargetAssemblyTypeName: SceneManagers, Assembly-CSharp
         m_MethodName: LoadStoryScene
-        m_Mode: 4
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

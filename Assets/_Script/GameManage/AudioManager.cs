@@ -55,10 +55,10 @@ public class AudioManager : MonoBehaviour
     }
     public void ChangeBackGroundMusic(int clipID)
     {
-        if (backGroundMusic.isPlaying)
-        {         
-            backGroundMusic.Stop();
-        }
+        //if (backGroundMusic.isPlaying)
+        //{         
+        //    backGroundMusic.Stop();
+        //}
         
 
         foreach (var audio in audioDataBase.audioDataBases)

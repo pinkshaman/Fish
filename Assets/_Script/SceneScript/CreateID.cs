@@ -1,11 +1,8 @@
-﻿using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.VersionControl;
+﻿
 using UnityEngine;
 using UnityEngine.UI;
-
+using GooglePlayGames;
+using GooglePlayGames.BasicApi;
 public class CreateID : MonoBehaviour
 {
     public Button createButton;
@@ -55,45 +52,61 @@ public class CreateID : MonoBehaviour
             Message.text = " Input Name is blank!";
         }
     }
+    public void SignIn()
+    {
+        PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
+    }
+    internal void ProcessAuthentication(SignInStatus status)
+    {
+        if (status == SignInStatus.Success)
+        {
+            // Continue with Play Games Services
+        }
+        else
+        {
+            // Disable your integration with Play Games Services or show a login button
+            // to ask users to sign-in. Clicking it should call
+            // PlayGamesPlatform.Instance.ManuallyAuthenticate(ProcessAuthentication).
+        }
+    }
+
+        //public void CheckIDAndCreatePlayer(string playerName)
+        //{
+        //    if (playerDataBase != null && playerDataBase.PlayerDataBases != null)
+        //    {
+        //        bool idExists = playerDataBase.PlayerDataBases.Exists(player => player.name == playerName);
+
+        //        if (idExists)
+        //        {
+        //            Debug.LogWarning("Name is invalid. Please choose another name.");
+        //            Message.text = "Name is invalid. Please choose another name.";
+        //        }
+        //        else
+        //        {
+        //            CreatePlayerName(playerName);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if (playerDataBase == null)
+        //        {
+        //            Debug.LogWarning("PlayerDataBase is null.");
+        //            // Tạo một instance mới nếu cần
+        //            playerDataBase = new PlayerDataBase();
+        //        }
+
+        //        // Khởi tạo danh sách nếu null
+        //        if (playerDataBase.PlayerDataBases == null)
+        //        {
+        //            playerDataBase.PlayerDataBases = new List<PlayerData>();
+        //        }
+
+        //        CreatePlayerName(playerName);
+        //    }
+        //}
 
 
-    //public void CheckIDAndCreatePlayer(string playerName)
-    //{
-    //    if (playerDataBase != null && playerDataBase.PlayerDataBases != null)
-    //    {
-    //        bool idExists = playerDataBase.PlayerDataBases.Exists(player => player.name == playerName);
-
-    //        if (idExists)
-    //        {
-    //            Debug.LogWarning("Name is invalid. Please choose another name.");
-    //            Message.text = "Name is invalid. Please choose another name.";
-    //        }
-    //        else
-    //        {
-    //            CreatePlayerName(playerName);
-    //        }
-    //    }
-    //    else
-    //    {
-    //        if (playerDataBase == null)
-    //        {
-    //            Debug.LogWarning("PlayerDataBase is null.");
-    //            // Tạo một instance mới nếu cần
-    //            playerDataBase = new PlayerDataBase();
-    //        }
-
-    //        // Khởi tạo danh sách nếu null
-    //        if (playerDataBase.PlayerDataBases == null)
-    //        {
-    //            playerDataBase.PlayerDataBases = new List<PlayerData>();
-    //        }
-
-    //        CreatePlayerName(playerName);
-    //    }
-    //}
-
-
-    public void CreatePlayerName(string playerName)
+        public void CreatePlayerName(string playerName)
     {
         // Tạo đối tượng PlayerData mới
         PlayerData newPlayerData = new PlayerData

@@ -18,7 +18,8 @@ public class ChallengerScene : MonoBehaviour
     public MapChallenger mapPrefabs;
     public Transform rootMap;
     public void Start()
-    {       
+    {
+        QuestID = PlayerPrefs.GetInt("QuestID");
         toggle.onValueChanged.AddListener(OpenQuestCheck);
         Debug.Log($"input QuestID : {QuestID}");
         ChangeBGMusic();
@@ -27,7 +28,7 @@ public class ChallengerScene : MonoBehaviour
 
     public void ChangeBGMusic()
     {
-        AudioManager audioManager = FindAnyObjectByType<AudioManager>();
+        AudioManager audioManager = FindFirstObjectByType<AudioManager>();
         audioManager.ChangeBackGroundMusic(2);
     }
 

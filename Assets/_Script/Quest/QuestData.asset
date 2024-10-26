@@ -35,3 +35,47 @@ MonoBehaviour:
     - rewardID: 3
       rewardQuality: 500
     mapData: 1
+  - questID: 3
+    QuestName: Story 2
+    QuestDecription: Eat All Fish!
+    TaskCount: 1
+    fishList: 0100000002000000030000000c00000004000000
+    rewardListUpdate:
+    - rewardID: 1
+      rewardQuality: 120
+    - rewardID: 3
+      rewardQuality: 570
+    mapData: 1
+  - questID: 4
+    QuestName: Story 3
+    QuestDecription: Eat All Fish!
+    TaskCount: 1
+    fishList: 0100000002000000030000000c000000040000000500000006000000
+    rewardListUpdate:
+    - rewardID: 1
+      rewardQuality: 150
+    - rewardID: 3
+      rewardQuality: 850
+    mapData: 1
+  - questID: 5
+    QuestName: Story 4
+    QuestDecription: Eat All Fish!
+    TaskCount: 1
+    fishList: 0100000002000000050000000600000008000000090000000c000000
+    rewardListUpdate:
+    - rewardID: 1
+      rewardQuality: 1000
+    - rewardID: 3
+      rewardQuality: 1500
+    mapData: 1
+  - questID: 6
+    QuestName: Story 5
+    QuestDecription: Eat All Fish!
+    TaskCount: 1
+    fishList: 0100000002000000030000000c0000000a0000000b0000000d0000000e0000000f000000
+    rewardListUpdate:
+    - rewardID: 1
+      rewardQuality: 100
+    - rewardID: 3
+      rewardQuality: 500
+    mapData: 1

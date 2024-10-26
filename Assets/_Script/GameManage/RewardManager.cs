@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class RewardManager : MonoBehaviour
 {
-    public QuestDataBase questDataBase;
+    
     public RewardHandle rewardHandles;
     public Transform rootRewardUi;
     public RewardDataBase rewardDataBase;
@@ -40,6 +40,7 @@ public class RewardManager : MonoBehaviour
         yield return new WaitUntil(() => isEnd);
         if (fishlive <= 0)
         {
+
             foreach (var reward in rewardListClaim)
             {
                 reward.rewardQuality = 0;
@@ -78,6 +79,7 @@ public class RewardManager : MonoBehaviour
     public void OnAccept()
     {
         Debug.Log($"RewardListClaim {rewardListClaim.Count}");
+        
         foreach (var rewards in rewardListClaim)
         {
             if (rewards.rewardID == 1)

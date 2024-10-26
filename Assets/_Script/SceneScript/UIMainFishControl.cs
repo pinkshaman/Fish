@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class UIMainFishControl : MonoBehaviour
 {
-
+    
     public FishDataBase fishDataBase;
     public FishMain fishMain;
     public FishManager fishManager;
@@ -18,7 +18,7 @@ public class UIMainFishControl : MonoBehaviour
     public GameObject resultPanel;
     public Interstitial ads;
     public bool isGameEnd;
-
+    
 
     public void Start()
     {

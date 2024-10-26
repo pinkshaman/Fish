@@ -16,7 +16,7 @@ public class MainScene : MonoBehaviour
     public void Start()
     {
         QuestToggle.onValueChanged.AddListener(QuestCheck);
-        AudioManager audio = FindAnyObjectByType<AudioManager>();
+        AudioManager audio = FindFirstObjectByType<AudioManager>();
         audio.ChangeBackGroundMusic(1);
 
     }
