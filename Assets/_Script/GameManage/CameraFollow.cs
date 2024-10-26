@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -22,6 +23,11 @@ public class CameraFollow : MonoBehaviour
         var fishMain = FindAnyObjectByType<FishMain>();     
        
         Vector3 desiredPosition = fishMain.gameObject.transform.position + Offset;
+        if(!fishMain.gameObject.activeSelf)
+        {
+            Debug.Log("FishMain Respawn");
+            return;
+        }
 
         // Giới hạn vị trí của camera trong vùng cho phép
         float clampedX = Mathf.Clamp(desiredPosition.x, minBounds.x, maxBounds.x);

@@ -102,8 +102,11 @@ public class Banner : MonoBehaviour
     void OnDestroy()
     {
         // Clean up the listeners:
-        _loadBannerButton.onClick.RemoveAllListeners();
-        _showBannerButton.onClick.RemoveAllListeners();
-        _hideBannerButton.onClick.RemoveAllListeners();
+        if (_loadBannerButton != null || _showBannerButton != null || _hideBannerButton != null)
+        {
+            _loadBannerButton.onClick.RemoveAllListeners();
+            _showBannerButton.onClick.RemoveAllListeners();
+            _hideBannerButton.onClick.RemoveAllListeners();
+        }
     }
 }
