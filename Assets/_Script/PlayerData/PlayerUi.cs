@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.PackageManager.Requests;
+﻿
 using UnityEngine;
 using UnityEngine.UI;
-using static Unity.Burst.Intrinsics.X86.Avx;
+
 
 public class PlayerUi : MonoBehaviour
 {
@@ -28,7 +25,7 @@ public class PlayerUi : MonoBehaviour
         //Cập nhật các thành phần giao diện
         playerName.text = data.name;
         playerLevel.text = data.level.ToString();
-        whilePearl.text = data.whilePearl.ToString();
+        whilePearl.text = data.whitePearl.ToString();
         blackPearl.text = data.blackPearl.ToString();
         LevelFill(data);
     }

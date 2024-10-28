@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Overlays;
+﻿
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
-using Toggle = UnityEngine.UI.Toggle;
+
 public class OptionShow : MonoBehaviour
 {
     public Button option1;
@@ -66,7 +63,7 @@ public class OptionShow : MonoBehaviour
     }
     public void UpdateBalance()
     {
-        whitePearl.text = playerDatas.whilePearl.ToString();
+        whitePearl.text = playerDatas.whitePearl.ToString();
         blackPearl.text = playerDatas.blackPearl.ToString();
     }
     public void SellFishOnTank(FishData fishData)
@@ -76,7 +73,7 @@ public class OptionShow : MonoBehaviour
         fishTankManager.fishTankBase.fishTankBases.Remove(fishTank);
         fishTankManager.RemoveFishFromTank(fishTank);
         Debug.Log($"Sell : {fishTank.ID} = {fishData.Price}");
-        playerDatas.whilePearl += fishData.Price;
+        playerDatas.whitePearl += fishData.Price;
         UpdateBalance();
         loadSaveData.SavesData(playerDatas);
         fishTankManager.SaveFishTankDataJson();

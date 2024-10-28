@@ -30,8 +30,8 @@ public class AudioManager : MonoBehaviour
     }
     public void Start()
     {      
-        backGroundMusic = gameObject.AddComponent<AudioSource>();
-        soundEffect = gameObject.AddComponent<AudioSource>();
+        //backGroundMusic = gameObject.AddComponent<AudioSource>();
+        //soundEffect = gameObject.AddComponent<AudioSource>();
         foreach (var audio in audioDataBase.audioDataBases)
         {
             if (audio.AudioID == setMusic)
@@ -55,18 +55,18 @@ public class AudioManager : MonoBehaviour
     }
     public void ChangeBackGroundMusic(int clipID)
     {
-        //if (backGroundMusic.isPlaying)
-        //{         
-        //    backGroundMusic.Stop();
-        //}
-        
+        if (backGroundMusic.isPlaying)
+        {
+            backGroundMusic.Stop();
+        }
+
 
         foreach (var audio in audioDataBase.audioDataBases)
         {
             if (audio.AudioID == clipID)
             {
                 PlayBackgoundMusic(audio.Sound);
-                break;
+                
             }
         }
     }

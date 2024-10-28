@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -17,7 +17,14 @@ public class MainScene : MonoBehaviour
     {
         QuestToggle.onValueChanged.AddListener(QuestCheck);
         AudioManager audio = FindFirstObjectByType<AudioManager>();
-        audio.ChangeBackGroundMusic(1);
+        if (audio != null)
+        {
+            audio.ChangeBackGroundMusic(1);
+        }
+        else
+        {
+            Debug.LogError("AudioManager not found  ");
+        }
 
     }
     public void OnButtonShopClick()

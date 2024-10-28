@@ -19,18 +19,17 @@ public class CreateID : MonoBehaviour
         saveLoadData.LoadData(); 
         playerData = saveLoadData.playerData;
        
-        if (playerData != null && !string.IsNullOrEmpty(playerData.name))
+        if (playerData.name == string.Empty )
         {
-            Debug.Log($"playerName :{playerData.name}");
-            loadScene.LoadMainScene(); // Nếu có tên, load MainScene
+            SignIn();
         }
         else
         {
-            Debug.Log("No player data found or player name is empty.");
-            // Nếu không có dữ liệu, bạn có thể xử lý khác hoặc để người dùng nhập tên
+            loadScene.LoadMainScene();
+            Message.text = $"Login Successfull{playerData.name} ";
         }
 
-        createButton.onClick.AddListener(OnCreateButtonClick);
+        //createButton.onClick.AddListener(OnCreateButtonClick);
     }
 
     public void OnXButtonClick()
@@ -39,19 +38,19 @@ public class CreateID : MonoBehaviour
         Debug.Log("Application is Quitting");
     }
 
-    public void OnCreateButtonClick()
-    {
-        string playerName = inputName != null ? inputName.text : string.Empty;
-        if (!string.IsNullOrEmpty(playerName))
-        {
-            CreatePlayerName(playerName);
-        }
-        else
-        {
-            Debug.LogWarning("input Name is blank!");
-            Message.text = " Input Name is blank!";
-        }
-    }
+    //public void OnCreateButtonClick()
+    //{
+    //    string playerName = inputName != null ? inputName.text : string.Empty;
+    //    if (!string.IsNullOrEmpty(playerName))
+    //    {
+    //        CreatePlayerName(playerName);
+    //    }
+    //    else
+    //    {
+    //        Debug.LogWarning("input Name is blank!");
+    //        Message.text = " Input Name is blank!";
+    //    }
+    //}
     public void SignIn()
     {
         PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
@@ -60,10 +59,18 @@ public class CreateID : MonoBehaviour
     {
         if (status == SignInStatus.Success)
         {
-            // Continue with Play Games Services
+            string id = PlayGamesPlatform.Instance.GetUserId();
+            string name = PlayGamesPlatform.Instance.GetUserDisplayName();
+            
+            PlayerData newPlayerData = new PlayerData(id,name,1,0,null,0,0,0);
+            Message.text = $"Login Succesful {name}";
+            saveLoadData.SavesData(newPlayerData);
+
+            loadScene.LoadChooseFish();
         }
         else
         {
+            Message.text = "Login Fail!";
             // Disable your integration with Play Games Services or show a login button
             // to ask users to sign-in. Clicking it should call
             // PlayGamesPlatform.Instance.ManuallyAuthenticate(ProcessAuthentication).
@@ -106,29 +113,29 @@ public class CreateID : MonoBehaviour
         //}
 
 
-        public void CreatePlayerName(string playerName)
-    {
-        // Tạo đối tượng PlayerData mới
-        PlayerData newPlayerData = new PlayerData
-        {
-            ID = GetInstanceID(),
-            name = playerName,
-            level = 1,
-            playerExperience = 0f,
-            whilePearl = 0,
-            blackPearl = 0,
-            playerAvatar = null,
-            fishMainID = 0,
-        };
+    //    public void CreatePlayerName(string playerName)
+    //{
+    //    // Tạo đối tượng PlayerData mới
+    //    PlayerData newPlayerData = new PlayerData
+    //    {
+    //        ID = GetInstanceID(),
+    //        name = playerName,
+    //        level = 1,
+    //        playerExperience = 0f,
+    //        whilePearl = 0,
+    //        blackPearl = 0,
+    //        playerAvatar = null,
+    //        fishMainID = 0,
+    //    };
         // Thêm đối tượng PlayerData vào danh sách trong PlayerDataBase
         //playerDataBase.PlayerDataBases.Add(newPlayerData);
-        Debug.Log($"Successfully! Your name: {playerName}");
+        //Debug.Log($"Successfully! Your name: {playerName}");
 
         // Lưu dữ liệu      
-        saveLoadData.SavesData(newPlayerData);
+        //saveLoadData.SavesData(newPlayerData);
 
-        loadScene.LoadChooseFish();
-    }
+        //loadScene.LoadChooseFish();
+    //}
 }
 
 

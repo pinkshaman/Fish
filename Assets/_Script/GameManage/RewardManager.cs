@@ -84,7 +84,7 @@ public class RewardManager : MonoBehaviour
         {
             if (rewards.rewardID == 1)
             {
-                playerData.whilePearl += rewards.rewardQuality;
+                playerData.whitePearl += rewards.rewardQuality;
                 Debug.Log($"Added WhitePearl :{rewards.rewardName} - {rewards.rewardQuality}");
             }
             if (rewards.rewardID == 3)

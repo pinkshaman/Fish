@@ -75,6 +75,11 @@ public class UIMainFishControl : MonoBehaviour
         RewardManager rewardManager = FindAnyObjectByType<RewardManager>();
         StartCoroutine(rewardManager.CalculatorReward(isEnd, fishLives, scores));
         Debug.Log($"Waiting for Reward Intilizing: {isEnd}-{fishLives}-{scores}");
-
+        
+    }
+    public void SaveScore(int score)
+    {
+        PlayerPrefs.SetInt("CurrentScore", score);
+        PlayerPrefs.Save();
     }
 }

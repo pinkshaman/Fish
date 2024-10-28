@@ -26,16 +26,16 @@ public class ShopScene : MonoBehaviour
 
     public void UpdateBalance()
     {
-        whitePearl.text = playerDatas.whilePearl.ToString();
+        whitePearl.text = playerDatas.whitePearl.ToString();
         BlackPearl.text = playerDatas.blackPearl.ToString();
     }   
     public void OnBuyFish()
     {
 
         FishData fishData = showUIHandle.GetFishDataFromCurrentToggle();
-        if (fishData != null && playerDatas.whilePearl >= fishData.Price)
+        if (fishData != null && playerDatas.whitePearl >= fishData.Price)
         {
-            playerDatas.whilePearl -= fishData.Price;
+            playerDatas.whitePearl -= fishData.Price;
             Message.text = $"Selected : {fishData.fishName}";
             Debug.Log($"Fish selected: {fishData.fishName}");
             AddFishToTank(fishData);
@@ -43,7 +43,7 @@ public class ShopScene : MonoBehaviour
             loadSaveData.playerData = playerDatas;
             loadSaveData.SavesData(loadSaveData.playerData);
         }
-        else if (playerDatas.whilePearl <= fishData.Price)
+        else if (playerDatas.whitePearl <= fishData.Price)
         {
             Message.text = $"Not Enough WhilePearl ";
         }
