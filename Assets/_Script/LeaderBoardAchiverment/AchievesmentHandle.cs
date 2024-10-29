@@ -21,7 +21,7 @@ public class AchievesmentHandle : MonoBehaviour
     public Image rewardIMG;
     public TMP_Text rewardQuality;
     public Image claimedIMG;
-
+    public PlayerData playerData;
     public void Start()
     {
         claimRewward.onClick.AddListener(OnClaim);
@@ -30,12 +30,12 @@ public class AchievesmentHandle : MonoBehaviour
     {
         this.achievement = data;
         this.achivesmentProgess = progess;
-        foreach(var reward in rewardDataBase.rewardBases)
+        foreach (var reward in rewardDataBase.rewardBases)
         {
-            if(reward.rewardID == data.AchievesmentRewardID.rewardID)
+            if (reward.rewardID == data.AchievesmentRewardID.rewardID)
             {
                 rewardIMG.sprite = reward.rewardIMG;
-                rewardQuality.text =data.AchievesmentRewardID.rewardQuality.ToString();
+                rewardQuality.text = data.AchievesmentRewardID.rewardQuality.ToString();
             }
         }
         UpdateUiAchievesment();
@@ -51,15 +51,15 @@ public class AchievesmentHandle : MonoBehaviour
     {
         achivesmentName.text = achievement.AchievesmentName;
         achievesmentDes.text = achievement.AchivesmentDecription;
-        
+
         FillProgess();
     }
     public void FillProgess()
     {
-       
+
         if (achievement.totalTask == 0)
         {
-           var  percentProgess = 1;
+            var percentProgess = 1;
             fillProgess.fillAmount = percentProgess;
         }
         else
@@ -106,6 +106,26 @@ public class AchievesmentHandle : MonoBehaviour
             audio.OnButtonClickAudio();
         }
     }
-
+    public void ReceivedReward()
+    {
+        if (achievement.AchievesmentRewardID.rewardID == 1)
+        {
+            playerData.whitePearl += achievement.AchievesmentRewardID.rewardQuality;
+        }
+        if (achievement.AchievesmentRewardID.rewardID == 3)
+        {
+            playerData.playerExperience += achievement.AchievesmentRewardID.rewardQuality;
+        }
+        SavePlayersData();
+    }
+    [ContextMenu("SavePlayersData")]
+    public void SavePlayersData()
+    {
+        var value = JsonUtility.ToJson(playerData);
+        PlayerPrefs.SetString(nameof(playerData), value);
+        PlayerPrefs.Save();
+    }
 }
+
+
 

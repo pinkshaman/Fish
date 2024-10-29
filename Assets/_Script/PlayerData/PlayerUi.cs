@@ -13,16 +13,16 @@ public class PlayerUi : MonoBehaviour
     public Image progessLevelBG;
     public Image levelFill;
     public PlayerData playerData;
-
+    
     public void SetDataPlayer(PlayerData data)
     {
-        // Gán dữ liệu data cho playerData.
+        
         this.playerData = data;
         UpdateUIplayerData(data);
     }
     public void UpdateUIplayerData(PlayerData data)
     {
-        //Cập nhật các thành phần giao diện
+        
         playerName.text = data.name;
         playerLevel.text = data.level.ToString();
         whilePearl.text = data.whitePearl.ToString();

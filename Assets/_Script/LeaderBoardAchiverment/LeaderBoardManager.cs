@@ -13,7 +13,7 @@ public class LeaderBoardManager : MonoBehaviour
     public LeaderBoardList leaderBoardList;
     public LeaderBoardHandle leaderBoardHandle;
     public Transform rootUi;
-    private int score = 0;
+    private int score ;
     public void Start()
     {
         score = PlayerPrefs.GetInt("CurrentScore");

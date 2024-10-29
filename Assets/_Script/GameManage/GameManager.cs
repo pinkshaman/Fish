@@ -4,7 +4,7 @@ using GooglePlayGames;
 using UnityEngine;
 using System;
 using System.Text;
-using System.Security.Cryptography;
+
 
 [Serializable]
 public class DataSetting
@@ -17,20 +17,38 @@ public class DataSetting
 }
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set; }
+
     public DataSetting dataSetting = new DataSetting();
-    private string fileName = "file.dat";
+    private string fileName;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    public void Start()
+    {
+        fileName = PlayerPrefs.GetString(nameof(dataSetting));
+    }
     public void SaveData()
     {
-
         LoadFromPlayerPrefs();
         OpenSavedGame();
     }
 
     void OpenSavedGame()
     {
+       
         ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
         savedGameClient.OpenWithAutomaticConflictResolution(fileName, DataSource.ReadCacheOrNetwork,
-            ConflictResolutionStrategy.UseLastKnownGood, OnSavedGameOpened);
+            ConflictResolutionStrategy.UseLongestPlaytime, OnSavedGameOpened);
     }
 
     public void OnSavedGameOpened(SavedGameRequestStatus status, ISavedGameMetadata game)
@@ -57,23 +75,24 @@ public class GameManager : MonoBehaviour
         if (status == SavedGameRequestStatus.Success)
         {
             // handle reading or writing of saved game.
+            Debug.Log("Saved Game");
         }
         else
         {
             // handle error
+            Debug.Log("Save Failled");
         }
     }
     public void LoadData()
     {
 
         OpenLoadGame();
-        SaveToPlayerPrefs();
+        
     }
     public void OpenLoadGame()
     {
         ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
-        savedGameClient.OpenWithAutomaticConflictResolution(fileName, DataSource.ReadCacheOrNetwork,
-            ConflictResolutionStrategy.UseLastKnownGood, LoadGameData);
+        savedGameClient.OpenWithAutomaticConflictResolution(fileName, DataSource.ReadCacheOrNetwork,ConflictResolutionStrategy.UseLastKnownGood, LoadGameData);
     }
     public void LoadGameData(SavedGameRequestStatus status, ISavedGameMetadata data)
     {
@@ -91,13 +110,14 @@ public class GameManager : MonoBehaviour
     public void OnSavedGameDataRead(SavedGameRequestStatus status, byte[] loadedData)
     {
         string data = System.Text.Encoding.UTF8.GetString(loadedData);
-        if(data == "")
+        if(string.IsNullOrEmpty(data))
         {
             SaveData();
         }
         else
         {
             dataSetting = JsonUtility.FromJson<DataSetting>(data);
+            SaveToPlayerPrefs();
         }
     }
    public void DeleteGameData(string filename)
@@ -166,6 +186,9 @@ public class GameManager : MonoBehaviour
         if (!string.IsNullOrEmpty(fishTankBase))
             dataSetting.fishTankBase = JsonUtility.FromJson<FishTankBase>(fishTankBase);
     }
-
+    public void OnApplicationQuit()
+    {
+        SaveData();
+    }
 
 }

@@ -74,6 +74,7 @@ public class AchivesmentManager : MonoBehaviour
         var QuestIndex = achievesmentProgessList.achivesmentProgesses.FindIndex(progess => achievesProgess.progessID == progess.progessID);
         achievesmentProgessList.achivesmentProgesses[QuestIndex] = achievesProgess;
         DictionaryAchievesment[achievesProgess.progessID].UpdateAchievesment(achievesProgess);
+        SaveAchievesment();
     }
     public void OnApplicationQuit()
     {

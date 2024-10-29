@@ -15,6 +15,7 @@ public class OptionShow : MonoBehaviour
     public FishTankManager fishTankManager;
     public Text whitePearl;
     public Text blackPearl;
+    public Text message;
     public void Start()
     {
         loadSaveData.LoadData();
@@ -49,6 +50,7 @@ public class OptionShow : MonoBehaviour
         var Value = fishShowUIHandle.GetFishDataFromCurrentToggle();
         Debug.Log($"Data :{Value.fishName}");
         loadSaveData.SetFishMain(playerDatas, Value.id);
+        message.text = $"Set {Value.fishName} to MainFish";
     }
     public void Option2()
     {
@@ -60,6 +62,7 @@ public class OptionShow : MonoBehaviour
         fishShowUIHandle.UpdateFishShow();
         AudioManager audioManager = FindAnyObjectByType<AudioManager>();
         audioManager.CointEffect();
+        message.text = $"Sold {Value.fishName} for {Value.Price}";
     }
     public void UpdateBalance()
     {
