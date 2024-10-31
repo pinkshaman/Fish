@@ -476,6 +476,7 @@ MonoBehaviour:
   rewardIMG: {fileID: 8930040001295484491}
   rewardQuality: {fileID: 8930040000414799447}
   claimedIMG: {fileID: 3303940665386451155}
+  playerManager: {fileID: 0}
 --- !u!1 &8930040000593451429
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,7 +675,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8930040000665467495}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5135734451363030542}
+        m_TargetAssemblyTypeName: AchievesmentHandle, Assembly-CSharp
+        m_MethodName: ReceivedReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8930040000538191708}
+        m_TargetAssemblyTypeName: AchievesmentHandle, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8930040000837845514
 GameObject:
   m_ObjectHideFlags: 0

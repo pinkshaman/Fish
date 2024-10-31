@@ -40,7 +40,7 @@ public class RewardManager : MonoBehaviour
         yield return new WaitUntil(() => isEnd);
         if (fishlive <= 0)
         {
-
+           
             foreach (var reward in rewardListClaim)
             {
                 reward.rewardQuality = 0;

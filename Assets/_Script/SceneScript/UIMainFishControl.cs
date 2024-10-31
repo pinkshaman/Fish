@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using GooglePlayGames;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.IO.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class UIMainFishControl : MonoBehaviour
@@ -28,6 +30,7 @@ public class UIMainFishControl : MonoBehaviour
 
 
     }
+ 
     [ContextMenu("LoadPlayerData")]
     public void LoadPlayerData()
     {
@@ -75,8 +78,11 @@ public class UIMainFishControl : MonoBehaviour
         RewardManager rewardManager = FindAnyObjectByType<RewardManager>();
         StartCoroutine(rewardManager.CalculatorReward(isEnd, fishLives, scores));
         Debug.Log($"Waiting for Reward Intilizing: {isEnd}-{fishLives}-{scores}");
-        
+        SaveScore(scores );
+      
     }
+  
+
     public void SaveScore(int score)
     {
         PlayerPrefs.SetInt("CurrentScore", score);

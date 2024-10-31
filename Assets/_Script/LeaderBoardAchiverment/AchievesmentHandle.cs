@@ -21,9 +21,10 @@ public class AchievesmentHandle : MonoBehaviour
     public Image rewardIMG;
     public TMP_Text rewardQuality;
     public Image claimedIMG;
-    public PlayerData playerData;
+    public PlayerManager playerManager;
     public void Start()
     {
+        playerManager = PlayerManager.Instance;
         claimRewward.onClick.AddListener(OnClaim);
     }
     public void SetDataAchievesment(Achievesment data, AchivesmentProgess progess)
@@ -104,27 +105,24 @@ public class AchievesmentHandle : MonoBehaviour
             claimedIMG.gameObject.SetActive(true);
             AudioManager audio = FindAnyObjectByType<AudioManager>();
             audio.OnButtonClickAudio();
+            AchivesmentManager achivesmentManager = AchivesmentManager.Instance;
+            achivesmentManager.SaveAchievesment();
         }
     }
     public void ReceivedReward()
     {
         if (achievement.AchievesmentRewardID.rewardID == 1)
         {
-            playerData.whitePearl += achievement.AchievesmentRewardID.rewardQuality;
+            playerManager.playerData.whitePearl += achievement.AchievesmentRewardID.rewardQuality;
         }
         if (achievement.AchievesmentRewardID.rewardID == 3)
         {
-            playerData.playerExperience += achievement.AchievesmentRewardID.rewardQuality;
-        }
-        SavePlayersData();
+            playerManager.playerData.playerExperience += achievement.AchievesmentRewardID.rewardQuality;
+        }      
+        playerManager.UpdateProgessData(playerManager.playerData);
+        playerManager.SavePlayersData();
     }
-    [ContextMenu("SavePlayersData")]
-    public void SavePlayersData()
-    {
-        var value = JsonUtility.ToJson(playerData);
-        PlayerPrefs.SetString(nameof(playerData), value);
-        PlayerPrefs.Save();
-    }
+  
 }
 
 

@@ -66,6 +66,7 @@ public class UIScore : MonoBehaviour
         CheckLives();   
         int scale = int.Parse(scalePoint.text);
         CheckList(scale);
+
     }
 
 

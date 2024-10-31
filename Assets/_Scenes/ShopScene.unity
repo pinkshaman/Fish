@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -296,7 +297,7 @@ MonoBehaviour:
     level: 0
     playerExperience: 0
     playerAvatar: {fileID: 0}
-    whilePearl: 0
+    whitePearl: 0
     blackPearl: 0
     fishMainID: 0
   whitePearl: {fileID: 410007698}
@@ -361,7 +362,7 @@ MonoBehaviour:
     level: 0
     playerExperience: 0
     playerAvatar: {fileID: 0}
-    whilePearl: 0
+    whitePearl: 0
     blackPearl: 0
     fishMainID: 0
 --- !u!1 &63308982
@@ -2852,7 +2853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8910393995556121888, guid: afc429cd819d33740bbd205943005ec0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.001321847
+      value: 0.0005303693
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3781277530102436625, guid: afc429cd819d33740bbd205943005ec0, type: 3}
@@ -3073,7 +3074,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 820, y: 70}
+  m_AnchoredPosition: {x: -34, y: -413}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1247548972

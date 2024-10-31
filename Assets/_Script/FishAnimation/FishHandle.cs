@@ -27,7 +27,7 @@ public class FishHandle : MonoBehaviour
     
     public virtual void Start()
     {
-        audioManager = FindAnyObjectByType<AudioManager>();
+        audioManager = AudioManager.Instance;
         ScaleFish();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();

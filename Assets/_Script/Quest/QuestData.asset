@@ -23,7 +23,7 @@ MonoBehaviour:
       rewardQuality: 100
     - rewardID: 3
       rewardQuality: 500
-    mapData: 2
+    mapData: 1
   - questID: 2
     QuestName: Story 1
     QuestDecription: Eat All Fish!
@@ -34,7 +34,7 @@ MonoBehaviour:
       rewardQuality: 100
     - rewardID: 3
       rewardQuality: 500
-    mapData: 1
+    mapData: 2
   - questID: 3
     QuestName: Story 2
     QuestDecription: Eat All Fish!
@@ -45,7 +45,7 @@ MonoBehaviour:
       rewardQuality: 120
     - rewardID: 3
       rewardQuality: 570
-    mapData: 1
+    mapData: 3
   - questID: 4
     QuestName: Story 3
     QuestDecription: Eat All Fish!
@@ -56,7 +56,7 @@ MonoBehaviour:
       rewardQuality: 150
     - rewardID: 3
       rewardQuality: 850
-    mapData: 1
+    mapData: 4
   - questID: 5
     QuestName: Story 4
     QuestDecription: Eat All Fish!
@@ -67,7 +67,7 @@ MonoBehaviour:
       rewardQuality: 1000
     - rewardID: 3
       rewardQuality: 1500
-    mapData: 1
+    mapData: 5
   - questID: 6
     QuestName: Story 5
     QuestDecription: Eat All Fish!
@@ -78,4 +78,4 @@ MonoBehaviour:
       rewardQuality: 100
     - rewardID: 3
       rewardQuality: 500
-    mapData: 1
+    mapData: 6

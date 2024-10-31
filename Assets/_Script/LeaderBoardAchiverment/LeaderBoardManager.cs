@@ -17,7 +17,10 @@ public class LeaderBoardManager : MonoBehaviour
     public void Start()
     {
         score = PlayerPrefs.GetInt("CurrentScore");
-        ReportScore(score);
+        if (score != 0)
+        {
+            ReportScore(score);
+        }
         LoadRank();
     }
     public void ShowLeaderboardUi()
@@ -27,6 +30,7 @@ public class LeaderBoardManager : MonoBehaviour
     public void ReportScore(int score)
     {
         PlayGamesPlatform.Instance.ReportScore(score, GPGSIds.leaderboard_highest_score_test, (bool success) => { });
+        PlayerPrefs.SetInt("CurrentScore", 0);
 
     }
     public void LoadRank()

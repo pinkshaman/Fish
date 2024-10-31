@@ -12,7 +12,7 @@ public class FishManager : MonoBehaviour
     public FishOtherHandle fishOtherHandle;
     public FishDataBase fishDataBases;
     public GameObject fishPrefabs;
-    public List<int> allFishes;
+    
 
     public FishMain fishMain;
     public GameObject PlayerFishMain;
@@ -39,15 +39,7 @@ public class FishManager : MonoBehaviour
 
     }
 
-    public void RegisterFish(int fishID)
-    {
-        if (!allFishes.Contains(fishID))
-        {
-            allFishes.Add(fishID);
-            Debug.Log($"Add OtherFishTolist: {fishID}");
-            allFishes.Sort();
-        }
-    }
+
     public void CreateFishQuest(int fishID)
     {
         FishData fishData = fishDataBases.fishDatas.Find(fish => fish.id == fishID);
@@ -60,7 +52,7 @@ public class FishManager : MonoBehaviour
 
         fishOtherHandle.gameObject.SetActive(true);
         fishOtherHandles.SetData(fishData);
-        RegisterFish(fishOtherHandles.ID);
+        
     }
     public void CreateFishGroup(int fishID)
     {
@@ -74,11 +66,8 @@ public class FishManager : MonoBehaviour
         for (int i = 0; i < enermyWave.numberOfEnemy; i++)
         {
             var enermy = Instantiate(fishSpawn, enermyWave.spawnPoint[i].transform.position, Quaternion.identity, rootFish);
-            enermy.gameObject.transform.SetParent(newParentGroup.transform);
-            FishSpawn fish = enermy.GetComponent<FishSpawn>();
-            fish.uniqueID = enermy.GetInstanceID();
-            enermy.SetData(fishData);
-            RegisterFish(fish.ID);
+            enermy.gameObject.transform.SetParent(newParentGroup.transform);                    
+            enermy.SetData(fishData);          
         }
         newParentGroup.SetDataGroup(enermyWave.SwimPath, fishData.speed);
 

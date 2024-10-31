@@ -10,7 +10,7 @@ public class ShopScene : MonoBehaviour
     public FishShowUIHandle showUIHandle;
     public Button BuyFishButton;
     public Text Message;
-    public SceneManagers loadScene;
+    
     public PlayerData playerDatas;
     public Text whitePearl;
     public Text BlackPearl;

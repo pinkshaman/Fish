@@ -69,11 +69,8 @@ public class CreateID : MonoBehaviour
     {
         if (status == SignInStatus.Success)
         {
-            //string id = PlayGamesPlatform.Instance.GetUserId();
-            //string name = PlayGamesPlatform.Instance.GetUserDisplayName();          
-            //PlayerData newPlayerData = new PlayerData(id,name,1,0,null,0,0,0);
+           
             GameManager.Instance.LoadData();
-
             Message.text = $"Login with Google Succesful";          
         }
         else
